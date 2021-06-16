@@ -1,6 +1,6 @@
 ---
-title: Next.js Pages
-date: 2021/3/18
+title: Split the Facts
+date: 2021/4/16
 description: Learn more about Next.js pages.
 tag: web development
 author: You
