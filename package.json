@@ -9,6 +9,8 @@
     "start": "next start"
   },
   "dependencies": {
+    "@mailchimp/mailchimp_marketing": "^3.0.48",
+    "axios": "^0.21.1",
     "gray-matter": "^4.0.2",
     "next": "latest",
     "nextra": "^0.4.4",
