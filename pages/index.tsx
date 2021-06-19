@@ -43,53 +43,56 @@ export default function Home() {
         </div>
         <div className="w-1/3 mx-auto">
           <p className={styles.title}>
-            Watch my videos on YouTube{' '}
+            My YouTube Channel &nbsp;{' '}
             <a
               href="https://www.youtube.com/channel/UCjRNMsglFYFwNsnOWIOgt1Q"
-              className="text-red-400"
+              className="text-green-600"
             >
               @Split! - The West at War with Itself
             </a>
           </p>
           <p className={styles.title}>
-            Support my content creation via Patreon{' '}
+            Support me via Patreon &nbsp;{' '}
             <a
               href="https://www.patreon.com/user/posts?u=56069659"
-              className="text-red-400"
+              className="text-green-600"
             >
               @Sam Roffey
             </a>
           </p>
 
           <p className={styles.title}>
-            Email{' '}
-            <a href="mailto:split.thefacts@gmail.com" className="text-red-400">
+            Email&nbsp;{' '}
+            <a
+              href="mailto:split.thefacts@gmail.com"
+              className="text-green-600"
+            >
               split.thefacts@gmail.com
             </a>
           </p>
           <p className={styles.title}>
-            Instagram
+            Instagram &nbsp;
             <a
               href="https://www.instagram.com/split_the_facts"
-              className="text-red-400"
+              className="text-green-600"
             >
               @split_the_facts
             </a>
           </p>
           <p className={styles.title}>
-            TikTok
+            TikTok &nbsp;
             <a
               href="https://www.tiktok.com/@split_the_facts?lang=en"
-              className="text-red-400"
+              className="text-green-600"
             >
               @split_the_facts
             </a>
           </p>
           <p className={styles.title}>
-            Reddit{' '}
+            Reddit &nbsp;{' '}
             <a
               href="https://www.reddit.com/user/SplitTheFacts"
-              className="text-red-400"
+              className="text-green-600"
             >
               @SplitTheFacts
             </a>

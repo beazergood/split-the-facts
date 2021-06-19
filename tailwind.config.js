@@ -6,7 +6,7 @@ module.exports = {
       }
     }
   },
-  plugins: [require('@tailwindcss/typography')],
+  plugins: [require('@tailwindcss/typography'), require('@tailwindcss/forms')],
   variants: {
     extend: {
       borderWidth: ['last']

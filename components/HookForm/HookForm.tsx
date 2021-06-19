@@ -1,5 +1,5 @@
-import { useForm, useFieldArray, Controller } from 'react-hook-form'
-import React, { useEffect } from 'react'
+import { useForm } from 'react-hook-form'
+import React, { useEffect, useState } from 'react'
 import {
   FormErrorMessage,
   FormLabel,
@@ -7,6 +7,8 @@ import {
   Input,
   Button
 } from '@chakra-ui/react'
+import { FaPaperPlane } from 'react-icons/fa'
+import { motion } from 'framer-motion'
 
 export const HookForm = () => {
   const {
@@ -16,9 +18,11 @@ export const HookForm = () => {
     reset,
     formState,
     formState: { errors, isSubmitting, isSubmitSuccessful }
-  } = useForm({ defaultValues: { email: '' } })
+  } = useForm({ defaultValues: { email: '' }, mode: 'onChange' })
 
-  const [submittedData, setSubmittedData] = React.useState({})
+  const [submittedData, setSubmittedData] = useState({})
+
+  const [messageData, setMessageData] = useState({ message: '', status: '' })
 
   useEffect(() => {
     if (formState.isSubmitSuccessful) {
@@ -39,34 +43,75 @@ export const HookForm = () => {
         },
         method: 'POST'
       })
-
-      const result = await res.json()
-
-      resolve({})
+      try {
+        const result = await res.json()
+        console.log('result: ', result)
+        if (result.error) {
+          setMessageData({
+            message: 'You are already subscribed',
+            status: 'error'
+          })
+        } else {
+          setMessageData({
+            message: 'Success, thanks for subscribing.',
+            status: 'success'
+          })
+        }
+        resolve({})
+      } catch (e) {
+        console.log('error: ', e)
+        setMessageData({ message: e.result.error.message, status: 'error' })
+      }
     })
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <FormControl isInvalid={errors.email}>
+    <div>
+      <form onSubmit={handleSubmit(onSubmit)}>
         <p className="text-lg mb-5">Enter your email to receive updates</p>
-
-        {/* <FormLabel htmlFor="email">Email</FormLabel> */}
-        <Input
-          id="email"
-          placeholder="email"
-          {...register('email', {
-            required: 'This is required',
-            minLength: { value: 4, message: 'Minimum length should be 4' }
-          })}
-        />
-        <FormErrorMessage>
-          {errors.email && errors.email.message}
-        </FormErrorMessage>
-      </FormControl>
-      <Button mt={4} colorScheme="teal" isLoading={isSubmitting} type="submit">
-        Submit
-      </Button>
-    </form>
+        <div className="flex flex-row">
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            <FormControl>
+              <Input
+                id="email"
+                placeholder="email"
+                className="mt-2 appearance-none border rounded-full w-80 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                {...register('email', {
+                  required: 'This is required',
+                  minLength: { value: 4, message: 'Minimum length should be 4' }
+                })}
+              />
+              <FormErrorMessage>
+                {errors.email && errors.email.message}
+              </FormErrorMessage>
+              <p
+                className={
+                  messageData.status == 'success'
+                    ? 'text-green-400'
+                    : 'text-red-500'
+                }
+              >
+                {messageData.message}
+              </p>
+            </FormControl>
+          </motion.div>
+          <Button
+            disabled={!formState.isValid}
+            colorScheme="teal"
+            isLoading={isSubmitting}
+            type="submit"
+            width="50px"
+            height="50px"
+            className="rounded-full bg-green-400 p-4 ml-5 hover:shadow-md hover:bg-green-500"
+          >
+            <FaPaperPlane className="text-white" />
+          </Button>
+        </div>
+      </form>
+    </div>
   )
 }

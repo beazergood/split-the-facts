@@ -26,6 +26,7 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-hook-form": "^7.9.0",
+    "react-icons": "^4.2.0",
     "rss": "^1.2.2"
   },
   "prettier": {
@@ -41,6 +42,7 @@
     "@storybook/addon-essentials": "^6.2.9",
     "@storybook/addon-links": "^6.2.9",
     "@storybook/react": "^6.2.9",
+    "@tailwindcss/forms": "^0.3.3",
     "@tailwindcss/typography": "^0.4.1",
     "@types/node": "^15.12.4",
     "@types/react": "^17.0.11",
