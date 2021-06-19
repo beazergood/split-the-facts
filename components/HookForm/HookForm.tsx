@@ -66,7 +66,7 @@ export const HookForm = () => {
   }
 
   return (
-    <div className="mx-auto w-80">
+    <div>
       <form onSubmit={handleSubmit(onSubmit)}>
         <p className="text-lg mb-5 font-NotoSerif">
           Enter your email to receive updates
