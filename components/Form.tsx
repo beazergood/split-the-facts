@@ -1,4 +1,4 @@
-export default function Form() {
+export default function MyForm() {
   const registerUser = async (event) => {
     event.preventDefault()
 
