@@ -3,6 +3,7 @@ import styles from '../styles/Home.module.css'
 import { HookForm } from '../components/HookForm'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import { FaYoutube, FaPatreon } from 'react-icons/fa'
 
 export default function Home() {
   return (
@@ -33,34 +34,44 @@ export default function Home() {
           src="https://yt3.ggpht.com/ytc/AAUvwnh1BcLZ9z1FADbBWugEfNT6_6jLl8M1Pi3RJzca=s176-c-k-c0x00ffffff-no-rj"
         />
         <motion.p
-          className="my-4 w-1/2 mx-auto text-center text-xl"
+          className="w-80 md:w-1/2 lg:w-1/2 my-4 mx-auto text-center text-xl font-NotoSerif"
           layoutId="subtitle"
         >
           Channel for parodies and comedic sketches. Enjoy!
         </motion.p>
-        <div className="w-1/3 mx-auto my-10">
-          <HookForm />
-        </div>
-        <div className="w-1/3 mx-auto">
-          <p className={styles.title}>
-            My YouTube Channel &nbsp;{' '}
+        <div className="w-90 px-5 md:w-66 lg:w-1/2 mx-auto">
+          <div className="flex flex-col md:flex-row w-full border-0 border-red-300">
             <a
               href="https://www.youtube.com/channel/UCjRNMsglFYFwNsnOWIOgt1Q"
-              className="text-green-600"
+              className="flex flex-row md:flex-col lg:flex-row shadow-sm p-4 hover:shadow-lg md:w-1/2 w-100 border-0 border-green-50"
             >
-              @Split! - The West at War with Itself
+              <FaYoutube className="text-4xl mr-4 text-red-500" />
+              <div className="flex flex-col">
+                <p className="text-xl">
+                  My YouTube Channel &rarr; <br />
+                </p>
+                <p className="text-green-600 text-md">
+                  @Split! - The West at War with Itself
+                </p>
+              </div>
             </a>
-          </p>
-          <p className={styles.title}>
-            Support me via Patreon &nbsp;{' '}
+
             <a
               href="https://www.patreon.com/user/posts?u=56069659"
-              className="text-green-600"
+              className="flex flex-row md:flex-col lg:flex-row shadow-sm p-4 md:w-1/2 hover:shadow-lg w-100 border-0 border-green-50"
             >
-              @Sam Roffey
+              <FaPatreon className="text-2xl mr-4 text-red-500" />
+              <div className="flex flex-col">
+                <p className="text-xl">Support my Patreon &rarr; </p>
+                <p className="text-green-600">@Sam Roffey</p>
+              </div>
             </a>
-          </p>
-
+          </div>
+        </div>
+        <div className="w-80 md:w-1/2 lg:w-1/2 mx-auto my-10">
+          <HookForm />
+        </div>
+        <div className="w-100 md:w-1/3 lg:w-1/2 mx-auto">
           <p className={styles.title}>
             Email&nbsp;{' '}
             <a

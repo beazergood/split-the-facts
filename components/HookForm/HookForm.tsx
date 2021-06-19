@@ -66,9 +66,11 @@ export const HookForm = () => {
   }
 
   return (
-    <div>
+    <div className="mx-auto w-80">
       <form onSubmit={handleSubmit(onSubmit)}>
-        <p className="text-lg mb-5">Enter your email to receive updates</p>
+        <p className="text-lg mb-5 font-NotoSerif">
+          Enter your email to receive updates
+        </p>
         <div className="flex flex-row">
           <motion.div
             initial={{ opacity: 0 }}

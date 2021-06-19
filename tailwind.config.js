@@ -2,6 +2,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
+        NotoSerif: ['Noto Serif'],
         PlayfairDisplay: ['Playfair Display']
       }
     }
