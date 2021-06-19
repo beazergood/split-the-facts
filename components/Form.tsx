@@ -4,7 +4,7 @@ const EmailForm: React.FC = () => {
   const registerUser = async (event) => {
     event.preventDefault()
 
-    const res = await fetch('/api/mailchimp', {
+    const res = await fetch('/api/register', {
       body: JSON.stringify({
         email: event.target.email.value
       }),
@@ -15,6 +15,7 @@ const EmailForm: React.FC = () => {
     })
 
     const result = await res.json()
+    console.log('result for subscribe to mailchimp', result) // TODO notify user of result
     // result.user => 'Ada Lovelace'
   }
 

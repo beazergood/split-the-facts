@@ -13,7 +13,7 @@ async function run() {
 
 export default async (req, res) => {
   const { email } = req.body
-  console.log('email: ', email)
+  console.log('sending subscribe to MailChimp message: ', email)
   if (!email || !email.length) {
     return res.status(400).json({
       error: 'Forgot to add your email?'
