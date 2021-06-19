@@ -27,9 +27,13 @@ export default async (req, res) => {
 
     console.log('response', response)
     // success
-    return res.status(201).json({ error: null })
+    return res
+      .status(201)
+      .json({ error: null, response: { status: response.data.status } })
   } catch (err) {
-    console.error('err', err)
+    if (err.data) {
+      console.error(err.data)
+    }
     return res.status(400).json({
       error: err
     })

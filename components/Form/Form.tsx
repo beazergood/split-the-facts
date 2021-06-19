@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-const EmailForm: React.FC = () => {
+export const EmailForm: React.FC = () => {
   const registerUser = async (event) => {
     event.preventDefault()
 
@@ -16,22 +16,20 @@ const EmailForm: React.FC = () => {
 
     const result = await res.json()
     console.log('result for subscribe to mailchimp', result) // TODO notify user of result
-    // result.user => 'Ada Lovelace'
   }
 
   return (
-    <form onSubmit={registerUser}>
-      <label htmlFor="email">email</label>
-      <input
-        id="email"
-        name="email"
-        type="text"
-        autoComplete="email"
-        required
-      />
-      <button type="submit">Sign Up</button>
-    </form>
+    <div>
+      <form onSubmit={registerUser}>
+        <input
+          id="email"
+          name="email"
+          type="text"
+          autoComplete="email"
+          required
+        />
+        <button type="submit">Sign Up</button>
+      </form>
+    </div>
   )
 }
-
-export default EmailForm
