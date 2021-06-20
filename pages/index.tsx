@@ -22,14 +22,14 @@ export default function Home() {
         </li>
       </motion.ul> */}
       <motion.h1
-        className="font-PlayfairDisplay text-3xl font-semibold text-center m-10"
+        className="font-PlayfairDisplay text-3xl font-semibold text-center mx-10 mt-10"
         layoutId="title"
       >
         Split! - The West at War with Itself
       </motion.h1>
       <main className={styles.main}>
         <motion.img
-          className="rounded-full mx-auto my-10"
+          className="rounded-full mx-auto my-5"
           width="90px"
           height="90px"
           layoutId="img"
@@ -70,7 +70,7 @@ export default function Home() {
             </a>
           </div>
         </div>
-        <div className="w-100 px-2 md:w-4/5 lg:w-1/2 mx-auto my-10 border-2 border-red-400">
+        <div className="w-100 px-2 md:w-4/5 lg:w-1/2 mx-auto my-10 border-0 border-red-400">
           <HookForm />
         </div>
         <div className="w-full px-2 md:w-5/6 lg:w-1/3 mx-auto border- md:border-red-400 text-left lg:text-center">
