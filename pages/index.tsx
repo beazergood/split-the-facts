@@ -47,26 +47,48 @@ export default function Home() {
               href="https://www.youtube.com/channel/UCjRNMsglFYFwNsnOWIOgt1Q"
               className="flex flex-row md:flex-col lg:flex-row shadow-sm p-4 hover:shadow-lg md:w-1/2 w-100 border-0 border-green-50"
             >
-              <FaYoutube className="text-4xl mr-4 text-red-500" />
-              <div className="flex flex-col">
-                <p className="text-xl">
-                  My YouTube Channel &rarr; <br />
-                </p>
-                <p className="text-green-600 text-md">
-                  @Split! - The West at War with Itself
-                </p>
-              </div>
+              <motion.div
+                whileHover={{
+                  scale: 1.02,
+                  transition: { duration: 0.2 }
+                }}
+                whileTap={{ scale: 0.9 }}
+                className="flex flex-row md:flex-col"
+              >
+                <div className="w-12 h-12">
+                  <FaYoutube className="text-4xl mr-4 text-red-500" />
+                </div>
+                <div className="flex flex-col">
+                  <p className="text-xl">
+                    My YouTube Channel &rarr; <br />
+                  </p>
+                  <p className="text-green-600 text-md">
+                    @Split! - The West at War with Itself
+                  </p>
+                </div>
+              </motion.div>
             </a>
 
             <a
               href="https://www.patreon.com/user/posts?u=56069659"
               className="flex flex-row md:flex-col lg:flex-row shadow-sm p-4 md:w-1/2 hover:shadow-lg w-100 border-0 border-green-50"
             >
-              <FaPatreon className="text-2xl mr-4 text-red-500" />
-              <div className="flex flex-col">
-                <p className="text-xl">Support my Patreon &rarr; </p>
-                <p className="text-green-600">@Sam Roffey</p>
-              </div>
+              <motion.div
+                whileHover={{
+                  scale: 1.02,
+                  transition: { duration: 0.2 }
+                }}
+                whileTap={{ scale: 0.9 }}
+                className="flex flex-row md:flex-col"
+              >
+                <div className="w-12 h-12">
+                  <FaPatreon className="text-2xl mr-4 text-red-500" />
+                </div>
+                <div className="flex flex-col">
+                  <p className="text-xl">Support my Patreon &rarr; </p>
+                  <p className="text-green-600">@Sam Roffey</p>
+                </div>
+              </motion.div>
             </a>
           </div>
         </div>

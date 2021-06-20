@@ -53,7 +53,7 @@ export const HookForm = () => {
           })
         } else {
           setMessageData({
-            message: 'Success, thanks for subscribing.',
+            message: '👍 that worked, thanks for subscribing.',
             status: 'success'
           })
         }
@@ -94,8 +94,8 @@ export const HookForm = () => {
               <p
                 className={
                   messageData.status == 'success'
-                    ? 'text-green-400'
-                    : 'text-red-500'
+                    ? 'text-green-600'
+                    : 'text-red-600'
                 }
               >
                 {messageData.message}
