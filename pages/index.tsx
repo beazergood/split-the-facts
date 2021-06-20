@@ -70,10 +70,10 @@ export default function Home() {
             </a>
           </div>
         </div>
-        <div className="w-100 px-2 md:w-1/2 lg:w-1/2 mx-auto my-10 border- border-red-400">
+        <div className="w-100 px-2 md:w-4/5 lg:w-1/2 mx-auto my-10 border-2 border-red-400">
           <HookForm />
         </div>
-        <div className="w-100 md:w-1/2 lg:w-1/3 mx-auto border- md:border-red-400 text-center">
+        <div className="w-full px-2 md:w-5/6 lg:w-1/3 mx-auto border- md:border-red-400 text-left lg:text-center">
           <p className={styles.title}>
             Email&nbsp;{' '}
             <a
