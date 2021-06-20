@@ -66,22 +66,23 @@ export const HookForm = () => {
   }
 
   return (
-    <div>
+    <div className="mx-auto w-5/6">
       <form onSubmit={handleSubmit(onSubmit)}>
-        <p className="text-lg mb-5 font-NotoSerif">
+        <p className="text-lg mb-5 font-NotoSerif text-center">
           Enter your email to receive updates
         </p>
-        <div className="flex flex-row">
+        <div className="flex md:flex-row mx-auto gap-2">
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
+            className="w-5/6"
           >
             <FormControl>
               <Input
                 id="email"
                 placeholder="email"
-                className="mt-2 appearance-none border rounded-full w-80 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                className="mx-2 appearance-none border rounded-full w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 {...register('email', {
                   required: 'This is required',
                   minLength: { value: 4, message: 'Minimum length should be 4' }
@@ -108,7 +109,7 @@ export const HookForm = () => {
             type="submit"
             width="50px"
             height="50px"
-            className="rounded-full bg-green-400 p-4 ml-5 hover:shadow-md hover:bg-green-500"
+            className="rounded-full bg-green-400 p-4 ml-5 -mt-1 hover:shadow-md hover:bg-green-500 w-90 text-white hidden md:block"
           >
             <FaPaperPlane className="text-white" />
           </Button>
