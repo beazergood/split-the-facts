@@ -29,6 +29,17 @@ class MyDocument extends Document {
           <meta name="twitter:title" content={meta.title} />
           <meta name="twitter:description" content={meta.description} />
           <meta name="twitter:image" content={meta.image} />
+
+          <link rel="preconnect" href="https://fonts.gstatic.com" />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap"
+            rel="stylesheet"
+          />
+
+          <link
+            href="https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap"
+            rel="stylesheet"
+          />
         </Head>
         <body>
           <Main />

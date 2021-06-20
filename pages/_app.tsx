@@ -1,10 +1,13 @@
-import 'nextra-theme-blog/style.css'
-import '../styles/main.css'
+import '../styles/globals.css'
+import type { AppProps } from 'next/app'
+import { AnimateSharedLayout } from 'framer-motion'
+import '../styles/tailwind.css'
 
-export default function Nextra({ Component, pageProps }) {
+function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <>
+    <AnimateSharedLayout>
       <Component {...pageProps} />
-    </>
+    </AnimateSharedLayout>
   )
 }
+export default MyApp

@@ -13,7 +13,7 @@ async function run() {
 
 export default async (req, res) => {
   const { email } = req.body
-  console.log('email: ', email)
+  console.log('sending subscribe to MailChimp message: ', email)
   if (!email || !email.length) {
     return res.status(400).json({
       error: 'Forgot to add your email?'
@@ -27,9 +27,13 @@ export default async (req, res) => {
 
     console.log('response', response)
     // success
-    return res.status(201).json({ error: null })
+    return res
+      .status(201)
+      .json({ error: null, response: { status: response.data.status } })
   } catch (err) {
-    console.error('err', err)
+    if (err.data) {
+      console.error(err.data)
+    }
     return res.status(400).json({
       error: err
     })

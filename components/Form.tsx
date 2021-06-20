@@ -1,10 +1,12 @@
-export default function MyForm() {
+import * as React from 'react'
+
+export const EmailForm: React.FC = () => {
   const registerUser = async (event) => {
     event.preventDefault()
 
     const res = await fetch('/api/register', {
       body: JSON.stringify({
-        name: event.target.name.value
+        email: event.target.email.value
       }),
       headers: {
         'Content-Type': 'application/json'
@@ -13,14 +15,21 @@ export default function MyForm() {
     })
 
     const result = await res.json()
-    // result.user => 'Ada Lovelace'
+    console.log('result for subscribe to mailchimp', result) // TODO notify user of result
   }
 
   return (
-    <form onSubmit={registerUser}>
-      <label htmlFor="name">Name</label>
-      <input id="name" name="name" type="text" autoComplete="name" required />
-      <button type="submit">Register</button>
-    </form>
+    <div>
+      <form onSubmit={registerUser}>
+        <input
+          id="email"
+          name="email"
+          type="text"
+          autoComplete="email"
+          required
+        />
+        <button type="submit">Sign Up</button>
+      </form>
+    </div>
   )
 }
