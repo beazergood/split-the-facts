@@ -66,10 +66,10 @@ export const HookForm = () => {
   }
 
   return (
-    <div className="mx-auto w-5/6">
+    <div className="">
       <form onSubmit={handleSubmit(onSubmit)}>
         <p className="text-lg mb-5 font-NotoSerif text-center">
-          Enter your email to receive updates
+          Enter your email to subscribe to the occassional update from me
         </p>
         <div className="flex md:flex-row mx-auto gap-2">
           <motion.div
@@ -81,7 +81,7 @@ export const HookForm = () => {
             <FormControl>
               <Input
                 id="email"
-                placeholder="email"
+                placeholder="Your email"
                 className="mx-2 appearance-none border rounded-full w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 {...register('email', {
                   required: 'This is required',

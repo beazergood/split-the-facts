@@ -22,7 +22,7 @@ export default function Home() {
         </li>
       </motion.ul> */}
       <motion.h1
-        className="font-PlayfairDisplay text-3xl font-semibold text-center mt-10"
+        className="font-PlayfairDisplay text-3xl font-semibold text-center m-10"
         layoutId="title"
       >
         Split! - The West at War with Itself
@@ -30,6 +30,8 @@ export default function Home() {
       <main className={styles.main}>
         <motion.img
           className="rounded-full mx-auto my-10"
+          width="90px"
+          height="90px"
           layoutId="img"
           src="https://yt3.ggpht.com/ytc/AAUvwnh1BcLZ9z1FADbBWugEfNT6_6jLl8M1Pi3RJzca=s176-c-k-c0x00ffffff-no-rj"
         />
@@ -40,7 +42,7 @@ export default function Home() {
           Channel for parodies and comedic sketches. Enjoy!
         </motion.p>
         <div className="w-90 px-5 md:w-66 lg:w-1/2 mx-auto">
-          <div className="flex flex-col md:flex-row w-full border-0 border-red-300">
+          <div className="flex flex-col md:flex-row w-full border- border-red-300">
             <a
               href="https://www.youtube.com/channel/UCjRNMsglFYFwNsnOWIOgt1Q"
               className="flex flex-row md:flex-col lg:flex-row shadow-sm p-4 hover:shadow-lg md:w-1/2 w-100 border-0 border-green-50"
@@ -68,10 +70,10 @@ export default function Home() {
             </a>
           </div>
         </div>
-        <div className="w-5/6 px-2 md:w-1/2 lg:w-1/2 mx-auto my-10 border- border-red-400">
+        <div className="w-100 px-2 md:w-1/2 lg:w-1/2 mx-auto my-10 border- border-red-400">
           <HookForm />
         </div>
-        <div className="w-5/6 md:w-1/2 lg:w-1/3 mx-auto border- md:border-red-400">
+        <div className="w-100 md:w-1/2 lg:w-1/3 mx-auto border- md:border-red-400 text-center">
           <p className={styles.title}>
             Email&nbsp;{' '}
             <a
