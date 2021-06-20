@@ -61,10 +61,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe>`
           ></noscript>
           <Main />
           <NextScript />
-          <p className="text-center text-sm text-gray-200">
-            &copy; 2021 Sam Roffey
-          </p>
-          <p className="text-center text-sm text-gray-200">{version}</p>
+
+          <div className="w-90">
+            <span className="block text-center text-sm text-gray-200">
+              &copy; 2021 Sam Roffey
+            </span>
+            <span className="inline-block text-right ml-10 text-sm text-gray-200">
+              {version}
+            </span>
+          </div>
         </body>
       </Html>
     )
