@@ -61,7 +61,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe>`
           ></noscript>
           <Main />
           <NextScript />
-          <p className="text-center text-sm text-gray-200">Sam Roffey 2021</p>
+          <p className="text-center text-sm text-gray-200">
+            &copy; 2021 Sam Roffey
+          </p>
           <p className="text-center text-sm text-gray-200">{version}</p>
         </body>
       </Html>
