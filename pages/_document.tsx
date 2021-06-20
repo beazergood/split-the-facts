@@ -1,4 +1,5 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
+import { version } from '../package.json'
 
 class MyDocument extends Document {
   static async getInitialProps(ctx) {
@@ -60,6 +61,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe>`
           ></noscript>
           <Main />
           <NextScript />
+          <p className="text-center text-sm text-gray-200">Sam Roffey 2021</p>
+          <p className="text-center text-sm text-gray-200">{version}</p>
         </body>
       </Html>
     )
