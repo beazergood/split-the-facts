@@ -67,7 +67,7 @@ export const HookForm = () => {
 
   return (
     <div className="">
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form onSubmit={handleSubmit(onSubmit)} id="sign_up_form">
         <p className="text-lg mb-5 font-NotoSerif text-center">
           Enter your email to subscribe to the occassional update from me
         </p>
