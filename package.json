@@ -1,6 +1,6 @@
 {
-  "name": "portfolio",
-  "version": "1.0.2",
+  "name": "split-the-facts",
+  "version": "1.0.3",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
