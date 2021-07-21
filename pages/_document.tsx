@@ -1,5 +1,5 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
-import { version } from '../package.json'
+import packageInfo from '../package.json'
 
 class MyDocument extends Document {
   static async getInitialProps(ctx) {
@@ -67,7 +67,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe>`
               &copy; 2021 Sam Roffey
             </span>
             <span className="inline-block text-right ml-10 text-sm text-gray-200">
-              {version}
+              {packageInfo.version}
             </span>
           </div>
         </body>

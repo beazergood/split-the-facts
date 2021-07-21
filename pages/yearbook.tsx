@@ -1,14 +1,14 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import { motion } from 'framer-motion'
-import Link from 'next/link'
-import Image from 'next/image'
-
 import { gql } from '@apollo/client'
 import client from '../scripts/apollo-client'
+import Link from 'next/link'
 
-export default function Home({ videos }) {
-  console.log('on the client ', videos)
+import { YearbookImage } from '../components/YearbookImage'
+
+export default function Yearbook({ characters }) {
+  console.log('on the client characters = ', characters)
   return (
     <div className="container mx-auto">
       <Head>
@@ -24,30 +24,19 @@ export default function Home({ videos }) {
           </Link>
         </li>
       </motion.ul>
-      <motion.h1
-        className="font-PlayfairDisplay text-3xl font-semibold text-center"
-        layoutId="title"
-      >
-        Split! - The West at War with Itself
-      </motion.h1>
 
       <main className={styles.main}>
-        {videos &&
-          videos.map((video) => {
-            return (
-              <div key={video.id} className="m-10 border- border-yellow-200">
-                <p className="text-xl">{video.title}</p>
-                <Image
-                  src={video.thumbnail_image.url}
-                  width={192}
-                  height={108}
-                />
-                <p>{video.description}</p>
-              </div>
-            )
-          })}
+        <div className="flex flex-row w-full">
+          {characters &&
+            characters.map((character) => {
+              return (
+                <div key={character.id} className="m-10 ">
+                  <YearbookImage character={character} key={character.id} />
+                </div>
+              )
+            })}
+        </div>
       </main>
-
       {/* <footer className={styles.footer}></footer> */}
     </div>
   )
@@ -58,14 +47,13 @@ export async function getStaticProps() {
   const { data } = await client.query({
     query: gql`
       query {
-        videos {
-          title
+        characters {
           id
-          description
-          thumbnail_image {
+          name
+          image {
             url
           }
-          hero_image {
+          image_hover {
             url
           }
         }
@@ -77,7 +65,7 @@ export async function getStaticProps() {
 
   return {
     props: {
-      videos: data.videos
+      characters: data.characters
     }
   }
 }
