@@ -1,6 +1,6 @@
 {
   "name": "split-the-facts",
-  "version": "1.1.0-0",
+  "version": "1.2.0-0",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
@@ -23,8 +23,10 @@
     "framer-motion": "4.1.17",
     "graphql": "^15.5.1",
     "gray-matter": "^4.0.2",
+    "isomorphic-unfetch": "^3.1.0",
     "next": "^11.0.1",
     "next-images": "^1.8.1",
+    "next-seo": "^4.26.0",
     "nextra": "^0.4.4",
     "nextra-theme-blog": "^0.1.5",
     "react": "^17.0.2",

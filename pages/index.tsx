@@ -41,6 +41,12 @@ export default function Home() {
         >
           Channel for parodies and comedic sketches. Enjoy!
         </motion.p>
+        <div className="container flex flex-col">
+          <Link href={'/the-interview-we-never-saw'}>
+            The Interview We Never Saw
+          </Link>
+          <Link href={'/videos'}>Videos</Link>
+        </div>
         <div className="w-90 px-5 md:w-66 lg:w-1/2 mx-auto">
           <div className="flex flex-col md:flex-row w-full border- border-red-300">
             <a

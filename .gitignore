@@ -35,6 +35,5 @@ yarn-error.log*
 
 public/feed.xml
 
-stf-api/.cache
-stf-api/.env
-stf-api/node_modules
+stf-api
+.env
