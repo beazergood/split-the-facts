@@ -57,22 +57,53 @@ export const YearbookImage = ({ character }) => {
             />
           </g>
         </motion.svg>
-        <motion.img
+        <HoverImage
           src={character.image.url}
-          style={{
-            position: 'absolute',
-            top: '60px',
-            left: '15px',
-            zIndex: 9,
-            width: '205px',
-            height: '290px'
-          }}
-          variants={imgVariants}
-          initial="initial"
-          animate="animate"
+          srcOnHover={character.image_hover.url}
+          alt={character.name}
         />
       </div>
       <p className="text-sm text-center my-5">{character.name}</p>
+    </>
+  )
+}
+
+export const HoverImage = ({ src, srcOnHover, alt }) => {
+  return (
+    <>
+      <motion.img
+        src={src}
+        alt={alt}
+        onMouseOver={(e): void => {
+          srcOnHover && (e.currentTarget.src = srcOnHover)
+        }}
+        onMouseOut={(e): void => {
+          srcOnHover && (e.currentTarget.src = src || '')
+        }}
+        variants={imgVariants}
+        initial="initial"
+        animate="animate"
+        transition={{ duration: 0.2 }}
+        style={{
+          position: 'absolute',
+          top: '60px',
+          left: '15px',
+          zIndex: 30,
+          width: '205px',
+          height: '290px'
+        }}
+        className="yearbookImg"
+      />
+      <style jsx>{`
+        .yearbookImg {
+          border: 1px solid red;
+          -webkit-transition: all ease 1s;
+          -moz-transition: all ease 1s;
+          -o-transition: all ease 1s;
+          -ms-transition: all ease 1s;
+          transition: all ease 1s;
+        }
+      `}</style>
     </>
   )
 }

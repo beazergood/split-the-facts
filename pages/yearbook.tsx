@@ -5,7 +5,28 @@ import { gql } from '@apollo/client'
 import client from '../scripts/apollo-client'
 import Link from 'next/link'
 
-import { YearbookImage } from '../components/YearbookImage'
+import { YearbookImage, HoverImage } from '../components/YearbookImage'
+
+const imgVariants = {
+  initial: { opacity: 0, y: 10, skew: 1 },
+  animate: {
+    opacity: 1,
+    y: 0,
+    skew: 0,
+    transition: { duration: 1.5, ease: 'easeInOut' }
+  }
+}
+const svgVariants = {
+  initial: { opacity: 0 },
+  animate: { opacity: 1, transition: { duration: 1, ease: 'easeIn' } }
+}
+const pathVariants = {
+  initial: { pathLength: 0 },
+  animate: {
+    pathLength: 1,
+    transition: { duration: 2, ease: 'easeInOut' }
+  }
+}
 
 export default function Yearbook({ characters }) {
   console.log('on the client characters = ', characters)
@@ -26,7 +47,34 @@ export default function Yearbook({ characters }) {
       </motion.ul>
 
       <main className={styles.main}>
-        <div className="flex flex-row w-full">
+        <h1 className="text-3xl text-center">The Interview We Never Saw</h1>
+        <h1 className="text-md mt-10 text-center">starring</h1>
+        <div className="min-h-screen flex items-center justify-center">
+          <div className="grid grid-cols-3 gap-y-14 gap-x-20 grid-flow-col">
+            <div className="bg-white rect p-3 rounded row-start-1 row-span-2">
+              <YearbookImage character={characters[0]} key={characters[0].id} />
+            </div>
+            <div className="bg-white rect p-3 rounded row-span-2 row-start-2">
+              <YearbookImage character={characters[1]} key={characters[1].id} />
+            </div>
+            <div className="bg-white rect p-3 rounded row-start-1 row-span-2">
+              <YearbookImage character={characters[2]} key={characters[2].id} />
+            </div>
+            <div className="bg-white rect p-3 rounded row-start-3 row-span-2 col-start-1">
+              <YearbookImage character={characters[3]} key={characters[3].id} />
+            </div>
+            <div className="bg-white rect p-3 rounded col-start-2 row-start-4 row-span-2">
+              <YearbookImage character={characters[4]} key={characters[4].id} />
+            </div>
+            <div className="bg-white rect p-3 rounded col-start-3 row-start-3 row-span-2">
+              <YearbookImage character={characters[5]} key={characters[5].id} />
+            </div>
+            <div className="bg-white rect p-3 rounded row-start-6 col-start-2">
+              <YearbookImage character={characters[6]} key={characters[6].id} />
+            </div>
+          </div>
+        </div>
+        {/* <div className="flex flex-row w-full container">
           {characters &&
             characters.map((character) => {
               return (
@@ -35,7 +83,7 @@ export default function Yearbook({ characters }) {
                 </div>
               )
             })}
-        </div>
+        </div> */}
       </main>
       {/* <footer className={styles.footer}></footer> */}
     </div>
