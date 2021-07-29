@@ -8,7 +8,7 @@ import { gql } from '@apollo/client'
 import client from '../scripts/apollo-client'
 
 export default function Home({ videos }) {
-  console.log('on the client ', videos)
+  // console.log('on the client ', videos)
   return (
     <div className="container mx-auto">
       <Head>

@@ -15,7 +15,7 @@ export const EmailForm: React.FC = () => {
     })
 
     const result = await res.json()
-    console.log('result for subscribe to mailchimp', result) // TODO notify user of result
+    // console.log('result for subscribe to mailchimp', result) // TODO notify user of result
   }
 
   return (

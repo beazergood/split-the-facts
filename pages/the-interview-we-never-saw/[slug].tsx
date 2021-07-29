@@ -115,7 +115,7 @@ export async function getStaticProps({ params: { slug } }) {
     `${NEXT_PUBLIC_STRAPI_API_URL}/characters?slug=${slug}`
   )
   const data = await res.json()
-  console.log(' ===== data ', data)
+  // console.log(' ===== data ', data)
 
   return {
     props: {

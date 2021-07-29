@@ -7,7 +7,7 @@ import { motion } from 'framer-motion'
 import { NextSeo } from 'next-seo'
 
 export default function Video({ video }) {
-  console.log(video)
+  // console.log(video)
 
   const SEO = {
     title: `Split the facts | ${video.title}`,
@@ -79,7 +79,7 @@ export async function getStaticPaths() {
       }
     }
   })
-  console.log('paths: ', paths)
+  // console.log('paths: ', paths)
   return {
     paths,
     fallback: false
@@ -87,7 +87,7 @@ export async function getStaticPaths() {
 }
 
 export const getStaticProps = async ({ params: { slug } }) => {
-  console.log('params: ', slug)
+  // console.log('params: ', slug)
 
   const { NEXT_PUBLIC_STRAPI_API_URL } = process.env
 
