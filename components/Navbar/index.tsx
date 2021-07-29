@@ -89,7 +89,7 @@ export const Navbar: React.FC<NavbarProps> = ({ logoFill }) => {
         </Link>
       </div>
       <div className="flex-grow"></div>
-      <div className="flex space-x-4 mr-10">
+      {/* <div className="flex space-x-4 mr-10">
         <Link href={'/videos'}>
           <a
             key="a"
@@ -110,7 +110,7 @@ export const Navbar: React.FC<NavbarProps> = ({ logoFill }) => {
       </div>
       <div className="">
         <Button label="Sign up" />
-      </div>
+      </div> */}
     </div>
   )
 }

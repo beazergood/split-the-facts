@@ -1,6 +1,6 @@
 {
   "name": "split-the-facts",
-  "version": "1.1.0-3",
+  "version": "1.1.0-0",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
@@ -8,7 +8,7 @@
     "build": "next build",
     "export": "next export",
     "start": "next start",
-    "storybook": "start-storybook -p 6006",
+    "storybook": "start-storybook -s ./public -p 6006",
     "build-storybook": "build-storybook"
   },
   "dependencies": {

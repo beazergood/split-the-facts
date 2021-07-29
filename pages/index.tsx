@@ -10,7 +10,17 @@ import { WaveBackground } from '../components/WaveBackground'
 import { HomepageHero } from '../components/HomepageHero'
 import { HookForm } from '../components/HookForm'
 
-export default function Home({ characters, charactersCast, homepage, videos }) {
+export default function Home({
+  characters,
+  charactersCast,
+  homepage,
+  videos,
+  heroVideo,
+  atTheBar,
+  recentVideos,
+  royalInterview,
+  theGodfather
+}) {
   return (
     <>
       <Head>
@@ -20,16 +30,15 @@ export default function Home({ characters, charactersCast, homepage, videos }) {
       </Head>
       <WaveBackground fill="#B3525E" />
 
-      <HomepageHero characters={characters} />
+      <HomepageHero characters={characters} heroVideo={heroVideo} />
       <div className="container mx-auto">
         <main className={styles.main}>
           <motion.h1
             className=" text-6xl w-1/2 mx-auto leading-normal font-bold relative z-10 text-black text-center mt-10"
             layoutId="title"
           >
-            <span className="font-PlayfairDisplay italic">Split! -</span>
             <span className="font-PlayfairDisplay">
-              The West at War with Itself
+              Split! - The West at War with Itself
             </span>
           </motion.h1>
           <div className="w-1/3 mx-auto my-10">
@@ -62,10 +71,13 @@ export default function Home({ characters, charactersCast, homepage, videos }) {
               Videos
             </h1>
           </div>
-          <VideosRow videos={videos} group={{ title: 'Latest Videos' }} />
-          <VideosRow videos={videos} group={{ title: 'Royal Interview' }} />
-          <VideosRow videos={videos} group={{ title: 'At The Bar' }} />
-          <VideosRow videos={videos} group={{ title: 'The Godfather' }} />
+          <VideosRow videos={recentVideos} group={{ title: 'Latest Videos' }} />
+          <VideosRow
+            videos={royalInterview}
+            group={{ title: 'Royal Interview' }}
+          />
+          <VideosRow videos={atTheBar} group={{ title: 'At The Bar' }} />
+          <VideosRow videos={theGodfather} group={{ title: 'The Godfather' }} />
           <div>
             <motion.div className="min-h-screen flex items-center justify-center my-44">
               <div className="grid grid-cols-6 gap-y-14 gap-x-20 grid-flow-col">
@@ -178,7 +190,11 @@ export async function getStaticProps() {
             url
           }
         }
-        videos(sort: "published:DESC") {
+        heroVideo: video(id: "60fee84a54d42565648f4973") {
+          oembed
+          title
+        }
+        recentVideos: videos(sort: "published:DESC", limit: 3) {
           id
           slug
           title
@@ -186,9 +202,41 @@ export async function getStaticProps() {
           thumbnail_image {
             url
           }
-          category {
-            slug
-            name
+        }
+        royalInterview: videos(
+          where: { category: { slug: "royal-interview" } }
+          sort: "published:DESC"
+        ) {
+          id
+          slug
+          title
+          published
+          thumbnail_image {
+            url
+          }
+        }
+        atTheBar: videos(
+          where: { category: { slug: "at-the-bar" } }
+          sort: "published:DESC"
+        ) {
+          id
+          slug
+          title
+          published
+          thumbnail_image {
+            url
+          }
+        }
+        theGodfather: videos(
+          where: { category: { slug: "the-godfather" } }
+          sort: "published:DESC"
+        ) {
+          id
+          slug
+          title
+          published
+          thumbnail_image {
+            url
           }
         }
       }
@@ -204,7 +252,14 @@ export async function getStaticProps() {
         return { ...c, showName: true }
       }),
       homepage: data.homepage,
-      videos: data.videos,
+      recentVideos: data.recentVideos,
+      royalInterview: data.royalInterview,
+      atTheBar: data.atTheBar,
+      theGodfather: data.theGodfather,
+      heroVideo: {
+        ...data.heroVideo,
+        oembed: data.heroVideo.oembed ? JSON.parse(data.heroVideo.oembed) : ''
+      },
       footerFill: '#8D3F48',
       logoFill: '#EAEFB1'
     }

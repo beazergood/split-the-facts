@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Moment from 'react-moment'
+import { FaPlayCircle } from 'react-icons/fa'
 
 export interface VideosRowProps {
   videos: any
@@ -26,11 +27,16 @@ export const VideosRow = ({ videos, group }) => {
                         {video.category.name}
                       </div> */}
                   {video.thumbnail_image && (
-                    <Image
-                      src={video.thumbnail_image.url}
-                      width={270}
-                      height={160}
-                    />
+                    <div className="relative">
+                      <Image
+                        src={video.thumbnail_image.url}
+                        width={270}
+                        height={160}
+                      />
+                      <div className="absolute bottom-14 left-24 ">
+                        <FaPlayCircle className="text-white text-6xl opacity-70 " />
+                      </div>
+                    </div>
                   )}
                   <div className="w-full my-4 px-2">
                     <p className="text-sm font-NotoSerif">{video.title}</p>

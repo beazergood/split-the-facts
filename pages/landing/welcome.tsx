@@ -11,10 +11,10 @@ import { WaveBackground } from '../../components/WaveBackground'
 import { Button } from '../../components/Button'
 
 export interface LandingHomeProps {
-  videos: any
+  video: any
 }
 
-export default function LandingHome({ videos }) {
+export default function LandingHome({ video }) {
   const SEO = {
     title: 'Videos Page',
     description: 'My parody videos for your entertainment... enjoy!',
@@ -32,6 +32,7 @@ export default function LandingHome({ videos }) {
         <VideoPlayer
           cursiveTitle="Questions from"
           title="The Hallporters Chair"
+          embed={video.oembed}
         />
 
         <h1 className="text-4xl text-center my-10 font-PlayfairDisplay">
@@ -61,11 +62,12 @@ export const getServerSideProps = async () => {
   const { data } = await client.query({
     query: gql`
       query {
-        videos(sort: "published:DESC") {
+        video(id: "60fee84a54d42565648f4973") {
           id
           slug
           title
           published
+          oembed
           thumbnail_image {
             url
           }
@@ -77,16 +79,15 @@ export const getServerSideProps = async () => {
       }
     `
   })
-  const parsedData = data.videos.map((vid) => {
-    return {
-      ...vid,
-      oembed: vid.oembed ? JSON.parse(vid.oembed) : ''
-    }
-  })
+
+  const parsedData = {
+    ...data.video,
+    oembed: data.video.oembed ? JSON.parse(data.video.oembed) : ''
+  }
 
   return {
     props: {
-      videos: parsedData,
+      video: parsedData,
       logoFill: '#94A661',
       footerFill: '#e9f7ca'
     }
