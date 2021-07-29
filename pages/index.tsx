@@ -207,7 +207,8 @@ export async function getStaticProps() {
       }),
       homepage: data.homepage,
       videos: data.videos,
-      footerFill: '#8D3F48'
+      footerFill: '#8D3F48',
+      logoFill: '#EAEFB1'
     }
   }
 }
