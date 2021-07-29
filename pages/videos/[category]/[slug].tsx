@@ -7,6 +7,8 @@ import { motion } from 'framer-motion'
 import { NextSeo } from 'next-seo'
 
 export default function Video({ video }) {
+  console.log(video)
+
   const SEO = {
     title: `Split the facts | ${video.title}`,
     description: video.description,
@@ -18,19 +20,27 @@ export default function Video({ video }) {
   return (
     <>
       <NextSeo {...SEO} />
-
-      <motion.div className="container mx-auto p-10">
+      <motion.div className="border- border-green-300 mx-auto w-1/2 h-1/3 absolut-z-2 ">
+        {video.hero_image && (
+          <Image
+            src={video.hero_image?.url}
+            width={620}
+            height={650}
+            layout="responsive"
+            className="mx-auto"
+          />
+        )}
+      </motion.div>
+      <motion.div className="container mx-auto p-10 relative bg-white bg-opacity-1 ">
         <p className="text-2xl">{video.title}</p>
         <p className="text-lg">{video.description}</p>
-        <motion.div className="border- border-green-300 w-1/2 mx-auto">
-          {video.hero_image && (
-            <Image
-              src={video.hero_image?.url}
-              width={520}
-              height={350}
-              layout="fixed"
-              className="mx-auto"
-            />
+
+        <motion.div className="container border- border-red-300 mx-auto my-10 w-2/3">
+          {video.oembed && (
+            <div
+              dangerouslySetInnerHTML={{ __html: video.oembed.rawData.html }}
+              className="w-full h-full"
+            ></div>
           )}
         </motion.div>
         <motion.div className="container border- border-red-300 mx-auto my-10 w-1/2">
@@ -83,10 +93,16 @@ export const getStaticProps = async ({ params: { slug } }) => {
 
   const res = await fetch(`${NEXT_PUBLIC_STRAPI_API_URL}/videos?slug=${slug}`)
   const data = await res.json()
-  console.log('!_!_!_!_!_!_!_! data', data)
+  const parsedData = data.map((vid) => {
+    return {
+      ...vid,
+      oembed: vid.oembed ? JSON.parse(vid.oembed) : ''
+    }
+  })
+
   return {
     props: {
-      video: data[0]
+      video: parsedData[0]
     }
   }
 }

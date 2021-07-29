@@ -81,7 +81,7 @@ export const HookForm = () => {
             <FormControl>
               <Input
                 id="email"
-                placeholder="Your email"
+                placeholder="Join the conversation"
                 className="mx-2 appearance-none border rounded-full w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 {...register('email', {
                   required: 'This is required',
@@ -109,7 +109,7 @@ export const HookForm = () => {
             type="submit"
             width="50px"
             height="50px"
-            className="rounded-full bg-green-400 p-4 ml-5 -mt-1 hover:shadow-md hover:bg-green-500 w-90 text-white hidden md:block"
+            className="rounded-full bg-moss-green p-4 ml-5 -mt-1 hover:shadow-md hover:bg-green-900 w-90 text-white hidden md:block"
           >
             <FaPaperPlane className="text-white" />
           </Button>

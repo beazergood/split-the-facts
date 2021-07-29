@@ -34,13 +34,24 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           <meta name="twitter:image" content={meta.image} /> */}
 
           <link rel="preconnect" href="https://fonts.gstatic.com" />
+
           <link
-            href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,900;1,600&display=swap"
+            rel="stylesheet"
+          ></link>
+
+          <link
+            href="https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap"
+            rel="stylesheet"
+          ></link>
+
+          <link
+            href="https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap"
             rel="stylesheet"
           />
 
           <link
-            href="https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@1,300&display=swap"
             rel="stylesheet"
           />
         </Head>
@@ -53,15 +64,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe>`
           ></noscript>
           <Main />
           <NextScript />
-
-          <div className="w-90 mt-10">
-            <span className="block text-center text-sm text-gray-200">
-              &copy; 2021 Sam Roffey
-            </span>
-            <span className="inline-block text-right ml-10 text-sm text-gray-200">
-              {packageInfo.version}
-            </span>
-          </div>
         </body>
       </Html>
     )

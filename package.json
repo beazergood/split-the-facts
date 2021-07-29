@@ -1,6 +1,6 @@
 {
   "name": "split-the-facts",
-  "version": "1.2.0-0",
+  "version": "1.1.0-1",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
@@ -24,6 +24,7 @@
     "graphql": "^15.5.1",
     "gray-matter": "^4.0.2",
     "isomorphic-unfetch": "^3.1.0",
+    "moment": "^2.29.1",
     "next": "^11.0.1",
     "next-images": "^1.8.1",
     "next-seo": "^4.26.0",
@@ -33,7 +34,9 @@
     "react-dom": "^17.0.2",
     "react-hook-form": "^7.9.0",
     "react-icons": "^4.2.0",
-    "rss": "^1.2.2"
+    "react-moment": "^1.1.1",
+    "rss": "^1.2.2",
+    "typewriter-effect": "^2.18.0"
   },
   "prettier": {
     "arrowParens": "always",
@@ -44,10 +47,11 @@
   },
   "devDependencies": {
     "@babel/core": "^7.14.6",
-    "@storybook/addon-actions": "^6.2.9",
-    "@storybook/addon-essentials": "^6.2.9",
-    "@storybook/addon-links": "^6.2.9",
-    "@storybook/react": "^6.2.9",
+    "@storybook/addon-actions": "^6.3.4",
+    "@storybook/addon-essentials": "^6.3.4",
+    "@storybook/addon-links": "^6.3.4",
+    "@storybook/react": "^6.3.4",
+    "@storybook/theming": "^6.3.4",
     "@tailwindcss/forms": "^0.3.3",
     "@tailwindcss/typography": "^0.4.1",
     "@types/node": "^15.12.4",
@@ -55,7 +59,9 @@
     "autoprefixer": "^10.2.6",
     "babel-loader": "^8.2.2",
     "postcss": "^8.3.5",
-    "tailwindcss": "^2.2.2",
+    "postcss-cli": "^8.3.1",
+    "postcss-loader": "^4.3.0",
+    "tailwindcss": "^2.2.4",
     "typescript": "^4.3.4"
   }
 }
