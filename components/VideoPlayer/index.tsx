@@ -4,7 +4,7 @@ import { FaPlayCircle } from 'react-icons/fa'
 
 export interface VideoPlayerProps {
   title: string
-  cursiveTitle?: string
+  cursiveTitle: string
 }
 
 const imgVariants = {

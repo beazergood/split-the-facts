@@ -15,5 +15,6 @@ const Template: Story<VideoPlayerProps> = (args) => <VideoPlayer {...args} />
 export const Primary = Template.bind({})
 Primary.args = {
   primary: true,
-  logoFill: '#fe0'
+  logoFill: '#fe0',
+  cursiveTitle: 'test'
 }

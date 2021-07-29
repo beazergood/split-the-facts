@@ -2,6 +2,10 @@ import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Moment from 'react-moment'
 
+export interface VideosRowProps {
+  videos: any
+  group: any
+}
 export const VideosRow = ({ videos, group }) => {
   return (
     <div className="mx-auto my-10" style={{ width: '95%' }}>
