@@ -7,9 +7,7 @@ import client from '../scripts/apollo-client'
 import { YearbookImage, YearbookImageThumb } from '../components/YearbookImage'
 import { VideosRow } from '../components/VideosRow'
 import { WaveBackground } from '../components/WaveBackground'
-import { VideoPlayer } from '../components/VideoPlayer'
 import { HomepageHero } from '../components/HomepageHero'
-import { FaArrowRight } from 'react-icons/fa'
 import { HookForm } from '../components/HookForm'
 
 export default function Home({ characters, charactersCast, homepage, videos }) {
