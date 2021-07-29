@@ -5,7 +5,7 @@ import { FaPlayCircle } from 'react-icons/fa'
 export interface VideoPlayerProps {
   title: string
   cursiveTitle: string
-  embed: any
+  embedId: any
   // thumbnailImg: any
 }
 

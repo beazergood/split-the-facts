@@ -4,7 +4,6 @@ import { YearbookImageThumb } from '../YearbookImage'
 import { VideoPlayer } from '../VideoPlayer'
 
 export interface HomepageHeroProps {
-  props?: string
   characters: Array<any>
   heroVideo?: any
 }
@@ -31,7 +30,7 @@ const pathVariants = {
   }
 }
 
-export const HomepageHero = ({ characters, heroVideo }) => {
+export const HomepageHero = ({ characters, heroVideo = '' }) => {
   return (
     <motion.div
       className="grid grid-cols-6 gap-y-14 gap-x-20 grid-flow-col grid-rows-3"

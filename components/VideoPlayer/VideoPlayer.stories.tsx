@@ -16,5 +16,6 @@ export const Primary = Template.bind({})
 Primary.args = {
   primary: true,
   logoFill: '#fe0',
-  cursiveTitle: 'test'
+  cursiveTitle: 'test',
+  embedId: ''
 }
