@@ -12,9 +12,24 @@ export default {
 
 const Template: Story<FooterProps> = (args) => <Footer {...args} />
 
-export const Primary = Template.bind({})
-Primary.args = {
-  primary: true,
-  logoFill: '#fe0',
-  footerFill: '#94A661'
+export const Light = Template.bind({})
+Light.args = {
+  theme: {
+    logoFill: '#94A661',
+    bgFill: '#E9F7CA',
+    buttonFill: '#EAEFB1',
+    iconsFill: '#94A661',
+    linkColour: '#94A661'
+  }
+}
+
+export const Dark = Template.bind({})
+Dark.args = {
+  theme: {
+    logoFill: '#94A661',
+    bgFill: '#8D3F48',
+    buttonFill: '#B3525E',
+    iconsFill: '#8D3F48',
+    linkColour: '#fefefe'
+  }
 }

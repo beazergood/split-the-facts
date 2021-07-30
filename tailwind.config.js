@@ -14,7 +14,7 @@ module.exports = {
         'pale-spring': '#EAEFB1',
         popstar: '#B3525E',
         'popstar-hover': '#8D3F48',
-        nyanza: '#e9f7ca',
+        nyanza: '#E9F7CA',
         'moss-green': '#94A661',
         jasmine: '#F7D488'
       }

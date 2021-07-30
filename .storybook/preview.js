@@ -1,3 +1,5 @@
+import '../styles/tailwind.css'
+import '../styles/globals.css'
 import * as nextImage from 'next/image'
 
 Object.defineProperty(nextImage, 'default', {

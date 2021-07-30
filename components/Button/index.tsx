@@ -3,9 +3,10 @@ import Link from 'next/link'
 
 export interface ButtonProps {
   label: string
+  href?: string
 }
 
-export const Button: React.FC<ButtonProps> = ({ label }) => {
+export const Button: React.FC<ButtonProps> = ({ label, href = '' }) => {
   return (
     <>
       <style jsx>
@@ -82,11 +83,22 @@ export const Button: React.FC<ButtonProps> = ({ label }) => {
           }
         `}
       </style>
-      <button className="pushable">
-        <span className="shadow"></span>
-        <span className="edge"></span>
-        <span className="front">{label}</span>
-      </button>
+      {href && (
+        <Link href={href}>
+          <button className="pushable">
+            <span className="shadow"></span>
+            <span className="edge"></span>
+            <span className="front">{label}</span>
+          </button>
+        </Link>
+      )}
+      {!href && (
+        <button className="pushable">
+          <span className="shadow"></span>
+          <span className="edge"></span>
+          <span className="front">{label}</span>
+        </button>
+      )}
     </>
   )
 }

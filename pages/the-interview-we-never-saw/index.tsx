@@ -5,6 +5,8 @@ import client from '../../scripts/apollo-client'
 import Link from 'next/link'
 import { WaveBackground } from '../../components/WaveBackground'
 import { YearbookImage, HoverImage } from '../../components/YearbookImage'
+import { Navbar } from '../../components/Navbar'
+import { Footer } from '../../components/Footer'
 
 const imgVariants = {
   initial: { opacity: 0, y: 10, skew: 1 },
@@ -27,10 +29,11 @@ const pathVariants = {
   }
 }
 
-export default function Yearbook({ characters }) {
+export default function Yearbook({ characters, theme, videos }) {
   // console.log('on the client characters = ', characters)
   return (
-    <div className="">
+    <>
+      <Navbar theme={theme} />
       <WaveBackground fill="#B3525E" />
       <motion.div className="container mx-auto relative z-10">
         <motion.h1
@@ -113,7 +116,14 @@ export default function Yearbook({ characters }) {
             })}
         </div> */}
       </motion.div>
-    </div>
+      <Footer
+        theme={theme.footer}
+        playlist={{
+          videos: videos,
+          group: { title: 'Parody videos', action: 'open' }
+        }}
+      />
+    </>
   )
 }
 
@@ -133,6 +143,14 @@ export async function getStaticProps() {
           }
           slug
         }
+        videos(limit: 3) {
+          id
+          title
+          embed_url
+          thumbnail_image {
+            url
+          }
+        }
       }
     `
   })
@@ -144,7 +162,19 @@ export async function getStaticProps() {
       characters: data.characters.map((c) => {
         return { ...c, showName: true }
       }),
-      footerFill: '#8D3F48'
+      videos: data.videos,
+      theme: {
+        header: { logoFill: '#fff' },
+        body: { bgFill: '#fefefe' },
+        footer: {
+          bgFill: '#8D3F48',
+          buttonFill: '#B3525E',
+          iconsFill: '#8D3F48',
+          linkColour: '#fff',
+          titleTagColour: '#fff',
+          logoFill: '#fff'
+        }
+      }
     }
   }
 }

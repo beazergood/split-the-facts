@@ -15,7 +15,12 @@ const imgVariants = {
     opacity: 1,
     y: 0,
     skew: 0,
-    transition: { duration: 1.5, ease: 'easeInOut', staggerChildren: 0.3 }
+    transition: {
+      duration: 1.5,
+      type: 'spring',
+      ease: 'easeInOut',
+      staggerChildren: 0.3
+    }
   }
 }
 const videoVariants = {
@@ -64,10 +69,11 @@ export const HomepageHero = ({ characters, heroVideo = '' }) => {
           cursiveTitle="Questions from "
           title="The Hallporters Chair"
           embedId="xJBlLgBNYhc"
+          thumbnailImg="https://res.cloudinary.com/split-the-facts/image/upload/v1627550229/outstanding_english_georgian_hall_porters_chair_1_eeffde1663.jpg"
         />
       </motion.div>
       <motion.div
-        className=" rect p-3 rounded row-start-1 col-start-6 row-span-2"
+        className=" rect p-3 rounded row-start-1 col-start-6 row-span-2 z-10"
         variants={imgVariants}
         exit={{ opacity: 0, transition: { duration: 1, delay: 1 } }}
       >
@@ -75,7 +81,7 @@ export const HomepageHero = ({ characters, heroVideo = '' }) => {
         <YearbookImageThumb character={characters[2]} key={characters[2].id} />
       </motion.div>
       <motion.div
-        className=" rect p-3 rounded row-start-2 row-span-2 col-start-1"
+        className=" rect p-3 rounded row-start-2 row-span-2 col-start-1 z-10"
         variants={imgVariants}
         exit={{ opacity: 0, transition: { duration: 1, delay: 1 } }}
       >

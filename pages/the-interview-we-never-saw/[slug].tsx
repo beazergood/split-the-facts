@@ -4,6 +4,7 @@ import styles from '../../styles/Home.module.css'
 import { motion } from 'framer-motion'
 import { YearbookImage } from '../../components/YearbookImage'
 import Link from 'next/link'
+import { Button } from '../../components/Button'
 
 const imgVariants = {
   initial: { opacity: 0, y: 10, skew: 1 },
@@ -36,7 +37,8 @@ export default function CharacterDetail({ character }) {
         animate="animate"
         exit="exit"
       >
-        <Link href={'/the-interview-we-never-saw'}>BACK</Link>
+        <Button href={'/the-interview-we-never-saw'} label="BACK" />
+
         <div className="min-h-screen flex items-center justify-center">
           <div className="grid grid-cols-3 gap-y-14 gap-x-10 grid-flow-col">
             <motion.div

@@ -1,12 +1,22 @@
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+
+export interface YearbookImageProps {
+  character: any
+}
+const transition = {
+  duration: 1.3,
+  ease: [0.6, 0.01, -0.05, 0.9],
+  type: 'spring',
+  stiffness: 300
+}
 const imgVariants = {
   initial: { opacity: 1, y: 10, skew: 1 },
   animate: {
     opacity: 1,
     y: 0,
     skew: 0,
-    transition: { duration: 1.5, ease: 'easeInOut' }
+    transition
   }
 }
 const svgVariants = {
@@ -20,7 +30,6 @@ const pathVariants = {
     transition: { duration: 2, ease: 'easeInOut' }
   }
 }
-const transition = { duration: 1.3, ease: [0.6, 0.01, -0.05, 0.9] }
 
 export const YearbookImage = ({ character }) => {
   return (
@@ -32,7 +41,7 @@ export const YearbookImage = ({ character }) => {
         {/* <AnimatePresence initial={false} exitBeforeEnter> */}
         <motion.div
           className="mx-auto border- border-yellow-200 relative cursor-pointer w-full"
-          whileHover={{ scale: 1.03 }}
+          whileHover={{ scale: 1.03, originX: 0 }}
           key={character.slug}
           transition={transition}
           exit={{ opacity: 0 }}

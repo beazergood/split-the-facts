@@ -1,11 +1,9 @@
 import { gql } from '@apollo/client'
 import client from '../../scripts/apollo-client'
-import fetch from 'isomorphic-unfetch'
 import { motion, useMotionValue, useTransform } from 'framer-motion'
 import Link from 'next/link'
-import Image from 'next/image'
 import { NextSeo } from 'next-seo'
-import Moment from 'react-moment'
+
 import { VideoPlayer } from '../../components/VideoPlayer'
 import { WaveBackground } from '../../components/WaveBackground'
 import { Button } from '../../components/Button'
@@ -32,7 +30,8 @@ export default function LandingHome({ video }) {
         <VideoPlayer
           cursiveTitle="Questions from"
           title="The Hallporters Chair"
-          embedId={video.oembed}
+          embedId={video.embed_url}
+          thumbnailImg={video.thumbnail_image?.url}
         />
 
         <h1 className="text-4xl text-center my-10 font-PlayfairDisplay">
@@ -62,12 +61,12 @@ export const getServerSideProps = async () => {
   const { data } = await client.query({
     query: gql`
       query {
-        video(id: "60fee84a54d42565648f4973") {
+        video(id: "6103c9b1f29073303c917968") {
           id
           slug
           title
           published
-          oembed
+          embed_url
           thumbnail_image {
             url
           }
@@ -80,14 +79,9 @@ export const getServerSideProps = async () => {
     `
   })
 
-  const parsedData = {
-    ...data.video,
-    oembed: data.video.oembed ? JSON.parse(data.video.oembed) : ''
-  }
-
   return {
     props: {
-      video: parsedData,
+      video: data.video,
       logoFill: '#94A661',
       footerFill: '#e9f7ca'
     }

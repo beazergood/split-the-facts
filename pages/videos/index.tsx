@@ -9,8 +9,10 @@ import Moment from 'react-moment'
 import { VideoPlayer } from '../../components/VideoPlayer'
 import { VideosRow } from '../../components/VideosRow'
 import { WaveBackground } from '../../components/WaveBackground'
+import { Navbar } from '../../components/Navbar'
+import { Footer } from '../../components/Footer'
 
-export default function VideosHome({ videos }) {
+export default function VideosHome({ videos, theme }) {
   const SEO = {
     title: 'Videos Page',
     description: 'My parody videos for your entertainment... enjoy!',
@@ -23,6 +25,7 @@ export default function VideosHome({ videos }) {
   return (
     <>
       <NextSeo {...SEO} />
+      <Navbar theme={theme.header} />
       <WaveBackground fill="#B3525E" />
       <motion.div className="w-full h-scren">
         <div className="h-1/2 w-full">
@@ -31,14 +34,24 @@ export default function VideosHome({ videos }) {
           </p>
         </div>
 
-        <VideosRow videos={videos} group={{ title: 'Royal Interview' }} />
-        <VideosRow videos={videos} group={{ title: 'At The Bar' }} />
         <VideosRow
           videos={videos}
-          group={{ title: 'Boris Addressing The Nation' }}
+          group={{ title: 'Royal Interview', action: 'open' }}
         />
-        <VideosRow videos={videos} group={{ title: 'The Godfather' }} />
+        <VideosRow
+          videos={videos}
+          group={{ title: 'At The Bar', action: 'open' }}
+        />
+        <VideosRow
+          videos={videos}
+          group={{ title: 'Boris Addressing The Nation', action: 'open' }}
+        />
+        <VideosRow
+          videos={videos}
+          group={{ title: 'The Godfather', action: 'open' }}
+        />
       </motion.div>
+      <Footer theme={theme.footer} />
     </>
   )
 }
@@ -63,18 +76,22 @@ export const getServerSideProps = async () => {
       }
     `
   })
-  const parsedData = data.videos.map((vid) => {
-    return {
-      ...vid,
-      oembed: vid.oembed ? JSON.parse(vid.oembed) : ''
-    }
-  })
 
   return {
     props: {
-      videos: parsedData,
-      logoFill: '#EAEFB1',
-      footerFill: '#B3525E'
+      videos: data.videos,
+      theme: {
+        header: { logoFill: '#fff', navBtnFill: '#fff' },
+        body: { bgFill: '#fefefe' },
+        footer: {
+          bgFill: '#8D3F48',
+          buttonFill: '#B3525E',
+          iconsFill: '#8D3F48',
+          linkColour: '#fff',
+          logoFill: '#B3525E',
+          titleTagColour: '#fff'
+        }
+      }
     }
   }
 }

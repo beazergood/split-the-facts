@@ -1,6 +1,6 @@
 {
   "name": "split-the-facts",
-  "version": "1.1.0-0",
+  "version": "1.1.0-1",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
@@ -36,6 +36,7 @@
     "react-hook-form": "^7.9.0",
     "react-icons": "^4.2.0",
     "react-moment": "^1.1.1",
+    "react-responsive": "^9.0.0-beta.3",
     "rss": "^1.2.2",
     "typewriter-effect": "^2.18.0"
   },
@@ -48,6 +49,8 @@
   },
   "devDependencies": {
     "@babel/core": "^7.14.6",
+    "@mdx-js/loader": "^1.6.22",
+    "@mdx-js/react": "^1.6.22",
     "@storybook/addon-actions": "^6.3.4",
     "@storybook/addon-essentials": "^6.3.4",
     "@storybook/addon-links": "^6.3.4",
