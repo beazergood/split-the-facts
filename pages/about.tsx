@@ -36,7 +36,7 @@ export default function About({ about, theme }) {
   )
 }
 
-export const getServerSideProps = async () => {
+export const getStaticProps = async () => {
   const { data } = await client.query({
     query: gql`
       query {
