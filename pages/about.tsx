@@ -2,7 +2,6 @@ import { gql } from '@apollo/client'
 import client from '../scripts/apollo-client'
 import { motion } from 'framer-motion'
 import { NextSeo } from 'next-seo'
-import { VideosRow } from '../components/VideosRow'
 import { WaveBackground } from '../components/WaveBackground'
 import { Navbar } from '../components/Navbar'
 import { Footer } from '../components/Footer'
@@ -36,7 +35,7 @@ export default function About({ about, theme }) {
   )
 }
 
-export const getStaticProps = async () => {
+export async function getStaticProps() {
   const { data } = await client.query({
     query: gql`
       query {
