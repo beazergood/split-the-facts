@@ -41,7 +41,7 @@ export const Footer: React.FC<FooterProps> = ({ theme, playlist = {} }) => {
   }
   return (
     <>
-      <div className="bsolute bottom- z-0 w-screen">
+      <div className="bsolute bottom- z-0 w-full">
         <div className="svg-container">
           <svg
             preserveAspectRatio="xMinYMin meet"
@@ -70,7 +70,7 @@ export const Footer: React.FC<FooterProps> = ({ theme, playlist = {} }) => {
             <VideosRow videos={playlist.videos} group={playlist.group} />
           </div>
         )}
-        <div className="w-100 px-2 md:w-3/5 lg:w-1/3 mx-auto py-10 border- border-red-400">
+        <div className="w-5/6 px-2 md:w-4/5 lg:w-2/3 mx-auto py-10 border- border-red-400">
           <HookForm />
         </div>
         <div className="w-0 px5 md:w-44 mx-auto -14">
@@ -186,12 +186,13 @@ export const Footer: React.FC<FooterProps> = ({ theme, playlist = {} }) => {
           <div className="flex flex-col lg:flex-row w-full border- rounded-md ">
             <a
               href="https://www.youtube.com/channel/UCjRNMsglFYFwNsnOWIOgt1Q"
-              className="flex flex-row md:flex-col lg:flex-row shadow-sm p-4 hover:shadow-lg md:w-1/2 w-100 rounded-xl md:mr-2 mb-4"
+              className="flex flex-row md:flex-col lg:flex-row shadow-sm p-4 hover:shadow-lg md:w-1/2 w-100 rounded-xl md:mr-2 "
               style={{ backgroundColor: theme.buttonFill }}
             >
               <motion.div
                 whileHover={{
                   scale: 1.02,
+
                   transition: { duration: 0.2 }
                 }}
                 whileTap={{ scale: 0.9 }}
@@ -207,9 +208,9 @@ export const Footer: React.FC<FooterProps> = ({ theme, playlist = {} }) => {
                   <p className="text-xl">
                     My YouTube Channel &rarr; <br />
                   </p>
-                  <p className=" text-md" style={{ color: theme.linkColour }}>
+                  {/* <p className=" text-md" style={{ color: theme.linkColour }}>
                     @Split! - The West at War with Itself
-                  </p>
+                  </p> */}
                 </div>
               </motion.div>
             </a>
@@ -235,9 +236,9 @@ export const Footer: React.FC<FooterProps> = ({ theme, playlist = {} }) => {
                 </div>
                 <div className="flex flex-col">
                   <p className="text-xl">Support my Patreon &rarr; </p>
-                  <p className=" text-md" style={{ color: theme.linkColour }}>
+                  {/* <p className=" text-md" style={{ color: theme.linkColour }}>
                     @Sam Roffey
-                  </p>
+                  </p> */}
                 </div>
               </motion.div>
             </a>

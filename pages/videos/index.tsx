@@ -27,29 +27,30 @@ export default function VideosHome({ videos, theme }) {
       <NextSeo {...SEO} />
       <Navbar theme={theme.header} />
       <WaveBackground fill="#B3525E" />
-      <motion.div className="w-full h-scren">
+      <motion.div className="w-full h-1/2">
         <div className="h-1/2 w-full">
-          <p className="text-3xl text-center font-NotoSerif my-10 z-10">
+          <p className="text-3xl text-center font-NotoSerif my-10 z-20 relative">
             Videos
           </p>
         </div>
-
-        <VideosRow
-          videos={videos}
-          group={{ title: 'Royal Interview', action: 'open' }}
-        />
-        <VideosRow
-          videos={videos}
-          group={{ title: 'At The Bar', action: 'open' }}
-        />
-        <VideosRow
-          videos={videos}
-          group={{ title: 'Boris Addressing The Nation', action: 'open' }}
-        />
-        <VideosRow
-          videos={videos}
-          group={{ title: 'The Godfather', action: 'open' }}
-        />
+        <div className="mt-20">
+          <VideosRow
+            videos={videos}
+            group={{ title: 'Royal Interview', action: 'open' }}
+          />
+          <VideosRow
+            videos={videos}
+            group={{ title: 'At The Bar', action: 'open' }}
+          />
+          <VideosRow
+            videos={videos}
+            group={{ title: 'Boris Addressing The Nation', action: 'open' }}
+          />
+          <VideosRow
+            videos={videos}
+            group={{ title: 'The Godfather', action: 'open' }}
+          />
+        </div>
       </motion.div>
       <Footer theme={theme.footer} />
     </>

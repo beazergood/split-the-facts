@@ -12,6 +12,7 @@ export const Button: React.FC<ButtonProps> = ({ label, href = '' }) => {
       <style jsx>
         {`
           .pushable {
+            min-width: 250px;
             position: relative;
             border: none;
             background: transparent;

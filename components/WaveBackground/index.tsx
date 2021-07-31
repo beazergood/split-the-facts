@@ -8,7 +8,7 @@ export interface WaveBackgroundProps {
 export const WaveBackground: React.FC<WaveBackgroundProps> = ({ fill }) => {
   return (
     <>
-      <motion.div className="w-full  absolute top-0 z-0 border- border-red-300">
+      <motion.div className="w-full absolute top-0 z-0 border- border-red-300">
         <div className="svg-container">
           <svg
             preserveAspectRatio="xMinYMin meet"

@@ -37,7 +37,7 @@ export default function Yearbook({ characters, theme, videos }) {
       <WaveBackground fill="#B3525E" />
       <motion.div className="container mx-auto relative z-10">
         <motion.h1
-          className="text-4xl font-PlayfairDisplay text-white text-center "
+          className="text-4xl font-PlayfairDisplay text-white text-center mx-2"
           layoutId="h1"
         >
           The Interview We Never Saw

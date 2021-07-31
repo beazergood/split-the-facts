@@ -44,13 +44,12 @@ export const VideoPlayer = ({
     <>
       {/* <AnimatePresence initial={false} exitBeforeEnter> */}
       <motion.div
-        className="mx-auto border- border-yellow-200 relative hover:cursor-help w-100 cursor-pointer"
+        className="mx-auto relative cursor-pointer w-full lg:w-2/3"
         whileHover={{ scale: 1.01 }}
         transition={transition}
         exit={{ opacity: 0 }}
         initial="initial"
         animate="animate"
-        style={{ width: '500px', height: '350px' }}
         variants={imgVariants}
       >
         {!showThumb && (
@@ -59,7 +58,7 @@ export const VideoPlayer = ({
               <div className="flex-grow"></div>
               <motion.div whileHover={{ scale: 1.1 }}>
                 <FaTimes
-                  className="text-4xl m-2 text-white hover:text-popstar-hover"
+                  className="text-4xl m-2 text-gray-300 hover:text-popstar-hover"
                   onClick={() => {
                     setThumbShow(true)
                   }}
@@ -68,8 +67,6 @@ export const VideoPlayer = ({
             </div>
             <div className="video-responsive">
               <iframe
-                width="853"
-                height="480"
                 src={`https://www.youtube.com/embed/${embedId}?autoplay=1`}
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -80,27 +77,32 @@ export const VideoPlayer = ({
           </>
         )}
         {showThumb && (
-          <>
+          <div
+            className="border- border-green-300 relative z-10 "
+            style={{ height: '60vh' }}
+          >
             <motion.img
               src={thumbnailImg}
-              width="500px"
-              height="350px"
-              className="absolute top-0 mx-auto rounded-lg shadow-lg pt-1"
+              className="absolute mx-auto rounded-lg shadow-lg pt-1 "
               exit={{ opacity: 0, transition: { duration: 0.3 } }}
               onClick={() => {
                 setThumbShow(false)
               }}
             />
             <FaPlayCircle
-              className="absolute z-10 text-8xl text-white hover:text-nyanza"
-              style={{ top: '30%', left: '40%' }}
+              className="absolute z-10 text-8xl text-white hover:text-nyanza top-24"
+              style={{
+                transform: 'translate(-50%, -50%)',
+                top: '40%',
+                left: '50%'
+              }}
               onClick={() => {
                 setThumbShow(false)
               }}
             />
             {cursiveTitle && (
               <motion.h1
-                className="font-AlexBrush text-4xl font-semibold text-center mx-10 m-10 z-20 absolute bottom-10 text-white"
+                className=" font-AlexBrush text-4xl font-semibold text-center mx-10 m-10 h-20 z-20 absolute bottom-20 md:bottom-4 text-white"
                 onClick={() => {
                   setThumbShow(false)
                 }}
@@ -109,7 +111,7 @@ export const VideoPlayer = ({
               </motion.h1>
             )}
             <motion.h1
-              className="font-PlayfairDisplay text-4xl font-semibold text-center mx-10 m-10 z-20 absolute bottom-0 text-white"
+              className="font-PlayfairDisplay text-4xl font-semibold text-center h-20 mx-10 m-10 z-20 absolute -bottom-3 text-gray-500 sm:text-white"
               onClick={() => {
                 setThumbShow(false)
               }}
@@ -117,7 +119,7 @@ export const VideoPlayer = ({
               {title}
             </motion.h1>
             ){' '}
-          </>
+          </div>
         )}
       </motion.div>
       {/* </AnimatePresence> */}

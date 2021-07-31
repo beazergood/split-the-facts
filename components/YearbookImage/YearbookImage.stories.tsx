@@ -1,6 +1,6 @@
 import React from 'react'
 import { Story, Meta } from '@storybook/react'
-import { YearbookImage, YearbookImageProps } from '.'
+import { YearbookImage, YearbookImageThumb, YearbookImageProps } from '.'
 
 export default {
   title: 'Components/YearbookImage',
@@ -10,11 +10,38 @@ export default {
   }
 } as Meta
 
-const Template: Story<YearbookImageProps> = (args) => (
+const TemplateBig: Story<YearbookImageProps> = (args) => (
   <YearbookImage {...args} />
 )
+const TemplateSmall: Story<YearbookImageProps> = (args) => (
+  <YearbookImageThumb {...args} />
+)
 
-export const Primary = Template.bind({})
+export const Primary = TemplateBig.bind({})
 Primary.args = {
-  character: {}
+  character: {
+    slug: '',
+    image: {
+      url: ''
+    },
+    image_hover: {
+      url: ''
+    },
+    showName: true,
+    name: 'Dave Beazer'
+  }
+}
+export const Secondary = TemplateSmall.bind({})
+Secondary.args = {
+  character: {
+    slug: '',
+    image: {
+      url: ''
+    },
+    image_hover: {
+      url: ''
+    },
+    showName: true,
+    name: 'Dave Beazer'
+  }
 }

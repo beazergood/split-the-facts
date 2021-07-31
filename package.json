@@ -1,6 +1,6 @@
 {
   "name": "split-the-facts",
-  "version": "1.1.0-2",
+  "version": "1.1.0-3",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
@@ -35,6 +35,7 @@
     "react-dom": "^17.0.2",
     "react-hook-form": "^7.9.0",
     "react-icons": "^4.2.0",
+    "react-intersection-observer": "^8.32.0",
     "react-moment": "^1.1.1",
     "react-responsive": "^9.0.0-beta.3",
     "rss": "^1.2.2",

@@ -37,9 +37,8 @@ export default function CharacterDetail({ character }) {
         animate="animate"
         exit="exit"
       >
-        <Button href={'/the-interview-we-never-saw'} label="BACK" />
-
         <div className="min-h-screen flex items-center justify-center">
+          <Button href={'/the-interview-we-never-saw'} label="BACK" />
           <div className="grid grid-cols-3 gap-y-14 gap-x-10 grid-flow-col">
             <motion.div
               initial={{ opacity: 0 }}
@@ -53,7 +52,7 @@ export default function CharacterDetail({ character }) {
             </motion.div>
             <div className="col-span-2">
               <motion.h1
-                className="text-3xl text-left my-4"
+                className="text-5xl text-left my-4 font-PlayfairDisplay"
                 layoutId="h1"
                 initial={{ scale: 0.9 }}
                 animate={{ scale: 1 }}
@@ -61,10 +60,10 @@ export default function CharacterDetail({ character }) {
               >
                 {character.name}
               </motion.h1>
-              <motion.p className="text-left text-2xl my-4">
+              <motion.p className="text-left text-3xl my-4 font-AlexBrush">
                 {character.quip}
               </motion.p>
-              <motion.p className="text-left text-xl">
+              <motion.p className="text-left text-xl font-AveriaSerifLibre">
                 {character.about}
               </motion.p>
             </div>

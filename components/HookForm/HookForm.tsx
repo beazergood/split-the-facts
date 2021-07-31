@@ -71,18 +71,18 @@ export const HookForm = () => {
         <p className="text-lg mb-5 font-NotoSerif text-center">
           Enter your email to subscribe to the occasional update from me
         </p>
-        <div className="flex md:flex-row mx-auto gap-2">
+        <div className="flex flex-col md:flex-row mx-auto gap-2">
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="w-5/6"
+            className="w-full md:w-1/2 mx-auto flex flex-col md:flex-row justify-around"
           >
             <FormControl>
               <Input
                 id="email"
                 placeholder="Join the conversation"
-                className="mx-2 appearance-none border rounded-full w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                className="mx-auto appearance-none border rounded-full w-5/6 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 {...register('email', {
                   required: 'This is required',
                   minLength: { value: 4, message: 'Minimum length should be 4' }
@@ -101,18 +101,17 @@ export const HookForm = () => {
                 {messageData.message}
               </p>
             </FormControl>
+            <Button
+              disabled={!formState.isValid}
+              isLoading={isSubmitting}
+              type="submit"
+              width="46px"
+              height="46px"
+              className="rounded-full bg-popstar p-4 mx-auto mt-3 md:-mt-5 hover:shadow-md hover:bg-popstar-hover text-white"
+            >
+              <FaPaperPlane className="text-white" />
+            </Button>
           </motion.div>
-          <Button
-            disabled={!formState.isValid}
-            colorScheme="teal"
-            isLoading={isSubmitting}
-            type="submit"
-            width="50px"
-            height="50px"
-            className="rounded-full bg-moss-green p-4 ml-5 -mt-1 hover:shadow-md hover:bg-green-900 w-90 text-white hidden md:block"
-          >
-            <FaPaperPlane className="text-white" />
-          </Button>
         </div>
       </form>
     </div>
