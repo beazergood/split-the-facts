@@ -38,18 +38,18 @@ export default function Home({
       <div className="container mx-auto">
         <main className={styles.main}>
           <motion.h1
-            className=" text-6xl w-1/2 mx-auto leading-normal font-bold relative z-10 text-black text-center mt-10"
+            className=" text-6xl w-full md:w-1/2 mx-auto leading-normal font-bold relative z-10 text-black text-center mt-10"
             layoutId="title"
           >
             <span className="font-PlayfairDisplay">
               Split! - The West at War with Itself
             </span>
           </motion.h1>
-          <div className="w-1/3 mx-auto my-10">
+          <div className="w-full md:w-1/3 mx-auto my-10">
             <HookForm />
           </div>
           {homepage && (
-            <div className="container w-1/2 mx-auto mt-10">
+            <div className="container w-full md:w-1/2 mx-auto mt-10">
               <p className="text-lg text-black text-center font-PlayfairDisplay">
                 {homepage.intro}
               </p>

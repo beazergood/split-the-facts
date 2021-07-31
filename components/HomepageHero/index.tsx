@@ -44,7 +44,7 @@ export const HomepageHero = ({ characters, heroVideo = '' }) => {
       variants={imgVariants}
     >
       <motion.div
-        className="rect p-3 rounded row-start-1 col-start-2 row-span-2 z-10"
+        className="rect p-3 rounded row-start-1 col-start-2 row-span-2 z-10  invisible md:visible"
         variants={imgVariants}
         exit={{ opacity: 0, transition: { duration: 1, delay: 1 } }}
       >
@@ -53,7 +53,7 @@ export const HomepageHero = ({ characters, heroVideo = '' }) => {
       </motion.div>
       <motion.div
         variants={imgVariants}
-        className="rect p-3 rounded row-span-2 row-start-2 col-start-5 z-10"
+        className="rect p-3 rounded row-span-2 row-start-2 col-start-5 z-10 invisible md:visible"
         exit={{ opacity: 0, transition: { duration: 1, delay: 1 } }}
       >
         {/* HARRY */}
@@ -73,7 +73,7 @@ export const HomepageHero = ({ characters, heroVideo = '' }) => {
         />
       </motion.div>
       <motion.div
-        className=" rect p-3 rounded row-start-1 col-start-6 row-span-2 z-10"
+        className=" rect p-3 rounded row-start-1 col-start-6 row-span-2 z-10  invisible md:visible"
         variants={imgVariants}
         exit={{ opacity: 0, transition: { duration: 1, delay: 1 } }}
       >

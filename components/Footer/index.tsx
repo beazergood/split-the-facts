@@ -182,11 +182,11 @@ export const Footer: React.FC<FooterProps> = ({ theme, playlist = {} }) => {
             </motion.svg>
           </Link>
         </div>
-        <div className="w-0 px5 md:w-66 lg:w-1/3 mx-auto my-14">
-          <div className="flex flex-col lg:flex-row w-full border- rounded-md p-2 ">
+        <div className="w-1/2 px-1 md:w-1/2 lg:w-1/3 mx-auto my-14 border- border-red-300">
+          <div className="flex flex-col lg:flex-row w-full border- rounded-md ">
             <a
               href="https://www.youtube.com/channel/UCjRNMsglFYFwNsnOWIOgt1Q"
-              className="flex flex-row md:flex-col lg:flex-row shadow-sm p-4 hover:shadow-lg md:w-1/2 w-100 rounded-xl md:mr-2"
+              className="flex flex-row md:flex-col lg:flex-row shadow-sm p-4 hover:shadow-lg md:w-1/2 w-100 rounded-xl md:mr-2 mb-4"
               style={{ backgroundColor: theme.buttonFill }}
             >
               <motion.div
