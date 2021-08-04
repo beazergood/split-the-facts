@@ -14,7 +14,7 @@ const sidebar = {
       restDelta: 2
     }
   }),
-  closed: {
+  closed: (height = 0) => ({
     clipPath: 'circle(30px at 235px 40px)',
     transition: {
       delay: 0.5,
@@ -22,7 +22,7 @@ const sidebar = {
       stiffness: 400,
       damping: 40
     }
-  }
+  })
 }
 
 export interface NavProps {

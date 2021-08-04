@@ -8,6 +8,7 @@ import { NextSeo } from 'next-seo'
 import { Navbar } from '../../../components/Navbar'
 import { Footer } from '../../../components/Footer'
 import { WaveBackground } from '../../../components/WaveBackground'
+import Markdown from 'markdown-to-jsx'
 
 export default function Video({ theme, video }) {
   // console.log(video)
@@ -63,12 +64,15 @@ export default function Video({ theme, video }) {
           </div>
         </motion.div>
         <motion.div className="container border- border-red-300 mx-auto my-10 w-1/2">
-          {video.content && (
+          <article className="prose lg:prose-xl px-4 lg:px-0 mt-12 text-gray-700 max-w-screen-md mx-auto text-lg leading-relaxed">
+            <Markdown>{video.content}</Markdown>
+          </article>
+          {/* {video.content && (
             <p
               dangerouslySetInnerHTML={{ __html: video.content }}
-              className="text-lg"
+              className="prose-lg"
             ></p>
-          )}
+          )} */}
         </motion.div>
       </motion.div>
       <Footer theme={theme.footer} />

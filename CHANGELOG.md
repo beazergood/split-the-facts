@@ -1,3 +1,11 @@
+## [1.1.0] - 04/8/21
+### Added
+- Videos horizontal scroll component
+- Markdown JSX for video transcript markdown to display properly
+
+### Removed
+- nav temporarily as interferes with videos row
+
 ## [0.0.9-0] - 25/7/21
 ### Added
 - footer component

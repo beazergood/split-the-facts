@@ -15,3 +15,7 @@ a {
   box-sizing: border-box;
 }
 
+.no-scroll {
+  overflow-y: hidden;
+  padding-right: 15px;
+}

@@ -29,25 +29,25 @@ export default function VideosHome({ videos, theme }) {
       <WaveBackground fill="#B3525E" />
       <motion.div className="w-full h-1/2">
         <div className="h-1/2 w-full">
-          <p className="text-3xl text-center font-NotoSerif my-10 z-20 relative">
+          <p className="text-3xl text-white text-center font-NotoSerif my-10 z-20 relative">
             Videos
           </p>
         </div>
         <div className="mt-20">
           <VideosRow
-            videos={videos}
+            videos={videos.royalInterview}
             group={{ title: 'Royal Interview', action: 'open' }}
           />
           <VideosRow
-            videos={videos}
+            videos={videos.atTheBar}
             group={{ title: 'At The Bar', action: 'open' }}
           />
           <VideosRow
-            videos={videos}
+            videos={videos.boris}
             group={{ title: 'Boris Addressing The Nation', action: 'open' }}
           />
           <VideosRow
-            videos={videos}
+            videos={videos.theGodfather}
             group={{ title: 'The Godfather', action: 'open' }}
           />
         </div>
@@ -61,7 +61,7 @@ export const getServerSideProps = async () => {
   const { data } = await client.query({
     query: gql`
       query {
-        videos(sort: "published:DESC") {
+        recentVideos: videos(sort: "published:DESC", limit: 3) {
           id
           slug
           title
@@ -69,6 +69,75 @@ export const getServerSideProps = async () => {
           thumbnail_image {
             url
           }
+          embed_url
+          category {
+            slug
+            name
+          }
+        }
+        royalInterview: videos(
+          where: { category: { slug: "royal-interview" } }
+          sort: "published:DESC"
+        ) {
+          id
+          slug
+          title
+          published
+          thumbnail_image {
+            url
+          }
+          embed_url
+          category {
+            slug
+            name
+          }
+        }
+        atTheBar: videos(
+          where: { category: { slug: "at-the-bar" } }
+          sort: "published:DESC"
+        ) {
+          id
+          slug
+          title
+          published
+          thumbnail_image {
+            url
+          }
+          embed_url
+          category {
+            slug
+            name
+          }
+        }
+        boris: videos(
+          where: { category: { slug: "parodies" } }
+          sort: "published:DESC"
+        ) {
+          id
+          slug
+          title
+          published
+          thumbnail_image {
+            url
+          }
+          embed_url
+          category {
+            slug
+            name
+          }
+        }
+        theGodfather: videos(
+          where: { category: { slug: "the-godfather" } }
+          sort: "published:DESC"
+        ) {
+          id
+          slug
+          title
+          published
+          thumbnail_image {
+            url
+          }
+          embed_url
           category {
             slug
             name
@@ -80,7 +149,12 @@ export const getServerSideProps = async () => {
 
   return {
     props: {
-      videos: data.videos,
+      videos: {
+        royalInterview: buildFullSlug(data.royalInterview),
+        atTheBar: buildFullSlug(data.atTheBar),
+        boris: buildFullSlug(data.boris),
+        theGodfather: buildFullSlug(data.theGodfather)
+      },
       theme: {
         header: { logoFill: '#fff', navBtnFill: '#fff' },
         body: { bgFill: '#fefefe' },
@@ -94,5 +168,24 @@ export const getServerSideProps = async () => {
         }
       }
     }
+  }
+}
+
+const buildFullSlug = (videos, category = '') => {
+  if (category) {
+    return videos.map((video) => {
+      return {
+        ...video,
+        fullSlug: `/videos/${category}/${video.slug}`
+      }
+    })
+  } else {
+    return videos.map((video) => {
+      const cat = video.category.slug
+      return {
+        ...video,
+        fullSlug: `/videos/${cat}/${video.slug}`
+      }
+    })
   }
 }

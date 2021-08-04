@@ -105,9 +105,9 @@ export const HookForm = () => {
               disabled={!formState.isValid}
               isLoading={isSubmitting}
               type="submit"
-              width="46px"
-              height="46px"
-              className="rounded-full bg-popstar p-4 mx-auto mt-3 md:-mt-5 hover:shadow-md hover:bg-popstar-hover text-white"
+              width="50px"
+              height="50px"
+              className="rounded-full bg-popstar mx-auto hover:shadow-xl -mt-2 hover:bg-popstar-hover text-white"
             >
               <FaPaperPlane className="text-white" />
             </Button>

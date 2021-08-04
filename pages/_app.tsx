@@ -6,8 +6,6 @@ import { DefaultSeo } from 'next-seo'
 import SEO from '../next-seo.config'
 
 function MyApp({ Component, pageProps }: AppProps) {
-  // console.log('pageProps: ', pageProps)
-
   return (
     // <AnimateSharedLayout>
     <>
