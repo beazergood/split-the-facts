@@ -64,15 +64,11 @@ export default function Video({ theme, video }) {
           </div>
         </motion.div>
         <motion.div className="container border- border-red-300 mx-auto my-10 w-1/2">
-          <article className="prose lg:prose-xl px-4 lg:px-0 mt-12 text-gray-700 max-w-screen-md mx-auto text-lg leading-relaxed">
-            <Markdown>{video.content}</Markdown>
-          </article>
-          {/* {video.content && (
-            <p
-              dangerouslySetInnerHTML={{ __html: video.content }}
-              className="prose-lg"
-            ></p>
-          )} */}
+          {video.content && (
+            <article className="prose lg:prose-xl px-4 lg:px-0 mt-12 text-gray-700 max-w-screen-md mx-auto text-lg leading-relaxed">
+              <Markdown>{video.content}</Markdown>
+            </article>
+          )}
         </motion.div>
       </motion.div>
       <Footer theme={theme.footer} />

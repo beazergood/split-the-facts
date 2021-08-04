@@ -129,6 +129,25 @@ export default function Yearbook({ characters, theme, videos }) {
 
 export async function getStaticProps() {
   // console.log('im on the server')
+  const buildFullSlug = (videos, category = '') => {
+    if (category) {
+      return videos.map((video) => {
+        return {
+          ...video,
+          fullSlug: `/videos/${category}/${video.slug}`
+        }
+      })
+    } else {
+      return videos.map((video) => {
+        const cat = video.category.slug
+        return {
+          ...video,
+          fullSlug: `/videos/${cat}/${video.slug}`
+        }
+      })
+    }
+  }
+
   const { data } = await client.query({
     query: gql`
       query {
@@ -150,6 +169,10 @@ export async function getStaticProps() {
           thumbnail_image {
             url
           }
+          slug
+          category {
+            slug
+          }
         }
       }
     `
@@ -162,7 +185,7 @@ export async function getStaticProps() {
       characters: data.characters.map((c) => {
         return { ...c, showName: true }
       }),
-      videos: data.videos,
+      videos: buildFullSlug(data.videos),
       theme: {
         header: { logoFill: '#fff' },
         body: { bgFill: '#fefefe' },
