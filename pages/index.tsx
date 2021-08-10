@@ -39,11 +39,12 @@ export default function Home({
 }) {
   const { scrollY } = useViewportScroll()
   const y1 = useTransform(scrollY, [0, 500], [0, -50])
+  const x1 = useTransform(scrollY, [0, 500], [10, 50])
   const y2 = useTransform(scrollY, [0, 300], [0, -100])
   const y3 = useTransform(scrollY, [100, 600], [0, -200])
   const y4 = useTransform(scrollY, [100, 800], [0, -100])
   const y5 = useTransform(scrollY, [0, 900], [0, -200])
-  const y6 = useTransform(scrollY, [900, 1400], [0, -400])
+  const y6 = useTransform(scrollY, [600, 1400], [0, -400])
   const y7 = useTransform(scrollY, [0, 1600], [0, -200])
   const y8 = useTransform(scrollY, [0, 2600], [0, -200])
 
@@ -86,7 +87,7 @@ export default function Home({
             {/* {isDesktopOrLaptop && ( */}
             <motion.div
               className="absolute left-32 top-16 z-20"
-              style={{ y: y1, x: -50 }}
+              style={{ y: y1, x: x1 }}
             >
               <Image src="/svg/frame-3.svg" width="146px" height="171px" />
             </motion.div>
@@ -97,8 +98,8 @@ export default function Home({
             </div>
             {/* {isDesktopOrLaptop && ( */}
             <motion.div
-              className="absolute right-32 top-4 z-20"
-              style={{ y: y2, x: 50 }}
+              className="absolute right-32 top-4 z-10"
+              style={{ y: y2, x: y1 }}
             >
               <Image src="/svg/frame-6.svg" width="91px" height="102px" />
             </motion.div>
@@ -109,7 +110,7 @@ export default function Home({
           <div className="bg-wall py-6 relative">
             <motion.div
               className="absolute left-16 top-44"
-              style={{ y: y3, x: 5 }}
+              style={{ y: y3, x: x1 }}
             >
               <Image src="/svg/frame-10.svg" width="114px" height="150px" />
             </motion.div>

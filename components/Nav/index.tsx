@@ -60,7 +60,6 @@ export const Nav = ({ props }) => {
           right: 0;
           bottom: 0;
           width: 300px;
-          z-index: 50;
         }
 
         .background {

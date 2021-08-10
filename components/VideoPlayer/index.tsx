@@ -106,6 +106,8 @@ export const VideoPlayer = ({
               <motion.img
                 src={thumbnailImg}
                 className="mx-auto rounded-lg  pt-1 "
+                width="732px"
+                height="431px"
                 exit={{ opacity: 0, transition: { duration: 0.3 } }}
                 onClick={() => {
                   setThumbShow(false)
