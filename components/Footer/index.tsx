@@ -1,5 +1,11 @@
 import React, { useState } from 'react'
-import { motion } from 'framer-motion'
+import {
+  useViewportScroll,
+  motion,
+  useTransform,
+  useSpring,
+  useMotionValue
+} from 'framer-motion'
 import { HookForm } from '../HookForm'
 import {
   FaPaypal,
@@ -12,6 +18,7 @@ import { SiGmail, SiTiktok } from 'react-icons/si'
 import packageInfo from '../../package.json'
 import { VideosRow } from '../VideosRow'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export interface FooterProps {
   theme: any
@@ -25,6 +32,10 @@ export interface FooterProps {
 }
 
 export const Footer: React.FC<FooterProps> = ({ theme, playlist = {} }) => {
+  const { scrollY } = useViewportScroll()
+  const y1 = useTransform(scrollY, [4500, 5800], [0, 100])
+  const y2 = useTransform(scrollY, [4500, 6000], [0, -100])
+
   const pathVariants = {
     initial: {
       fill: 'red'
@@ -41,8 +52,14 @@ export const Footer: React.FC<FooterProps> = ({ theme, playlist = {} }) => {
   }
   return (
     <>
-      <div className="bsolute bottom- z-0 w-full">
-        <div className="svg-container">
+      <div className="relative bottom- z-0 w-full">
+        <motion.div
+          className="absolute z-10 right-4 top-14"
+          style={{ y: y2, x: 0 }}
+        >
+          <Image src="/svg/lamp-and-frame.svg" width="323px" height="284px" />
+        </motion.div>
+        <div className="svg-container z-0">
           <svg
             preserveAspectRatio="xMinYMin meet"
             viewBox="0 0 1440 145"
@@ -55,22 +72,27 @@ export const Footer: React.FC<FooterProps> = ({ theme, playlist = {} }) => {
           </svg>
         </div>
       </div>
-
       <div style={{ background: theme.bgFill, marginTop: '-2px' }}>
         <div className="w-100 px-2 md:w-3/5 lg:w-1/3 mx-auto pt-10 border- border-red-400">
           <h1
-            className="text-2xl text-center font-PlayfairDisplay"
+            className="text-2xl text-center my-4 font-PlayfairDisplay"
             style={{ color: theme.titleTagColour }}
           >
-            Parodies and Comedic Sketches for your entertainment. Enjoy!
+            Let us expose the hypocrisies of those who demand we behave.
           </h1>
         </div>
         {playlist.videos && (
-          <div className="w-100 md:w-3/5 lg:w-2/3 mx-auto py-0 border- border-red-400">
+          <div className="w-100 mt-10 md:w-3/5 lg:w-2/3 mx-auto py-0 border- border-red-400">
             <VideosRow videos={playlist.videos} group={playlist.group} />
           </div>
         )}
-        <div className="w-5/6 px-2 md:w-4/5 lg:w-2/3 mx-auto py-10 border- border-red-400">
+        <div className="w-5/6 px-2 md:w-4/5 lg:w-2/3 mx-auto py-10 border- relative border-red-400">
+          <motion.div
+            className="absolute left-4 bottom-14"
+            style={{ y: y1, x: -100 }}
+          >
+            <Image src="/svg/boxer-cushion.svg" width="200px" height="180px" />
+          </motion.div>
           <HookForm />
         </div>
         <div className="w-0 px5 md:w-44 mx-auto -14">
@@ -182,7 +204,7 @@ export const Footer: React.FC<FooterProps> = ({ theme, playlist = {} }) => {
             </motion.svg>
           </Link>
         </div>
-        <div className="w-1/2 px-1 md:w-1/2 lg:w-1/3 mx-auto my-14 border- border-red-300">
+        <div className="w-1/2 px-1 md:w-1/2 lg:w-1/3 mx-auto my-14">
           <div className="flex flex-col lg:flex-row w-full border- rounded-md ">
             <a
               href="https://www.youtube.com/channel/UCjRNMsglFYFwNsnOWIOgt1Q"
@@ -295,7 +317,7 @@ export const Footer: React.FC<FooterProps> = ({ theme, playlist = {} }) => {
               <input
                 type="hidden"
                 name="hosted_button_id"
-                value="A6UYBE6GNSK54"
+                value="ZTCTS58DNYUC6"
               />
               <input
                 type="image"
@@ -311,10 +333,37 @@ export const Footer: React.FC<FooterProps> = ({ theme, playlist = {} }) => {
                 height="1"
               />
             </form>
+            {/* <form
+              action="https://www.paypal.com/donate"
+              method="post"
+              target="_top"
+            >
+              <input
+                type="hidden"
+                name="hosted_button_id"
+                value="A6UYBE6GNSK54"
+              />
+              <input
+                type="image"
+                src="https://www.paypalobjects.com/en_GB/i/btn/btn_donate_SM.gif"
+                name="submit"
+                title="PayPal - The safer, easier way to pay online!"
+                alt="Donate with PayPal button"
+              />
+              <img
+                alt=""
+                src="https://www.paypal.com/en_GB/i/scr/pixel.gif"
+                width="1"
+                height="1"
+              />
+            </form> */}
           </div>
         </div>
         <div className="w-90 mt-10  z-10 mx-auto bottom-10">
-          <span className="block text-center text-sm ">
+          <span
+            className="block text-center text-sm"
+            style={{ color: theme.buttonFill }}
+          >
             &copy; 2021 Sam Roffey
           </span>
           <span className="inline-block text-right ml-10 text-sm ">

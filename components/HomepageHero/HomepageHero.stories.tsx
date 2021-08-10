@@ -1,6 +1,6 @@
 import React from 'react'
 import { Story, Meta } from '@storybook/react'
-import { HomepageHero, HomepageHeroProps } from './'
+import { HomepageHero, HomepageHeroProps } from '.'
 
 export default {
   title: 'Components/HomepageHero',

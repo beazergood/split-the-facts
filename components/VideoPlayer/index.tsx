@@ -7,6 +7,7 @@ export interface VideoPlayerProps {
   title?: string
   cursiveTitle?: string
   thumbnailImg?: any
+  host?: string
 }
 
 const imgVariants = {
@@ -35,7 +36,8 @@ export const VideoPlayer = ({
   title = '',
   cursiveTitle = '',
   embedId,
-  thumbnailImg = 'https://res.cloudinary.com/split-the-facts/image/upload/v1627550229/outstanding_english_georgian_hall_porters_chair_1_eeffde1663.jpg'
+  thumbnailImg = '',
+  host = ''
 }) => {
   // console.log('embed: ', embed)
 
@@ -45,7 +47,6 @@ export const VideoPlayer = ({
       {/* <AnimatePresence initial={false} exitBeforeEnter> */}
       <motion.div
         className="mx-auto relative cursor-pointer w-full lg:w-2/3"
-        whileHover={{ scale: 1.01 }}
         transition={transition}
         exit={{ opacity: 0 }}
         initial="initial"
@@ -65,60 +66,83 @@ export const VideoPlayer = ({
                 />
               </motion.div>
             </div>
-            <div className="video-responsive">
-              <iframe
+            <div className="video-responsive shadow-xl">
+              {host === 'vimeo' && (
+                <>
+                  <iframe
+                    src="https://player.vimeo.com/video/583742309?h=09f16ddcea&autoplay=1&portrait=0"
+                    style={{
+                      position: 'absolute',
+                      top: 0,
+                      left: 0,
+                      width: '100%',
+                      height: '100%'
+                    }}
+                    allow="autoplay; fullscreen; picture-in-picture"
+                    allowfullscreen
+                  ></iframe>
+
+                  <script src="https://player.vimeo.com/api/player.js"></script>
+                </>
+              )}
+              {/* <iframe
                 src={`https://www.youtube.com/embed/${embedId}?autoplay=1`}
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
                 title="Embedded youtube"
-              />
+              /> */}
             </div>
           </>
         )}
         {showThumb && (
           <div
-            className="border- border-green-300 relative z-10 "
-            style={{ height: '60vh' }}
+            className="border- border-green-300 relative z-20 "
+            style={{ height: '40vh' }}
           >
-            <motion.img
-              src={thumbnailImg}
-              className="absolute mx-auto rounded-lg shadow-lg pt-1 "
-              exit={{ opacity: 0, transition: { duration: 0.3 } }}
-              onClick={() => {
-                setThumbShow(false)
-              }}
-            />
-            <FaPlayCircle
-              className="absolute z-10 text-8xl text-white hover:text-nyanza top-24"
-              style={{
-                transform: 'translate(-50%, -50%)',
-                top: '40%',
-                left: '50%'
-              }}
-              onClick={() => {
-                setThumbShow(false)
-              }}
-            />
-            {cursiveTitle && (
-              <motion.h1
-                className=" font-AlexBrush text-4xl font-semibold text-center mx-10 m-10 h-20 z-20 absolute bottom-20 md:bottom-4 text-white"
+            <h3 className="text-center text-white font-AveriaSerifLibre uppercase">
+              Website Exlusive Video
+            </h3>
+            <div className="border- border-green-300 flex items-center">
+              <motion.img
+                src={thumbnailImg}
+                className="mx-auto rounded-lg  pt-1 "
+                exit={{ opacity: 0, transition: { duration: 0.3 } }}
                 onClick={() => {
                   setThumbShow(false)
                 }}
-              >
-                {cursiveTitle}
-              </motion.h1>
-            )}
-            <motion.h1
-              className="font-PlayfairDisplay text-4xl font-semibold text-center h-20 mx-10 m-10 z-20 absolute -bottom-3 text-gray-500 sm:text-white"
-              onClick={() => {
-                setThumbShow(false)
-              }}
-            >
-              {title}
-            </motion.h1>
-            ){' '}
+              />
+              <FaPlayCircle
+                className="z-20 absolute text-8xl text-white hover:text-nyanza cursor-pointer"
+                style={{
+                  transform: 'translate(-50%, -50%)',
+                  left: '50%'
+                }}
+                onClick={() => {
+                  setThumbShow(false)
+                }}
+              />
+              {cursiveTitle && (
+                <motion.h1
+                  className=" font-AlexBrush text-4xl font-semibold text-center mx-10 z-20 absolute left-40 bottom-0 md:top-64 text-white"
+                  onClick={() => {
+                    setThumbShow(false)
+                  }}
+                >
+                  {cursiveTitle}
+                </motion.h1>
+              )}
+              <div className="bg-popstar-hover bg-opacity-50 mx-10 m-10 z-10 rounded-lg absolute left-40 md:top-64 p-2 ">
+                <motion.h1
+                  className="font-PlayfairDisplay text-4xl font-semibold text-center text-gray-500 sm:text-white"
+                  onClick={() => {
+                    setThumbShow(false)
+                  }}
+                >
+                  {title}
+                </motion.h1>
+              </div>
+            </div>
           </div>
         )}
       </motion.div>

@@ -14,6 +14,8 @@ const Template: Story<NavbarProps> = (args) => <Navbar {...args} />
 
 export const Primary = Template.bind({})
 Primary.args = {
-  primary: true,
-  logoFill: '#fe0'
+  theme: {
+    logoFill: '#B3525E',
+    navBtnFill: '#B3525E'
+  }
 }

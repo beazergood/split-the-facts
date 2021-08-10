@@ -123,12 +123,19 @@ export const VideosRow = ({ videos, group }) => {
     []
   )
 
-  const { hideScroll, showScroll } = useHideBodyScroll()
+  // const { hideScroll, showScroll } = useHideBodyScroll()
 
   return (
-    <div className="mx-auto y-10 relative" style={{ width: '95%' }}>
-      <p className="text-xl my-3 relative">{group.title}</p>
-      <div onMouseEnter={hideScroll} onMouseLeave={showScroll}>
+    <div
+      className="mx-auto my-3 relative px-3 py-4 bg-wall shadow-md "
+      style={{ width: '95%' }}
+    >
+      <p className="ml-6 my-3 relative font-AveriaSerifLibre">
+        <span className="text-xl">{group.title}</span> -{' '}
+        <span className="text-md">{items.length} videos</span>
+      </p>
+      {/* <div onMouseEnter={hideScroll} onMouseLeave={showScroll}> */}
+      <div>
         <div onMouseLeave={dragStop}>
           <ScrollMenu
             LeftArrow={LeftArrow}
@@ -181,6 +188,7 @@ function Card({ fullSlug, title, itemId, thumbnail_url, published }) {
 
   return (
     <motion.div
+      key={itemId}
       whileHover={{ scale: 1.05 }}
       className="cursor-pointer border- bg-white border-red-300 flex-shrink-0 shadow mx-4"
       style={{
@@ -189,7 +197,7 @@ function Card({ fullSlug, title, itemId, thumbnail_url, published }) {
       tabIndex={0}
     >
       <Link href={fullSlug}>
-        <div className="flex flex-col items-center my-10">
+        <div className="flex flex-col items-center my-4">
           <div className="relative">
             <Image src={thumbnail_url} width={270} height={160} />
             <div className="absolute bottom-14 left-24 ">

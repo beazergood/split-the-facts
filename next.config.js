@@ -13,6 +13,8 @@ module.exports = withMDX({
 const withImages = require('next-images')
 module.exports = withImages({
   images: {
-    domains: ['res.cloudinary.com'] // correct to go here? not 100% sure how to mix different package configs
+    deviceSizes: [320, 420, 768, 1024, 1200],
+    loader: 'default',
+    domains: ['res.cloudinary.com']
   }
 })

@@ -108,7 +108,9 @@ export const YearbookImage = ({ character }) => {
           />
 
           {character.showName && (
-            <p className="text-sm text-center my-5">{character.name}</p>
+            <p className="text-sm text-center my-5 font-PlayfairDisplay">
+              {character.name}
+            </p>
           )}
         </motion.div>
         {/* </AnimatePresence> */}
@@ -220,7 +222,9 @@ export const YearbookImageThumb = ({ character }) => {
         />
 
         {character.showName && (
-          <p className="text-sm text-center my-2">{character.name}</p>
+          <p className="text-sm text-center my-2 font-PlayfairDisplay">
+            {character.name}
+          </p>
         )}
       </motion.div>
     </>

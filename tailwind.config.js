@@ -16,8 +16,17 @@ module.exports = {
         'popstar-hover': '#8D3F48',
         nyanza: '#E9F7CA',
         'moss-green': '#94A661',
-        jasmine: '#F7D488'
-      }
+        jasmine: '#F7D488',
+        'jasmine-faded': 'hsla(41, 87%, 75%, 0.56)',
+        wall: '#FAF4E6',
+        'dark-brown': '#1C0D0E'
+      },
+      backgroundImage: (theme) => ({
+        angle: "url('/svg/angle-1440x80.svg')",
+        'hero-pattern': "url('/svg/leaves-7.svg')",
+        frames: "url('/images/frames-nobg-1440.png')",
+        'frames-collage': "url('/collage-1440-5.svg')"
+      })
     }
   },
   plugins: [

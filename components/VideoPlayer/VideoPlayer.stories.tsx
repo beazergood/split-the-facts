@@ -10,8 +10,13 @@ export default {
   }
 } as Meta
 
-const Template: Story<VideoPlayerProps> = (args) => <VideoPlayer {...args} />
-
+const Template: Story<VideoPlayerProps> = (args) => {
+  return (
+    <div className="bg-popstar">
+      <VideoPlayer {...args} />
+    </div>
+  )
+}
 export const Primary = Template.bind({})
 Primary.args = {
   primary: true,
@@ -19,5 +24,5 @@ Primary.args = {
   title: 'The Hallporters Chair',
   embedId: 'xJBlLgBNYhc',
   thumbnailImg:
-    'https://res.cloudinary.com/split-the-facts/image/upload/v1627550229/outstanding_english_georgian_hall_porters_chair_1_eeffde1663.jpg'
+    'https://res.cloudinary.com/split-the-facts/image/upload/v1628605413/photo_sketch_merge_732x431_feathered_95f2210239.png'
 }

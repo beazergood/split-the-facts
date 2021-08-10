@@ -44,7 +44,7 @@ export const Navbar: React.FC<NavbarProps> = ({ theme }) => {
             width="100%"
             version="1.1"
             viewBox="0 0 139.31 54.3909"
-            className="cursor-pointer"
+            className="cursor-pointer md:ml-4"
             variants={pathVariants}
             initial="initial"
             animate="animate"

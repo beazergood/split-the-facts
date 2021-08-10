@@ -3,11 +3,19 @@ import { useInView } from 'react-intersection-observer'
 import { YearbookImage } from '../YearbookImage'
 import { OrnateFrame } from '../OrnateFrame'
 import { Button } from '../Button'
+import Link from 'next/link'
+import Image from 'next/image'
 
 export interface InterviewSectionProps {
   characters: any
 }
 export const InterviewSection = ({ characters }) => {
+  const { scrollY } = useViewportScroll()
+  const y1 = useTransform(scrollY, [3000, 4000], [0, -50])
+  const y2 = useTransform(scrollY, [3400, 4500], [0, -150])
+  const y3 = useTransform(scrollY, [4000, 4800], [0, -150])
+  const y4 = useTransform(scrollY, [4500, 5800], [0, 100])
+
   const [ref1, inView1, entry1] = useInView({
     /* Optional options */
     threshold: 0.1,
@@ -73,8 +81,11 @@ export const InterviewSection = ({ characters }) => {
     }
   }
   return (
-    <div>
-      <motion.div className="min-h-screen flex items-center justify-center my-44 px-4">
+    <div className="relative">
+      <motion.div className="min-h-screen flex items-center justify-center my-14 px-4">
+        <motion.div className="absolute left-24 top-64" style={{ y: y1, x: 5 }}>
+          <Image src="/svg/frame-9.svg" width="112px" height="134px" />
+        </motion.div>
         <div className="grid grid-cols-3 md:grid-cols-6 gap-y-14 gap-x-20 grid-flow-col">
           <div className="col-span-2 sm:col-span-3 md:col-span-3 col-start-1 row-start-1 row-span-1 ">
             <motion.h1
@@ -83,16 +94,15 @@ export const InterviewSection = ({ characters }) => {
             >
               The Interview We Never Saw
             </motion.h1>
-          </div>
-          <div className="col-span-1 col-start-1 row-start-3 relative mt-10 gap-x-3 md:row-start-2 md:col-start-1">
-            <OrnateFrame label="Starring" />
-          </div>
-          <div className="col-span-2 col-start-2 row-start-3 relative mt-10 gap-x-3 sm:col-start-5 sm:row-start-3 ">
-            <div className="mx-auto border- border-red-400 flex">
-              <Button
-                href="/the-interview-we-never-saw"
-                label="Meet the cast"
-              />
+            <div className="border- border-green-200 flex flex-row">
+              <div className="w-64"></div>
+              <div className="flex">
+                <Link href="/the-interview-we-never-saw">
+                  <p className="text-moss-green text-right text-2xl mt-8 cursor-pointer hover:bg-nyanza p-1">
+                    Meet the cast &rArr;
+                  </p>
+                </Link>
+              </div>
             </div>
           </div>
 
@@ -128,6 +138,18 @@ export const InterviewSection = ({ characters }) => {
             <YearbookImage character={characters[2]} key={characters[2].id} />
           </motion.div>
         </div>
+      </motion.div>
+      <motion.div
+        className="absolute right-20 bottom-64"
+        style={{ y: y2, x: 5 }}
+      >
+        <Image src="/svg/frame-10.svg" width="112px" height="134px" />
+      </motion.div>
+      <motion.div
+        className="absolute right-64 bottom-14"
+        style={{ y: y3, x: 5 }}
+      >
+        <Image src="/svg/frame-3.svg" width="146px" height="171px" />
       </motion.div>
     </div>
   )

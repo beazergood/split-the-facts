@@ -1,4 +1,9 @@
-## [1.1.0] - 04/8/21
+## [1.1.0-5] - 10/8/21
+### Added
+- Front-end styling looking good
+- Embedded vimeo video for hero video
+
+## [1.1.0-4] - 04/8/21
 ### Added
 - Videos horizontal scroll component
 - Markdown JSX for video transcript markdown to display properly
