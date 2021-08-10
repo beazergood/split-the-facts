@@ -79,7 +79,6 @@ export const VideoPlayer = ({
                       height: '100%'
                     }}
                     allow="autoplay; fullscreen; picture-in-picture"
-                    allowfullscreen
                   ></iframe>
 
                   <script src="https://player.vimeo.com/api/player.js"></script>
