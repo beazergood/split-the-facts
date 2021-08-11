@@ -55,7 +55,7 @@ export default function Yearbook({ characters, theme, videos }) {
             </h1>
 
             <div className="w-full ">
-              <WaveBackground fill="#B3525E" />
+              <WaveBackground />
             </div>
             {/* {isDesktopOrLaptop && ( */}
             <div className="absolute right-16 top-4 z-30">

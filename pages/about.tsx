@@ -20,7 +20,7 @@ export default function About({ about, theme }) {
     <>
       <NextSeo {...SEO} />
       <Navbar theme={theme.header} />
-      <WaveBackground fill="#B3525E" />
+      <WaveBackground />
       <motion.div className="w-full h-screen container mx-auto">
         <div className="h-1/3 w-full">
           <p className="text-3xl text-center  my-10 z-30 relative text-white font-PlayfairDisplay">

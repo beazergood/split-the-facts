@@ -1,9 +1,7 @@
 import { motion, useViewportScroll, useTransform } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import { YearbookImage } from '../YearbookImage'
-import { OrnateFrame } from '../OrnateFrame'
 import { Button } from '../Button'
-import Link from 'next/link'
 import Image from 'next/image'
 
 export interface InterviewSectionProps {

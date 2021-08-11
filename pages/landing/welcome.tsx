@@ -25,7 +25,7 @@ export default function LandingHome({ video }) {
   return (
     <>
       <NextSeo {...SEO} />
-      <WaveBackground fill="#e9f7ca" />
+      <WaveBackground />
       <motion.div>
         <VideoPlayer
           cursiveTitle="Questions from"

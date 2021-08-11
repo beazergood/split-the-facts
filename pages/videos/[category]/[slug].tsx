@@ -41,7 +41,7 @@ export default function Video({ theme, video }) {
               />
             </div>
           )}
-          <WaveBackground fill={theme.footer.bgFill} />
+          <WaveBackground />
         </div>
 
         {/* <motion.div className="border-2 border-green-300 mx-auto w-1/2 h-1/3 absolut-z-2 ">

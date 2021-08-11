@@ -3,6 +3,7 @@ import { useInView } from 'react-intersection-observer'
 
 export interface OrnateFrameProps {
   label: string
+  color: string
 }
 
 export const OrnateFrame = ({ label, color }) => {

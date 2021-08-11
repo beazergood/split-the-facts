@@ -11,9 +11,11 @@ const Template: Story<OrnateFrameProps> = (args) => <OrnateFrame {...args} />
 
 export const Standard = Template.bind({})
 Standard.args = {
-  label: 'Videos'
+  label: 'Videos',
+  color: '#fff'
 }
 export const Long = Template.bind({})
 Long.args = {
-  label: 'Parody Videos'
+  label: 'Parody Videos',
+  color: '#fff'
 }
