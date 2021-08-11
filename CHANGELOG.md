@@ -1,3 +1,8 @@
+## [1.1.0-6] - 11/8/21
+### Fixed
+- cushion overlapping footer video row
+- 
+
 ## [1.1.0-5] - 10/8/21
 ### Added
 - Front-end styling looking good

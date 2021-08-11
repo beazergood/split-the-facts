@@ -4,6 +4,7 @@ import { useInView } from 'react-intersection-observer'
 
 export interface YearbookImageProps {
   character: any
+  clickable?: boolean
 }
 const transition = {
   duration: 1.3,
@@ -35,7 +36,7 @@ const pathVariants = {
   }
 }
 
-export const YearbookImage = ({ character }) => {
+export const YearbookImage = ({ character, clickable = true }) => {
   const { scrollY } = useViewportScroll()
 
   const [ref, inView, entry] = useInView({
@@ -52,7 +53,7 @@ export const YearbookImage = ({ character }) => {
         {/* <AnimatePresence initial={false} exitBeforeEnter> */}
         <motion.div
           className="mx-auto border- border-yellow-200 relative cursor-pointer w-full"
-          whileHover={{ scale: 1.03, originX: 0 }}
+          whileHover={{ scale: 1 }}
           key={character.slug}
           ref={ref}
           transition={transition}

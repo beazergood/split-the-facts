@@ -82,16 +82,16 @@ export const Footer: React.FC<FooterProps> = ({ theme, playlist = {} }) => {
           </h1>
         </div>
         {playlist.videos && (
-          <div className="w-100 mt-10 md:w-3/5 lg:w-2/3 mx-auto py-0 border- border-red-400">
+          <div className="w-100 mt-10 md:w-3/5 lg:w-2/3 mx-auto py-0 relative z-20">
             <VideosRow videos={playlist.videos} group={playlist.group} />
           </div>
         )}
         <div className="w-5/6 px-2 md:w-4/5 lg:w-2/3 mx-auto py-10 border- relative border-red-400">
           <motion.div
-            className="absolute left-4 bottom-14"
+            className="absolute left-4 bottom-14 z-0"
             style={{ y: y1, x: -100 }}
           >
-            <Image src="/svg/boxer-cushion.svg" width="200px" height="180px" />
+            <Image src="/svg/boxer-cushion.svg" width="150px" height="170px" />
           </motion.div>
           <HookForm />
         </div>

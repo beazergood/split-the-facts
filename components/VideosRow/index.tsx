@@ -200,7 +200,7 @@ function Card({ fullSlug, title, itemId, thumbnail_url, published }) {
         <div className="flex flex-col items-center my-4">
           <div className="relative">
             <Image src={thumbnail_url} width={270} height={160} />
-            <div className="absolute bottom-14 left-24 ">
+            <div className="absolute bottom-14 left-24">
               <FaPlayCircle className="text-white text-6xl opacity-70 " />
             </div>
           </div>

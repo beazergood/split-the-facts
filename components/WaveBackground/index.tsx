@@ -1,11 +1,9 @@
 import React, { useState } from 'react'
 import { motion } from 'framer-motion'
 
-export interface WaveBackgroundProps {
-  fill: string
-}
+export interface WaveBackgroundProps {}
 
-export const WaveBackground: React.FC<WaveBackgroundProps> = ({ fill }) => {
+export const WaveBackground: React.FC<WaveBackgroundProps> = () => {
   return (
     <>
       <motion.div className="w-full z-10">

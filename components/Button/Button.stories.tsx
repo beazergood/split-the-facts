@@ -14,7 +14,6 @@ const Template: Story<ButtonProps> = (args) => <Button {...args} />
 
 export const Primary = Template.bind({})
 Primary.args = {
-  primary: true,
-  logoFill: '#fe0',
+  fill: '#fe0',
   label: ' Sign up'
 }

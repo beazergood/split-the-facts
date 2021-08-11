@@ -6,9 +6,9 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 import { WaveBackground } from '../../components/WaveBackground'
-import { YearbookImage, HoverImage } from '../../components/YearbookImage'
 import { Navbar } from '../../components/Navbar'
 import { Footer } from '../../components/Footer'
+import { PhotoCollage, AllInOne } from '../../components/TheInterviewWeNeverSaw'
 
 const imgVariants = {
   initial: { opacity: 0, y: 10, skew: 1 },
@@ -73,127 +73,8 @@ export default function Yearbook({ characters, theme, videos }) {
               interview: the premise was born.
             </p>
           </div>
-          <motion.div className="min-h-screen flex items-center justify-center mb-10">
-            <div className="absolute right-2 top-64">
-              <Image src="/svg/frame-5.svg" width="112px" height="134px" />
-            </div>
-            <div className="absolute right-32 bottom-16 scale-90">
-              <Image src="/svg/frame-6.svg" width="91px" height="102px" />
-            </div>
-            <div className="grid grid-cols-3 gap-y-14 gap-x-20 grid-flow-col">
-              <motion.div
-                className=" rect p-3 rounded row-start-1 row-span-2"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1, transition: { duration: 1, delay: 1 } }}
-                exit={{ opacity: 0, transition: { duration: 1, delay: 1 } }}
-              >
-                <YearbookImage
-                  character={characters[0]}
-                  key={characters[0].id}
-                />
-              </motion.div>
-              <motion.div
-                className=" rect p-3 rounded row-span-2 row-start-2"
-                initial={{ opacity: 0 }}
-                animate={{
-                  opacity: 1,
-                  transition: { duration: 1, delay: 1.1 }
-                }}
-                exit={{ opacity: 0, transition: { duration: 1, delay: 1 } }}
-              >
-                <YearbookImage
-                  character={characters[1]}
-                  key={characters[1].id}
-                />
-              </motion.div>
-              <motion.div
-                className=" rect p-3 rounded row-start-1 row-span-2"
-                initial={{ opacity: 0 }}
-                animate={{
-                  opacity: 1,
-                  transition: { duration: 1, delay: 1.2 }
-                }}
-                exit={{ opacity: 0, transition: { duration: 1, delay: 1 } }}
-              >
-                <YearbookImage
-                  character={characters[2]}
-                  key={characters[2].id}
-                />
-              </motion.div>
-              <motion.div
-                className=" rect p-3 rounded row-start-3 row-span-2 col-start-1"
-                initial={{ opacity: 0 }}
-                animate={{
-                  opacity: 1,
-                  transition: { duration: 1, delay: 1.3 }
-                }}
-                exit={{ opacity: 0, transition: { duration: 1, delay: 1 } }}
-              >
-                <YearbookImage
-                  character={characters[3]}
-                  key={characters[3].id}
-                />
-              </motion.div>
-              <motion.div
-                className=" rect p-3 rounded col-start-2 row-start-4 row-span-2"
-                initial={{ opacity: 0 }}
-                animate={{
-                  opacity: 1,
-                  transition: { duration: 1, delay: 1.4 }
-                }}
-                exit={{ opacity: 0, transition: { duration: 1, delay: 1 } }}
-              >
-                <YearbookImage
-                  character={characters[4]}
-                  key={characters[4].id}
-                />
-              </motion.div>
-              <motion.div
-                className=" rect p-3 rounded col-start-3 row-start-3 row-span-2"
-                initial={{ opacity: 0 }}
-                animate={{
-                  opacity: 1,
-                  transition: { duration: 1, delay: 1.5 }
-                }}
-                exit={{ opacity: 0, transition: { duration: 1, delay: 1 } }}
-              >
-                <YearbookImage
-                  character={characters[5]}
-                  key={characters[5].id}
-                />
-              </motion.div>
-              <motion.div
-                className=" rect p-3 rounded row-start-6 col-start-2"
-                initial={{ opacity: 0 }}
-                animate={{
-                  opacity: 1,
-                  transition: { duration: 1, delay: 1.6 }
-                }}
-                exit={{ opacity: 0, transition: { duration: 1, delay: 1 } }}
-              >
-                <YearbookImage
-                  character={characters[6]}
-                  key={characters[6].id}
-                />
-              </motion.div>
-            </div>
-            <div className="absolute left-2 top-64">
-              <Image src="/svg/frame-4.svg" width="112px" height="134px" />
-            </div>
-            <div className="absolute left-32 bottom-16 scale-90">
-              <Image src="/svg/frame-10.svg" width="91px" height="102px" />
-            </div>
-          </motion.div>
-          {/* <div className="flex flex-row w-full container">
-          {characters &&
-            characters.map((character) => {
-              return (
-                <div key={character.id} className="m-10 ">
-                  <YearbookImage character={character} key={character.id} />
-                </div>
-              )
-            })}
-        </div> */}
+          {/* <PhotoCollage characters={characters} /> */}
+          <AllInOne characters={characters} />
         </motion.div>
         <Footer
           theme={theme.footer}
@@ -234,6 +115,8 @@ export async function getStaticProps() {
         characters {
           id
           name
+          quip
+          about
           image {
             url
           }
@@ -242,7 +125,7 @@ export async function getStaticProps() {
           }
           slug
         }
-        videos(limit: 3) {
+        videos(limit: 3, sort: "published:DESC") {
           id
           title
           embed_url
@@ -263,7 +146,7 @@ export async function getStaticProps() {
   return {
     props: {
       characters: data.characters.map((c) => {
-        return { ...c, showName: true }
+        return { ...c, showName: false }
       }),
       videos: buildFullSlug(data.videos),
       theme: {

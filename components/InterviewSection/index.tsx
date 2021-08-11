@@ -83,7 +83,7 @@ export const InterviewSection = ({ characters }) => {
   return (
     <div className="relative">
       <motion.div className="min-h-screen flex items-center justify-center my-14 px-4">
-        <motion.div className="absolute left-24 top-64" style={{ y: y1, x: 5 }}>
+        <motion.div className="absolute left-24 top-0" style={{ y: y1, x: 5 }}>
           <Image src="/svg/frame-9.svg" width="112px" height="134px" />
         </motion.div>
         <div className="grid grid-cols-3 md:grid-cols-6 gap-y-14 gap-x-20 grid-flow-col">
@@ -96,12 +96,11 @@ export const InterviewSection = ({ characters }) => {
             </motion.h1>
             <div className="border- border-green-200 flex flex-row">
               <div className="w-64"></div>
-              <div className="flex">
-                <Link href="/the-interview-we-never-saw">
-                  <p className="text-moss-green text-right text-2xl mt-8 cursor-pointer hover:bg-nyanza p-1">
-                    Meet the cast &rArr;
-                  </p>
-                </Link>
+              <div className="flex mt-10">
+                <Button
+                  href="/the-interview-we-never-saw"
+                  label="Meet the cast &rArr;"
+                />
               </div>
             </div>
           </div>

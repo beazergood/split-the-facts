@@ -5,7 +5,7 @@ export interface OrnateFrameProps {
   label: string
 }
 
-export const OrnateFrame = ({ label }) => {
+export const OrnateFrame = ({ label, color }) => {
   const transition = {
     duration: 1.3,
     ease: [0.6, 0.01, -0.05, 0.9],
@@ -72,11 +72,12 @@ export const OrnateFrame = ({ label }) => {
         </motion.svg>
 
         <motion.h1
-          className="font-NotoSerif text-2xl border- text-popstar-hover border-yellow-100 text-center absolute svg-centered"
+          className="font-NotoSerif text-2xl border-  border-yellow-100 text-center absolute svg-centered"
           initial="initial"
           variants={textVariants}
           animate={inView ? 'animate' : 'initial'}
           transition={{ type: 'spring', stiffness: 100, duration: 2 }}
+          style={{ color: color }}
         >
           {label}
         </motion.h1>

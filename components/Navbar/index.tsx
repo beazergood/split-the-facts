@@ -116,21 +116,21 @@ export const Navbar: React.FC<NavbarProps> = ({ theme }) => {
         <Link href={'/videos'}>
           <a
             key="a"
-            className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+            className="text-white hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
           >
             Videos
           </a>
         </Link>
 
-        <Link href={'/landing/welcome'}>
+        <Link href={'/about'}>
           <a
             key="a"
-            className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+            className="text-white hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
           >
-            Landing Page
+            About
           </a>
         </Link>
-      </div>*/}
+      </div> */}
       <div className="">
         {/* <Nav props={navProps} /> */}
         {/* <Button href={'/test'} label="TEsT 123" /> */}

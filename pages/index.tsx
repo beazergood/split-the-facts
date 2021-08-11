@@ -94,7 +94,7 @@ export default function Home({
             {/* )} */}
             <HomepageHero heroVideo={homepage.hero_image} />
             <div className="w-full ">
-              <WaveBackground fill="#B3525E" />
+              <WaveBackground />
             </div>
             {/* {isDesktopOrLaptop && ( */}
             <motion.div
@@ -147,7 +147,13 @@ export default function Home({
               className="absolute right-32 bottom-16 scale-90"
               style={{ y: y5, x: 5 }}
             >
-              <Image src="/svg/frame-6.svg" width="91px" height="102px" />
+              <Image src="/svg/frame-11.svg" width="91px" height="102px" />
+            </motion.div>
+            <motion.div
+              className="absolute left-6 bottom-64"
+              style={{ y: y3, x: x1 }}
+            >
+              <Image src="/svg/frame-6.svg" width="114px" height="150px" />
             </motion.div>
           </div>
         </div>
@@ -172,7 +178,7 @@ export default function Home({
               <Image src="/svg/frame-7.svg" width="179px" height="200px" />
             </motion.div>
             <div className="absolute left-20 right-0 bottom-0 top-0 bg-popstar-hover bg-opacity-0 flex flex-col justify-center ">
-              <OrnateFrame label="Videos" />
+              <OrnateFrame label="Videos" color={theme.primary} />
             </div>
             <motion.div
               className="absolute right-32 bottom-0"
