@@ -81,7 +81,10 @@ export const InterviewSection = ({ characters }) => {
   return (
     <div className="relative">
       <motion.div className="min-h-screen flex items-center justify-center my-14 px-4">
-        <motion.div className="absolute left-24 top-0" style={{ y: y1, x: 5 }}>
+        <motion.div
+          className="absolute left-24 -top-24"
+          style={{ y: y1, x: 5 }}
+        >
           <Image src="/svg/frame-9.svg" width="112px" height="134px" />
         </motion.div>
         <div className="grid grid-cols-3 md:grid-cols-6 gap-y-14 gap-x-20 grid-flow-col">
