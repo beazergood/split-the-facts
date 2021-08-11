@@ -132,7 +132,7 @@ export const Navbar: React.FC<NavbarProps> = ({ theme }) => {
         </Link>
       </div> */}
       <div className="">
-        {/* <Nav props={navProps} /> */}
+        <Nav props={navProps} />
         {/* <Button href={'/test'} label="TEsT 123" /> */}
       </div>
     </div>
