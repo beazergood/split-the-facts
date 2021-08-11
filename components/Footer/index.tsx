@@ -359,15 +359,20 @@ export const Footer: React.FC<FooterProps> = ({ theme, playlist = {} }) => {
             </form> */}
           </div>
         </div>
-        <div className="w-90 mt-10  z-10 mx-auto bottom-10">
+        <div className="w-90 py-10 flex flex-row items-center justify-between z-10 mx-auto bottom-10">
+          <span className="block text-left ml-10 text-sm opacity-50">
+            {packageInfo.version}
+          </span>
           <span
             className="block text-center text-sm"
             style={{ color: theme.buttonFill }}
           >
             &copy; 2021 Sam Roffey
           </span>
-          <span className="inline-block text-right ml-10 text-sm ">
-            {packageInfo.version}
+          <span className="block text-right mr-10 text-sm opacity-50 ">
+            <a href="https://www.webjam.io" target="_blank">
+              Website by WebJAM
+            </a>
           </span>
         </div>{' '}
       </div>
