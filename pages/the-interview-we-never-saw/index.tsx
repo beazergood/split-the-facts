@@ -45,7 +45,7 @@ export default function Yearbook({ characters, theme, videos }) {
             </div>
             {/* )} */}
             <motion.h1
-              className="font-PlayfairDisplay text-6xl pl-10 leading-normal font-bold text-white text-center mx-2"
+              className="font-PlayfairDisplay text-6xl pl-10 leading-normal font-bold text-golden text-center mx-2"
               layoutId="h1"
             >
               The Interview We Never Saw

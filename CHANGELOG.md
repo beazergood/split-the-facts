@@ -1,3 +1,8 @@
+## [1.1.0-7] - 12/8/21
+### Added
+- comments functionality using Hyvor talk to videos and blog posts
+- blog section
+
 ## [1.1.0-6] - 11/8/21
 ### Fixed
 - cushion overlapping footer video row

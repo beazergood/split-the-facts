@@ -16,7 +16,8 @@ import { OrnateFrame } from '../components/OrnateFrame'
 import { useInView } from 'react-intersection-observer'
 import useResponsive from '../hooks/responsive'
 import Markdown from 'markdown-to-jsx'
-
+import { BlogSection } from '../components/BlogSection'
+import { VideosSection } from '../components/VideosSection'
 import {
   useViewportScroll,
   motion,
@@ -35,7 +36,8 @@ export default function Home({
   recentVideos,
   royalInterview,
   theGodfather,
-  theme
+  theme,
+  articles
 }) {
   const { scrollY } = useViewportScroll()
   const y1 = useTransform(scrollY, [0, 500], [0, -50])
@@ -117,15 +119,16 @@ export default function Home({
 
             <div className="relative z-50 bg-white md:mt-44 py-2 my-20 w-5/6 md:w-1/2 mx-auto shadow-md border-jasmine-faded border-8 ">
               <motion.h1
-                className="text-4xl md:text-6xl  leading-normal font-bold relative z-10 text-black text-center mt-10"
+                className="font-PlayfairDisplay  text-7xl font-extrabold italic tracking-tight z-10 text-gray-800 leading-20 text-center mt-10 "
                 layoutId="title"
               >
-                <span className="font-PlayfairDisplay leading-20">
-                  Split! <br /> The West at War with Itself
-                </span>
+                Split!
               </motion.h1>
+              <motion.h2 className="font-PlayfairDisplay text-center text-gray-800 font-semibold px-4 pt-3 leading-32 text-5xl">
+                The West at War with Itself
+              </motion.h2>
               {homepage && (
-                <div className="px-6 mt-10">
+                <div className="px-6 my-10">
                   {homepage.intro_rich && (
                     <article className="prose lg:prose-lg px-6 lg:px-0 mt-12 text-gray-700 max-w-screen-md mx-auto text-lg leading-relaxed text-center font-PlayfairDisplay ">
                       <Markdown>{homepage.intro_rich}</Markdown>
@@ -157,60 +160,22 @@ export default function Home({
             </motion.div>
           </div>
         </div>
-
-        <div className="relative bg-gradient-to-r from-popstar to-popstar-hover py-14">
-          <div className="absolute top-0 z-0 w-full">
-            <svg
-              width="1440"
-              height="80"
-              viewBox="0 0 1440 80"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M1440 0L0 80V0H1440Z" fill="#FAF4E6" />
-            </svg>
-          </div>
-          <section className="h-64 w-100 bg-hero-patternz relative ">
-            <motion.div
-              className="absolute left-32 bottom-32"
-              style={{ y: y6, x: 5 }}
-            >
-              <Image src="/svg/frame-7.svg" width="179px" height="200px" />
-            </motion.div>
-            <div className="absolute left-20 right-0 bottom-0 top-0 bg-popstar-hover bg-opacity-0 flex flex-col justify-center ">
-              <OrnateFrame label="Videos" color={theme.primary} />
-            </div>
-            <motion.div
-              className="absolute right-32 bottom-0"
-              style={{ y: y7, x: 5 }}
-            >
-              <Image src="/svg/frame-4.svg" width="157px" height="175px" />
-            </motion.div>
-          </section>
-          <div className="container mx-auto">
-            <VideosRow
-              key="1"
-              videos={recentVideos}
-              group={{ title: 'Latest Uploads', action: 'link' }}
-            />
-            <VideosRow
-              key="2"
-              videos={royalInterview}
-              group={{ title: 'Royal Interview', action: 'link' }}
-            />
-            <VideosRow
-              key="3"
-              videos={atTheBar}
-              group={{ title: 'At The Bar', action: 'link' }}
-            />
-            <VideosRow
-              key="4"
-              videos={theGodfather}
-              group={{ title: 'The Godfather', action: 'link' }}
-            />
-          </div>
+        <div className="md:mt-24">
+          <BlogSection
+            title="Writing"
+            articles={articles}
+            theme={theme}
+            href="/blog"
+          />
         </div>
+        <VideosSection
+          title="Videos"
+          href="/videos"
+          videos={{ theGodfather, recentVideos, royalInterview, atTheBar }}
+          theme={theme}
+        />
         <div className="absoute top-0 z-0 w-full">
+          {/* wave */}
           <svg
             width="1440"
             height="80"
@@ -221,7 +186,7 @@ export default function Home({
             <path d="M1440 0L0 80V0H1440Z" fill="#FAF4E6" />
           </svg>
         </div>
-        <InterviewSection characters={charactersCast} />
+        {/* <InterviewSection characters={charactersCast} /> */}
 
         <Footer theme={theme.footer} />
       </div>
@@ -255,6 +220,14 @@ export async function getStaticProps() {
         heroVideo: video(id: "60fee84a54d42565648f4973") {
           title
           embed_url
+        }
+        articles(sort: "published:DESC", limit: 2) {
+          title
+          description
+          slug
+          image {
+            url
+          }
         }
         recentVideos: videos(sort: "published:DESC", limit: 3) {
           id
@@ -348,6 +321,9 @@ export async function getStaticProps() {
       charactersCast: data.characters.map((c) => {
         return { ...c, showName: true }
       }),
+      articles: data.articles.map((a) => {
+        return { ...a, slug: 'posts/' + a.slug }
+      }),
       homepage: data.homepage,
       recentVideos: buildFullSlug(data.recentVideos),
       royalInterview: buildFullSlug(data.royalInterview),
@@ -356,7 +332,7 @@ export async function getStaticProps() {
       heroVideo: data.heroVideo,
       theme: {
         primary: '#b3525e',
-        secondary: '',
+        secondary: '#3F678D',
         header: { logoFill: '#fff', navBtnFill: '#fff' },
         body: { bgFill: '#fefefe' },
         footer: {

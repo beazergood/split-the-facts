@@ -100,7 +100,7 @@ export const VideoPlayer = ({
             style={{ height: '40vh' }}
           >
             <h3 className="text-center text-white font-AveriaSerifLibre uppercase">
-              Website Exlusive Video
+              Website Exclusive Video
             </h3>
             <div className="border- border-green-300 flex items-center">
               <motion.img

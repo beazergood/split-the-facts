@@ -104,7 +104,7 @@ export const YearbookImage = ({ character, clickable = true }) => {
         />
 
         {character.showName && (
-          <p className="text-sm text-center my-5 font-PlayfairDisplay">
+          <p className="text-md text-center my-5 font-PlayfairDisplay">
             {character.name}
           </p>
         )}

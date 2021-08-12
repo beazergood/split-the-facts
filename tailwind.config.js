@@ -19,13 +19,17 @@ module.exports = {
         jasmine: '#F7D488',
         'jasmine-faded': 'hsla(41, 87%, 75%, 0.56)',
         wall: '#FAF4E6',
-        'dark-brown': '#1C0D0E'
+        'dark-brown': '#1C0D0E',
+        golden: '#FFD56B',
+        ocean: '#3F678D',
+        cobalt: '#0047AB'
       },
       backgroundImage: (theme) => ({
         angle: "url('/svg/angle-1440x80.svg')",
         'hero-pattern': "url('/svg/leaves-7.svg')",
         frames: "url('/images/frames-nobg-1440.png')",
-        'frames-collage': "url('/collage-1440-5.svg')"
+        'frames-collage': "url('/collage-1440-5.svg')",
+        'cobalt-popstar': "url('/svg/pattern-cobalt-popstar.svg')"
       })
     }
   },

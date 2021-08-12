@@ -1,26 +1,25 @@
 import { gql } from '@apollo/client'
-import client from '../../../scripts/apollo-client'
+import client from '../../scripts/apollo-client'
 import Link from 'next/link'
 import fetch from 'isomorphic-unfetch'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { NextSeo } from 'next-seo'
-import { Navbar } from '../../../components/Navbar'
-import { Footer } from '../../../components/Footer'
-import { WaveBackground } from '../../../components/WaveBackground'
+import { Navbar } from '../../components/Navbar'
+import { Footer } from '../../components/Footer'
+import { WaveBackground } from '../../components/WaveBackground'
 import Markdown from 'markdown-to-jsx'
-const WEBSITE_ID = process.env.NEXT_PUBLIC_HYVOR_WEBSITE_ID
 import HyvorTalk from 'hyvor-talk-react'
-
-export default function Video({ theme, video }) {
+const WEBSITE_ID = process.env.NEXT_PUBLIC_HYVOR_WEBSITE_ID
+export default function Article({ theme, article }) {
   // console.log(video)
 
   const SEO = {
-    title: `Split the facts | ${video.title}`,
-    description: video.description,
+    title: `Split the facts | ${article.title}`,
+    description: article.description,
     openGraph: {
-      title: `Split The Facts! | ${video.title}`,
-      description: video.description
+      title: `Split The Facts! | ${article.title}`,
+      description: article.description
     }
   }
   return (
@@ -29,20 +28,9 @@ export default function Video({ theme, video }) {
       <div className="bg-wall">
         <div className="" style={{ backgroundColor: theme.primary }}>
           <Navbar theme={theme.header} />
-          {video.embed_url && (
-            <div className="video-responsive mx-auto">
-              <iframe
-                width="1000"
-                height="580"
-                src={`https://www.youtube.com/embed/${video.embed_url}?autoplay=1`}
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                className="mx-auto shadow-2xl"
-                title="Embedded youtube"
-              />
-            </div>
-          )}
+          <div className="flex justify-center items-center flex-col py-2 bg-EAEFB1 rounded-t-md">
+            <Image src={article.image.url} width="400px" height="380px" />
+          </div>
           <WaveBackground />
         </div>
 
@@ -61,17 +49,14 @@ export default function Video({ theme, video }) {
           <motion.div className="container border- border-red-300 mx-auto w-5/6">
             <div className="my-16">
               <p className="text-3xl mb-2 font-PlayfairDisplay text-center">
-                {video.title}
-              </p>
-              <p className="text-lg text-center font-AveriaSerifLibre">
-                {video.description}
+                {article.title}
               </p>
             </div>
           </motion.div>
           <motion.div className="container border- border-red-300 mx-auto my-10 w-1/2">
-            {video.content && (
+            {article.content && (
               <article className="prose lg:prose-xl px-4 lg:px-0 mt-12 text-gray-700 max-w-screen-md mx-auto text-lg leading-relaxed">
-                <Markdown>{video.content}</Markdown>
+                <Markdown>{article.content}</Markdown>
               </article>
             )}
           </motion.div>
@@ -79,7 +64,7 @@ export default function Video({ theme, video }) {
         <div className="w-1/2 mx-auto">
           <HyvorTalk.Embed
             websiteId={WEBSITE_ID}
-            id={video.id}
+            id={article.id}
             loadMode="scroll"
           />
         </div>
@@ -93,23 +78,23 @@ export async function getStaticPaths() {
   const { data } = await client.query({
     query: gql`
       query {
-        videos {
+        articles {
+          title
+          description
           slug
-          id
-          category {
-            slug
+          image {
+            url
           }
-          embed_url
+          id
         }
       }
     `
   })
 
-  const paths = data.videos.map((video) => {
+  const paths = data.articles.map((a) => {
     return {
       params: {
-        category: video.category.slug,
-        slug: video.slug
+        slug: a.slug
       }
     }
   })
@@ -122,12 +107,12 @@ export async function getStaticPaths() {
 export const getStaticProps = async ({ params: { slug } }) => {
   const { NEXT_PUBLIC_STRAPI_API_URL } = process.env
 
-  const res = await fetch(`${NEXT_PUBLIC_STRAPI_API_URL}/videos?slug=${slug}`)
+  const res = await fetch(`${NEXT_PUBLIC_STRAPI_API_URL}/articles?slug=${slug}`)
   const data = await res.json()
 
   return {
     props: {
-      video: data[0],
+      article: data[0],
       theme: {
         primary: '#E9F7CA',
         header: { logoFill: '#94A661' },
