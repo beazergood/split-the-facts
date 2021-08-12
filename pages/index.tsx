@@ -119,7 +119,7 @@ export default function Home({
 
             <div className="relative z-50 bg-white md:mt-44 py-2 my-20 w-5/6 md:w-1/2 mx-auto shadow-md border-jasmine-faded border-8 ">
               <motion.h1
-                className="font-PlayfairDisplay  text-7xl font-extrabold italic tracking-tight z-10 text-gray-800 leading-20 text-center mt-10 "
+                className="font-PlayfairDisplay text-7xl font-extrabold italic tracking-tight z-10 text-gray-800 leading-20 text-center mt-10 "
                 layoutId="title"
               >
                 Split!
@@ -322,7 +322,7 @@ export async function getStaticProps() {
         return { ...c, showName: true }
       }),
       articles: data.articles.map((a) => {
-        return { ...a, slug: 'posts/' + a.slug }
+        return { ...a, slug: 'blog/' + a.slug }
       }),
       homepage: data.homepage,
       recentVideos: buildFullSlug(data.recentVideos),

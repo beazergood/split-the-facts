@@ -30,7 +30,8 @@ export const Navbar: React.FC<NavbarProps> = ({ theme }) => {
     items: [
       { id: 0, label: 'Home', selected: true, href: '/' },
       { id: 1, label: 'About', selected: false, href: '/about' },
-      { id: 2, label: 'Videos', selected: false, href: '/videos' }
+      { id: 2, label: 'Videos', selected: false, href: '/videos' },
+      { id: 3, label: 'Blog', selected: false, href: '/blog' }
     ]
   }
 
