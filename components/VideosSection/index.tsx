@@ -73,22 +73,18 @@ export const VideosSection = ({ title, href, theme, videos }) => {
       </section>
       <div className="container mx-auto">
         <VideosRow
-          key="1"
           videos={videos.recentVideos}
           group={{ title: 'Latest Uploads', action: 'link' }}
         />
         <VideosRow
-          key="2"
           videos={videos.royalInterview}
           group={{ title: 'Royal Interview', action: 'link' }}
         />
         <VideosRow
-          key="3"
           videos={videos.atTheBar}
           group={{ title: 'At The Bar', action: 'link' }}
         />
         <VideosRow
-          key="4"
           videos={videos.theGodfather}
           group={{ title: 'The Godfather', action: 'link' }}
         />

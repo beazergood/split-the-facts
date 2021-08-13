@@ -10,7 +10,11 @@ import {
 import { FaPaperPlane } from 'react-icons/fa'
 import { motion } from 'framer-motion'
 
-export const HookForm = ({ fill }) => {
+export interface HookFormProps {
+  fill?: string
+}
+
+export const HookForm = ({ fill = '#000' }) => {
   const {
     handleSubmit,
     register,

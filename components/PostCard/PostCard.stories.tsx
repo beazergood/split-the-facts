@@ -8,6 +8,7 @@ export default {
 } as Meta
 
 const args2 = {
+  id: 2,
   title: 'What an absolute faff',
   thumb:
     'http://localhost:3000/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fsplit-the-facts%2Fimage%2Fupload%2Fv1628767434%2Fbook_open_2_800w_9d11c61be6.jpg&w=1200&q=75',
@@ -27,6 +28,7 @@ const Template: Story<PostcardProps> = (args) => {
 
 export const Standard = Template.bind({})
 Standard.args = {
+  id: 1,
   title: 'How now brown cow',
   thumb:
     'http://localhost:3000/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fsplit-the-facts%2Fimage%2Fupload%2Fv1628767083%2Fbook_open_cda1d4836b.jpg&w=384&q=75',

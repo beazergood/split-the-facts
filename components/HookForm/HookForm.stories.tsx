@@ -10,3 +10,6 @@ export default {
 const Template: Story = (args) => <HookForm {...args} />
 
 export const Primary = Template.bind({})
+Primary.args = {
+  fill: '#ff0000'
+}

@@ -40,7 +40,7 @@ export default function Article({ theme, article }) {
   useEffect(
     () =>
       yRange.onChange((v) => {
-        setCurrentPercent(Math.trunc(yRange.current))
+        setCurrentPercent(Math.trunc(yRange.get()))
       }),
     [yRange]
   )

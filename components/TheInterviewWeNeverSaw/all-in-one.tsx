@@ -14,7 +14,7 @@ export const AllInOne = ({ characters }) => {
       <div className="absolute right-32 top-0 scale-90">
         <Image src="/svg/frame-6.svg" width="91px" height="102px" />
       </div>
-      <div className="grid grid-cols-4 gap-y-20 gap-x-4 mt-32">
+      <div className="flex flex-col mt-32">
         {characters &&
           characters.map((character, index) => {
             return (
@@ -38,9 +38,9 @@ export const AllInOne = ({ characters }) => {
   )
 }
 
-const LeftsideProfile = ({ character }) => {
+const LeftsideProfile = ({ character, key }) => {
   return (
-    <>
+    <div key={key} className="flex flex-row">
       <motion.div
         className=" rect p- rounded col-span-1"
         initial={{ opacity: 0 }}
@@ -53,7 +53,7 @@ const LeftsideProfile = ({ character }) => {
         <YearbookImage character={character} key={character.id} />
       </motion.div>
 
-      <div className="col-span-2 flex flex-col items-start justify-center">
+      <div className="p-4 flex flex-col items-start justify-center">
         <motion.h1
           className="text-5xl text-left my-4 font-PlayfairDisplay"
           layoutId="h1"
@@ -66,19 +66,19 @@ const LeftsideProfile = ({ character }) => {
         <motion.p className="text-left text-3xl my-4 font-AlexBrush">
           {character.quip}
         </motion.p>
-        <motion.p className="text-left text-xl font-AveriaSerifLibre">
+        <motion.p className="text-left text-xl font-NotoSerif">
           {character.about}
         </motion.p>
       </div>
       <div className="col-span-1"></div>
-    </>
+    </div>
   )
 }
-const RightsideProfile = ({ character }) => {
+const RightsideProfile = ({ character, key }) => {
   return (
-    <>
-      <div className="col-span-1"></div>
-      <div className="col-span-2 flex flex-col items-start justify-center">
+    <div key={key} className="flex flex-row">
+      <div className="flex"></div>
+      <div className="flex flex-col items-start justify-center">
         <motion.h1
           className="text-5xl text-left my-4 font-PlayfairDisplay"
           layoutId="h1"
@@ -91,7 +91,7 @@ const RightsideProfile = ({ character }) => {
         <motion.p className="text-left text-3xl my-4 font-AlexBrush">
           {character.quip}
         </motion.p>
-        <motion.p className="text-left text-xl font-AveriaSerifLibre">
+        <motion.p className="text-left text-xl font-NotoSerif">
           {character.about}
         </motion.p>
       </div>
@@ -106,6 +106,6 @@ const RightsideProfile = ({ character }) => {
       >
         <YearbookImage character={character} key={character.id} />
       </motion.div>
-    </>
+    </div>
   )
 }
