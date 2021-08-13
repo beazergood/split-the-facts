@@ -1,12 +1,7 @@
 import Head from 'next/head'
-import styles from '../styles/Home.module.css'
-import Link from 'next/link'
-import Image from 'next/image'
 import { gql } from '@apollo/client'
 import client from '../scripts/apollo-client'
-import { OrnateFrame } from '../components/OrnateFrame'
 import { useInView } from 'react-intersection-observer'
-import Markdown from 'markdown-to-jsx'
 import { Navbar } from '../components/Navbar'
 import { HomepageHero } from '../components/HomepageHero'
 import { IntroSection } from '../components/IntroSection'
@@ -14,20 +9,11 @@ import { InterviewSection } from '../components/InterviewSection'
 import { BlogSection } from '../components/BlogSection'
 import { VideosSection } from '../components/VideosSection'
 import { Footer } from '../components/Footer'
-import {
-  useViewportScroll,
-  motion,
-  useTransform,
-  useSpring,
-  useMotionValue
-} from 'framer-motion'
+import { useViewportScroll, useTransform } from 'framer-motion'
 
 export default function Home({
-  characters,
   charactersCast,
   homepage,
-  videos,
-  heroVideo,
   atTheBar,
   recentVideos,
   royalInterview,
@@ -95,7 +81,6 @@ export default function Home({
           />
 
           <InterviewSection characters={charactersCast} />
-
           <Footer theme={theme.footer} />
         </div>
       </div>
