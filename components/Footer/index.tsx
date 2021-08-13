@@ -57,7 +57,12 @@ export const Footer: React.FC<FooterProps> = ({ theme, playlist = {} }) => {
           className="absolute z-10 right-4 top-14"
           style={{ y: y2, x: 0 }}
         >
-          <Image src="/svg/lamp-and-frame.svg" width="323px" height="284px" />
+          <Image
+            src="/svg/lamp-and-frame.svg"
+            width="323px"
+            height="284px"
+            alt="Ornate Lamp &amp; Frame"
+          />
         </motion.div>
         <div className="svg-container z-0">
           <svg
@@ -91,12 +96,17 @@ export const Footer: React.FC<FooterProps> = ({ theme, playlist = {} }) => {
             className="absolute left-4 bottom-14 z-0"
             style={{ y: y1, x: -100 }}
           >
-            <Image src="/svg/boxer-cushion.svg" width="150px" height="170px" />
+            <Image
+              src="/svg/boxer-cushion.svg"
+              width="150px"
+              height="170px"
+              alt="Boxer Cushion"
+            />
           </motion.div>
           <HookForm fill={theme.buttonFill} />
         </div>
         <div className="w-0 px5 md:w-44 mx-auto -14">
-          <Link href="/">
+          <Link href="/" passHref>
             <motion.svg
               height="70%"
               xmlns="http://www.w3.org/2000/svg"
@@ -326,8 +336,8 @@ export const Footer: React.FC<FooterProps> = ({ theme, playlist = {} }) => {
                 title="PayPal - The safer, easier way to pay online!"
                 alt="Donate with PayPal button"
               />
-              <img
-                alt=""
+              <Image
+                alt="Paypal Button"
                 src="https://www.paypal.com/en_GB/i/scr/pixel.gif"
                 width="1"
                 height="1"
@@ -370,7 +380,7 @@ export const Footer: React.FC<FooterProps> = ({ theme, playlist = {} }) => {
             &copy; 2021 Sam Roffey
           </span>
           <span className="block text-right mr-10 text-sm opacity-50 ">
-            <a href="https://www.webjam.io" target="_blank">
+            <a href="https://www.webjam.io" target="_blank" rel="noreferrer">
               Website by WebJAM
             </a>
           </span>

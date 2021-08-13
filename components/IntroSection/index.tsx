@@ -2,7 +2,6 @@ import { motion, useTransform, useViewportScroll } from 'framer-motion'
 import { HookForm } from '../HookForm'
 import Image from 'next/image'
 import Markdown from 'markdown-to-jsx'
-import { LogoJsonLd } from 'next-seo'
 export interface IntroSectionProps {
   intro: string
 }
@@ -21,13 +20,23 @@ export const IntroSection = ({ intro }) => {
     <>
       <div className="relative">
         <motion.div className="absolute left-16 top-4" style={{ y: y3, x: x1 }}>
-          <Image src="/svg/frame-10.svg" width="114px" height="150px" />
+          <Image
+            src="/svg/frame-10.svg"
+            width="114px"
+            height="150px"
+            alt="Ornate Frame"
+          />
         </motion.div>
         <motion.div
           className="absolute left-6 -bottom-20"
           style={{ y: y3, x: x1 }}
         >
-          <Image src="/svg/frame-6.svg" width="114px" height="150px" />
+          <Image
+            src="/svg/frame-6.svg"
+            width="114px"
+            height="150px"
+            alt="Ornate Frame"
+          />
         </motion.div>
         <div className="z-50 bg-white md:mt-0 py-2 my-20 w-5/6 md:w-1/2 mx-auto shadow-md border-jasmine-faded border-8 ">
           <motion.h1
@@ -55,13 +64,23 @@ export const IntroSection = ({ intro }) => {
             className="absolute right-20 top-24"
             style={{ y: y4, x: x }}
           >
-            <Image src="/svg/frame-5.svg" width="112px" height="134px" />
+            <Image
+              src="/svg/frame-5.svg"
+              width="112px"
+              height="134px"
+              alt="Ornate Frame"
+            />
           </motion.div>
           <motion.div
             className="absolute right-32 bottom-16"
             style={{ y: y5, x: 5 }}
           >
-            <Image src="/svg/frame-11.svg" width="91px" height="102px" />
+            <Image
+              src="/svg/frame-11.svg"
+              width="91px"
+              height="102px"
+              alt="Ornate Frame"
+            />
           </motion.div>
         </div>
       </div>

@@ -76,7 +76,12 @@ export const BlogSection = ({ title, articles, theme, href }) => {
           className="absolute left-32 bottom-32"
           style={{ y: y6, x: 5 }}
         >
-          <Image src="/svg/frame-7.svg" width="120px" height="130px" />
+          <Image
+            src="/svg/frame-7.svg"
+            width="120px"
+            height="130px"
+            alt="Ornate Frame"
+          />
         </motion.div>
         <div className="absolute left-20 right-0 bottom-0 top-0 bg-popstar-hover bg-opacity-0 flex flex-col justify-center ">
           <OrnateFrame label={title} color={theme.secondary} />
@@ -85,7 +90,12 @@ export const BlogSection = ({ title, articles, theme, href }) => {
           className="absolute right-32 bottom-0"
           style={{ y: y5, x: 5 }}
         >
-          <Image src="/svg/frame-4.svg" width="157px" height="175px" />
+          <Image
+            src="/svg/frame-4.svg"
+            width="157px"
+            height="175px"
+            alt="Ornate Frame"
+          />
         </motion.div>
       </section>
       <div className="container mx-auto ">

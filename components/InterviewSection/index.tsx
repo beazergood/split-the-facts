@@ -33,11 +33,12 @@ export const InterviewSection = ({ characters }) => {
   const meghanVariants = {
     initial: {
       opactity: 0,
-      y: 0
+      y: 200
     },
     animate: {
       opacity: 1,
       x: 0,
+      y: 30,
       transition: {
         duration: 2.5,
         type: 'spring',
@@ -49,16 +50,16 @@ export const InterviewSection = ({ characters }) => {
   const cjVariants = {
     initial: {
       opactity: 0,
-      y: 10
+      y: 20
     },
     animate: {
       opacity: 1,
-      y: 2,
+      y: -10,
       transition: {
         duration: 1.5,
         type: 'spring',
         stiffness: 100,
-        delay: 0.4
+        delay: 1.4
       }
     }
   }
@@ -70,7 +71,7 @@ export const InterviewSection = ({ characters }) => {
     },
     animate: {
       opacity: 1,
-      y: 0,
+      y: 40,
       transition: {
         duration: 0.5,
         type: 'spring',
@@ -81,37 +82,44 @@ export const InterviewSection = ({ characters }) => {
   return (
     <div className="relative">
       <motion.div className="absolute right-20 top-0" style={{ y: y2, x: 5 }}>
-        <Image src="/svg/frame-10.svg" width="112px" height="134px" />
+        <Image
+          src="/svg/frame-10.svg"
+          width="112px"
+          height="134px"
+          alt="Ornate Frame"
+        />
       </motion.div>
       <motion.div
-        className="absolute left-24 -bottom-64"
+        className="absolute left-24 -bottom-80"
         style={{ y: y3, x: 5 }}
       >
-        <Image src="/svg/frame-3.svg" width="146px" height="171px" />
+        <Image
+          src="/svg/frame-4.svg"
+          width="146px"
+          height="171px"
+          alt="Ornate Frame"
+        />
       </motion.div>
       <motion.div
         className="absolute left-24 -top-24 z-10"
         style={{ y: y1, x: 5 }}
       >
-        <Image src="/svg/frame-6.svg" width="112px" height="134px" />
+        <Image
+          src="/svg/frame-6.svg"
+          width="112px"
+          height="134px"
+          alt="Ornate Frame"
+        />
       </motion.div>
       <motion.div className="min-h-screen flex items-center justify-center px-4">
         <div className="flex flex-col">
           <div className="">
             <motion.h1
-              className="font-PlayfairDisplay text-6xl pl-10 leading-normal text-center font-bold z-10 text-gray-700 "
+              className="font-PlayfairDisplay text-6xl pl-10 leading-normal text-center font-bold z-10 text-gray-700 my-20"
               layoutId="title"
             >
               The Interview We Never Saw
             </motion.h1>
-            <div className="border- border-green-200 flex flex-row">
-              <div className="flex mt-10 mx-auto">
-                <Button
-                  href="/the-interview-we-never-saw"
-                  label="Meet the cast &rArr;"
-                />
-              </div>
-            </div>
           </div>
           <div className="flex flex-row justify-around w-screen">
             <motion.div
@@ -145,6 +153,11 @@ export const InterviewSection = ({ characters }) => {
             >
               <YearbookImage character={characters[1]} key={characters[1].id} />
             </motion.div>
+          </div>
+          <div className="border- border-green-200 flex flex-row">
+            <div className="flex mt-20 mx-auto">
+              <Button href="/the-cast" label="Meet the cast &rArr;" />
+            </div>
           </div>
         </div>
       </motion.div>

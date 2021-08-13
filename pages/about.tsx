@@ -27,7 +27,8 @@ export default function About({ about, theme }) {
     <>
       <NextSeo {...SEO} />
       <div className="bg-wall overflow-x-hidden">
-        <div className="bg-gradient-to-r from-cobalt to-cobalt-deep ">
+        {/* <div className="bg-gradient-to-r from-cobalt to-cobalt-deep "> */}
+        <div className="bg-gradient-to-r from-cobalt-deep to-ocean ">
           <Navbar theme={theme.header} />
           <div className="h-44 w-full relative">
             <div className=" flex flex-col justify-center ">
@@ -61,6 +62,7 @@ export default function About({ about, theme }) {
               width="102px"
               height="145px"
               className="mx-auto border-2 border-green-50 rounded-full"
+              alt="Sam Roffey"
             />
           </div>
           <h1 className="text-4xl font-semibold font-PlayfairDisplay text-center my-4">
@@ -100,9 +102,9 @@ export async function getStaticProps() {
         header: { logoFill: '#fff', navBtnFill: '#fff' },
         body: { bgFill: '#fefefe' },
         footer: {
-          bgFill: '#0047AB',
+          bgFill: '#3F678D',
           buttonFill: '#FFD56B',
-          iconsFill: '#0047AB',
+          iconsFill: '#3F678D',
           linkColour: '#fff',
           logoFill: '#fff',
           titleTagColour: '#fff'

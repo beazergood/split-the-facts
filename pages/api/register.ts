@@ -11,6 +11,7 @@ async function run() {
   console.log(response)
 }
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default async (req, res) => {
   const { email } = req.body
   console.log('sending subscribe to MailChimp message: ', email)

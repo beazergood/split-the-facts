@@ -1,7 +1,7 @@
 import { gql } from '@apollo/client'
 import client from '../../scripts/apollo-client'
-import { motion, useMotionValue, useTransform } from 'framer-motion'
-import Link from 'next/link'
+import { motion } from 'framer-motion'
+
 import { NextSeo } from 'next-seo'
 
 import { VideoPlayer } from '../../components/VideoPlayer'
@@ -42,12 +42,12 @@ export default function LandingHome({ video }) {
           <p>Welcome to my new website!</p>
           <p>
             This will serve as the main hub for all of my content and projects.
-            I appreciate all of the encouraging feedback and support I've
+            I appreciate all of the encouraging feedback and support I&lsquo;ve
             received since starting my videos earlier this year.
           </p>
           <p>
-            I'm excited to have this as my creative outlet and welcome you all
-            along for the ride. Enjoy!
+            I&lsquo;m excited to have this as my creative outlet and welcome you
+            all along for the ride. Enjoy!
           </p>
           <div className="my-4">
             <Button label="Entré" />

@@ -1,11 +1,11 @@
 import { motion } from 'framer-motion'
 import { gql } from '@apollo/client'
-import client from '../../scripts/apollo-client'
+import client from '../scripts/apollo-client'
 import Image from 'next/image'
-import { WaveBackground } from '../../components/WaveBackground'
-import { Navbar } from '../../components/Navbar'
-import { Footer } from '../../components/Footer'
-import { PhotoCollage, AllInOne } from '../../components/TheInterviewWeNeverSaw'
+import { WaveBackground } from '../components/WaveBackground'
+import { Navbar } from '../components/Navbar'
+import { Footer } from '../components/Footer'
+import { PhotoCollage, AllInOne } from '../components/TheInterviewWeNeverSaw'
 
 const imgVariants = {
   initial: { opacity: 0, y: 10, skew: 1 },
@@ -34,7 +34,7 @@ export default function Yearbook({ characters, theme, videos }) {
     <>
       <div className="bg-wall">
         <div className="relative" style={{ backgroundColor: theme.primary }}>
-          <Navbar theme={theme} />
+          <Navbar theme={theme.header} />
           <div className="relative border- border-green-300 w-full mx-auto h-1/3">
             {/* {isDesktopOrLaptop && ( */}
             <div className="absolute left-32 top-16 z-0">

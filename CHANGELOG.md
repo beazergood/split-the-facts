@@ -1,3 +1,7 @@
+## [1.1.0-8] - 13/8/21
+### Added
+- Characters page quotes
+
 ## [1.1.0-7] - 12/8/21
 ### Added
 - comments functionality using Hyvor talk to videos and blog posts

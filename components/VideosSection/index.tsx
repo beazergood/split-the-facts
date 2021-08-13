@@ -53,13 +53,18 @@ export const VideosSection = ({ title, href, theme, videos }) => {
   })
 
   return (
-    <div className="relative bg-gradient-to-r bg-moss-green pt-14">
+    <div className="relative pt-14" style={{ backgroundColor: theme.primary }}>
       <section className="h-64 w-100 bg-hero-patternz relative ">
         <motion.div
           className="absolute left-32 z-10 bottom-32"
           style={{ y: y6, x: 5 }}
         >
-          <Image src="/svg/frame-5.svg" width="109px" height="120px" />
+          <Image
+            src="/svg/frame-5.svg"
+            width="109px"
+            height="120px"
+            alt="Ornate Frame"
+          />
         </motion.div>
         <div className="absolute left-20 right-0 bottom-0 top-0 bg-popstar-hover bg-opacity-0 flex flex-col justify-center ">
           <OrnateFrame label="Videos" color={theme.primary} />
@@ -68,7 +73,12 @@ export const VideosSection = ({ title, href, theme, videos }) => {
           className="absolute right-32 bottom-0 z-20"
           style={{ y: y7, x: 5 }}
         >
-          <Image src="/svg/frame-11.svg" width="127px" height="155px" />
+          <Image
+            src="/svg/frame-11.svg"
+            width="127px"
+            height="155px"
+            alt="Ornate Frame"
+          />
         </motion.div>
       </section>
       <div className="container mx-auto">

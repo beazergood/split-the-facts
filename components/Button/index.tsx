@@ -46,7 +46,7 @@ const ButtonElement = ({ label }) => {
     }
   }
 
-  const hoverFill = '#B3525E'
+  const hoverFill = '#666'
 
   return (
     <div className="flex items-center justify-center  hover:text-gray-500 hover:text-2xl cursor-pointer">

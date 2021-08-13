@@ -8,8 +8,8 @@ import { Navbar } from '../../components/Navbar'
 import { Footer } from '../../components/Footer'
 import { WaveBackground } from '../../components/WaveBackground'
 import Markdown from 'markdown-to-jsx'
-import HyvorTalk from 'hyvor-talk-react'
-const WEBSITE_ID = parseInt(process.env.NEXT_PUBLIC_HYVOR_WEBSITE_ID)
+// import HyvorTalk from 'hyvor-talk-react'
+// const WEBSITE_ID = parseInt(process.env.NEXT_PUBLIC_HYVOR_WEBSITE_ID)
 import { useEffect, useState } from 'react'
 import {
   motion,
@@ -65,7 +65,12 @@ export default function Article({ theme, article }) {
           <Navbar theme={theme.header} />
           <div className="flex justify-center items-center flex-col py-2 bg-EAEFB1 rounded-t-md">
             <Link href="/blog">&lArr;Back to blog home</Link>
-            <Image src={article.image.url} width="400px" height="380px" />
+            <Image
+              src={article.image.url}
+              width="400px"
+              height="380px"
+              alt="Post image"
+            />
           </div>
           <WaveBackground />
         </div>
@@ -129,11 +134,11 @@ export default function Article({ theme, article }) {
           </motion.div>
         </motion.div>
         <div className="w-1/2 mx-auto">
-          <HyvorTalk.Embed
+          {/* <HyvorTalk.Embed
             websiteId={WEBSITE_ID}
             id={article.id}
             loadMode="scroll"
-          />
+          /> */}
         </div>
         <Footer theme={theme.footer} />
       </div>

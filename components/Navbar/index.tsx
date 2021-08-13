@@ -31,14 +31,15 @@ export const Navbar: React.FC<NavbarProps> = ({ theme }) => {
       { id: 0, label: 'Home', selected: true, href: '/' },
       { id: 1, label: 'About', selected: false, href: '/about' },
       { id: 2, label: 'Videos', selected: false, href: '/videos' },
-      { id: 3, label: 'Blog', selected: false, href: '/blog' }
+      { id: 3, label: 'Blog', selected: false, href: '/blog' },
+      { id: 4, label: 'Cast', selected: false, href: '/the-cast' }
     ]
   }
 
   return (
     <div className="w-full h-24 container relative flex flex-row space-around border- border-red-300  mx-auto py-4 z-40">
       <div>
-        <Link href="/">
+        <Link href="/" passHref>
           <motion.svg
             height="70%"
             xmlns="http://www.w3.org/2000/svg"

@@ -32,22 +32,30 @@ export const HomepageHero = ({ heroVideo = { url: '' } }) => {
           className="absolute left-32 -bottom-2 z-0"
           style={{ y: y1, x: x1 }}
         >
-          <Image src="/svg/frame-3.svg" width="146px" height="171px" />
+          <Image
+            src="/svg/frame-3.svg"
+            width="146px"
+            height="171px"
+            alt="Ornate Frame"
+          />
         </motion.div>
 
         <motion.div
           className="absolute right-32 top-4 z-10"
           style={{ y: y2, x: x1 }}
         >
-          <Image src="/svg/frame-4.svg" width="152px" height="185px" />
+          <Image
+            src="/svg/frame-4.svg"
+            width="152px"
+            height="185px"
+            alt="Ornate Frame"
+          />
         </motion.div>
         <VideoPlayer
           cursiveTitle="Questions from "
           title="The Hallporters Chair"
-          embedId="xJBlLgBNYhc"
+          embedId="YBU7mAh9qVQ"
           thumbnailImg={heroVideo.url}
-          host="vimeo"
-          videoId="123"
         />
         <WaveBackground />
       </motion.div>

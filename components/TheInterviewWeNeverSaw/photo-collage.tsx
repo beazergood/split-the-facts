@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
-import { YearbookImage, HoverImage } from '../../components/YearbookImage'
+import { YearbookImage } from '../../components/YearbookImage'
 
 export interface PhotoCollageProps {
   characters: Array<any>
@@ -9,10 +9,20 @@ export const PhotoCollage = ({ characters }) => {
   return (
     <motion.div className="min-h-screen flex items-center justify-center mb-10">
       <div className="absolute right-2 top-64">
-        <Image src="/svg/frame-5.svg" width="112px" height="134px" />
+        <Image
+          src="/svg/frame-5.svg"
+          width="112px"
+          height="134px"
+          alt="Ornate Frame"
+        />
       </div>
       <div className="absolute right-32 bottom-16 scale-90">
-        <Image src="/svg/frame-6.svg" width="91px" height="102px" />
+        <Image
+          src="/svg/frame-6.svg"
+          width="91px"
+          height="102px"
+          alt="Ornate Frame"
+        />
       </div>
       <div className="grid grid-cols-3 gap-y-14 gap-x-20 grid-flow-col">
         <motion.div
@@ -91,10 +101,20 @@ export const PhotoCollage = ({ characters }) => {
         </motion.div>
       </div>
       <div className="absolute left-2 top-64">
-        <Image src="/svg/frame-4.svg" width="112px" height="134px" />
+        <Image
+          src="/svg/frame-4.svg"
+          width="112px"
+          height="134px"
+          alt="Ornate Frame"
+        />
       </div>
       <div className="absolute left-32 bottom-16 scale-90">
-        <Image src="/svg/frame-10.svg" width="91px" height="102px" />
+        <Image
+          src="/svg/frame-10.svg"
+          width="91px"
+          height="102px"
+          alt="Ornate Frame"
+        />
       </div>
     </motion.div>
   )

@@ -19,7 +19,7 @@ const variants = {
   }
 }
 
-const colors = ['#B3525E', '#0047AB', '#94A661', '#3F678D']
+const colors = ['#B3525E', '#0047AB', '#94A661', '#3F678D', '#3F678D']
 
 export const MenuItem = ({ i, selected }) => {
   const style = { border: `2px solid ${colors[i.id]}` }
@@ -30,7 +30,7 @@ export const MenuItem = ({ i, selected }) => {
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.95 }}
     >
-      <Link href={i.href}>
+      <Link href={i.href} passHref>
         <div>
           <div className="text-placeholder" style={style}>
             {i.label}

@@ -1,4 +1,5 @@
 import * as React from 'react'
+import fetch from 'isomorphic-unfetch'
 
 export const EmailForm: React.FC = () => {
   const registerUser = async (event) => {

@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { FaPlayCircle, FaTimes } from 'react-icons/fa'
-import HyvorTalk from 'hyvor-talk-react'
-const WEBSITE_ID = parseInt(process.env.NEXT_PUBLIC_HYVOR_WEBSITE_ID)
+// import HyvorTalk from 'hyvor-talk-react'
+// const WEBSITE_ID = parseInt(process.env.NEXT_PUBLIC_HYVOR_WEBSITE_ID)
 
 export interface VideoPlayerProps {
   embedId: any
@@ -71,37 +71,22 @@ export const VideoPlayer = ({
               </motion.div>
             </div>
             <div className="video-responsive shadow-xl">
-              {host === 'vimeo' && (
-                <>
-                  <iframe
-                    src="https://player.vimeo.com/video/583742309?h=09f16ddcea&autoplay=1&portrait=0"
-                    style={{
-                      position: 'absolute',
-                      top: 0,
-                      left: 0,
-                      width: '100%',
-                      height: '100%'
-                    }}
-                    allow="autoplay; fullscreen; picture-in-picture"
-                  ></iframe>
-
-                  <script src="https://player.vimeo.com/api/player.js"></script>
-                </>
-              )}
-              {/* <iframe
-                src={`https://www.youtube.com/embed/${embedId}?autoplay=1`}
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                title="Embedded youtube"
-              /> */}
+              {
+                <iframe
+                  src={`https://www.youtube.com/embed/${embedId}?autoplay=1`}
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  title="Embedded youtube"
+                />
+              }
             </div>
             <div className="w-2/3 mx-auto">
-              <HyvorTalk.Embed
+              {/* <HyvorTalk.Embed
                 websiteId={WEBSITE_ID}
                 id={videoId}
                 loadMode="scroll"
-              />
+              /> */}
             </div>
           </>
         )}

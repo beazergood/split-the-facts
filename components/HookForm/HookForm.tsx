@@ -86,7 +86,7 @@ export const HookForm = ({ fill = '#000' }) => {
               <Input
                 id="email"
                 placeholder="Join the conversation"
-                className="mx-auto appearance-none border rounded-full w-5/6 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                className="mx-auto appearance-none rounded-full w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 {...register('email', {
                   required: 'This is required',
                   minLength: { value: 4, message: 'Minimum length should be 4' }
@@ -112,7 +112,7 @@ export const HookForm = ({ fill = '#000' }) => {
               width="50px"
               height="50px"
               style={{ backgroundColor: fill }}
-              className="rounded-full mx-auto hover:shadow-xl -mt-2 text-white"
+              className="rounded-full mx-auto hover:shadow-xl -mt-2 text-white "
             >
               <FaPaperPlane className="text-white" />
             </Button>

@@ -1,18 +1,28 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
-import { YearbookImage, HoverImage } from '../../components/YearbookImage'
+import { YearbookImage } from '../../components/YearbookImage'
 
 export interface AllInOneProps {
   characters: Array<any>
 }
 export const AllInOne = ({ characters }) => {
   return (
-    <motion.div className="min-h-screen flex flex-col items-center justify-center mb-10">
+    <div className="min-h-screen flex flex-col items-center justify-center mb-10">
       <div className="absolute right-2 top-24">
-        <Image src="/svg/frame-5.svg" width="112px" height="134px" />
+        <Image
+          src="/svg/frame-5.svg"
+          width="112px"
+          height="134px"
+          alt="Ornate Frame"
+        />
       </div>
       <div className="absolute right-32 top-0 scale-90">
-        <Image src="/svg/frame-6.svg" width="91px" height="102px" />
+        <Image
+          src="/svg/frame-6.svg"
+          width="91px"
+          height="102px"
+          alt="Ornate Frame"
+        />
       </div>
       <div className="flex flex-col mt-32">
         {characters &&
@@ -29,19 +39,29 @@ export const AllInOne = ({ characters }) => {
           })}
       </div>
       <div className="absolute left-2 top-14">
-        <Image src="/svg/frame-4.svg" width="112px" height="134px" />
+        <Image
+          src="/svg/frame-4.svg"
+          width="112px"
+          height="134px"
+          alt="Ornate Frame"
+        />
       </div>
       <div className="absolute left-32 top-0 scale-90">
-        <Image src="/svg/frame-10.svg" width="91px" height="102px" />
+        <Image
+          src="/svg/frame-10.svg"
+          width="91px"
+          height="102px"
+          alt="Ornate Frame"
+        />
       </div>
       <p className="border-2 p-8 font-PlayfairDisplay text-ocean text-lg text-bold  rounded-xl border-golden">
-        <span className="text-3xl text-golden">*</span> it's perhaps worth
+        <span className="text-3xl text-golden">*</span> it&lsquo;s perhaps worth
         pointing out in this day and age that these quotes are part of my parody
         video scripts and in no way were any real life individuals close to
         resembling these levels of honesty and transparency in their respective
         dialogues.
       </p>
-    </motion.div>
+    </div>
   )
 }
 
@@ -61,9 +81,9 @@ const LeftsideProfile = ({ character, key }) => {
       </motion.div>
       <div className="flex flex-row ml-4 items-center p-4 bg-moss-green bg-opacity-50 rounded-t-3xl rounded-br-3xl">
         <p className="font-AveriaSerifLibre">
-          <span className="text-4xl">"</span>
+          <span className="text-4xl">&quot;</span>
           <span className="text-xl ">{character.quote}</span>
-          <span className="text-4xl">"</span>
+          <span className="text-4xl leading-5">&quot;</span>
         </p>
       </div>
       <div className="pl-10 flex flex-col items-start justify-center ">
@@ -109,9 +129,9 @@ const RightsideProfile = ({ character, key }) => {
         </div>
         <div className="flex flex-row mx-6 items-end bg-jasmine-faded p-3 rounded-t-3xl rounded-bl-3xl">
           <p className="font-AveriaSerifLibre">
-            <span className="text-4xl">"</span>
+            <span className="text-4xl">&quot;</span>
             <span className="text-xl ">{character.quote}</span>
-            <span className="text-4xl">"</span>
+            <span className="text-4xl">&quot;</span>
           </p>
         </div>
       </div>

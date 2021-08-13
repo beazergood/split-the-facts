@@ -97,11 +97,7 @@ export const YearbookImage = ({ character, clickable = true }) => {
             />
           </g>
         </motion.svg>
-        <HoverImage
-          src={character.image.url}
-          srcOnHover={character.image_hover.url}
-          alt={character.name}
-        />
+        <HoverImage src={character.image.url} alt={character.name} />
 
         {character.showName && (
           <p className="text-md text-center my-5 font-PlayfairDisplay">
@@ -114,7 +110,7 @@ export const YearbookImage = ({ character, clickable = true }) => {
   )
 }
 
-export const HoverImage = ({ src, srcOnHover, alt }) => {
+export const HoverImage = ({ src, srcOnHover = '', alt }) => {
   return (
     <>
       <motion.img

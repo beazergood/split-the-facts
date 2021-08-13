@@ -1,4 +1,3 @@
-// import React from 'react'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Moment from 'react-moment'
@@ -9,10 +8,9 @@ import Link from 'next/link'
 import React, { useState } from 'react'
 import { ScrollMenu, VisibilityContext } from 'react-horizontal-scrolling-menu'
 import useDrag from './helpers/useDrag'
-import useHideBodyScroll from './helpers/useHideBodyScroll'
 import throttle from 'lodash/throttle'
-import HyvorTalk from 'hyvor-talk-react'
-const WEBSITE_ID = parseInt(process.env.NEXT_PUBLIC_HYVOR_WEBSITE_ID)
+// import HyvorTalk from 'hyvor-talk-react'
+// const WEBSITE_ID = parseInt(process.env.NEXT_PUBLIC_HYVOR_WEBSITE_ID)
 
 export interface VideosRowProps {
   videos: any
@@ -153,6 +151,7 @@ export const VideosRow = ({ videos, group }) => {
           >
             {items.map((video) => (
               <Card
+                key={video.id}
                 itemId={video.id}
                 title={video.title}
                 published={video.published}
@@ -200,10 +199,15 @@ function Card({ fullSlug, title, itemId, thumbnail_url, published }) {
       }}
       tabIndex={0}
     >
-      <Link href={fullSlug}>
+      <Link href={fullSlug} passHref>
         <div className="flex flex-col items-center my-4">
           <div className="relative">
-            <Image src={thumbnail_url} width={270} height={160} />
+            <Image
+              src={thumbnail_url}
+              width={270}
+              height={160}
+              alt="Video Thumbnail"
+            />
             <div className="absolute bottom-14 left-24">
               <FaPlayCircle className="text-white text-6xl opacity-70 " />
             </div>
@@ -213,11 +217,11 @@ function Card({ fullSlug, title, itemId, thumbnail_url, published }) {
             <p className="text-sm font-NotoSerif">{title}</p>
             <span className="text-sm font-NotoSerif text-right flex flex-row mx-2 items-center">
               <span className="flex-grow"></span>
-              <HyvorTalk.CommentCount
+              {/* <HyvorTalk.CommentCount
                 websiteId={WEBSITE_ID}
                 id={itemId}
                 mode="number"
-              />
+              /> */}
 
               <GoComment className="mx-1 text-lg" />
             </span>
