@@ -73,7 +73,7 @@ export const VideoPlayer = ({
             <div className="video-responsive shadow-xl">
               {
                 <iframe
-                  src={`https://www.youtube.com/embed/${embedId}?autoplay=1`}
+                  src={`https://www.youtube.com/embed/${embedId}?autoplay=1&controls=0&showinfo=0`}
                   frameBorder="0"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen
