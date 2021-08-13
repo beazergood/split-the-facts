@@ -1,4 +1,3 @@
-import '../../styles/tailwind.css'
 import { BlogSection, BlogSectionProps } from '.'
 import { Story, Meta } from '@storybook/react'
 

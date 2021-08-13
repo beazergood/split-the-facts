@@ -1,4 +1,3 @@
-import '../../styles/tailwind.css'
 import { VideosSection, VideosSectionProps } from '.'
 import { Story, Meta } from '@storybook/react'
 
