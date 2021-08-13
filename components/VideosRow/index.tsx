@@ -9,8 +9,8 @@ import React, { useState } from 'react'
 import { ScrollMenu, VisibilityContext } from 'react-horizontal-scrolling-menu'
 import useDrag from './helpers/useDrag'
 import throttle from 'lodash/throttle'
-// import HyvorTalk from 'hyvor-talk-react'
-// const WEBSITE_ID = parseInt(process.env.NEXT_PUBLIC_HYVOR_WEBSITE_ID)
+import HyvorTalk from 'hyvor-talk-react'
+const WEBSITE_ID = parseInt(process.env.NEXT_PUBLIC_HYVOR_WEBSITE_ID)
 
 export interface VideosRowProps {
   videos: any
@@ -217,11 +217,11 @@ function Card({ fullSlug, title, itemId, thumbnail_url, published }) {
             <p className="text-sm font-NotoSerif">{title}</p>
             <span className="text-sm font-NotoSerif text-right flex flex-row mx-2 items-center">
               <span className="flex-grow"></span>
-              {/* <HyvorTalk.CommentCount
+              <HyvorTalk.CommentCount
                 websiteId={WEBSITE_ID}
                 id={itemId}
                 mode="number"
-              /> */}
+              />
 
               <GoComment className="mx-1 text-lg" />
             </span>

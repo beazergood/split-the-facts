@@ -12,8 +12,8 @@ import { Navbar } from '../../../components/Navbar'
 import { Footer } from '../../../components/Footer'
 import { WaveBackground } from '../../../components/WaveBackground'
 import Markdown from 'markdown-to-jsx'
-// const WEBSITE_ID = parseInt(process.env.NEXT_PUBLIC_HYVOR_WEBSITE_ID)
-// import HyvorTalk from 'hyvor-talk-react'
+const WEBSITE_ID = parseInt(process.env.NEXT_PUBLIC_HYVOR_WEBSITE_ID)
+import HyvorTalk from 'hyvor-talk-react'
 import { useState, useEffect } from 'react'
 
 export default function Video({ theme, video }) {
@@ -148,11 +148,11 @@ export default function Video({ theme, video }) {
           </motion.div>
         </motion.div>
         <div className="w-1/2 mx-auto">
-          {/* <HyvorTalk.Embed
+          <HyvorTalk.Embed
             websiteId={WEBSITE_ID}
             id={video.id}
             loadMode="scroll"
-          /> */}
+          />
         </div>
         <Footer theme={theme.footer} />
       </div>

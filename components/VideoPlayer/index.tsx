@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { FaPlayCircle, FaTimes } from 'react-icons/fa'
-// import HyvorTalk from 'hyvor-talk-react'
-// const WEBSITE_ID = parseInt(process.env.NEXT_PUBLIC_HYVOR_WEBSITE_ID)
+import HyvorTalk from 'hyvor-talk-react'
+const WEBSITE_ID = parseInt(process.env.NEXT_PUBLIC_HYVOR_WEBSITE_ID)
 
 export interface VideoPlayerProps {
   embedId: any
@@ -82,11 +82,11 @@ export const VideoPlayer = ({
               }
             </div>
             <div className="w-2/3 mx-auto">
-              {/* <HyvorTalk.Embed
+              <HyvorTalk.Embed
                 websiteId={WEBSITE_ID}
                 id={videoId}
                 loadMode="scroll"
-              /> */}
+              />
             </div>
           </>
         )}

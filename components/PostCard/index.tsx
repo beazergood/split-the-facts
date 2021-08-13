@@ -2,8 +2,8 @@ import { motion, useViewportScroll, useTransform } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import Image from 'next/image'
 import { Button } from '../Button'
-// import HyvorTalk from 'hyvor-talk-react'
-// const WEBSITE_ID = parseInt(process.env.NEXT_PUBLIC_HYVOR_WEBSITE_ID)
+import HyvorTalk from 'hyvor-talk-react'
+const WEBSITE_ID = parseInt(process.env.NEXT_PUBLIC_HYVOR_WEBSITE_ID)
 
 export interface PostcardProps {
   id: string
@@ -62,7 +62,7 @@ export const Postcard = ({ title, intro, thumb, color = '', href, id }) => {
       <div className="px-4 py-5 h-64 flex flex-col justify-between">
         <h3 className="text-3xl font-PlayfairDisplay">{title}</h3>
         <p className="my-4 font-AveriaSerifLibre text-xl">{intro}</p>
-        {/* <HyvorTalk.CommentCount websiteId={WEBSITE_ID} id={id} /> */}
+        <HyvorTalk.CommentCount websiteId={WEBSITE_ID} id={id} />
 
         <div className="flex flex-col items-center ">
           <Button label="Read post" href={href} />

@@ -8,8 +8,8 @@ import { Navbar } from '../../components/Navbar'
 import { Footer } from '../../components/Footer'
 import { WaveBackground } from '../../components/WaveBackground'
 import Markdown from 'markdown-to-jsx'
-// import HyvorTalk from 'hyvor-talk-react'
-// const WEBSITE_ID = parseInt(process.env.NEXT_PUBLIC_HYVOR_WEBSITE_ID)
+import HyvorTalk from 'hyvor-talk-react'
+const WEBSITE_ID = parseInt(process.env.NEXT_PUBLIC_HYVOR_WEBSITE_ID)
 import { useEffect, useState } from 'react'
 import {
   motion,
@@ -134,11 +134,11 @@ export default function Article({ theme, article }) {
           </motion.div>
         </motion.div>
         <div className="w-1/2 mx-auto">
-          {/* <HyvorTalk.Embed
+          <HyvorTalk.Embed
             websiteId={WEBSITE_ID}
             id={article.id}
             loadMode="scroll"
-          /> */}
+          />
         </div>
         <Footer theme={theme.footer} />
       </div>
