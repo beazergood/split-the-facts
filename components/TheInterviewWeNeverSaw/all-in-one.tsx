@@ -27,6 +27,7 @@ export const AllInOne = ({ characters }) => {
       <div className="flex flex-col mt-32">
         {characters &&
           characters.map((character, index) => {
+            console.log('index: ', index)
             return (
               <>
                 {index % 2 === 0 ? (
