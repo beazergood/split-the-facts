@@ -7,7 +7,7 @@ export interface AllInOneProps {
 }
 export const AllInOne = ({ characters }) => {
   return (
-    <motion.div className="min-h-screen flex items-center justify-center mb-10">
+    <motion.div className="min-h-screen flex flex-col items-center justify-center mb-10">
       <div className="absolute right-2 top-24">
         <Image src="/svg/frame-5.svg" width="112px" height="134px" />
       </div>
@@ -34,15 +34,22 @@ export const AllInOne = ({ characters }) => {
       <div className="absolute left-32 top-0 scale-90">
         <Image src="/svg/frame-10.svg" width="91px" height="102px" />
       </div>
+      <p className="border-2 p-8 font-PlayfairDisplay text-ocean text-lg text-bold  rounded-xl border-golden">
+        <span className="text-3xl text-golden">*</span> it's perhaps worth
+        pointing out in this day and age that these quotes are part of my parody
+        video scripts and in no way were any real life individuals close to
+        resembling these levels of honesty and transparency in their respective
+        dialogues.
+      </p>
     </motion.div>
   )
 }
 
 const LeftsideProfile = ({ character, key }) => {
   return (
-    <div key={key} className="flex flex-row">
+    <div key={key} className="flex flex-row items-center mb-32">
       <motion.div
-        className=" rect p- rounded col-span-1"
+        className="rect"
         initial={{ opacity: 0 }}
         animate={{
           opacity: 1,
@@ -52,10 +59,16 @@ const LeftsideProfile = ({ character, key }) => {
       >
         <YearbookImage character={character} key={character.id} />
       </motion.div>
-
-      <div className="p-4 flex flex-col items-start justify-center">
+      <div className="flex flex-row ml-4 items-center p-4 bg-moss-green bg-opacity-50 rounded-t-3xl rounded-br-3xl">
+        <p className="font-AveriaSerifLibre">
+          <span className="text-4xl">"</span>
+          <span className="text-xl ">{character.quote}</span>
+          <span className="text-4xl">"</span>
+        </p>
+      </div>
+      <div className="pl-10 flex flex-col items-start justify-center ">
         <motion.h1
-          className="text-5xl text-left my-4 font-PlayfairDisplay"
+          className="text-4xl text-left font-PlayfairDisplay "
           layoutId="h1"
           initial={{ scale: 0.9 }}
           animate={{ scale: 1 }}
@@ -63,40 +76,47 @@ const LeftsideProfile = ({ character, key }) => {
         >
           {character.name}
         </motion.h1>
-        <motion.p className="text-left text-3xl my-4 font-AlexBrush">
+        <motion.p className="text-left text-4xl my-4 font-AlexBrush">
           {character.quip}
         </motion.p>
-        <motion.p className="text-left text-xl font-NotoSerif">
+        <motion.p className="text-left text-lg font-NotoSerif">
           {character.about}
         </motion.p>
       </div>
-      <div className="col-span-1"></div>
     </div>
   )
 }
 const RightsideProfile = ({ character, key }) => {
   return (
-    <div key={key} className="flex flex-row">
-      <div className="flex"></div>
-      <div className="flex flex-col items-start justify-center">
-        <motion.h1
-          className="text-5xl text-left my-4 font-PlayfairDisplay"
-          layoutId="h1"
-          initial={{ scale: 0.9 }}
-          animate={{ scale: 1 }}
-          transition={{ duration: 0.2 }}
-        >
-          {character.name}
-        </motion.h1>
-        <motion.p className="text-left text-3xl my-4 font-AlexBrush">
-          {character.quip}
-        </motion.p>
-        <motion.p className="text-left text-xl font-NotoSerif">
-          {character.about}
-        </motion.p>
+    <div key={key} className="flex flex-row items-center mb-32 ">
+      <div className="flex flex-row items-end">
+        <div className="pl-10 flex flex-col items-start justify-center ">
+          <motion.h1
+            className="text-4xl text-left font-PlayfairDisplay"
+            layoutId="h1"
+            initial={{ scale: 0.9 }}
+            animate={{ scale: 1 }}
+            transition={{ duration: 0.2 }}
+          >
+            {character.name}
+          </motion.h1>
+          <motion.p className="text-left text-4xl my-4 font-AlexBrush">
+            {character.quip}
+          </motion.p>
+          <motion.p className="text-left text-lg font-NotoSerif">
+            {character.about}
+          </motion.p>
+        </div>
+        <div className="flex flex-row mx-6 items-end bg-jasmine-faded p-3 rounded-t-3xl rounded-bl-3xl">
+          <p className="font-AveriaSerifLibre">
+            <span className="text-4xl">"</span>
+            <span className="text-xl ">{character.quote}</span>
+            <span className="text-4xl">"</span>
+          </p>
+        </div>
       </div>
       <motion.div
-        className=" rect p- rounded col-span-1"
+        className=" rect p- rounded "
         initial={{ opacity: 0 }}
         animate={{
           opacity: 1,

@@ -45,12 +45,12 @@ export default function Yearbook({ characters, theme, videos }) {
             </div>
             {/* )} */}
             <motion.h1
-              className="font-PlayfairDisplay text-6xl pl-10 leading-normal font-bold text-golden text-center mx-2"
+              className="font-PlayfairDisplay text-6xl pl-10 leading-normal font-bold text-wall text-center mx-2"
               layoutId="h1"
             >
               The Interview We Never Saw
             </motion.h1>
-            <h1 className="text-2xl mt-10 font-AveriaSerifLibre text-popstar-hover text-center">
+            <h1 className="text-2xl mt-10 font-AveriaSerifLibre text-dark-brown text-center">
               starring
             </h1>
 
@@ -124,6 +124,7 @@ export async function getStaticProps() {
             url
           }
           slug
+          quote
         }
         videos(limit: 3, sort: "published:DESC") {
           id
@@ -141,7 +142,7 @@ export async function getStaticProps() {
     `
   })
 
-  // console.log(' ===== data ', data)
+  console.log(' ===== data ', data)
 
   return {
     props: {
