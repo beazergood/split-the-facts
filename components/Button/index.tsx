@@ -8,7 +8,6 @@ export interface ButtonProps {
 }
 
 export const Button: React.FC<ButtonProps> = ({ label, href = '' }) => {
-  console.log('href: ', href)
   return (
     <>
       {href && (
