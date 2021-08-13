@@ -10,7 +10,7 @@ import {
 import { FaPaperPlane } from 'react-icons/fa'
 import { motion } from 'framer-motion'
 
-export const HookForm = () => {
+export const HookForm = ({ fill }) => {
   const {
     handleSubmit,
     register,
@@ -107,7 +107,8 @@ export const HookForm = () => {
               type="submit"
               width="50px"
               height="50px"
-              className="rounded-full bg-popstar mx-auto hover:shadow-xl -mt-2 hover:bg-popstar-hover text-white"
+              style={{ backgroundColor: fill }}
+              className="rounded-full mx-auto hover:shadow-xl -mt-2 text-white"
             >
               <FaPaperPlane className="text-white" />
             </Button>

@@ -1,12 +1,7 @@
 import { gql } from '@apollo/client'
 import client from '../../scripts/apollo-client'
-import fetch from 'isomorphic-unfetch'
-import { motion, useMotionValue, useTransform } from 'framer-motion'
-import Link from 'next/link'
-import Image from 'next/image'
+import { motion } from 'framer-motion'
 import { NextSeo } from 'next-seo'
-import Moment from 'react-moment'
-import { VideoPlayer } from '../../components/VideoPlayer'
 import { VideosRow } from '../../components/VideosRow'
 import { WaveBackground } from '../../components/WaveBackground'
 import { Navbar } from '../../components/Navbar'
@@ -170,11 +165,11 @@ export const getServerSideProps = async () => {
         header: { logoFill: '#fff', navBtnFill: '#fff' },
         body: { bgFill: '#fefefe' },
         footer: {
-          bgFill: '#8D3F48',
-          buttonFill: '#B3525E',
-          iconsFill: '#8D3F48',
-          linkColour: '#fff',
-          logoFill: '#B3525E',
+          bgFill: '#94A661',
+          buttonFill: '#E9F7CA',
+          iconsFill: '#94A661',
+          linkColour: '#0c0c0c',
+          logoFill: '#E9F7CA',
           titleTagColour: '#fff'
         }
       }

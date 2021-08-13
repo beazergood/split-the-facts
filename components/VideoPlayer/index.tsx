@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { FaPlayCircle, FaTimes } from 'react-icons/fa'
+import HyvorTalk from 'hyvor-talk-react'
+const WEBSITE_ID = parseInt(process.env.NEXT_PUBLIC_HYVOR_WEBSITE_ID)
 
 export interface VideoPlayerProps {
   embedId: any
@@ -8,6 +10,7 @@ export interface VideoPlayerProps {
   cursiveTitle?: string
   thumbnailImg?: any
   host?: string
+  videoId: string
 }
 
 const imgVariants = {
@@ -37,7 +40,8 @@ export const VideoPlayer = ({
   cursiveTitle = '',
   embedId,
   thumbnailImg = '',
-  host = ''
+  host = '',
+  videoId = ''
 }) => {
   // console.log('embed: ', embed)
 
@@ -91,6 +95,13 @@ export const VideoPlayer = ({
                 allowFullScreen
                 title="Embedded youtube"
               /> */}
+            </div>
+            <div className="w-2/3 mx-auto">
+              <HyvorTalk.Embed
+                websiteId={WEBSITE_ID}
+                id={videoId}
+                loadMode="scroll"
+              />
             </div>
           </>
         )}

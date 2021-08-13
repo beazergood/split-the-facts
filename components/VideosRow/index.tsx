@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Moment from 'react-moment'
 import { FaPlayCircle, FaTimes } from 'react-icons/fa'
+import { GoComment } from 'react-icons/go'
 import { BsChevronCompactLeft, BsChevronCompactRight } from 'react-icons/bs'
 import Link from 'next/link'
 import React, { useState } from 'react'
@@ -10,6 +11,8 @@ import { ScrollMenu, VisibilityContext } from 'react-horizontal-scrolling-menu'
 import useDrag from './helpers/useDrag'
 import useHideBodyScroll from './helpers/useHideBodyScroll'
 import throttle from 'lodash/throttle'
+import HyvorTalk from 'hyvor-talk-react'
+const WEBSITE_ID = parseInt(process.env.NEXT_PUBLIC_HYVOR_WEBSITE_ID)
 
 export interface VideosRowProps {
   videos: any
@@ -129,6 +132,7 @@ export const VideosRow = ({ videos, group }) => {
     <div
       className="mx-auto my-3 relative px-3 py-4 bg-wall shadow-md "
       style={{ width: '95%' }}
+      key={group.title}
     >
       <p className="ml-6 my-3 relative font-AveriaSerifLibre">
         <span className="text-xl">{group.title}</span> -{' '}
@@ -207,6 +211,17 @@ function Card({ fullSlug, title, itemId, thumbnail_url, published }) {
 
           <div className="w-full my-4 px-2">
             <p className="text-sm font-NotoSerif">{title}</p>
+            <span className="text-sm font-NotoSerif text-right flex flex-row mx-2 items-center">
+              <span className="flex-grow"></span>
+              <HyvorTalk.CommentCount
+                websiteId={WEBSITE_ID}
+                id={itemId}
+                mode="number"
+              />
+
+              <GoComment className="mx-1 text-lg" />
+            </span>
+
             <Moment format="D MMM YYYY" className="font-NotoSerif text-xs">
               {published}
             </Moment>

@@ -3,7 +3,7 @@ import { Story, Meta } from '@storybook/react'
 import { HomepageHero, HomepageHeroProps } from '.'
 
 export default {
-  title: 'Components/HomepageHero',
+  title: 'Home/HomepageHero',
   component: HomepageHero,
   argTypes: {
     backgroundColor: { control: 'color' }

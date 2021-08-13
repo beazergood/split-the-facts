@@ -44,6 +44,8 @@ export const Nav = ({ props }) => {
         animate={isOpen ? 'open' : 'closed'}
         custom={height}
         ref={containerRef}
+        id="websiteNav"
+        style={{ width: isOpen ? '300px' : '10px' }}
       >
         <motion.div
           className="background"
@@ -54,7 +56,7 @@ export const Nav = ({ props }) => {
         <MenuToggle toggle={() => toggleOpen()} />
       </motion.nav>
       <style jsx global>{`
-        nav {
+        nav#websiteNav {
           position: fixed;
           top: 0;
           right: 0;
@@ -70,7 +72,7 @@ export const Nav = ({ props }) => {
           width: 300px;
         }
 
-        button {
+        button#navBtn {
           outline: none;
           border: none;
           -webkit-user-select: none;
@@ -86,20 +88,20 @@ export const Nav = ({ props }) => {
           background: transparent;
         }
 
-        nav > ul,
+        nav#websiteNav > ul,
         li {
           margin: 0;
           padding: 0;
         }
 
-        nav > ul {
+        nav#websiteNav > ul {
           padding: 25px;
           position: absolute;
           top: 100px;
           width: 230px;
         }
 
-        li {
+        nav#websiteNav > ul > li {
           list-style: none;
           margin-bottom: 20px;
           display: flex;

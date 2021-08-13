@@ -93,7 +93,7 @@ export const Footer: React.FC<FooterProps> = ({ theme, playlist = {} }) => {
           >
             <Image src="/svg/boxer-cushion.svg" width="150px" height="170px" />
           </motion.div>
-          <HookForm />
+          <HookForm fill={theme.buttonFill} />
         </div>
         <div className="w-0 px5 md:w-44 mx-auto -14">
           <Link href="/">

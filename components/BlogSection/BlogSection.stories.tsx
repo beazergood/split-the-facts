@@ -15,17 +15,25 @@ const Template: Story<BlogSectionProps> = (args) => <BlogSection {...args} />
 export const MetaList = Template.bind({})
 MetaList.args = {
   title: 'Blog',
+  theme: {
+    primary: '',
+    secondary: ''
+  },
   articles: [
     {
-      title: 'test',
-      intro: 'test',
-      thumb: 'test',
+      title: 'Testing testing',
+      description: 'How now brown cow, how now brown cow.',
+      image: {
+        url: ''
+      },
       href: 'test'
     },
     {
-      title: 'test 2',
-      intro: 'test',
-      thumb: 'test',
+      title: 'Test 2021',
+      description: 'How now brown cow, how now brown cow.',
+      image: {
+        url: ''
+      },
       href: 'test'
     }
   ]

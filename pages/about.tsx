@@ -20,29 +20,35 @@ export default function About({ about, theme }) {
     }
   }
   const { scrollY } = useViewportScroll()
-  const y1 = useTransform(scrollY, [0, 500], [0, -250])
+  const y1 = useTransform(scrollY, [0, 600], [0, -250])
   const y2 = useTransform(scrollY, [0, 900], [0, -20])
 
   return (
     <>
       <NextSeo {...SEO} />
       <div className="bg-wall overflow-x-hidden">
-        <div className="" style={{ backgroundColor: theme.primary }}>
+        <div className="bg-gradient-to-r from-cobalt to-cobalt-deep ">
           <Navbar theme={theme.header} />
-          <div className="h-64 mb-32 w-full relative">
+          <div className="h-44 w-full relative">
             <div className=" flex flex-col justify-center ">
               <div className="mx-auto">
-                <Image src={about.hero.url} width="732px" height="431px" />
+                {/* <Image src={about.hero.url} width="732px" height="431px" /> */}
               </div>
             </div>
-            <div className="absolute left-20 right-0 -bottom-32 top-0 bg-popstar-hover bg-opacity-0 flex flex-col justify-center ">
+            <div className="absolute left-0 right-0 bottom-16 top-0 bg-0047AB bg-opacity-0 flex flex-col justify-center">
               <OrnateFrame label={about.header} color={theme.primary} />
             </div>
           </div>
-          <motion.div style={{ y: y2 }} className="relative h-64">
-            <WaveBackground />
-
-            <div className="bg-wall h-64 w-full"></div>
+          <motion.div className="relative  h-">
+            <svg
+              width="1440"
+              height="80"
+              viewBox="0 0 1440 80"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M1440 80L0 0V80H1440Z" fill="#FAF4E6" />
+            </svg>
           </motion.div>
         </div>
         <motion.div
@@ -57,12 +63,11 @@ export default function About({ about, theme }) {
               className="mx-auto border-2 border-green-50 rounded-full"
             />
           </div>
-          <Markdown>{about.content}</Markdown>
-          <div className=" my-10 ">
-            <HookForm />
-          </div>
+          <h1 className="text-4xl font-semibold font-PlayfairDisplay text-center my-4">
+            Sam Roffey
+          </h1>
+          <Markdown className="font-NotoSerif mb-20">{about.content}</Markdown>
         </motion.div>
-        <motion.div className="w-full h-screen container mx-auto"></motion.div>
         <Footer theme={theme.footer} />
       </div>
     </>
@@ -91,15 +96,15 @@ export async function getStaticProps() {
     props: {
       about: data.about,
       theme: {
-        primary: '#B3525E',
+        primary: '#0047AB',
         header: { logoFill: '#fff', navBtnFill: '#fff' },
         body: { bgFill: '#fefefe' },
         footer: {
-          bgFill: '#8D3F48',
-          buttonFill: '#B3525E',
-          iconsFill: '#8D3F48',
+          bgFill: '#0047AB',
+          buttonFill: '#FFD56B',
+          iconsFill: '#0047AB',
           linkColour: '#fff',
-          logoFill: '#B3525E',
+          logoFill: '#fff',
           titleTagColour: '#fff'
         }
       }

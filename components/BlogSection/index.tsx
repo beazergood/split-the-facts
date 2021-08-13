@@ -76,7 +76,7 @@ export const BlogSection = ({ title, articles, theme, href }) => {
           className="absolute left-32 bottom-32"
           style={{ y: y6, x: 5 }}
         >
-          <Image src="/svg/frame-7.svg" width="179px" height="200px" />
+          <Image src="/svg/frame-7.svg" width="120px" height="130px" />
         </motion.div>
         <div className="absolute left-20 right-0 bottom-0 top-0 bg-popstar-hover bg-opacity-0 flex flex-col justify-center ">
           <OrnateFrame label={title} color={theme.secondary} />
@@ -99,6 +99,7 @@ export const BlogSection = ({ title, articles, theme, href }) => {
                     thumb={article.image.url}
                     intro={article.description}
                     href={article.slug}
+                    id={article.id}
                   />
                 </div>
               )

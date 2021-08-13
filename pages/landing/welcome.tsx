@@ -32,6 +32,7 @@ export default function LandingHome({ video }) {
           title="The Hallporters Chair"
           embedId={video.embed_url}
           thumbnailImg={video.thumbnail_image?.url}
+          videoId="video.id"
         />
 
         <h1 className="text-4xl text-center my-10 font-PlayfairDisplay">

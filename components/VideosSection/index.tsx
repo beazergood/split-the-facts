@@ -43,7 +43,7 @@ export const VideosSection = ({ title, href, theme, videos }) => {
     }
   }
   const { scrollY } = useViewportScroll()
-  const y7 = useTransform(scrollY, [0, 300], [0, 200])
+  const y7 = useTransform(scrollY, [1700, 2400], [0, -200])
   const y6 = useTransform(scrollY, [1800, 2600], [0, -400])
 
   const [ref, inView, entry] = useInView({
@@ -53,22 +53,22 @@ export const VideosSection = ({ title, href, theme, videos }) => {
   })
 
   return (
-    <div className="relative bg-gradient-to-r from-popstar to-popstar-hover py-14">
+    <div className="relative bg-gradient-to-r bg-moss-green pt-14">
       <section className="h-64 w-100 bg-hero-patternz relative ">
         <motion.div
           className="absolute left-32 z-10 bottom-32"
           style={{ y: y6, x: 5 }}
         >
-          <Image src="/svg/frame-5.svg" width="179px" height="200px" />
+          <Image src="/svg/frame-5.svg" width="109px" height="120px" />
         </motion.div>
         <div className="absolute left-20 right-0 bottom-0 top-0 bg-popstar-hover bg-opacity-0 flex flex-col justify-center ">
           <OrnateFrame label="Videos" color={theme.primary} />
         </div>
         <motion.div
-          className="absolute right-32 bottom-0"
+          className="absolute right-32 bottom-0 z-20"
           style={{ y: y7, x: 5 }}
         >
-          <Image src="/svg/frame-4.svg" width="157px" height="175px" />
+          <Image src="/svg/frame-11.svg" width="127px" height="155px" />
         </motion.div>
       </section>
       <div className="container mx-auto">
@@ -92,6 +92,18 @@ export const VideosSection = ({ title, href, theme, videos }) => {
           videos={videos.theGodfather}
           group={{ title: 'The Godfather', action: 'link' }}
         />
+      </div>
+      <div className="absoute bottom-0 z-0 w-full">
+        {/* wave */}
+        <svg
+          width="1440"
+          height="80"
+          viewBox="0 0 1440 80"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path d="M0 80L1440 0V80H0Z" fill="#FAF4E6" />
+        </svg>
       </div>
     </div>
   )

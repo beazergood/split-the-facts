@@ -1,7 +1,7 @@
-import { motion } from 'framer-motion'
-import { YearbookImageThumb } from '../YearbookImage'
+import { motion, useTransform, useViewportScroll } from 'framer-motion'
 import { VideoPlayer } from '../VideoPlayer'
-import useResponsive from '../../hooks/responsive'
+import { WaveBackground } from '../WaveBackground'
+import Image from 'next/image'
 
 export interface HomepageHeroProps {
   heroVideo?: any
@@ -15,20 +15,41 @@ const videoVariants = {
 }
 
 export const HomepageHero = ({ heroVideo = { url: '' } }) => {
+  const { scrollY } = useViewportScroll()
+
+  const y1 = useTransform(scrollY, [0, 200], [0, -250])
+  const x1 = useTransform(scrollY, [0, 500], [10, 50])
+  const y2 = useTransform(scrollY, [0, 200], [0, -100])
+
   return (
     <>
       <motion.div
-        className="border- mx-auto border-purple-500  "
+        className="relative mx-auto"
         variants={videoVariants}
         exit={{ opacity: 0, transition: { duration: 1, delay: 1 } }}
       >
+        <motion.div
+          className="absolute left-32 -bottom-2 z-0"
+          style={{ y: y1, x: x1 }}
+        >
+          <Image src="/svg/frame-3.svg" width="146px" height="171px" />
+        </motion.div>
+
+        <motion.div
+          className="absolute right-32 top-4 z-10"
+          style={{ y: y2, x: x1 }}
+        >
+          <Image src="/svg/frame-4.svg" width="152px" height="185px" />
+        </motion.div>
         <VideoPlayer
           cursiveTitle="Questions from "
           title="The Hallporters Chair"
           embedId="xJBlLgBNYhc"
           thumbnailImg={heroVideo.url}
           host="vimeo"
+          videoId="123"
         />
+        <WaveBackground />
       </motion.div>
     </>
   )

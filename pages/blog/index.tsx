@@ -40,17 +40,20 @@ export default function BlogHome({ posts, theme }) {
           </div>
         </div>
         <motion.div className="w-full h-1/2">
-          <div className="mt-20 grid grid-cols-4 grid-flow-row">
+          <div className="mt-20 flex flex-col">
             {posts &&
               posts.map((post) => {
                 return (
-                  <div className="col-span-1 gap-x-4" key={post.id}>
+                  <div className="flex flex-row my-10" key={post.id}>
+                    <div className="w-32"></div>
                     <Postcard
                       title={post.title}
                       thumb={post.image.url}
                       intro={post.description}
                       href={post.slug}
+                      id={post.id}
                     />
+                    <div className="w-32"></div>
                   </div>
                 )
               })}
@@ -81,17 +84,19 @@ export const getServerSideProps = async () => {
 
   return {
     props: {
-      posts: data.articles,
+      posts: data.articles.map((a) => {
+        return { ...a, slug: 'blog/' + a.slug }
+      }),
       theme: {
-        primary: '#94A661',
+        primary: '#3F678D',
         header: { logoFill: '#fff', navBtnFill: '#fff' },
         body: { bgFill: '#fefefe' },
         footer: {
-          bgFill: '#8D3F48',
-          buttonFill: '#B3525E',
-          iconsFill: '#8D3F48',
+          bgFill: '#3F678D',
+          buttonFill: '#0047AB',
+          iconsFill: '#3F678D',
           linkColour: '#fff',
-          logoFill: '#B3525E',
+          logoFill: '#0047AB',
           titleTagColour: '#fff'
         }
       }

@@ -3,7 +3,7 @@ import { Story, Meta } from '@storybook/react'
 import { InterviewSection, InterviewSectionProps } from './'
 
 export default {
-  title: 'Components/InterviewSection',
+  title: 'Home/InterviewSection',
   component: InterviewSection,
   argTypes: {
     backgroundColor: { control: 'color' }
