@@ -128,7 +128,7 @@ export const VideosRow = ({ videos, group }) => {
 
   return (
     <div
-      className="mx-auto my-3 relative px-3 py-4 bg-wall shadow-md "
+      className="mx-auto my-3 relative px-3 py-4 bg-white shadow-md "
       style={{ width: '95%' }}
       key={group.title}
     >

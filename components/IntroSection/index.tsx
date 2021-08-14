@@ -41,14 +41,14 @@ export const IntroSection = ({ intro }) => {
             alt="Ornate Frame"
           />
         </motion.div>
-        <div className="z-50 bg-white md:mt-0 py-2 md:my-20 md:w-4/6 lg:w-1/2 mx-auto shadow-md border-jasmine-faded border-8 relative">
+        <div className="z-50 bg-white md:mt-0 py-2 md:my-20 w-full sm:w-5/6 md:w-4/6 lg:w-1/2 mx-auto shadow-md border-jasmine-faded border-8 relative">
           <motion.h1
-            className="font-PlayfairDisplay text-7xl font-extrabold italic tracking-tight z-10 text-gray-800 leading-20 text-center mt-10 "
+            className="font-PlayfairDisplay text-5xl md:text-7xl font-extrabold italic tracking-tight z-10 text-gray-800 leading-20 text-center mt-10 "
             layoutId="title"
           >
             Split!
           </motion.h1>
-          <motion.h2 className="font-PlayfairDisplay text-center text-gray-800 font-semibold px-4 pt-3 leading-32 text-5xl">
+          <motion.h2 className="font-PlayfairDisplay text-center text-gray-800 font-semibold px-4 pt-3 leading-32 text-3xl md:text-5xl">
             The West at War with Itself
           </motion.h2>
           {intro && (

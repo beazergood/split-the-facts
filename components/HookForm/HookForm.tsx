@@ -9,6 +9,7 @@ import {
 } from '@chakra-ui/react'
 import { FaPaperPlane } from 'react-icons/fa'
 import { motion } from 'framer-motion'
+import Confetti from 'react-dom-confetti'
 
 export interface HookFormProps {
   fill?: string
@@ -25,6 +26,7 @@ export const HookForm = ({ fill = '#000' }) => {
   } = useForm({ defaultValues: { email: '' }, mode: 'onChange' })
 
   const [submittedData, setSubmittedData] = useState({})
+  const [someProp, setsomeProp] = useState(false)
 
   const [messageData, setMessageData] = useState({ message: '', status: '' })
 
@@ -37,7 +39,6 @@ export const HookForm = ({ fill = '#000' }) => {
   function onSubmit(values) {
     return new Promise(async (resolve) => {
       console.log('values: ', values)
-
       const res = await fetch('/api/register', {
         body: JSON.stringify({
           email: values.email
@@ -49,13 +50,13 @@ export const HookForm = ({ fill = '#000' }) => {
       })
       try {
         const result = await res.json()
-        console.log('result: ', result)
         if (result.error) {
           setMessageData({
             message: 'You are already subscribed',
             status: 'error'
           })
         } else {
+          setsomeProp(true)
           setMessageData({
             message: '👍 that worked, thanks for subscribing.',
             status: 'success'
@@ -69,10 +70,29 @@ export const HookForm = ({ fill = '#000' }) => {
     })
   }
 
+  const config = {
+    angle: 90,
+    spread: 360,
+    startVelocity: 40,
+    elementCount: 70,
+    dragFriction: 0.12,
+    duration: 4000,
+    stagger: 9,
+    width: '10px',
+    height: '10px',
+    perspective: '654px',
+    colors: ['#a864fd', '#29cdff', '#78ff44', '#ff718d', '#fdff6a']
+  }
+
   return (
     <div className="">
       <form onSubmit={handleSubmit(onSubmit)} id="sign_up_form">
-        <p className="text-lg mb-5 font-PlayfairDisplay text-center">
+        <p
+          className="text-lg mb-5 font-PlayfairDisplay text-center"
+          onClick={() => {
+            setsomeProp(!someProp)
+          }}
+        >
           Enter your email to subscribe to the occasional update from me.
         </p>
         <div className="flex flex-col md:flex-row mx-auto gap-2">
@@ -115,6 +135,7 @@ export const HookForm = ({ fill = '#000' }) => {
               className="hover:shadow-xl text-white w-32 h-10 block rounded-full my-6"
             >
               <FaPaperPlane className="text-white" />
+              <Confetti active={someProp} config={config} />
             </Button>
           </motion.div>
         </div>

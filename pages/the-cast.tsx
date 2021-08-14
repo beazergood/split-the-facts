@@ -167,7 +167,7 @@ export async function getStaticProps() {
       theme: {
         primary: '#b3525e',
         secondary: '#3F678D',
-        header: { logoFill: '#fff', navBtnFill: '#fff' },
+        header: { logoFill: '#fff', navBtnFill: '#FAF4E6' },
         body: { bgFill: '#fefefe' },
         footer: {
           bgFill: '#8D3F48',

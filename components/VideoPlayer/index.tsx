@@ -63,12 +63,12 @@ export const VideoPlayer = ({
               <div className="flex-grow"></div>
               <motion.div
                 whileHover={{ scale: 1.1 }}
-                className="bg-popstar-hover rounded-full"
+                className="bg-popstar-hover rounded-full hover:text-popstar"
                 onClick={() => {
                   setThumbShow(true)
                 }}
               >
-                <FaTimes className="text-4xl m-2 text-gray-300 hover:text-popstar" />
+                <FaTimes className="text-4xl m-2 text-gray-300 " />
               </motion.div>
             </div>
             <div className="video-responsive shadow-xl">
@@ -122,7 +122,7 @@ export const VideoPlayer = ({
               />
               {cursiveTitle && (
                 <motion.h1
-                  className=" font-AlexBrush md:text-4xl font-semibold text-center mx-10 z-20 absolute md:left-40 top-40 md:top-64 text-white"
+                  className=" font-AlexBrush text-2xl md:text-4xl font-semibold text-center mx-10 z-20 absolute md:left-40 top-40 md:top-64 text-white"
                   onClick={() => {
                     setThumbShow(false)
                   }}
@@ -132,7 +132,7 @@ export const VideoPlayer = ({
               )}
               <div className="bg-popstar shadow-lg bg-opacity-50 mx-10 m-10 z-10 rounded-lg absolute md:left-40 top-36 md:top-64 p-2 ">
                 <motion.h1
-                  className="font-PlayfairDisplay md:text-4xl font-semibold text-center text-white"
+                  className="font-PlayfairDisplay text-2xl  md:text-4xl font-semibold text-center text-white"
                   onClick={() => {
                     setThumbShow(false)
                   }}

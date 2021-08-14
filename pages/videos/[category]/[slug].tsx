@@ -26,7 +26,7 @@ export default function Video({ theme, video }) {
     }
   }
 
-  const [currentPrecent, setCurrentPercent] = useState(null)
+  const [currentPercent, setCurrentPercent] = useState(null)
   const [currentProgressColor, setCurrentProgressColor] = useState(null)
   const { scrollYProgress } = useViewportScroll()
   const yRange = useTransform(scrollYProgress, [0, 1], [0, 100])
@@ -42,15 +42,15 @@ export default function Video({ theme, video }) {
 
   useEffect(() => {
     setCurrentProgressColor(
-      currentPrecent >= 90
-        ? '#E9F7CA'
-        : currentPrecent >= 45
-        ? '#3F678D'
-        : currentPrecent >= 20
+      currentPercent >= 70
+        ? '#B3525E'
+        : currentPercent >= 45
+        ? '#FFD56B'
+        : currentPercent >= 20
         ? '#0047AB'
         : '#0047AB'
     )
-  }, [currentPrecent])
+  }, [currentPercent])
   return (
     <>
       <NextSeo {...SEO} />
@@ -58,18 +58,51 @@ export default function Video({ theme, video }) {
         <div style={{ backgroundColor: theme.primary }}>
           <Navbar theme={theme.header} />
           {video.embed_url && (
-            <div className="video-responsive relative mx-auto">
-              <iframe
-                width="640"
-                height="370"
-                src={`https://www.youtube.com/embed/${video.embed_url}?autoplay=1`}
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                className="mx-auto shadow-2xl"
-                title="Embedded youtube"
-              />
-            </div>
+            <>
+              <div className="md:w-2/3 mx-auto w-full">
+                <div className="embed-container">
+                  <iframe
+                    src={`https://www.youtube.com/embed/${video.embed_url}?autoplay=1`}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="mx-auto shadow-2xl"
+                  ></iframe>
+
+                  <style jsx>{`
+                    .embed-container {
+                      position: relative;
+                      max-width: 80%;
+                      margin: 0 auto;
+                      padding-bottom: 56.25%;
+                      height: 0;
+                      overflow: hidden;
+                      max-width: 100%;
+                    }
+                    .embed-container iframe,
+                    .embed-container object,
+                    .embed-container embed {
+                      position: absolute;
+                      top: 0;
+                      left: 0;
+                      width: 100%;
+                      height: 100%;
+                    }
+                  `}</style>
+                </div>
+              </div>
+              {/* <div className="video-responsive relative mx-auto">
+                <iframe
+                  width="640"
+                  height="370"
+                  frameBorder="0"
+                  src={`https://www.youtube.com/embed/${video.embed_url}?autoplay=1`}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="mx-auto shadow-2xl"
+                  title="Embedded youtube"
+                />
+              </div> */}
+            </>
           )}
           <WaveBackground />
         </div>
@@ -99,7 +132,7 @@ export default function Video({ theme, video }) {
           <div
             style={{
               position: 'fixed',
-              top: '20px',
+              bottom: '20px',
               left: '20px',
               width: '120px',
               height: '120px',
@@ -108,7 +141,7 @@ export default function Video({ theme, video }) {
           >
             <svg className="progress-icon" viewBox="0 0 60 60">
               <motion.path
-                fill={currentPrecent === 100 ? '#E9F7CA' : 'none'}
+                fill={currentPercent === 100 ? '#B3525E' : 'none'}
                 strokeWidth="8"
                 stroke={currentProgressColor}
                 strokeDasharray="0 1"
@@ -134,12 +167,12 @@ export default function Video({ theme, video }) {
                 opacity: pathLength
               }}
             >
-              {currentPrecent}
+              {currentPercent}
             </motion.div>
           </div>
           <motion.div className="container border- border-red-300 mx-auto my-10 md:w-1/2 w-full">
             {video.content && (
-              <article className="prose lg:prose-xl px-4 lg:px-0 mt-12 text-gray-700 max-w-screen-md mx-auto text-lg leading-relaxed">
+              <article className="prose lg:prose-xl px-4 lg:px-0 mt-12 font-PlayfairDisplay text-gray-700 max-w-screen-md mx-auto text-lg leading-relaxed">
                 <Markdown>{video.content}</Markdown>
               </article>
             )}
@@ -200,7 +233,7 @@ export const getStaticProps = async ({ params: { slug } }) => {
       theme: {
         primary: '#b3525e',
         secondary: '#3F678D',
-        header: { logoFill: '#fff', navBtnFill: '#fff' },
+        header: { logoFill: '#fff', navBtnFill: '#FAF4E6' },
         body: { bgFill: '#fefefe' },
         footer: {
           bgFill: '#8D3F48',

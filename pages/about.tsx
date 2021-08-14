@@ -62,14 +62,16 @@ export default function About({ about, theme }) {
               src={about.avatar.url}
               width="102px"
               height="145px"
-              className="mx-auto border-2 border-green-50 rounded-full"
+              className="mx-auto border-2 border-green-50"
               alt="Sam Roffey"
             />
           </div>
           <h1 className="text-4xl font-semibold font-PlayfairDisplay text-center my-4">
             Sam Roffey
           </h1>
-          <Markdown className="font-NotoSerif mb-20">{about.content}</Markdown>
+          <Markdown className="font-prose lg:prose-xl font-PlayfairDisplay mb-20">
+            {about.content}
+          </Markdown>
         </motion.div>
         <Footer theme={theme.footer} />
       </div>
@@ -101,7 +103,7 @@ export async function getStaticProps() {
       theme: {
         primary: '#b3525e',
         secondary: '#3F678D',
-        header: { logoFill: '#fff', navBtnFill: '#fff' },
+        header: { logoFill: '#fff', navBtnFill: '#FAF4E6' },
         body: { bgFill: '#fefefe' },
         footer: {
           bgFill: '#8D3F48',

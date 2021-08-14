@@ -78,7 +78,7 @@ export const Footer: React.FC<FooterProps> = ({ theme, playlist = {} }) => {
         </div>
       </div>
       <div style={{ background: theme.bgFill, marginTop: '-2px' }}>
-        <div className="w-100 px-2 md:w-3/5 lg:w-1/3 mx-auto pt-10 border- border-red-400">
+        <div className="w-100 px-2 md:w-3/5 lg:w-1/3 mx-auto pt-10 ">
           <h1
             className="text-2xl text-center my-4 font-PlayfairDisplay"
             style={{ color: theme.titleTagColour }}
@@ -91,7 +91,7 @@ export const Footer: React.FC<FooterProps> = ({ theme, playlist = {} }) => {
             <VideosRow videos={playlist.videos} group={playlist.group} />
           </div>
         )}
-        <div className="w-5/6 px-2 md:w-4/5 lg:w-2/3 mx-auto py-10 border- relative border-red-400">
+        <div className="w-5/6 px-2 md:w-4/5 lg:w-2/3 mx-auto py-10  relative ">
           <motion.div
             className="absolute left-4 bottom-14 z-0 invisible md:visible"
             style={{ y: y1, x: -100 }}
@@ -214,11 +214,11 @@ export const Footer: React.FC<FooterProps> = ({ theme, playlist = {} }) => {
             </motion.svg>
           </Link>
         </div>
-        <div className="w-1/2 px-1 md:w-1/2 lg:w-1/3 mx-auto my-14">
-          <div className="flex flex-col md:flex-row my-4 w-full border- items-center rounded-md ">
+        <div className="w-1/2 px-1 md:w-1/2 lg:w-1/3 mx-auto my-14 ">
+          <div className="flex flex-col md:flex-row my-4 w-full items-center rounded-md ">
             <a
               href="https://www.youtube.com/channel/UCjRNMsglFYFwNsnOWIOgt1Q"
-              className="flex flex-row md:flex-col lg:flex-row shadow-sm p-4 hover:shadow-lg md:w-1/2 w-100 rounded-xl md:mr-2 "
+              className="flex flex-row md:flex-col lg:flex-row my-4 shadow-sm p-4 hover:shadow-lg md:w-1/2 w-100 rounded-xl md:mr-2 "
               style={{ backgroundColor: theme.buttonFill }}
             >
               <motion.div
@@ -237,7 +237,7 @@ export const Footer: React.FC<FooterProps> = ({ theme, playlist = {} }) => {
                   />
                 </div>
                 <div className="flex flex-col">
-                  <p className="text-xl">
+                  <p className="text-lg">
                     Subscribe to my YouTube Channel &rarr; <br />
                   </p>
                   {/* <p className=" text-md" style={{ color: theme.linkColour }}>
@@ -249,7 +249,7 @@ export const Footer: React.FC<FooterProps> = ({ theme, playlist = {} }) => {
 
             <a
               href="https://www.patreon.com/user/posts?u=56069659"
-              className="flex flex-row md:flex-col my-0 lg:flex-row shadow-sm p-4 md:w-1/2 hover:shadow-lg w-100 rounded-xl"
+              className="flex flex-row md:flex-col my-0 lg:flex-row shadow-sm p-4  w-100 md:w-1/2 hover:shadow-lg rounded-xl"
               style={{ backgroundColor: theme.buttonFill }}
             >
               <motion.div
@@ -267,7 +267,7 @@ export const Footer: React.FC<FooterProps> = ({ theme, playlist = {} }) => {
                   />
                 </div>
                 <div className="flex flex-col">
-                  <p className="text-xl">Support me on Patreon &rarr; </p>
+                  <p className="text-lg">Support me on Patreon &rarr; </p>
                   {/* <p className=" text-md" style={{ color: theme.linkColour }}>
                     @Sam Roffey
                   </p> */}
@@ -276,7 +276,7 @@ export const Footer: React.FC<FooterProps> = ({ theme, playlist = {} }) => {
             </a>
           </div>
         </div>
-        <div className="w-full px-2 md:w-5/6 lg:w-1/3 mx-auto border- md:border-red-400 flex flex-wrap justify-center">
+        <div className="w-full px-2 md:w-5/6 lg:w-1/3 mx-auto flex flex-wrap justify-center">
           <a
             href="mailto:split.thefacts@gmail.com"
             style={{ color: theme.linkColor }}

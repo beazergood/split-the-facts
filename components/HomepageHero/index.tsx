@@ -28,7 +28,7 @@ export const HomepageHero = ({
   const { scrollY } = useViewportScroll()
 
   const y1 = useTransform(scrollY, [0, 200], [0, -250])
-  const x1 = useTransform(scrollY, [0, 500], [10, 50])
+  const x1 = useTransform(scrollY, [0, 500], [0, -250])
   const y2 = useTransform(scrollY, [0, 200], [0, -100])
 
   return (
@@ -51,8 +51,8 @@ export const HomepageHero = ({
         </motion.div>
 
         <motion.div
-          className="absolute right-12 top-4 z-10 md:-right-20 lg:right-32 xl:right-64 invisible md:visible"
-          style={{ y: y2, x: x1 }}
+          className="absolute right-12 top-4 z-10 md:-right-20 lg:right-32 xl:right-14 xl:top-44 invisible md:visible"
+          style={{ y: y2, x: 10 }}
         >
           <Image
             src="/svg/frame-4.svg"

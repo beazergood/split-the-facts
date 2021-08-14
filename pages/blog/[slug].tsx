@@ -48,10 +48,10 @@ export default function Article({ theme, article }) {
 
   useEffect(() => {
     setCurrentProgressColor(
-      currentPercent >= 90
-        ? '#E9F7CA'
+      currentPercent >= 70
+        ? '#B3525E'
         : currentPercent >= 45
-        ? '#3F678D'
+        ? '#FFD56B'
         : currentPercent >= 20
         ? '#0047AB'
         : '#0047AB'
@@ -70,7 +70,7 @@ export default function Article({ theme, article }) {
         <motion.div className="container mx-auto relative  ">
           <motion.div className="container border- border-red-300 mx-auto w-5/6">
             <div className="my-16">
-              <p className="text-4xl mb-2 font-PlayfairDisplay text-center">
+              <p className="text-5xl mb-2 font-PlayfairDisplay text-center">
                 {article.title}
               </p>
             </div>
@@ -78,7 +78,7 @@ export default function Article({ theme, article }) {
           <div
             style={{
               position: 'fixed',
-              top: '20px',
+              bottom: '20px',
               left: '20px',
               width: '120px',
               height: '120px',
@@ -87,7 +87,7 @@ export default function Article({ theme, article }) {
           >
             <svg className="progress-icon" viewBox="0 0 60 60">
               <motion.path
-                fill={currentPercent === 100 ? '#E9F7CA' : 'none'}
+                fill={currentPercent === 100 ? '#B3525E' : 'none'}
                 strokeWidth="8"
                 stroke={currentProgressColor}
                 strokeDasharray="0 1"
@@ -119,7 +119,7 @@ export default function Article({ theme, article }) {
 
           <motion.div className="container border- border-red-300 mx-auto my-10 w-1/2">
             {article.content && (
-              <article className="prose lg:prose-xl px-4 lg:px-0 mt-12 text-gray-700 max-w-screen-md mx-auto text-lg leading-relaxed">
+              <article className="prose lg:prose-xl font-PlayfairDisplay px-4 lg:px-0 mt-12 text-gray-700 max-w-screen-md mx-auto text-lg leading-relaxed">
                 <Markdown>{article.content}</Markdown>
                 <div className="text-right">
                   <Moment
@@ -188,7 +188,7 @@ export const getStaticProps = async ({ params: { slug } }) => {
       theme: {
         primary: '#b3525e',
         secondary: '#3F678D',
-        header: { logoFill: '#fff', navBtnFill: '#fff' },
+        header: { logoFill: '#fff', navBtnFill: '#FAF4E6' },
         body: { bgFill: '#fefefe' },
         footer: {
           bgFill: '#8D3F48',

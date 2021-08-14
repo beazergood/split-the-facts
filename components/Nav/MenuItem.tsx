@@ -22,17 +22,16 @@ const variants = {
 const colors = ['#B3525E', '#B3525E', '#B3525E', '#B3525E', '#B3525E']
 
 export const MenuItem = ({ i, selected }) => {
-  const style = { border: `2px solid ${colors[i.id]}` }
   return (
     <motion.li
-      className="cursor-pointer hover:shadow-md"
+      className="cursor-pointer "
       variants={variants}
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.95 }}
     >
       <Link href={i.href} passHref>
         <div>
-          <div className="text-placeholder" style={style}>
+          <div className="text-placeholder font-NotoSerif font-medium text=xl border-2 border-jasmine-faded">
             {i.label}
           </div>
         </div>

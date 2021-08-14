@@ -127,7 +127,7 @@ export const InterviewSection = ({ characters }) => {
           <div className="flex flex-col md:flex-row justify-around w-screen">
             <motion.div
               ref={ref1}
-              className="rect p-3 rounded"
+              className="rect p-3 rounded my-20"
               variants={meghanVariants}
               initial="initial"
               animate={inView1 ? 'animate' : 'initial'}
@@ -158,7 +158,7 @@ export const InterviewSection = ({ characters }) => {
             </motion.div>
           </div>
           <div className="border- border-green-200 flex flex-row">
-            <div className="flex mt-20 mx-auto">
+            <div className="flex mt-24 mx-auto">
               <Button href="/the-cast" label="Meet the cast &rArr;" />
             </div>
           </div>
