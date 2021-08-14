@@ -21,7 +21,7 @@ export default function BlogHome({ posts, theme }) {
   return (
     <>
       <NextSeo {...SEO} />
-      <div className="bg-wall overflow-x-hidden">
+      <div className="bg-cobalt-deep overflow-x-hidden">
         <div className="" style={{ backgroundColor: theme.primary }}>
           <Navbar theme={theme.header} />
           <div className="h-1/2 w-full relative">
@@ -30,15 +30,18 @@ export default function BlogHome({ posts, theme }) {
             </div>
           </div>
           <div className="w-full ">
-            <WaveBackground />
+            <WaveBackground fill="#013A88" />
           </div>
         </div>
         <motion.div className="w-full h-1/2">
-          <div className="mt-20 flex flex-col">
+          <div className="mt-20 flex flex-col ">
             {posts &&
               posts.map((post) => {
                 return (
-                  <div className="flex flex-row my-10" key={post.id}>
+                  <div
+                    className="w-full md:w-1/3 lg:w-1/2 flex flex-col mx-auto my-10"
+                    key={post.id}
+                  >
                     <div className="w-32"></div>
                     <Postcard
                       title={post.title}
@@ -87,10 +90,10 @@ export const getServerSideProps = async () => {
         body: { bgFill: '#fefefe' },
         footer: {
           bgFill: '#3F678D',
-          buttonFill: '#0047AB',
+          buttonFill: '#013A88',
           iconsFill: '#3F678D',
           linkColour: '#fff',
-          logoFill: '#0047AB',
+          logoFill: '#013A88',
           titleTagColour: '#fff'
         }
       }

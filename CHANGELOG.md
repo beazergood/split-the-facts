@@ -1,6 +1,13 @@
+## [1.1.0-9] - 13/8/21
+### Fixes
+- Responsive layout
+
 ## [1.1.0-8] - 13/8/21
 ### Added
 - Characters page quotes
+
+### Fixed
+- bug that was breaking the build: Ensure google font weights are in ascending order when importing them!
 
 ## [1.1.0-7] - 12/8/21
 ### Added

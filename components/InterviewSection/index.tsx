@@ -80,8 +80,11 @@ export const InterviewSection = ({ characters }) => {
     }
   }
   return (
-    <div className="relative">
-      <motion.div className="absolute right-20 top-0" style={{ y: y2, x: 5 }}>
+    <div className="relative z-0">
+      <motion.div
+        className="absolute right-20 top-0 z-10 invisible md:visible"
+        style={{ y: y2, x: 5 }}
+      >
         <Image
           src="/svg/frame-10.svg"
           width="112px"
@@ -90,7 +93,7 @@ export const InterviewSection = ({ characters }) => {
         />
       </motion.div>
       <motion.div
-        className="absolute left-24 -bottom-80"
+        className="absolute left-24 -bottom-80 invisible md:visible"
         style={{ y: y3, x: 5 }}
       >
         <Image
@@ -101,7 +104,7 @@ export const InterviewSection = ({ characters }) => {
         />
       </motion.div>
       <motion.div
-        className="absolute left-24 -top-24 z-10"
+        className="absolute left-24 -top-24 z-0 invisible md:visible"
         style={{ y: y1, x: 5 }}
       >
         <Image
@@ -121,7 +124,7 @@ export const InterviewSection = ({ characters }) => {
               The Interview We Never Saw
             </motion.h1>
           </div>
-          <div className="flex flex-row justify-around w-screen">
+          <div className="flex flex-col md:flex-row justify-around w-screen">
             <motion.div
               ref={ref1}
               className="rect p-3 rounded"

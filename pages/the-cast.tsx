@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion'
+import { motion, useViewportScroll, useTransform } from 'framer-motion'
 import { gql } from '@apollo/client'
 import client from '../scripts/apollo-client'
 import Image from 'next/image'
@@ -29,15 +29,19 @@ const pathVariants = {
 }
 
 export default function Yearbook({ characters, theme, videos }) {
-  // console.log('on the client characters = ', characters)
+  const { scrollY } = useViewportScroll()
+
+  const y1 = useTransform(scrollY, [0, 500], [10, 50])
+  const y2 = useTransform(scrollY, [0, 300], [0, -100])
+  const y3 = useTransform(scrollY, [100, 600], [0, -200])
+
   return (
     <>
       <div className="bg-wall">
         <div className="relative" style={{ backgroundColor: theme.primary }}>
           <Navbar theme={theme.header} />
           <div className="relative border- border-green-300 w-full mx-auto h-1/3">
-            {/* {isDesktopOrLaptop && ( */}
-            <div className="absolute left-32 top-16 z-0">
+            <div className="absolute left-32 top-16 z-0 invisible md:visible">
               <Image
                 src="/svg/frame-3.svg"
                 width="146px"
@@ -45,7 +49,7 @@ export default function Yearbook({ characters, theme, videos }) {
                 alt="Ornate Frame"
               />
             </div>
-            {/* )} */}
+
             <motion.h1
               className="font-PlayfairDisplay text-6xl pl-10 leading-normal font-bold text-popstar-hover text-center mx-2"
               layoutId="h1"
@@ -60,14 +64,17 @@ export default function Yearbook({ characters, theme, videos }) {
               <WaveBackground />
             </div>
             {/* {isDesktopOrLaptop && ( */}
-            <div className="absolute right-16 top-4 z-30">
+            <motion.div
+              style={{ y: y1, x: 0 }}
+              className="absolute right-16 top-4 z-30 invisible md:visible"
+            >
               <Image
                 src="/svg/frame-9.svg"
                 width="182px"
                 height="203px"
                 alt="Ornate Frame"
               />
-            </div>
+            </motion.div>
             {/* )} */}
           </div>
         </div>

@@ -4,7 +4,11 @@ import { WaveBackground } from '../WaveBackground'
 import Image from 'next/image'
 
 export interface HomepageHeroProps {
-  heroVideo?: any
+  heroImageUrl: any
+  embedId: string
+  aboveImageText: string
+  cursiveTitle: string
+  mainTitle: string
 }
 
 const transition = { duration: 1.3, ease: [0.6, 0.01, -0.05, 0.9] }
@@ -14,7 +18,13 @@ const videoVariants = {
   animate: { opacity: 1, transition }
 }
 
-export const HomepageHero = ({ heroVideo = { url: '' } }) => {
+export const HomepageHero = ({
+  heroImageUrl,
+  embedId,
+  aboveImageText,
+  cursiveTitle,
+  mainTitle
+}) => {
   const { scrollY } = useViewportScroll()
 
   const y1 = useTransform(scrollY, [0, 200], [0, -250])
@@ -29,7 +39,7 @@ export const HomepageHero = ({ heroVideo = { url: '' } }) => {
         exit={{ opacity: 0, transition: { duration: 1, delay: 1 } }}
       >
         <motion.div
-          className="absolute left-32 -bottom-2 z-0"
+          className="absolute md:-left-10 lg:left-20 xl:left-44 -bottom-2 z-0 invisible md:visible"
           style={{ y: y1, x: x1 }}
         >
           <Image
@@ -41,7 +51,7 @@ export const HomepageHero = ({ heroVideo = { url: '' } }) => {
         </motion.div>
 
         <motion.div
-          className="absolute right-32 top-4 z-10"
+          className="absolute right-12 top-4 z-10 md:-right-20 lg:right-32 xl:right-64 invisible md:visible"
           style={{ y: y2, x: x1 }}
         >
           <Image
@@ -52,10 +62,12 @@ export const HomepageHero = ({ heroVideo = { url: '' } }) => {
           />
         </motion.div>
         <VideoPlayer
-          cursiveTitle="Questions from "
-          title="The Hallporters Chair"
-          embedId="YBU7mAh9qVQ"
-          thumbnailImg={heroVideo.url}
+          videoId="HomepageHero"
+          cursiveTitle={cursiveTitle}
+          mainTitle={mainTitle}
+          aboveImageText={aboveImageText}
+          embedId={embedId}
+          thumbnailImg={heroImageUrl}
         />
         <WaveBackground />
       </motion.div>

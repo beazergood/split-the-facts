@@ -5,12 +5,12 @@ import HyvorTalk from 'hyvor-talk-react'
 const WEBSITE_ID = parseInt(process.env.NEXT_PUBLIC_HYVOR_WEBSITE_ID)
 
 export interface VideoPlayerProps {
-  embedId: any
-  title?: string
-  cursiveTitle?: string
-  thumbnailImg?: any
-  host?: string
   videoId: string
+  embedId: string
+  cursiveTitle: string
+  mainTitle: string
+  thumbnailImg: any
+  aboveImageText: string
 }
 
 const imgVariants = {
@@ -36,12 +36,12 @@ const pathVariants = {
 const transition = { duration: 0.4, ease: [0.6, 0.01, -0.05, 0.9] }
 
 export const VideoPlayer = ({
-  title = '',
-  cursiveTitle = '',
+  mainTitle,
+  cursiveTitle,
   embedId,
-  thumbnailImg = '',
-  host = '',
-  videoId = ''
+  thumbnailImg,
+  aboveImageText,
+  videoId
 }) => {
   // console.log('embed: ', embed)
 
@@ -61,13 +61,14 @@ export const VideoPlayer = ({
           <>
             <div className="flex flex-row">
               <div className="flex-grow"></div>
-              <motion.div whileHover={{ scale: 1.1 }}>
-                <FaTimes
-                  className="text-4xl m-2 text-gray-300 hover:text-popstar-hover"
-                  onClick={() => {
-                    setThumbShow(true)
-                  }}
-                />
+              <motion.div
+                whileHover={{ scale: 1.1 }}
+                className="bg-popstar-hover rounded-full"
+                onClick={() => {
+                  setThumbShow(true)
+                }}
+              >
+                <FaTimes className="text-4xl m-2 text-gray-300 hover:text-popstar" />
               </motion.div>
             </div>
             <div className="video-responsive shadow-xl">
@@ -81,7 +82,7 @@ export const VideoPlayer = ({
                 />
               }
             </div>
-            <div className="w-2/3 mx-auto">
+            <div className="md:w-2/3 mx-auto">
               <HyvorTalk.Embed
                 websiteId={WEBSITE_ID}
                 id={videoId}
@@ -96,7 +97,7 @@ export const VideoPlayer = ({
             style={{ height: '40vh' }}
           >
             <h3 className="text-center text-white font-AveriaSerifLibre uppercase">
-              Website Exclusive Video
+              {aboveImageText}
             </h3>
             <div className="border- border-green-300 flex items-center">
               <motion.img
@@ -110,7 +111,7 @@ export const VideoPlayer = ({
                 }}
               />
               <FaPlayCircle
-                className="z-20 absolute text-8xl text-white hover:text-nyanza cursor-pointer"
+                className="z-20 absolute text-4xl md:text-8xl text-white hover:text-nyanza cursor-pointer"
                 style={{
                   transform: 'translate(-50%, -50%)',
                   left: '50%'
@@ -121,7 +122,7 @@ export const VideoPlayer = ({
               />
               {cursiveTitle && (
                 <motion.h1
-                  className=" font-AlexBrush text-4xl font-semibold text-center mx-10 z-20 absolute left-40 bottom-0 md:top-64 text-white"
+                  className=" font-AlexBrush md:text-4xl font-semibold text-center mx-10 z-20 absolute md:left-40 top-40 md:top-64 text-white"
                   onClick={() => {
                     setThumbShow(false)
                   }}
@@ -129,14 +130,14 @@ export const VideoPlayer = ({
                   {cursiveTitle}
                 </motion.h1>
               )}
-              <div className="bg-popstar-hover bg-opacity-50 mx-10 m-10 z-10 rounded-lg absolute left-40 md:top-64 p-2 ">
+              <div className="bg-popstar shadow-lg bg-opacity-50 mx-10 m-10 z-10 rounded-lg absolute md:left-40 top-36 md:top-64 p-2 ">
                 <motion.h1
-                  className="font-PlayfairDisplay text-4xl font-semibold text-center text-gray-500 sm:text-white"
+                  className="font-PlayfairDisplay md:text-4xl font-semibold text-center text-white"
                   onClick={() => {
                     setThumbShow(false)
                   }}
                 >
-                  {title}
+                  {mainTitle}
                 </motion.h1>
               </div>
             </div>

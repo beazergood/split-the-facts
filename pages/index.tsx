@@ -11,8 +11,18 @@ import { VideosSection } from '../components/VideosSection'
 import { Footer } from '../components/Footer'
 import { useViewportScroll, useTransform } from 'framer-motion'
 
+export interface HomepageProps {
+  heroProps: {
+    cursive_header: string
+    main_header: string
+    above_image_text: string
+    hero_image_url: string
+    embedId: string
+  }
+}
 export default function Home({
   charactersCast,
+  heroProps,
   homepage,
   atTheBar,
   recentVideos,
@@ -59,7 +69,13 @@ export default function Home({
       <div className="bg-wall overflow-x-hidden">
         <div className="relative" style={{ backgroundColor: theme.primary }}>
           <Navbar theme={theme.header} />
-          <HomepageHero heroVideo={homepage.hero_image} />
+          <HomepageHero
+            heroImageUrl={heroProps.hero_image_url}
+            cursiveTitle={heroProps.hero_cursive_title}
+            mainTitle={heroProps.hero_main_title}
+            aboveImageText={heroProps.above_image_text}
+            embedId={heroProps.embedId}
+          />
         </div>
 
         <div className="bg-wall py-0 relative z-10 mt-28 pt-4">
@@ -106,12 +122,16 @@ export async function getStaticProps() {
           slug
         }
         homepage {
-          intro
-          intro_rich
+          hero_main_title
+          hero_cursive_title
+          hero_above_image_header
+          embed_id
           hero_image {
             url
           }
+          intro_rich
         }
+
         heroVideo: video(id: "60fee84a54d42565648f4973") {
           title
           embed_url
@@ -221,6 +241,13 @@ export async function getStaticProps() {
         return { ...a, slug: 'blog/' + a.slug }
       }),
       homepage: data.homepage,
+      heroProps: {
+        hero_main_title: data.homepage.hero_main_title,
+        hero_cursive_title: data.homepage.hero_cursive_title,
+        hero_above_image_header: data.homepage.hero_above_image_header,
+        embed_id: data.homepage.embed_id,
+        hero_image_url: data.homepage.hero_image.url
+      },
       recentVideos: buildFullSlug(data.recentVideos),
       royalInterview: buildFullSlug(data.royalInterview),
       atTheBar: buildFullSlug(data.atTheBar),

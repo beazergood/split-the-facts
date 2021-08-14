@@ -62,8 +62,8 @@ export default function Video({ theme, video }) {
           {video.embed_url && (
             <div className="video-responsive mx-auto">
               <iframe
-                width="1000"
-                height="580"
+                width="640"
+                height="370"
                 src={`https://www.youtube.com/embed/${video.embed_url}?autoplay=1`}
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -88,7 +88,7 @@ export default function Video({ theme, video }) {
         )}
       </motion.div> */}
         <motion.div className="container mx-auto relative  ">
-          <motion.div className="container border- border-red-300 mx-auto w-5/6">
+          <motion.div className="container border- border-red-300 mx-auto md:w-5/6">
             <div className="my-16">
               <p className="text-3xl mb-2 font-PlayfairDisplay text-center">
                 {video.title}
@@ -139,7 +139,7 @@ export default function Video({ theme, video }) {
               {currentPrecent}
             </motion.div>
           </div>
-          <motion.div className="container border- border-red-300 mx-auto my-10 w-1/2">
+          <motion.div className="container border- border-red-300 mx-auto my-10 md:w-1/2 w-full">
             {video.content && (
               <article className="prose lg:prose-xl px-4 lg:px-0 mt-12 text-gray-700 max-w-screen-md mx-auto text-lg leading-relaxed">
                 <Markdown>{video.content}</Markdown>
@@ -147,7 +147,7 @@ export default function Video({ theme, video }) {
             )}
           </motion.div>
         </motion.div>
-        <div className="w-1/2 mx-auto">
+        <div className="w-full md:w-1/2 mx-auto">
           <HyvorTalk.Embed
             websiteId={WEBSITE_ID}
             id={video.id}

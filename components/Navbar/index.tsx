@@ -37,23 +37,23 @@ export const Navbar: React.FC<NavbarProps> = ({ theme }) => {
   }
 
   return (
-    <div className="w-full h-24 container relative flex flex-row space-around border- border-red-300  mx-auto py-4 z-40">
+    <div className="w-full h-24 container relative flex flex-row space-around border-0 border-red-300  mx-auto py-4 z-40">
       <div>
         <Link href="/" passHref>
           <motion.svg
-            height="70%"
+            height="80%"
             xmlns="http://www.w3.org/2000/svg"
-            width="100%"
+            width="150px"
             version="1.1"
             viewBox="0 0 139.31 54.3909"
-            className="cursor-pointer md:ml-4"
+            className="cursor-pointer md:ml-0 lg:ml-10"
             variants={pathVariants}
             initial="initial"
             animate="animate"
             transition={transition}
             whileHover={{
               scale: 1.1,
-              originX: 0.3,
+              originX: 0.1,
               boxShadow: '0px 0px 8px rgb(255,255,255)',
               textShadow: '0px 0px 8px rgb(255,255,255)'
             }}

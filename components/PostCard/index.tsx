@@ -50,7 +50,7 @@ export const Postcard = ({ title, intro, thumb, color = '', href, id }) => {
 
   return (
     <div
-      className="flex flex-col  relative bg-wall mx-3 shadow-lg rounded-md w-full"
+      className="flex flex-col relative bg-wall shadow-lg rounded-md w-full mx-auto my-6 pb-4"
       ref={ref}
       key={id}
     >

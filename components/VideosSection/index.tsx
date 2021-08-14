@@ -56,7 +56,7 @@ export const VideosSection = ({ title, href, theme, videos }) => {
     <div className="relative pt-14" style={{ backgroundColor: theme.primary }}>
       <section className="h-64 w-100 bg-hero-patternz relative ">
         <motion.div
-          className="absolute left-32 z-10 bottom-32"
+          className="absolute left-32 z-10 bottom-32 invisible md:visible"
           style={{ y: y6, x: 5 }}
         >
           <Image
@@ -66,11 +66,11 @@ export const VideosSection = ({ title, href, theme, videos }) => {
             alt="Ornate Frame"
           />
         </motion.div>
-        <div className="absolute left-20 right-0 bottom-0 top-0 bg-popstar-hover bg-opacity-0 flex flex-col justify-center ">
+        <div className="absolute left-0 right-0 bottom-0 top-0 bg-popstar-hover bg-opacity-0 flex flex-col justify-center ">
           <OrnateFrame label="Videos" color={theme.primary} />
         </div>
         <motion.div
-          className="absolute right-32 bottom-0 z-20"
+          className="absolute right-32 bottom-0 z-10 invisible md:visible"
           style={{ y: y7, x: 5 }}
         >
           <Image

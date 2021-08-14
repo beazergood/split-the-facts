@@ -10,46 +10,23 @@ export default {
   }
 } as Meta
 
-const Template: Story<HomepageHeroProps> = (args) => <HomepageHero {...args} />
+const Template: Story<HomepageHeroProps> = (args) => {
+  return (
+    <div className="bg-popstar m-0 p-0">
+      <HomepageHero {...args} />
+    </div>
+  )
+}
 
 export const Primary = Template.bind({})
 Primary.args = {
-  primary: true,
-  characters: [
-    {
-      id: 0,
-      name: 'Jim',
-      image: {
-        url: ''
-      }
-    },
-    {
-      id: 1,
-      name: 'Jim',
-      image: {
-        url: ''
-      }
-    },
-    {
-      id: 2,
-      name: 'Jim',
-      image: {
-        url: ''
-      }
-    },
-    {
-      id: 3,
-      name: 'Jim',
-      image: {
-        url: ''
-      }
-    },
-    {
-      id: 4,
-      name: 'Jim',
-      image: {
-        url: ''
-      }
-    }
-  ]
+  heroImage: {
+    url:
+      'https://res.cloudinary.com/split-the-facts/image/upload/v1628605413/photo_sketch_merge_732x431_feathered_95f2210239.png'
+  },
+  embedId: '',
+  aboveImageText: 'Worldwide Exclusive',
+  cursiveHeader: 'Questions from ',
+  mainHeader: 'The Hallporters Chair',
+  videoId: 'Hallporters Chair Video'
 }

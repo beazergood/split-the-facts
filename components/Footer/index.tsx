@@ -54,7 +54,7 @@ export const Footer: React.FC<FooterProps> = ({ theme, playlist = {} }) => {
     <>
       <div className="relative bottom- z-0 w-full">
         <motion.div
-          className="absolute z-10 right-4 top-14"
+          className="absolute z-10 right-4 top-14 invisible md:visible"
           style={{ y: y2, x: 0 }}
         >
           <Image
@@ -93,7 +93,7 @@ export const Footer: React.FC<FooterProps> = ({ theme, playlist = {} }) => {
         )}
         <div className="w-5/6 px-2 md:w-4/5 lg:w-2/3 mx-auto py-10 border- relative border-red-400">
           <motion.div
-            className="absolute left-4 bottom-14 z-0"
+            className="absolute left-4 bottom-14 z-0 invisible md:visible"
             style={{ y: y1, x: -100 }}
           >
             <Image
@@ -215,7 +215,7 @@ export const Footer: React.FC<FooterProps> = ({ theme, playlist = {} }) => {
           </Link>
         </div>
         <div className="w-1/2 px-1 md:w-1/2 lg:w-1/3 mx-auto my-14">
-          <div className="flex flex-col lg:flex-row w-full border- rounded-md ">
+          <div className="flex flex-col md:flex-row my-4 w-full border- items-center rounded-md ">
             <a
               href="https://www.youtube.com/channel/UCjRNMsglFYFwNsnOWIOgt1Q"
               className="flex flex-row md:flex-col lg:flex-row shadow-sm p-4 hover:shadow-lg md:w-1/2 w-100 rounded-xl md:mr-2 "
@@ -249,7 +249,7 @@ export const Footer: React.FC<FooterProps> = ({ theme, playlist = {} }) => {
 
             <a
               href="https://www.patreon.com/user/posts?u=56069659"
-              className="flex flex-row md:flex-col lg:flex-row shadow-sm p-4 md:w-1/2 hover:shadow-lg w-100 rounded-xl"
+              className="flex flex-row md:flex-col my-4 lg:flex-row shadow-sm p-4 md:w-1/2 hover:shadow-lg w-100 rounded-xl"
               style={{ backgroundColor: theme.buttonFill }}
             >
               <motion.div

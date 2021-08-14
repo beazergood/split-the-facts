@@ -19,7 +19,10 @@ export const IntroSection = ({ intro }) => {
   return (
     <>
       <div className="relative">
-        <motion.div className="absolute left-16 top-4" style={{ y: y3, x: x1 }}>
+        <motion.div
+          className="absolute left-16 top-4 z-0 invisible md:visible"
+          style={{ y: y3, x: x1 }}
+        >
           <Image
             src="/svg/frame-10.svg"
             width="114px"
@@ -28,7 +31,7 @@ export const IntroSection = ({ intro }) => {
           />
         </motion.div>
         <motion.div
-          className="absolute left-6 -bottom-20"
+          className="absolute left-6 -bottom-20 z-0 invisible md:visible"
           style={{ y: y3, x: x1 }}
         >
           <Image
@@ -38,7 +41,7 @@ export const IntroSection = ({ intro }) => {
             alt="Ornate Frame"
           />
         </motion.div>
-        <div className="z-50 bg-white md:mt-0 py-2 my-20 w-5/6 md:w-1/2 mx-auto shadow-md border-jasmine-faded border-8 ">
+        <div className="z-50 bg-white md:mt-0 py-2 md:my-20 md:w-4/6 lg:w-1/2 mx-auto shadow-md border-jasmine-faded border-8 relative">
           <motion.h1
             className="font-PlayfairDisplay text-7xl font-extrabold italic tracking-tight z-10 text-gray-800 leading-20 text-center mt-10 "
             layoutId="title"
@@ -50,18 +53,18 @@ export const IntroSection = ({ intro }) => {
           </motion.h2>
           {intro && (
             <div className="px-6 my-10">
-              <article className="prose lg:prose-lg px-6 lg:px-0 mt-12 text-gray-700 max-w-screen-md mx-auto text-lg leading-relaxed text-center font-PlayfairDisplay ">
+              <article className="prose lg:prose-lg md:px-6 lg:px-0 mt-12 text-gray-700 max-w-screen-md mx-auto text-lg leading-relaxed text-center font-PlayfairDisplay ">
                 <Markdown>{intro}</Markdown>
               </article>
             </div>
           )}
-          <div className=" my-10 ">
-            <HookForm fill={buttonFill} />
-          </div>
+        </div>
+        <div className="my-10 relative z-30">
+          <HookForm fill={buttonFill} />
         </div>
         <div>
           <motion.div
-            className="absolute right-20 top-24"
+            className="absolute right-20 top-24 z-0 invisible md:visible"
             style={{ y: y4, x: x }}
           >
             <Image
@@ -72,7 +75,7 @@ export const IntroSection = ({ intro }) => {
             />
           </motion.div>
           <motion.div
-            className="absolute right-32 bottom-16"
+            className="absolute right-32 md:bottom-16 z-0  invisible md:visible"
             style={{ y: y5, x: 5 }}
           >
             <Image
