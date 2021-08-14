@@ -50,6 +50,8 @@ export const Footer: React.FC<FooterProps> = ({ theme, playlist = {} }) => {
     type: 'spring',
     stiffness: 300
   }
+
+  const [showVersion, setShowVersion] = useState(false)
   return (
     <>
       <div className="relative bottom- z-0 w-full">
@@ -371,10 +373,13 @@ export const Footer: React.FC<FooterProps> = ({ theme, playlist = {} }) => {
         </div>
         <div className="w-90 py-10 flex flex-row items-center justify-between z-10 mx-auto bottom-10">
           <span className="block text-left ml-10 text-sm opacity-50">
-            {packageInfo.version}
+            {showVersion && <span>{packageInfo.version}</span>}
           </span>
           <span
             className="block text-center text-sm"
+            onClick={() => {
+              setShowVersion(!showVersion)
+            }}
             style={{ color: theme.buttonFill }}
           >
             &copy; 2021 Sam Roffey
