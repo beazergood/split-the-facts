@@ -1,3 +1,11 @@
+## [1.1.0-10] - 13/8/21
+### Changes
+- uniform colours on header and footer throughout
+- copy on footer buttons (more cta)
+
+### Fixes
+- Blog layout
+
 ## [1.1.0-9] - 13/8/21
 ### Fixes
 - Responsive layout

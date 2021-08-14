@@ -28,7 +28,7 @@ export default function About({ about, theme }) {
       <NextSeo {...SEO} />
       <div className="bg-wall overflow-x-hidden">
         {/* <div className="bg-gradient-to-r from-cobalt to-cobalt-deep "> */}
-        <div className="bg-gradient-to-r from-cobalt-deep to-ocean ">
+        <div className="bg-gradient-to-r from-popstar to-popstar-hover ">
           <Navbar theme={theme.header} />
           <div className="h-44 w-full relative">
             <div className=" flex flex-col justify-center ">
@@ -41,7 +41,7 @@ export default function About({ about, theme }) {
             </div>
           </div>
           <motion.div className="relative  h-">
-            <svg
+            {/* <svg
               width="1440"
               height="80"
               viewBox="0 0 1440 80"
@@ -49,7 +49,8 @@ export default function About({ about, theme }) {
               xmlns="http://www.w3.org/2000/svg"
             >
               <path d="M1440 80L0 0V80H1440Z" fill="#FAF4E6" />
-            </svg>
+            </svg> */}
+            <WaveBackground />
           </motion.div>
         </div>
         <motion.div
@@ -98,15 +99,16 @@ export async function getStaticProps() {
     props: {
       about: data.about,
       theme: {
-        primary: '#0047AB',
+        primary: '#b3525e',
+        secondary: '#3F678D',
         header: { logoFill: '#fff', navBtnFill: '#fff' },
         body: { bgFill: '#fefefe' },
         footer: {
-          bgFill: '#3F678D',
-          buttonFill: '#FFD56B',
-          iconsFill: '#3F678D',
+          bgFill: '#8D3F48',
+          buttonFill: '#B3525E',
+          iconsFill: '#8D3F48',
           linkColour: '#fff',
-          logoFill: '#fff',
+          logoFill: '#B3525E',
           titleTagColour: '#fff'
         }
       }

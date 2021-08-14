@@ -165,8 +165,8 @@ export async function getStaticProps() {
       }),
       videos: buildFullSlug(data.videos),
       theme: {
-        primary: '#B3525E',
-        secondary: '#B3525E',
+        primary: '#b3525e',
+        secondary: '#3F678D',
         header: { logoFill: '#fff', navBtnFill: '#fff' },
         body: { bgFill: '#fefefe' },
         footer: {
@@ -174,8 +174,8 @@ export async function getStaticProps() {
           buttonFill: '#B3525E',
           iconsFill: '#8D3F48',
           linkColour: '#fff',
-          titleTagColour: '#fff',
-          logoFill: '#fff'
+          logoFill: '#B3525E',
+          titleTagColour: '#fff'
         }
       }
     }

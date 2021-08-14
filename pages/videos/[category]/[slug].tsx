@@ -17,8 +17,6 @@ import HyvorTalk from 'hyvor-talk-react'
 import { useState, useEffect } from 'react'
 
 export default function Video({ theme, video }) {
-  // console.log(video)
-
   const SEO = {
     title: `Split the facts | ${video.title}`,
     description: video.description,
@@ -200,15 +198,17 @@ export const getStaticProps = async ({ params: { slug } }) => {
     props: {
       video: data[0],
       theme: {
-        primary: '#E9F7CA',
-        header: { logoFill: '#94A661', navBtnFill: '#fff' },
+        primary: '#b3525e',
+        secondary: '#3F678D',
+        header: { logoFill: '#fff', navBtnFill: '#fff' },
         body: { bgFill: '#fefefe' },
         footer: {
-          logoFill: '#94A661',
-          bgFill: '#E9F7CA',
-          buttonFill: '#94A661',
-          iconsFill: '#E9F7CA',
-          linkColour: '#E9F7CA'
+          bgFill: '#8D3F48',
+          buttonFill: '#B3525E',
+          iconsFill: '#8D3F48',
+          linkColour: '#fff',
+          logoFill: '#B3525E',
+          titleTagColour: '#fff'
         }
       }
     }

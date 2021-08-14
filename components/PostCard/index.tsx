@@ -1,4 +1,6 @@
 import { motion, useViewportScroll, useTransform } from 'framer-motion'
+import { GoComment } from 'react-icons/go'
+import Moment from 'react-moment'
 import { useInView } from 'react-intersection-observer'
 import Image from 'next/image'
 import { Button } from '../Button'
@@ -14,7 +16,16 @@ export interface PostcardProps {
   color?: string
 }
 
-export const Postcard = ({ title, intro, thumb, color = '', href, id }) => {
+export const Postcard = ({
+  title,
+  intro,
+  thumb,
+  color = '',
+  href,
+  id,
+  author,
+  published
+}) => {
   const transition = {
     duration: 1.3,
     ease: [0.6, 0.01, -0.05, 0.9],
@@ -50,7 +61,7 @@ export const Postcard = ({ title, intro, thumb, color = '', href, id }) => {
 
   return (
     <div
-      className="flex flex-col relative bg-wall shadow-lg rounded-md w-full mx-auto my-6 pb-4"
+      className="flex flex-col relative bg-white shadow-lg rounded-md w-full mx-auto my-6 pb-4"
       ref={ref}
       key={id}
     >
@@ -59,14 +70,32 @@ export const Postcard = ({ title, intro, thumb, color = '', href, id }) => {
           <Image src={thumb} layout="fill" alt="Blog Post Thumbnail" />
         </div>
       </div>
-      <div className="px-4 py-5 h-64 flex flex-col justify-between">
+      <div className="px-4 py-5 flex flex-col justify-between ">
         <h3 className="text-3xl font-PlayfairDisplay">{title}</h3>
-        <p className="my-4 font-AveriaSerifLibre text-xl">{intro}</p>
-        <HyvorTalk.CommentCount websiteId={WEBSITE_ID} id={id} />
+        {/* <div className="flex flex-row justify-start items-center">
+          <span className="relative bg-moss-green p-3 rounded-full flex flex-col items-center mr-2">
+            <span className="text-white text-xl leading-5">Sr</span>
+          </span>
+          <p className="my-4 font-PlayfairDisplay text-lg">{author.name}</p>
+        </div> */}
 
-        <div className="flex flex-col items-center ">
-          <Button label="Read post" href={href} />
-        </div>
+        <p className="my-4 font-AveriaSerifLibre text-xl">{intro}</p>
+        <span className="text-sm font-NotoSerif text-right flex flex-row mr-2 items-center ">
+          <span className="flex-grow"></span>
+          <Moment format="D MMM YYYY" className="font-NotoSerif text-xs">
+            {published}
+          </Moment>
+          <span className="w-6"></span>
+          <HyvorTalk.CommentCount
+            websiteId={WEBSITE_ID}
+            id={id}
+            mode="number"
+          />
+          <GoComment className="mx-1 text-lg" />
+        </span>
+      </div>
+      <div className="flex flex-col items-center mt-4">
+        <Button label="Read post" href={href} />
       </div>
     </div>
   )

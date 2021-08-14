@@ -179,15 +179,16 @@ export const getServerSideProps = async () => {
         theGodfather: buildFullSlug(data.theGodfather)
       },
       theme: {
-        primary: '#94A661',
+        primary: '#b3525e',
+        secondary: '#3F678D',
         header: { logoFill: '#fff', navBtnFill: '#fff' },
         body: { bgFill: '#fefefe' },
         footer: {
-          bgFill: '#94A661',
-          buttonFill: '#E9F7CA',
-          iconsFill: '#94A661',
-          linkColour: '#0c0c0c',
-          logoFill: '#E9F7CA',
+          bgFill: '#8D3F48',
+          buttonFill: '#B3525E',
+          iconsFill: '#8D3F48',
+          linkColour: '#fff',
+          logoFill: '#B3525E',
           titleTagColour: '#fff'
         }
       }

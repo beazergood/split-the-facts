@@ -2,6 +2,7 @@ import { gql } from '@apollo/client'
 import client from '../../scripts/apollo-client'
 import Link from 'next/link'
 import fetch from 'isomorphic-unfetch'
+import Moment from 'react-moment'
 import Image from 'next/image'
 import { NextSeo } from 'next-seo'
 import { Navbar } from '../../components/Navbar'
@@ -31,12 +32,12 @@ export default function Article({ theme, article }) {
     }
   }
 
-  const [currentPrecent, setCurrentPercent] = useState(null)
+  const [currentPercent, setCurrentPercent] = useState(0)
   const [currentProgressColor, setCurrentProgressColor] = useState(null)
   const { scrollYProgress } = useViewportScroll()
   const yRange = useTransform(scrollYProgress, [0, 1], [0, 100])
   const pathLength = useSpring(scrollYProgress, { stiffness: 400, damping: 90 })
-
+  console.log('currentPercent: ', currentPercent)
   useEffect(
     () =>
       yRange.onChange((v) => {
@@ -47,15 +48,15 @@ export default function Article({ theme, article }) {
 
   useEffect(() => {
     setCurrentProgressColor(
-      currentPrecent >= 90
+      currentPercent >= 90
         ? '#E9F7CA'
-        : currentPrecent >= 45
+        : currentPercent >= 45
         ? '#3F678D'
-        : currentPrecent >= 20
+        : currentPercent >= 20
         ? '#0047AB'
         : '#0047AB'
     )
-  }, [currentPrecent])
+  }, [currentPercent])
 
   return (
     <>
@@ -63,22 +64,22 @@ export default function Article({ theme, article }) {
       <div className="bg-wall">
         <div className="" style={{ backgroundColor: theme.primary }}>
           <Navbar theme={theme.header} />
-          <div className="flex justify-center items-center flex-col py-2 bg-EAEFB1 rounded-t-md">
-            <Link href="/blog">&lArr;Back to blog home</Link>
+          {/* <div className="flex justify-center items-center flex-col py-2 bg-EAEFB1 rounded-t-md">
             <Image
               src={article.image.url}
               width="400px"
               height="380px"
               alt="Post image"
+              className="shadow-md"
             />
-          </div>
+          </div> */}
           <WaveBackground />
         </div>
 
         <motion.div className="container mx-auto relative  ">
           <motion.div className="container border- border-red-300 mx-auto w-5/6">
             <div className="my-16">
-              <p className="text-3xl mb-2 font-PlayfairDisplay text-center">
+              <p className="text-4xl mb-2 font-PlayfairDisplay text-center">
                 {article.title}
               </p>
             </div>
@@ -95,7 +96,7 @@ export default function Article({ theme, article }) {
           >
             <svg className="progress-icon" viewBox="0 0 60 60">
               <motion.path
-                fill={currentPrecent === 100 ? '#E9F7CA' : 'none'}
+                fill={currentPercent === 100 ? '#E9F7CA' : 'none'}
                 strokeWidth="8"
                 stroke={currentProgressColor}
                 strokeDasharray="0 1"
@@ -121,7 +122,7 @@ export default function Article({ theme, article }) {
                 opacity: pathLength
               }}
             >
-              {currentPrecent}
+              {currentPercent}
             </motion.div>
           </div>
 
@@ -129,6 +130,14 @@ export default function Article({ theme, article }) {
             {article.content && (
               <article className="prose lg:prose-xl px-4 lg:px-0 mt-12 text-gray-700 max-w-screen-md mx-auto text-lg leading-relaxed">
                 <Markdown>{article.content}</Markdown>
+                <div className="text-right">
+                  <Moment
+                    format="D MMM YYYY"
+                    className="font-NotoSerif text-xs"
+                  >
+                    {article.published}
+                  </Moment>
+                </div>
               </article>
             )}
           </motion.div>
@@ -186,15 +195,17 @@ export const getStaticProps = async ({ params: { slug } }) => {
     props: {
       article: data[0],
       theme: {
-        primary: '#E9F7CA',
-        header: { logoFill: '#94A661' },
+        primary: '#b3525e',
+        secondary: '#3F678D',
+        header: { logoFill: '#fff', navBtnFill: '#fff' },
         body: { bgFill: '#fefefe' },
         footer: {
-          logoFill: '#94A661',
-          bgFill: '#E9F7CA',
-          buttonFill: '#94A661',
-          iconsFill: '#E9F7CA',
-          linkColour: '#E9F7CA'
+          bgFill: '#8D3F48',
+          buttonFill: '#B3525E',
+          iconsFill: '#8D3F48',
+          linkColour: '#fff',
+          logoFill: '#B3525E',
+          titleTagColour: '#fff'
         }
       }
     }

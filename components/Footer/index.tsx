@@ -238,7 +238,7 @@ export const Footer: React.FC<FooterProps> = ({ theme, playlist = {} }) => {
                 </div>
                 <div className="flex flex-col">
                   <p className="text-xl">
-                    My YouTube Channel &rarr; <br />
+                    Subscribe to my YouTube Channel &rarr; <br />
                   </p>
                   {/* <p className=" text-md" style={{ color: theme.linkColour }}>
                     @Split! - The West at War with Itself
@@ -249,7 +249,7 @@ export const Footer: React.FC<FooterProps> = ({ theme, playlist = {} }) => {
 
             <a
               href="https://www.patreon.com/user/posts?u=56069659"
-              className="flex flex-row md:flex-col my-4 lg:flex-row shadow-sm p-4 md:w-1/2 hover:shadow-lg w-100 rounded-xl"
+              className="flex flex-row md:flex-col my-0 lg:flex-row shadow-sm p-4 md:w-1/2 hover:shadow-lg w-100 rounded-xl"
               style={{ backgroundColor: theme.buttonFill }}
             >
               <motion.div
@@ -267,7 +267,7 @@ export const Footer: React.FC<FooterProps> = ({ theme, playlist = {} }) => {
                   />
                 </div>
                 <div className="flex flex-col">
-                  <p className="text-xl">Support my Patreon &rarr; </p>
+                  <p className="text-xl">Support me on Patreon &rarr; </p>
                   {/* <p className=" text-md" style={{ color: theme.linkColour }}>
                     @Sam Roffey
                   </p> */}
