@@ -57,10 +57,10 @@ export default function Video({ theme, video }) {
     <>
       <NextSeo {...SEO} />
       <div className="bg-wall">
-        <div className="" style={{ backgroundColor: theme.primary }}>
+        <div style={{ backgroundColor: theme.primary }}>
           <Navbar theme={theme.header} />
           {video.embed_url && (
-            <div className="video-responsive mx-auto">
+            <div className="video-responsive relative mx-auto">
               <iframe
                 width="640"
                 height="370"

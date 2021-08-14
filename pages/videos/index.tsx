@@ -1,6 +1,7 @@
 import { gql } from '@apollo/client'
 import client from '../../scripts/apollo-client'
 import { motion } from 'framer-motion'
+import Image from 'next/image'
 import { NextSeo } from 'next-seo'
 import { VideosRow } from '../../components/VideosRow'
 import { WaveBackground } from '../../components/WaveBackground'
@@ -28,6 +29,23 @@ export default function VideosHome({ videos, theme }) {
             {/* <p className="text-3xl text-white text-center font-NotoSerif my-10 z-20 relative">
               Videos
             </p> */}
+            <div className="absolute left-32 top-16 z-0 invisible md:visible">
+              <Image
+                src="/svg/frame-6.svg"
+                width="126px"
+                height="141px"
+                alt="Ornate Frame"
+              />
+            </div>
+            <div className="absolute right-32 top-16 z-0 invisible md:visible">
+              <Image
+                src="/svg/frame-9.svg"
+                width="106px"
+                height="111px"
+                alt="Ornate Frame"
+              />
+            </div>
+
             <div className="flex flex-col justify-center ">
               <OrnateFrame label="Videos" color={theme.primary} />
             </div>

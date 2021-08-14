@@ -27,13 +27,13 @@ export default function LandingHome({ video }) {
       <NextSeo {...SEO} />
       <WaveBackground />
       <motion.div>
-        <VideoPlayer
+        {/* <VideoPlayer
           cursiveTitle="Questions from"
-          title="The Hallporters Chair"
+          mainTitle="The Hallporters Chair"
           embedId={video.embed_url}
           thumbnailImg={video.thumbnail_image?.url}
           videoId="video.id"
-        />
+        /> */}
 
         <h1 className="text-4xl text-center my-10 font-PlayfairDisplay">
           ☝️ Website Exclusive Video

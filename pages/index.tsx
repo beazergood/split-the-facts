@@ -31,30 +31,30 @@ export default function Home({
   theme,
   articles
 }) {
-  const { scrollY } = useViewportScroll()
+  // const { scrollY } = useViewportScroll()
 
-  const x1 = useTransform(scrollY, [0, 500], [10, 50])
-  const y2 = useTransform(scrollY, [0, 300], [0, -100])
-  const y3 = useTransform(scrollY, [100, 600], [0, -200])
-  const y4 = useTransform(scrollY, [100, 800], [0, -100])
-  const y5 = useTransform(scrollY, [0, 900], [0, -200])
-  const y6 = useTransform(scrollY, [600, 1400], [0, -400])
-  const y7 = useTransform(scrollY, [0, 1600], [0, -200])
-  const y8 = useTransform(scrollY, [0, 2600], [0, -200])
+  // const x1 = useTransform(scrollY, [0, 500], [10, 50])
+  // const y2 = useTransform(scrollY, [0, 300], [0, -100])
+  // const y3 = useTransform(scrollY, [100, 600], [0, -200])
+  // const y4 = useTransform(scrollY, [100, 800], [0, -100])
+  // const y5 = useTransform(scrollY, [0, 900], [0, -200])
+  // const y6 = useTransform(scrollY, [600, 1400], [0, -400])
+  // const y7 = useTransform(scrollY, [0, 1600], [0, -200])
+  // const y8 = useTransform(scrollY, [0, 2600], [0, -200])
 
-  const [ref, inView, entry] = useInView({
-    /* Optional options */
-    threshold: 0.5,
-    triggerOnce: false
-  })
+  // const [ref, inView, entry] = useInView({
+  //   /* Optional options */
+  //   threshold: 0.5,
+  //   triggerOnce: false
+  // })
 
-  const variantsFromRight = {
-    visible: { opacity: 1, y: 0 },
-    hidden: {
-      opacity: 0,
-      y: 50
-    }
-  }
+  // const variantsFromRight = {
+  //   visible: { opacity: 1, y: 0 },
+  //   hidden: {
+  //     opacity: 0,
+  //     y: 50
+  //   }
+  // }
 
   return (
     <>
