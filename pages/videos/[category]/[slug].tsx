@@ -201,7 +201,7 @@ export const getStaticProps = async ({ params: { slug } }) => {
       video: data[0],
       theme: {
         primary: '#E9F7CA',
-        header: { logoFill: '#94A661' },
+        header: { logoFill: '#94A661', navBtnFill: '#fff' },
         body: { bgFill: '#fefefe' },
         footer: {
           logoFill: '#94A661',
