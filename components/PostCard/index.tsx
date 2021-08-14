@@ -14,6 +14,7 @@ export interface PostcardProps {
   thumb: string
   href: string
   color?: string
+  published: any
 }
 
 export const Postcard = ({
@@ -23,7 +24,6 @@ export const Postcard = ({
   color = '',
   href,
   id,
-  author,
   published
 }) => {
   const transition = {
@@ -72,12 +72,6 @@ export const Postcard = ({
       </div>
       <div className="px-4 py-5 flex flex-col justify-between ">
         <h3 className="text-3xl font-PlayfairDisplay">{title}</h3>
-        {/* <div className="flex flex-row justify-start items-center">
-          <span className="relative bg-moss-green p-3 rounded-full flex flex-col items-center mr-2">
-            <span className="text-white text-xl leading-5">Sr</span>
-          </span>
-          <p className="my-4 font-PlayfairDisplay text-lg">{author.name}</p>
-        </div> */}
 
         <p className="my-4 font-AveriaSerifLibre text-xl">{intro}</p>
         <span className="text-sm font-NotoSerif text-right flex flex-row mr-2 items-center ">

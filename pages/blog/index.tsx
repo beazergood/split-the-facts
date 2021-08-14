@@ -53,7 +53,6 @@ export default function BlogHome({ posts, theme }) {
                         intro={post.description}
                         href={post.slug}
                         id={post.id}
-                        author={post.author}
                         published={post.published_at}
                       />
                       <div className="w-32"></div>
@@ -81,12 +80,7 @@ export const getServerSideProps = async () => {
             url
           }
           id
-          author {
-            name
-            picture {
-              url
-            }
-          }
+
           published_at
         }
       }

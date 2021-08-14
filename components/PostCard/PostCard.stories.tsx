@@ -14,7 +14,14 @@ const args2 = {
     'http://localhost:3000/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fsplit-the-facts%2Fimage%2Fupload%2Fv1628767434%2Fbook_open_2_800w_9d11c61be6.jpg&w=1200&q=75',
   intro: 'Did you see him trying to tie his shoelaces?!',
   color: '#FFD56B',
-  href: ''
+  href: '',
+  author: {
+    name: '',
+    picture: {
+      url: ''
+    }
+  },
+  published: new Date()
 }
 
 const Template: Story<PostcardProps> = (args) => {
@@ -34,7 +41,14 @@ Standard.args = {
     'http://localhost:3000/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fsplit-the-facts%2Fimage%2Fupload%2Fv1628767083%2Fbook_open_cda1d4836b.jpg&w=384&q=75',
   intro: 'Why not buy not try not',
   color: '#FFD56B',
-  href: ''
+  href: '',
+  author: {
+    name: '',
+    picture: {
+      url: ''
+    }
+  },
+  published: new Date()
 }
 
 // export const Long = Template.bind({})

@@ -116,6 +116,7 @@ export async function getStaticProps() {
             url
           }
           id
+          published_at
         }
         recentVideos: videos(sort: "published:DESC", limit: 3) {
           id

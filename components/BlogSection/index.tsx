@@ -110,6 +110,7 @@ export const BlogSection = ({ title, articles, theme, href }) => {
                     intro={article.description}
                     href={article.slug}
                     id={article.id}
+                    published={article.published_at}
                   />
                 </div>
               )

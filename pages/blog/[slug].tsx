@@ -64,15 +64,6 @@ export default function Article({ theme, article }) {
       <div className="bg-wall">
         <div className="" style={{ backgroundColor: theme.primary }}>
           <Navbar theme={theme.header} />
-          {/* <div className="flex justify-center items-center flex-col py-2 bg-EAEFB1 rounded-t-md">
-            <Image
-              src={article.image.url}
-              width="400px"
-              height="380px"
-              alt="Post image"
-              className="shadow-md"
-            />
-          </div> */}
           <WaveBackground />
         </div>
 
