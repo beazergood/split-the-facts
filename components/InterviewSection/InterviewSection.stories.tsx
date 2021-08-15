@@ -10,9 +10,13 @@ export default {
   }
 } as Meta
 
-const Template: Story<InterviewSectionProps> = (args) => (
-  <InterviewSection {...args} />
-)
+const Template: Story<InterviewSectionProps> = (args) => {
+  return (
+    <div className="bg-wall w-full">
+      <InterviewSection {...args} />
+    </div>
+  )
+}
 
 export const Primary = Template.bind({})
 Primary.args = {

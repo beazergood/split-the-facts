@@ -128,11 +128,11 @@ export const VideosRow = ({ videos, group }) => {
 
   return (
     <div
-      className="mx-auto my-3 relative px-3 py-4 bg-white shadow-md "
+      className="mx-auto my-3 relative px-3 py-4 bg-popstar-hover rounded-lg"
       style={{ width: '95%' }}
       key={group.title}
     >
-      <p className="ml-6 my-3 relative font-AveriaSerifLibre">
+      <p className="ml-6 my-3 relative font-AveriaSerifLibre text-wall">
         <span className="text-xl">{group.title}</span> -{' '}
         <span className="text-md">{items.length} videos</span>
       </p>
@@ -191,7 +191,7 @@ function Card({ fullSlug, title, itemId, thumbnail_url, published }) {
     <motion.div
       key={itemId}
       whileHover={{ scale: 1.05 }}
-      className="cursor-pointer border- bg-white border-red-300 flex-shrink-0 shadow mx-4"
+      className="cursor-pointer   bg-wall border-red-300 flex-shrink-0 shadow mx-4"
       style={{
         width: '260px'
       }}
@@ -260,9 +260,11 @@ function Arrow({
         flexDirection: 'column',
         justifyContent: 'center',
         right: '1%',
+        width: '20px',
         opacity: disabled ? '0' : '1',
         userSelect: 'none',
-        background: '#fefefe'
+        background: '#B3525E',
+        color: '#fff'
       }}
     >
       {children}

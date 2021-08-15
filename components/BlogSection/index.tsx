@@ -56,10 +56,10 @@ export const BlogSection = ({ title, articles, theme, href }) => {
 
   return (
     <div
-      className="w-full  border-t-2 pb-20 border-ocean bg-ocean relative min-h-64"
+      className="w-full  border-t-2 pb-20 border-ocean bg-ocean relative min-h-64 py-20"
       ref={ref}
     >
-      <div className="w-full absolute -top-20 ">
+      <div className="w-100 absolute -top-20 ">
         <svg
           width="1440"
           height="80"
@@ -103,7 +103,10 @@ export const BlogSection = ({ title, articles, theme, href }) => {
           {articles &&
             articles.map((article) => {
               return (
-                <div className="md:w-1/3 z-20 mx-auto" key={article.id}>
+                <div
+                  className="md:w-1/3 sm:w-2/3 z-20 mx-auto"
+                  key={article.id}
+                >
                   <Postcard
                     title={article.title}
                     thumb={article.image.url}
@@ -117,7 +120,7 @@ export const BlogSection = ({ title, articles, theme, href }) => {
             })}
         </div>
       </div>
-      <div className="absolute -bottom-20 z-10 w-full">
+      <div className="absolute -bottom-20 z-10 w-100">
         <svg
           width="1440"
           height="80"

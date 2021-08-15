@@ -13,11 +13,12 @@ export const InterviewSection = ({ characters }) => {
   const y2 = useTransform(scrollY, [3900, 4400], [0, -150])
   const y3 = useTransform(scrollY, [3800, 4800], [0, -150])
   const y4 = useTransform(scrollY, [4500, 5800], [0, 100])
+  const xChair = useTransform(scrollY, [3800, 4800], [10, 60])
 
   const [ref1, inView1, entry1] = useInView({
     /* Optional options */
     threshold: 0.1,
-    triggerOnce: false
+    triggerOnce: true
   })
   const [ref2, inView2, entry2] = useInView({
     /* Optional options */
@@ -27,7 +28,7 @@ export const InterviewSection = ({ characters }) => {
   const [ref3, inView3, entry3] = useInView({
     /* Optional options */
     threshold: 0.2,
-    triggerOnce: false
+    triggerOnce: true
   })
 
   const meghanVariants = {
@@ -81,8 +82,8 @@ export const InterviewSection = ({ characters }) => {
   }
   return (
     <div className="relative z-0">
-      <motion.div
-        className="absolute right-20 top-0 z-10 invisible md:visible"
+      {/* <motion.div
+        className="absolute right-20 top-24 z-10 invisible md:visible"
         style={{ y: y2, x: 5 }}
       >
         <Image
@@ -91,7 +92,7 @@ export const InterviewSection = ({ characters }) => {
           height="134px"
           alt="Ornate Frame"
         />
-      </motion.div>
+      </motion.div> */}
       <motion.div
         className="absolute left-24 -bottom-80 invisible md:visible"
         style={{ y: y3, x: 5 }}
@@ -104,21 +105,21 @@ export const InterviewSection = ({ characters }) => {
         />
       </motion.div>
       <motion.div
-        className="absolute left-24 -top-24 z-0 invisible md:visible"
-        style={{ y: y1, x: 5 }}
+        className="absolute left-20 top-24 z-0 invisible md:visible"
+        style={{ y: y1, x: 15 }}
       >
         <Image
-          src="/svg/frame-6.svg"
-          width="112px"
-          height="134px"
-          alt="Ornate Frame"
+          src="/svg/horse-1.svg"
+          width="312px"
+          height="334px"
+          alt="I Love Lamp"
         />
       </motion.div>
       <motion.div className=" flex items-center justify-center px-4">
         <div className="flex flex-col">
-          <div className="">
+          <div className="mx-auto flex flex-row">
             <motion.h1
-              className="font-PlayfairDisplay text-6xl px-2 mx-auto md:w-1/4 leading-normal text-center font-bold z-10 text-gray-700 my-20"
+              className="font-PlayfairDisplay text-6xl px-2 mx-auto w-1/2  leading-normal text-center font-bold z-10 text-gray-700 my-20"
               layoutId="title"
             >
               The Interview We Never Saw
@@ -163,6 +164,18 @@ export const InterviewSection = ({ characters }) => {
             </div>
           </div>
         </div>
+        <motion.div
+          className="absolute -right-0 top-0 z-0 invisible md:visible "
+          style={{ y: y4, x: xChair }}
+        >
+          <Image
+            className="right-0 absolute"
+            src="/svg/chair.svg"
+            width="412px"
+            height="434px"
+            alt="Chair"
+          />
+        </motion.div>
       </motion.div>
     </div>
   )

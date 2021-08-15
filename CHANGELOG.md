@@ -1,3 +1,13 @@
+## [1.1.0-12] - 14/8/21
+### Fixes
+- right button on video row
+
+### Added
+- horse and chair svg
+
+### Changed
+- cast intro section, swapped text with video page.
+
 ## [1.1.0-11] - 14/8/21
 ### Fixes
 - more mobile layout

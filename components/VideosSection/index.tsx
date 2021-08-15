@@ -101,7 +101,7 @@ export const VideosSection = ({ title, href, theme, videos }) => {
           group={{ title: 'The Godfather', action: 'link' }}
         />
       </div>
-      <div className="absoute bottom-0 -z-10 w-full border-b-2 border-wall">
+      <div className="absoute bottom-0 -z-10 w-100 border-b-2 border-wall">
         {/* wave */}
         <svg
           width="1440"

@@ -16,7 +16,7 @@ export const AllInOne = ({ characters }) => {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center mb-10">
       <motion.div
-        className="absolute right-2 top-24 invisible md:visible"
+        className="absolute right-0 top-14 invisible md:visible"
         style={{ y: y1, x: 0 }}
       >
         <Image
@@ -27,7 +27,7 @@ export const AllInOne = ({ characters }) => {
         />
       </motion.div>
       <motion.div
-        className="absolute right-32 top-0 scale-90 invisible md:visible"
+        className="absolute right-36 top-0 scale-90 invisible md:visible"
         style={{ y: y2, x: 0 }}
       >
         <Image
@@ -37,7 +37,7 @@ export const AllInOne = ({ characters }) => {
           alt="Ornate Frame"
         />
       </motion.div>
-      <div className="flex flex-col mt-32">
+      <div className="flex flex-col mt-12">
         {characters &&
           characters.map((character, index) => {
             console.log('index: ', index)
@@ -52,7 +52,7 @@ export const AllInOne = ({ characters }) => {
             )
           })}
       </div>
-      <motion.div
+      {/* <motion.div
         className="absolute left-2 top-32 md:top-14 invisible md:visible"
         style={{ y: y3, x: 0 }}
       >
@@ -73,7 +73,7 @@ export const AllInOne = ({ characters }) => {
           height="102px"
           alt="Ornate Frame"
         />
-      </motion.div>
+      </motion.div> */}
       <p className="border-2 p-8 font-PlayfairDisplay text-ocean text-lg text-bold  rounded-xl border-golden">
         <span className="text-3xl text-golden">*</span> it&lsquo;s perhaps worth
         pointing out in this day and age that these quotes are part of my parody
