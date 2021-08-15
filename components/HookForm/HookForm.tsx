@@ -56,11 +56,13 @@ export const HookForm = ({ fill = '#000' }) => {
             status: 'error'
           })
         } else {
-          setsomeProp(true)
           setMessageData({
             message: '👍 that worked, thanks for subscribing.',
             status: 'success'
           })
+          setTimeout(() => {
+            setsomeProp(!someProp)
+          }, 100)
         }
         resolve({})
       } catch (e) {
@@ -69,20 +71,6 @@ export const HookForm = ({ fill = '#000' }) => {
       }
     })
   }
-
-  // const config = {
-  //   angle: 90,
-  //   spread: 360,
-  //   startVelocity: 40,
-  //   elementCount: 70,
-  //   dragFriction: 0.12,
-  //   duration: 4000,
-  //   stagger: 9,
-  //   width: '10px',
-  //   height: '10px',
-  //   perspective: '654px',
-  //   colors: ['#a864fd', '#29cdff', '#78ff44', '#ff718d', '#fdff6a']
-  // }
 
   const config = {
     angle: 81,
@@ -101,12 +89,7 @@ export const HookForm = ({ fill = '#000' }) => {
   return (
     <div className="">
       <form onSubmit={handleSubmit(onSubmit)} id="sign_up_form">
-        <p
-          className="text-lg mb-5 font-PlayfairDisplay text-center"
-          onClick={() => {
-            setsomeProp(!someProp)
-          }}
-        >
+        <p className="text-lg mb-5 font-PlayfairDisplay text-center">
           Enter your email to subscribe to the occasional update from me.
         </p>
         <div className="flex flex-col md:flex-row mx-auto gap-2">
@@ -120,7 +103,7 @@ export const HookForm = ({ fill = '#000' }) => {
               <Input
                 id="email"
                 placeholder="Join the conversation"
-                className="appearance-none rounded-full w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                className="appearance-none rounded-full w-full mb-2 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 {...register('email', {
                   required: 'This is required',
                   minLength: { value: 4, message: 'Minimum length should be 4' }

@@ -26,7 +26,7 @@ export default async (req, res) => {
 
     const response = await axios.post(url, data, { headers })
 
-    console.log('response', response)
+    console.log('response from Mailchimp: ', response.data)
     // success
     return res
       .status(201)
