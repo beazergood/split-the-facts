@@ -85,13 +85,13 @@ export const HookForm = ({ fill = '#000' }) => {
   // }
 
   const config = {
-    angle: '81',
-    spread: '68',
-    startVelocity: '61',
-    elementCount: '95',
-    dragFriction: '0.15',
-    duration: '2950',
-    stagger: '11',
+    angle: 81,
+    spread: 68,
+    startVelocity: 61,
+    elementCount: 95,
+    dragFriction: 0.15,
+    duration: 2950,
+    stagger: 11,
     width: '10px',
     height: '10px',
     perspective: '899px',
