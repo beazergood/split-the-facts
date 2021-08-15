@@ -56,7 +56,7 @@ export const BlogSection = ({ title, articles, theme, href }) => {
 
   return (
     <div
-      className="w-full border- py-20 border-green-500 bg-ocean relative min-h-64"
+      className="w-full  border- py-20 border-green-500 bg-ocean relative min-h-64"
       ref={ref}
     >
       <div className="w-full absolute -top-20">
@@ -71,7 +71,7 @@ export const BlogSection = ({ title, articles, theme, href }) => {
         </svg>
       </div>
 
-      <section className="h-64 w-100 bg-hero-patternz relative ">
+      <section className="h-64 w-100 relative ">
         <motion.div
           className="absolute left-32 bottom-32 invisible md:visible"
           style={{ y: y6, x: 5 }}
@@ -98,7 +98,7 @@ export const BlogSection = ({ title, articles, theme, href }) => {
           />
         </motion.div>
       </section>
-      <div className="border- border-red-300 w-full ">
+      <div className="border- border-red-300 w-full px-2">
         <div className="flex flex-col lg:flex-row ">
           {articles &&
             articles.map((article) => {

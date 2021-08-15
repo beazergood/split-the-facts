@@ -37,13 +37,13 @@ export default function BlogHome({ posts, theme }) {
               <WaveBackground />
             </div>
           </div>
-          <motion.div className="w-full h-1/2" style={{ y: y1, x: 0 }}>
+          <motion.div className="w-full h-1/2 px-3" style={{ y: y1, x: 0 }}>
             <div className="mt-10 flex flex-col ">
               {posts &&
                 posts.map((post) => {
                   return (
                     <div
-                      className="w-full md:w-1/3 lg:w-1/3 flex flex-col mx-auto my-10"
+                      className="w-full md:w-1/3 lg:w-1/3 flex flex-col mx-auto my-4 md:my-10"
                       key={post.id}
                     >
                       <div className="w-32"></div>

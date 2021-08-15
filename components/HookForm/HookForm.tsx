@@ -70,17 +70,31 @@ export const HookForm = ({ fill = '#000' }) => {
     })
   }
 
+  // const config = {
+  //   angle: 90,
+  //   spread: 360,
+  //   startVelocity: 40,
+  //   elementCount: 70,
+  //   dragFriction: 0.12,
+  //   duration: 4000,
+  //   stagger: 9,
+  //   width: '10px',
+  //   height: '10px',
+  //   perspective: '654px',
+  //   colors: ['#a864fd', '#29cdff', '#78ff44', '#ff718d', '#fdff6a']
+  // }
+
   const config = {
-    angle: 90,
-    spread: 360,
-    startVelocity: 40,
-    elementCount: 70,
-    dragFriction: 0.12,
-    duration: 4000,
-    stagger: 9,
+    angle: '81',
+    spread: '68',
+    startVelocity: '61',
+    elementCount: '95',
+    dragFriction: '0.15',
+    duration: '2950',
+    stagger: '11',
     width: '10px',
     height: '10px',
-    perspective: '654px',
+    perspective: '899px',
     colors: ['#a864fd', '#29cdff', '#78ff44', '#ff718d', '#fdff6a']
   }
 
@@ -100,13 +114,13 @@ export const HookForm = ({ fill = '#000' }) => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="w-full md:w-1/2 mx-auto flex flex-col md:flex-row items-center justify-around "
+            className="w-full md:w-1/2 mx-auto flex flex-col align-top items-center justify-around"
           >
-            <FormControl>
+            <FormControl className="w-5/6 md:w-1/2 mx-auto">
               <Input
                 id="email"
                 placeholder="Join the conversation"
-                className="mx-auto appearance-none rounded-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                className="appearance-none rounded-full w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
                 {...register('email', {
                   required: 'This is required',
                   minLength: { value: 4, message: 'Minimum length should be 4' }
@@ -129,10 +143,10 @@ export const HookForm = ({ fill = '#000' }) => {
               disabled={!formState.isValid}
               isLoading={isSubmitting}
               type="submit"
-              style={{ backgroundColor: fill }}
               width="50px"
               height="50px"
-              className="hover:shadow-xl text-white w-32 h-10 block rounded-full my-6"
+              className="rounded-full p-4 md:ml-2 hover:shadow-md text-white hidden md:block relative mt-8 z-50"
+              style={{ backgroundColor: fill }}
             >
               <FaPaperPlane className="text-white" />
               <Confetti active={someProp} config={config} />

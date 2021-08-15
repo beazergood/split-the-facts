@@ -15,7 +15,10 @@ export const AllInOne = ({ characters }) => {
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center mb-10">
-      <motion.div className="absolute right-2 top-24" style={{ y: y1, x: 0 }}>
+      <motion.div
+        className="absolute right-2 top-24 invisible md:visible"
+        style={{ y: y1, x: 0 }}
+      >
         <Image
           src="/svg/frame-5.svg"
           width="112px"
@@ -24,7 +27,7 @@ export const AllInOne = ({ characters }) => {
         />
       </motion.div>
       <motion.div
-        className="absolute right-32 top-0 scale-90"
+        className="absolute right-32 top-0 scale-90 invisible md:visible"
         style={{ y: y2, x: 0 }}
       >
         <Image
@@ -50,7 +53,7 @@ export const AllInOne = ({ characters }) => {
           })}
       </div>
       <motion.div
-        className="absolute left-2 top-32 md:top-14"
+        className="absolute left-2 top-32 md:top-14 invisible md:visible"
         style={{ y: y3, x: 0 }}
       >
         <Image
@@ -61,7 +64,7 @@ export const AllInOne = ({ characters }) => {
         />
       </motion.div>
       <motion.div
-        className="absolute left-32 -top-20 md:top-0 scale-90"
+        className="absolute left-32 -top-20 md:top-0 scale-90 invisible md:visible"
         style={{ y: y4, x: 0 }}
       >
         <Image

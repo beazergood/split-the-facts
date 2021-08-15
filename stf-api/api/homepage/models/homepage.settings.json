@@ -2,11 +2,13 @@
   "kind": "singleType",
   "collectionName": "homepages",
   "info": {
-    "name": "Homepage"
+    "name": "Homepage",
+    "description": ""
   },
   "options": {
     "increments": true,
-    "timestamps": true
+    "timestamps": true,
+    "draftAndPublish": false
   },
   "attributes": {
     "seo": {
@@ -14,11 +16,38 @@
       "repeatable": false,
       "component": "shared.seo"
     },
-    "hero": {
-      "type": "component",
-      "repeatable": false,
-      "component": "sections.hero",
-      "required": true
+    "intro": {
+      "type": "text"
+    },
+    "hero_image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "intro_rich": {
+      "type": "richtext"
+    },
+    "video_url": {
+      "type": "string"
+    },
+    "hero_cursive_title": {
+      "type": "string"
+    },
+    "hero_main_title": {
+      "type": "string"
+    },
+    "hero_above_image_header": {
+      "type": "string"
+    },
+    "embed_id": {
+      "type": "string"
     }
   }
 }

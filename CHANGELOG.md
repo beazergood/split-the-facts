@@ -1,3 +1,7 @@
+## [1.1.0-11] - 14/8/21
+### Fixes
+- more mobile layout
+
 ## [1.1.0-10] - 13/8/21
 ### Changes
 - uniform colours on header and footer throughout

@@ -220,7 +220,7 @@ export const Footer: React.FC<FooterProps> = ({ theme, playlist = {} }) => {
           <div className="flex flex-col md:flex-row my-4 w-full items-center rounded-md ">
             <a
               href="https://www.youtube.com/channel/UCjRNMsglFYFwNsnOWIOgt1Q"
-              className="flex flex-row md:flex-col lg:flex-row my-4 shadow-sm p-4 hover:shadow-lg md:w-1/2 w-100 rounded-xl md:mr-2 "
+              className="flex flex-row md:flex-col lg:flex-row my-4 shadow-sm p-4 hover:shadow-lg md:w-1/2 w-100 rounded-xl md:mr-2 h-32"
               style={{ backgroundColor: theme.buttonFill }}
             >
               <motion.div
@@ -251,7 +251,7 @@ export const Footer: React.FC<FooterProps> = ({ theme, playlist = {} }) => {
 
             <a
               href="https://www.patreon.com/user/posts?u=56069659"
-              className="flex flex-row md:flex-col my-0 lg:flex-row shadow-sm p-4  w-100 md:w-1/2 hover:shadow-lg rounded-xl"
+              className="flex flex-row md:flex-col my-0 lg:flex-row shadow-sm p-4  w-100 md:w-1/2 hover:shadow-lg rounded-xl h-32"
               style={{ backgroundColor: theme.buttonFill }}
             >
               <motion.div

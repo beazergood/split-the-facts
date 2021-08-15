@@ -7,9 +7,15 @@ export default {
   component: HookForm
 } as Meta
 
-const Template: Story = (args) => <HookForm {...args} />
+const Template: Story = (args) => {
+  return (
+    <div className="bg-popstar">
+      <HookForm {...args} />
+    </div>
+  )
+}
 
 export const Primary = Template.bind({})
 Primary.args = {
-  fill: '#ff0000'
+  fill: '#8D3F48'
 }

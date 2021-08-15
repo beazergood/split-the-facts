@@ -73,7 +73,7 @@ export const Postcard = ({
       <div className="px-4 py-5 flex flex-col justify-between ">
         <h3 className="text-3xl font-PlayfairDisplay">{title}</h3>
 
-        <p className="my-4 font-AveriaSerifLibre text-xl">{intro}</p>
+        <p className="my-4 font-PlayfairDisplay text-xl">{intro}</p>
         <span className="text-sm font-NotoSerif text-right flex flex-row mr-2 items-center ">
           <span className="flex-grow"></span>
           <Moment format="D MMM YYYY" className="font-NotoSerif text-xs">

@@ -22,7 +22,8 @@ Open.args = {
     {
       id: 1,
       thumbnail_image: {
-        url: '/images/outstanding-english-georgian-hall-porters-chair-1.jpeg'
+        url:
+          'https://res.cloudinary.com/split-the-facts/image/upload/v1629016327/Screenshot_2021_08_15_at_09_31_34_069224e400.png'
       },
       embed_url: 'xJBlLgBNYhc',
       published: new Date(),
@@ -33,7 +34,7 @@ Open.args = {
       id: 2,
       thumbnail_image: {
         url:
-          'https://res.cloudinary.com/split-the-facts/image/upload/v1627591993/Screenshot_2021_07_29_at_21_53_01_51d9d89f09.png'
+          'https://res.cloudinary.com/split-the-facts/image/upload/v1629016327/Screenshot_2021_08_15_at_09_31_34_069224e400.png'
       },
       embed_url: '6u31KU3nv-w',
       published: new Date(),
@@ -44,7 +45,7 @@ Open.args = {
       id: 6,
       thumbnail_image: {
         url:
-          'https://res.cloudinary.com/split-the-facts/image/upload/v1627294073/Screenshot_2021_07_26_at_11_07_33_4fd24f4448.png'
+          'https://res.cloudinary.com/split-the-facts/image/upload/v1629016327/Screenshot_2021_08_15_at_09_31_34_069224e400.png'
       },
       embed_url: 'xJBlLgBNYhc',
       published: new Date(),
@@ -55,7 +56,7 @@ Open.args = {
       id: 3,
       thumbnail_image: {
         url:
-          'https://res.cloudinary.com/split-the-facts/image/upload/v1627316466/Screenshot_2021_07_26_at_17_20_56_74a8d1bf97.png'
+          'https://res.cloudinary.com/split-the-facts/image/upload/v1629016327/Screenshot_2021_08_15_at_09_31_34_069224e400.png'
       },
       embed_url: '',
       published: new Date(),
@@ -66,7 +67,7 @@ Open.args = {
       id: 4,
       thumbnail_image: {
         url:
-          'https://res.cloudinary.com/split-the-facts/image/upload/v1627316012/Screenshot_2021_07_26_at_15_36_45_147e48e1d1.png'
+          'https://res.cloudinary.com/split-the-facts/image/upload/v1629016327/Screenshot_2021_08_15_at_09_31_34_069224e400.png'
       },
       embed_url: 'B9ODFJyYv_k',
       published: new Date(),
@@ -77,7 +78,7 @@ Open.args = {
       id: 5,
       thumbnail_image: {
         url:
-          'https://res.cloudinary.com/split-the-facts/image/upload/v1626856861/Screenshot_2021_07_18_at_08_46_02_77df809cff.png'
+          'https://res.cloudinary.com/split-the-facts/image/upload/v1629016327/Screenshot_2021_08_15_at_09_31_34_069224e400.png'
       },
       embed_url: 'tq1G9Z66Nds',
       published: new Date(),
@@ -88,7 +89,7 @@ Open.args = {
       id: 10,
       thumbnail_image: {
         url:
-          'https://res.cloudinary.com/split-the-facts/image/upload/v1626856861/Screenshot_2021_07_18_at_08_46_02_77df809cff.png'
+          'https://res.cloudinary.com/split-the-facts/image/upload/v1629016327/Screenshot_2021_08_15_at_09_31_34_069224e400.png'
       },
       embed_url: 'tq1G9Z66Nds',
       published: new Date(),
@@ -99,7 +100,7 @@ Open.args = {
       id: 15,
       thumbnail_image: {
         url:
-          'https://res.cloudinary.com/split-the-facts/image/upload/v1626856861/Screenshot_2021_07_18_at_08_46_02_77df809cff.png'
+          'https://res.cloudinary.com/split-the-facts/image/upload/v1629016327/Screenshot_2021_08_15_at_09_31_34_069224e400.png'
       },
       embed_url: 'tq1G9Z66Nds',
       published: new Date(),

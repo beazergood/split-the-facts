@@ -45,11 +45,11 @@ const ButtonElement = ({ label }) => {
     }
   }
 
-  const hoverFill = '#666'
+  const hoverFill = '#013A88'
 
   return (
     <div className="flex items-center justify-center  hover:text-gray-500 hover:text-2xl cursor-pointer">
-      <p className="absolute">{label}</p>
+      <p className="absolute font-PlayfairDisplay  text-xl">{label}</p>
 
       <motion.svg
         width="183"

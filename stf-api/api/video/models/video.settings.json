@@ -21,14 +21,9 @@
     "content": {
       "type": "richtext"
     },
-    "categories": {
-      "collection": "category",
-      "via": "videos",
-      "dominant": true
-    },
     "characters": {
-      "collection": "characters",
       "via": "videos",
+      "collection": "characters",
       "dominant": true
     },
     "thumbnail_image": {
@@ -60,6 +55,17 @@
     },
     "embed_url": {
       "type": "string"
+    },
+    "oembed": {
+      "type": "oembed",
+      "columnType": "string"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title"
+    },
+    "category": {
+      "model": "category"
     }
   }
 }

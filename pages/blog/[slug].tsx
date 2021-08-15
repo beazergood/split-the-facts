@@ -117,7 +117,7 @@ export default function Article({ theme, article }) {
             </motion.div>
           </div>
 
-          <motion.div className="container border- border-red-300 mx-auto my-10 w-1/2">
+          <motion.div className="container border- border-red-300 mx-auto my-10 md:w-1/2">
             {article.content && (
               <article className="prose lg:prose-xl font-PlayfairDisplay px-4 lg:px-0 mt-12 text-gray-700 max-w-screen-md mx-auto text-lg leading-relaxed">
                 <Markdown>{article.content}</Markdown>
@@ -133,7 +133,7 @@ export default function Article({ theme, article }) {
             )}
           </motion.div>
         </motion.div>
-        <div className="w-1/2 mx-auto">
+        <div className="w-full px-2 md:px-0 md:w-1/2 mx-auto">
           <HyvorTalk.Embed
             websiteId={WEBSITE_ID}
             id={article.id}

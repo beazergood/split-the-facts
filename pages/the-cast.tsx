@@ -63,7 +63,7 @@ export default function Yearbook({ characters, theme, videos }) {
             <div className="w-full ">
               <WaveBackground />
             </div>
-            {/* {isDesktopOrLaptop && ( */}
+
             <motion.div
               style={{ y: y1, x: 0 }}
               className="absolute right-16 top-4 z-30 invisible md:visible"
@@ -75,7 +75,6 @@ export default function Yearbook({ characters, theme, videos }) {
                 alt="Ornate Frame"
               />
             </motion.div>
-            {/* )} */}
           </div>
         </div>
         <motion.div className="container mx-auto relative z-10">

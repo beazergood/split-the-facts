@@ -114,11 +114,11 @@ export const InterviewSection = ({ characters }) => {
           alt="Ornate Frame"
         />
       </motion.div>
-      <motion.div className="min-h-screen flex items-center justify-center px-4">
+      <motion.div className=" flex items-center justify-center px-4">
         <div className="flex flex-col">
           <div className="">
             <motion.h1
-              className="font-PlayfairDisplay text-6xl pl-10 leading-normal text-center font-bold z-10 text-gray-700 my-20"
+              className="font-PlayfairDisplay text-6xl px-2 mx-auto md:w-1/4 leading-normal text-center font-bold z-10 text-gray-700 my-20"
               layoutId="title"
             >
               The Interview We Never Saw

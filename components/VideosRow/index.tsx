@@ -156,7 +156,7 @@ export const VideosRow = ({ videos, group }) => {
                 title={video.title}
                 published={video.published}
                 fullSlug={video.fullSlug}
-                thumbnail_url={video.thumbnail_image.url}
+                thumbnail_url={video.thumbnail_image?.url}
               />
             ))}
           </ScrollMenu>
@@ -187,8 +187,6 @@ function RightArrow() {
 }
 
 function Card({ fullSlug, title, itemId, thumbnail_url, published }) {
-  const visibility = React.useContext(VisibilityContext)
-
   return (
     <motion.div
       key={itemId}
@@ -201,17 +199,24 @@ function Card({ fullSlug, title, itemId, thumbnail_url, published }) {
     >
       <Link href={fullSlug} passHref>
         <div className="flex flex-col items-center my-4">
-          <div className="relative">
-            <Image
-              src={thumbnail_url}
-              width={270}
-              height={160}
-              alt="Video Thumbnail"
-            />
-            <div className="absolute bottom-14 left-24">
-              <FaPlayCircle className="text-white text-6xl opacity-70 " />
+          {thumbnail_url && (
+            <div className="relative">
+              <Image
+                src={`${thumbnail_url.slice(
+                  0,
+                  thumbnail_url.lastIndexOf('/') + 1
+                )}thumbnail_${thumbnail_url.slice(
+                  thumbnail_url.lastIndexOf('/') + 1
+                )}`}
+                width={270}
+                height={160}
+                alt="Video Thumbnail"
+              />
+              <div className="absolute bottom-14 left-24">
+                <FaPlayCircle className="text-white text-6xl opacity-70 " />
+              </div>
             </div>
-          </div>
+          )}
 
           <div className="w-full my-4 px-2">
             <p className="text-sm font-NotoSerif">{title}</p>
