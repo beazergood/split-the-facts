@@ -160,7 +160,7 @@ const RightsideProfile = ({ character, key }) => {
         <div className="order-2 ">
           <YearbookImage character={character} key={character.id} />
         </div>
-        <div className="flex order-1 flex-row mr-4 lg:mr-3 items-center p-4 text-left bg-jasmine-faded rounded-t-3xl rounded-bl-3xl md:w-1/3 w-1/3 lg:rounded-bl-3xl lg:rounded-br-none ">
+        <div className="flex order-1 flex-row mr-4 lg:mr-3 items-center p-4 text-left bg-jasmine-faded rounded-t-3xl rounded-bl-3xl md:w-1/3 w-1/2 lg:rounded-bl-3xl lg:rounded-br-none ">
           <p className="font-AveriaSerifLibre">
             <span className="text-4xl">&quot;</span>
             <span className="text-xl ">{character.quote}</span>
