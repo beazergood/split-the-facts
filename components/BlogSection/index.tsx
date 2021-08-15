@@ -56,10 +56,10 @@ export const BlogSection = ({ title, articles, theme, href }) => {
 
   return (
     <div
-      className="w-full  border- py-20 border-green-500 bg-ocean relative min-h-64"
+      className="w-full  border-t-2 pb-20 border-ocean bg-ocean relative min-h-64"
       ref={ref}
     >
-      <div className="w-full absolute -top-20">
+      <div className="w-full absolute -top-20 ">
         <svg
           width="1440"
           height="80"

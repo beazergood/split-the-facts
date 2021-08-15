@@ -33,7 +33,7 @@ export const InterviewSection = ({ characters }) => {
   const meghanVariants = {
     initial: {
       opactity: 0,
-      y: 200
+      y: 100
     },
     animate: {
       opacity: 1,
@@ -127,7 +127,7 @@ export const InterviewSection = ({ characters }) => {
           <div className="flex flex-col md:flex-row justify-around w-screen">
             <motion.div
               ref={ref1}
-              className="rect p-3 rounded my-20"
+              className="rect p-3 rounded my-20 md:my-4"
               variants={meghanVariants}
               initial="initial"
               animate={inView1 ? 'animate' : 'initial'}
@@ -149,7 +149,7 @@ export const InterviewSection = ({ characters }) => {
 
             <motion.div
               ref={ref3}
-              className="rect p-3 rounded "
+              className="rect p-3 rounded my-20 md:my-10"
               variants={harryVariants}
               initial="initial"
               animate={inView3 ? 'animate' : 'initial'}

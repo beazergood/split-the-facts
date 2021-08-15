@@ -52,9 +52,12 @@ export const VideosSection = ({ title, href, theme, videos }) => {
   })
 
   return (
-    <div className="relative pt-14" style={{ backgroundColor: theme.primary }}>
+    <div
+      className="relative pt-14 border-b-2 border-wall"
+      style={{ backgroundColor: theme.primary }}
+    >
       <section className="h-64 w-100 bg-hero-patternz relative ">
-        {/* <motion.div
+        <motion.div
           className="absolute left-32 z-10 bottom-32 invisible md:visible"
           style={{ y: y6, x: 5 }}
         >
@@ -64,11 +67,11 @@ export const VideosSection = ({ title, href, theme, videos }) => {
             height="120px"
             alt="Ornate Frame"
           />
-        </motion.div> */}
+        </motion.div>
         <div className="absolute left-0 right-0 bottom-0 top-0 bg-popstar-hover bg-opacity-0 flex flex-col justify-center ">
           <OrnateFrame label="Videos" color={theme.primary} />
         </div>
-        {/* <motion.div
+        <motion.div
           className="absolute right-32 bottom-0 z-10 invisible md:visible"
           style={{ y: y7, x: 5 }}
         >
@@ -78,7 +81,7 @@ export const VideosSection = ({ title, href, theme, videos }) => {
             height="155px"
             alt="Ornate Frame"
           />
-        </motion.div> */}
+        </motion.div>
       </section>
       <div className="container mx-auto">
         <VideosRow
@@ -98,7 +101,7 @@ export const VideosSection = ({ title, href, theme, videos }) => {
           group={{ title: 'The Godfather', action: 'link' }}
         />
       </div>
-      <div className="absoute bottom-0 z-0 w-full">
+      <div className="absoute bottom-0 -z-10 w-full border-b-2 border-wall">
         {/* wave */}
         <svg
           width="1440"
