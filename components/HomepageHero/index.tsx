@@ -34,7 +34,7 @@ export const HomepageHero = ({
   return (
     <>
       <motion.div
-        className="relative mx-auto"
+        className="relative mx-auto bg-popstar"
         variants={videoVariants}
         exit={{ opacity: 0, transition: { duration: 1, delay: 1 } }}
       >

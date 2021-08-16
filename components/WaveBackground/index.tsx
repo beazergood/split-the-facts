@@ -43,7 +43,7 @@ export const WaveBackground: React.FC<WaveBackgroundProps> = ({ fill }) => {
         .svg-container {
           display: inline-block;
           position: relative;
-          width: 100%;
+          width: 103%;
           padding-bottom: 10%;
           vertical-align: middle;
           margin-bottom: -2px;

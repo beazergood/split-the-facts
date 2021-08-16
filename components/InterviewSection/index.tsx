@@ -81,7 +81,7 @@ export const InterviewSection = ({ characters }) => {
     }
   }
   return (
-    <div className="relative z-0 w-full">
+    <div className="relative z-0 w-full bg-wall">
       <motion.div
         className="absolute left-24 -bottom-80 invisible md:visible"
         style={{ y: y3, x: 5 }}

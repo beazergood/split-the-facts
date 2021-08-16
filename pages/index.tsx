@@ -39,38 +39,34 @@ export default function Home({
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="bg-wall overflow-x-hidden">
-        <div className="relative" style={{ backgroundColor: theme.primary }}>
-          <Navbar theme={theme.header} />
-          <HomepageHero
-            heroImageUrl={heroProps.hero_image_url}
-            cursiveTitle={heroProps.hero_cursive_title}
-            mainTitle={heroProps.hero_main_title}
-            aboveImageText={heroProps.above_image_text}
-            embedId={heroProps.embed_id}
-          />
-        </div>
+      <div className="w-full overflow-x-hidden">
+        <Navbar theme={theme.header} />
+        <HomepageHero
+          heroImageUrl={heroProps.hero_image_url}
+          cursiveTitle={heroProps.hero_cursive_title}
+          mainTitle={heroProps.hero_main_title}
+          aboveImageText={heroProps.above_image_text}
+          embedId={heroProps.embed_id}
+        />
 
-        <div className="bg-wall py-0 relative z-10 mt-10 sm:mt-52 md:mt-28 pt-4">
-          <IntroSection intro={homepage.intro_rich} />
+        <IntroSection intro={homepage.intro_rich} />
 
-          <BlogSection
-            title="Writing"
-            articles={articles}
-            theme={theme}
-            href="/blog"
-          />
+        <BlogSection
+          title="Writing"
+          articles={articles}
+          theme={theme}
+          href="/blog"
+        />
 
-          <VideosSection
-            title="Videos"
-            href="/videos"
-            videos={{ miscellaneous, recentVideos, royalInterview, atTheBar }}
-            theme={theme}
-          />
+        <VideosSection
+          title="Videos"
+          href="/videos"
+          videos={{ miscellaneous, recentVideos, royalInterview, atTheBar }}
+          theme={theme}
+        />
 
-          <InterviewSection characters={charactersCast} />
-          <Footer theme={theme.footer} />
-        </div>
+        <InterviewSection characters={charactersCast} />
+        <Footer theme={theme.footer} />
       </div>
     </>
   )

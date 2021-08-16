@@ -54,7 +54,7 @@ export const Footer: React.FC<FooterProps> = ({ theme, playlist = {} }) => {
   const [showVersion, setShowVersion] = useState(false)
   return (
     <>
-      <div className="relative bottom- z-0 w-full">
+      <div className="relative z-0 w-full">
         <motion.div
           className="absolute z-10 right-4 top-14 invisible md:visible"
           style={{ y: y2, x: 0 }}
@@ -66,10 +66,10 @@ export const Footer: React.FC<FooterProps> = ({ theme, playlist = {} }) => {
             alt="Ornate Lamp &amp; Frame"
           />
         </motion.div>
-        <div className="svg-container z-0">
+        <div className="svg-container z-0 bg-wall">
           <svg
             preserveAspectRatio="xMinYMin meet"
-            viewBox="0 0 1440 145"
+            viewBox="0 0 1440 143"
             className="svg-content"
           >
             <path
@@ -407,7 +407,7 @@ export const Footer: React.FC<FooterProps> = ({ theme, playlist = {} }) => {
         .svg-container {
           display: inline-block;
           position: relative;
-          width: 100%;
+          width: 103%;
           padding-bottom: 20%;
           vertical-align: middle;
           overflow: hidden;
