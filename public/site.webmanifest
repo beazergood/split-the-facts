@@ -1,6 +1,6 @@
 {
-    "name": "Split The Facts!",
-    "short_name": "Split The Facts!",
+    "name": "STF!",
+    "short_name": "STF!",
     "icons": [
         {
             "src": "/android-chrome-192x192.png",
@@ -13,7 +13,7 @@
             "type": "image/png"
         }
     ],
-    "theme_color": "#B3525E",
-    "background_color": "#B3525E",
+    "theme_color": "B3535F",
+    "background_color": "B3535F",
     "display": "standalone"
 }
