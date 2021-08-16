@@ -107,7 +107,7 @@ export const Footer: React.FC<FooterProps> = ({ theme, playlist = {} }) => {
           </motion.div>
           <HookForm fill={theme.buttonFill} />
         </div>
-        <div className="w-0 px5 md:w-44 mx-auto -14">
+        <div className="w-64 px5 md:w-44 mx-auto -14">
           <Link href="/" passHref>
             <motion.svg
               height="70%"
