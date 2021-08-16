@@ -23,7 +23,8 @@ MetaList.args = {
       title: 'Testing testing',
       description: 'How now brown cow, how now brown cow.',
       image: {
-        url: ''
+        url:
+          'http://localhost:3000/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fsplit-the-facts%2Fimage%2Fupload%2Fv1628946824%2Fbooks_sketch_1_ed7a2544db.png&w=1200&q=75'
       },
       href: 'test'
     },
@@ -31,7 +32,8 @@ MetaList.args = {
       title: 'Test 2021',
       description: 'How now brown cow, how now brown cow.',
       image: {
-        url: ''
+        url:
+          'http://localhost:3000/_next/image?url=https%3A%2F%2Fres.cloudinary.com%2Fsplit-the-facts%2Fimage%2Fupload%2Fv1628946824%2Fbooks_sketch_1_ed7a2544db.png&w=1200&q=75'
       },
       href: 'test'
     }

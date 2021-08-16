@@ -1,3 +1,7 @@
+## [1.1.0-14] - 16/8/21
+### Changes
+- intro section using css background gradient 
+- 
 ## [1.1.0-13] - 16/8/21
 ### Fixes
 - made slant svgs responsive

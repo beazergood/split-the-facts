@@ -54,14 +54,13 @@ export default function Home({
         <div className="bg-wall py-0 relative z-10 mt-10 sm:mt-52 md:mt-28 pt-4">
           <IntroSection intro={homepage.intro_rich} />
 
-          <div className="md:mt-24">
-            <BlogSection
-              title="Writing"
-              articles={articles}
-              theme={theme}
-              href="/blog"
-            />
-          </div>
+          <BlogSection
+            title="Writing"
+            articles={articles}
+            theme={theme}
+            href="/blog"
+          />
+
           <VideosSection
             title="Videos"
             href="/videos"

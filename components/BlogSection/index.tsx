@@ -59,38 +59,6 @@ export const BlogSection = ({ title, articles, theme, href }) => {
       className="w-100  border-t-2 pb-20 border-ocean bg-ocean  relative min-h-64 py-20"
       ref={ref}
     >
-      <div className="w-full absolute -top-20 ">
-        <div className="svg-container-1">
-          {/* wave */}
-          <svg
-            viewBox="0 0 1440 80"
-            fill="none"
-            className="svg-content"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path d="M1440 80L0 0V80H1440Z" fill="#3F678D" />
-          </svg>
-        </div>
-        <style jsx>{`
-          .svg-container-1 {
-            display: inline-block;
-            position: relative;
-            width: 100%;
-            padding-bottom: 25%;
-            vertical-align: middle;
-            margin-top: -85px;
-            overflow: hidden;
-          }
-
-          .svg-content {
-            display: inline-block;
-            position: absolute;
-            top: 0;
-            left: 0;
-          }
-        `}</style>
-      </div>
-
       <section className="h-64 w-100 relative ">
         <motion.div
           className="absolute left-32 bottom-32 invisible md:visible"
@@ -140,38 +108,13 @@ export const BlogSection = ({ title, articles, theme, href }) => {
             })}
         </div>
       </div>
-      <div className="z-30 w-100">
-        <div className="svg-container-2">
-          <svg
-            viewBox="0 0 1440 80"
-            fill="none"
-            className="svg-content-2 "
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            {/* <path d="M1440 0L0 80V0H1440Z" fill="#ff0000" /> */}
-            <path d="M1440 0L0 80V0H1440Z" fill="#3F678D" />
-          </svg>
-          <style jsx>{`
-            .svg-container-2 {
-              display: inline-block;
-              position: relative;
-              width: 100%;
-              height: 80px;
-              z-index: 10;
-              vertical-align: middle;
-              margin-bottom: -250px;
-              overflow: hidden;
-            }
-
-            .svg-content-2 {
-              display: inline-block;
-              position: absolute;
-              bottom: 0;
-              left: 0;
-            }
-          `}</style>
-        </div>
-      </div>
+      <div
+        className="absolute -bottom-10 z-10 h-72 w-full "
+        style={{
+          backgroundImage:
+            'linear-gradient(176deg, #3F678D 70%, #B3525E calc(70% + 2px))'
+        }}
+      ></div>
     </div>
   )
 }
