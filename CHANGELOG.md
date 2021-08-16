@@ -1,4 +1,9 @@
-## [1.1.0-12] - 14/8/21
+## [1.1.0-13] - 16/8/21
+### Fixes
+- made slant svgs responsive
+- 
+
+## [1.1.0-12] - 15/8/21
 ### Fixes
 - right button on video row
 

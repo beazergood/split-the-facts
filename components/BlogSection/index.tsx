@@ -56,19 +56,39 @@ export const BlogSection = ({ title, articles, theme, href }) => {
 
   return (
     <div
-      className="w-full  border-t-2 pb-20 border-ocean bg-ocean relative min-h-64 py-20"
+      className="w-100  border-t-2 pb-20 border-ocean bg-ocean  relative min-h-64 py-20"
       ref={ref}
     >
-      <div className="w-100 absolute -top-20 ">
-        <svg
-          width="1440"
-          height="80"
-          viewBox="0 0 1440 80"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path d="M1440 80L0 0V80H1440Z" fill="#3f678d" />
-        </svg>
+      <div className="w-full absolute -top-20 ">
+        <div className="svg-container-1">
+          {/* wave */}
+          <svg
+            viewBox="0 0 1440 80"
+            fill="none"
+            className="svg-content"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path d="M1440 80L0 0V80H1440Z" fill="#3F678D" />
+          </svg>
+        </div>
+        <style jsx>{`
+          .svg-container-1 {
+            display: inline-block;
+            position: relative;
+            width: 100%;
+            padding-bottom: 25%;
+            vertical-align: middle;
+            margin-top: -85px;
+            overflow: hidden;
+          }
+
+          .svg-content {
+            display: inline-block;
+            position: absolute;
+            top: 0;
+            left: 0;
+          }
+        `}</style>
       </div>
 
       <section className="h-64 w-100 relative ">
@@ -98,13 +118,13 @@ export const BlogSection = ({ title, articles, theme, href }) => {
           />
         </motion.div>
       </section>
-      <div className="border- border-red-300 w-full px-2">
+      <div className="w-full px-2">
         <div className="flex flex-col lg:flex-row ">
           {articles &&
             articles.map((article) => {
               return (
                 <div
-                  className="md:w-1/3 sm:w-2/3 z-20 mx-auto"
+                  className="md:w-1/3 sm:w-2/3 lg:w-1/4 z-20 mx-auto"
                   key={article.id}
                 >
                   <Postcard
@@ -120,16 +140,37 @@ export const BlogSection = ({ title, articles, theme, href }) => {
             })}
         </div>
       </div>
-      <div className="absolute -bottom-20 z-10 w-100">
-        <svg
-          width="1440"
-          height="80"
-          viewBox="0 0 1440 80"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path d="M1440 0L0 80V0H1440Z" fill="#3F678D" />
-        </svg>
+      <div className="z-30 w-100">
+        <div className="svg-container-2">
+          <svg
+            viewBox="0 0 1440 80"
+            fill="none"
+            className="svg-content-2 "
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            {/* <path d="M1440 0L0 80V0H1440Z" fill="#ff0000" /> */}
+            <path d="M1440 0L0 80V0H1440Z" fill="#3F678D" />
+          </svg>
+          <style jsx>{`
+            .svg-container-2 {
+              display: inline-block;
+              position: relative;
+              width: 100%;
+              height: 80px;
+              z-index: 10;
+              vertical-align: middle;
+              margin-bottom: -250px;
+              overflow: hidden;
+            }
+
+            .svg-content-2 {
+              display: inline-block;
+              position: absolute;
+              bottom: 0;
+              left: 0;
+            }
+          `}</style>
+        </div>
       </div>
     </div>
   )

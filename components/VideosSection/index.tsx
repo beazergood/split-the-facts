@@ -102,16 +102,36 @@ export const VideosSection = ({ title, href, theme, videos }) => {
         />
       </div>
       <div className="absoute bottom-0 -z-10 w-100 border-b-2 border-wall">
-        {/* wave */}
-        <svg
-          width="1440"
-          height="80"
-          viewBox="0 0 1440 80"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path d="M0 80L1440 0V80H0Z" fill="#FAF4E6" />
-        </svg>
+        <div className="svg-container">
+          {/* wave */}
+          <svg
+            viewBox="0 0 1440 80"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className="svg-content"
+          >
+            <path d="M0 80L1440 0V80H0Z" fill="#FAF4E6" />
+          </svg>
+        </div>
+        <style jsx>{`
+          .svg-container {
+            display: inline-block;
+            position: relative;
+            width: 100%;
+            padding-bottom: 5%;
+            vertical-align: middle;
+            margin-bottom: -2px;
+
+            overflow: hidden;
+          }
+
+          .svg-content {
+            display: inline-block;
+            position: absolute;
+            top: 0;
+            left: 0;
+          }
+        `}</style>
       </div>
     </div>
   )

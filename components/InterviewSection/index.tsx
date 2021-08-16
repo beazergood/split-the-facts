@@ -81,7 +81,7 @@ export const InterviewSection = ({ characters }) => {
     }
   }
   return (
-    <div className="relative z-0">
+    <div className="relative z-0 w-full">
       {/* <motion.div
         className="absolute right-20 top-24 z-10 invisible md:visible"
         style={{ y: y2, x: 5 }}
@@ -93,7 +93,7 @@ export const InterviewSection = ({ characters }) => {
           alt="Ornate Frame"
         />
       </motion.div> */}
-      <motion.div
+      {/* <motion.div
         className="absolute left-24 -bottom-80 invisible md:visible"
         style={{ y: y3, x: 5 }}
       >
@@ -103,8 +103,8 @@ export const InterviewSection = ({ characters }) => {
           height="171px"
           alt="Ornate Frame"
         />
-      </motion.div>
-      <motion.div
+      </motion.div> */}
+      {/* <motion.div
         className="absolute left-20 top-24 z-0 invisible md:visible"
         style={{ y: y1, x: 15 }}
       >
@@ -112,10 +112,10 @@ export const InterviewSection = ({ characters }) => {
           src="/svg/horse-1.svg"
           width="312px"
           height="334px"
-          alt="I Love Lamp"
+          alt="Horse Painting"
         />
-      </motion.div>
-      <motion.div className=" flex items-center justify-center px-4">
+      </motion.div> */}
+      <motion.div className=" flex items-center justify-center px-4 ">
         <div className="flex flex-col">
           <div className="mx-auto flex flex-row">
             <motion.h1
@@ -164,8 +164,8 @@ export const InterviewSection = ({ characters }) => {
             </div>
           </div>
         </div>
-        <motion.div
-          className="absolute -right-0 top-0 z-0 invisible md:visible "
+        {/* <motion.div
+          className="absolute right-2 top-10 z-0 invisible md:visible "
           style={{ y: y4, x: xChair }}
         >
           <Image
@@ -175,7 +175,7 @@ export const InterviewSection = ({ characters }) => {
             height="434px"
             alt="Chair"
           />
-        </motion.div>
+        </motion.div> */}
       </motion.div>
     </div>
   )
