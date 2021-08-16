@@ -371,10 +371,7 @@ export const Footer: React.FC<FooterProps> = ({ theme, playlist = {} }) => {
             </form> */}
           </div>
         </div>
-        <div className="w-90 py-10 flex flex-row items-center justify-between z-10 mx-auto bottom-10">
-          <span className="block text-left ml-10 text-sm opacity-50">
-            {showVersion && <span>{packageInfo.version}</span>}
-          </span>
+        <div className="px-4 w-90 pt-14 flex flex-row items-center justify-around z-10 mx-auto bottom-10">
           <span className="block text-right mr-10 text-sm opacity-50 cursor-pointer">
             <Link href="/privacy-policy">
               <>
@@ -389,7 +386,8 @@ export const Footer: React.FC<FooterProps> = ({ theme, playlist = {} }) => {
             }}
             style={{ color: theme.buttonFill }}
           >
-            &copy; 2021 Sam Roffey
+            {showVersion && <span>{packageInfo.version}</span>}
+            {!showVersion && <span>&copy; 2021 Sam Roffey</span>}
           </span>
           <span className="block text-right mr-10 text-sm opacity-50 cursor-pointer">
             <Link href="/cookies">
@@ -398,12 +396,12 @@ export const Footer: React.FC<FooterProps> = ({ theme, playlist = {} }) => {
               </>
             </Link>
           </span>
-          <span className="block text-right mr-10 text-sm opacity-50 hover:underline cursor-pointer">
-            <a href="https://www.webjam.io" target="_blank" rel="noreferrer">
-              👾 Website by WebJAM
-            </a>
-          </span>
         </div>{' '}
+        <span className="block text-center py-2 text-sm opacity-50 hover:underline cursor-pointer">
+          <a href="https://www.webjam.io" target="_blank" rel="noreferrer">
+            👾 Website by WebJAM 👾
+          </a>
+        </span>
       </div>
       <style jsx>{`
         .svg-container {
