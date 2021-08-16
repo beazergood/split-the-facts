@@ -128,7 +128,7 @@ export const HookForm = ({ fill = '#000' }) => {
               type="submit"
               width="50px"
               height="50px"
-              className="rounded-full p-4 md:ml-2 hover:shadow-md text-white hidden md:block relative mt-8 z-50"
+              className="rounded-full p-4 md:ml-2 hover:shadow-md text-white hidden md:block relative mt-8 z-30"
               style={{ backgroundColor: fill }}
             >
               <FaPaperPlane className="text-white" />

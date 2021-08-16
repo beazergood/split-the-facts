@@ -55,7 +55,7 @@ export default function VideosHome({ videos, theme }) {
           </div>
         </div>
         <motion.div className="w-full h-1/2">
-          <div className="relative z-50 bg-wall  py-2 mt-10 w-5/6 md:w-1/2 mx-auto shadow-m border-jasmine-faded border- ">
+          <div className="relative z-30 bg-wall  py-2 mt-10 w-5/6 md:w-1/2 mx-auto shadow-m border-jasmine-faded border- ">
             <p className="text-lg text-black text-center font-NotoSerif px-2">
               The Meghan, Harry and Boris impressions came about via whimsical
               enactment: I was with a friend, walking our dogs on a golf course

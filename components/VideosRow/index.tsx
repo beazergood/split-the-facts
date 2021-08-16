@@ -128,7 +128,7 @@ export const VideosRow = ({ videos, group }) => {
 
   return (
     <div
-      className="mx-auto my-3 mt-10 relative px-3 py-4 bg-popstar-hover rounded-lg"
+      className="mx-auto my-3 mt-10 relative py-4 bg-popstar-hover rounded-lg w-full"
       key={group.title}
     >
       <p className="ml-6 my-3 relative font-AveriaSerifLibre text-wall">
@@ -264,7 +264,7 @@ function Arrow({
         userSelect: 'none',
         color: '#fff'
       }}
-      className="hover:bg-ocean bg-popstar"
+      className="hover:bg-ocean bg-popstar-hover"
     >
       {children}
     </button>

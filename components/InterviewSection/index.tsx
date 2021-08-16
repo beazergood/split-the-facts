@@ -108,7 +108,7 @@ export const InterviewSection = ({ characters }) => {
         <div className="flex flex-col">
           <div className="mx-auto flex flex-row">
             <motion.h1
-              className="font-PlayfairDisplay text-6xl px-2 mx-auto w-1/2 leading-normal text-center font-bold z-10 text-gray-700 my-20"
+              className="font-PlayfairDisplay text-6xl px-2 mx-auto w-3/4 leading-normal text-center font-bold z-10 text-gray-700 my-20"
               layoutId="title"
             >
               The Interview We Never Saw

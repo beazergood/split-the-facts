@@ -65,9 +65,14 @@ export const Postcard = ({
       ref={ref}
       key={id}
     >
-      <div className="flex w-full  justify-center items-center flex-col bg-cobalt rounded-t-xl">
-        <div className="h-64 w-full relative rounded-t-xl">
-          <Image src={thumb} layout="fill" alt="Blog Post Thumbnail" />
+      <div className="flex w-full  justify-center items-center flex-col bg-cobalt rounded-t-2xl">
+        <div className="h-64 w-full relative rounded-t-2xl">
+          <Image
+            src={thumb}
+            layout="fill"
+            alt="Blog Post Thumbnail"
+            objectFit="cover"
+          />
         </div>
       </div>
       <div className="px-4 py-5 flex flex-col justify-between ">

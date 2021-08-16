@@ -41,7 +41,7 @@ export const IntroSection = ({ intro }) => {
             alt="Ornate Frame"
           />
         </motion.div>
-        <div className="z-40 bg-white md:mt-0 py-2 md:my-20 w-full sm:w-5/6 md:w-4/6 lg:w-1/2 mx-auto shadow-md border-jasmine-faded border-8 relative">
+        <div className="z-20 bg-white md:mt-0 py-2 md:my-20 w-full sm:w-5/6 md:w-4/6 lg:w-1/2 mx-auto shadow-md border-jasmine-faded border-8 relative">
           <motion.h1
             className="font-PlayfairDisplay text-5xl md:text-7xl font-extrabold italic tracking-tight z-10 text-gray-800 leading-20 text-center mt-10 "
             layoutId="title"
@@ -59,7 +59,7 @@ export const IntroSection = ({ intro }) => {
             </div>
           )}
         </div>
-        <div className="relative z-50 mt-20">
+        <div className="relative z-20 mt-20">
           <HookForm fill={buttonFill} />
         </div>
         <div>

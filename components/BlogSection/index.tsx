@@ -87,12 +87,12 @@ export const BlogSection = ({ title, articles, theme, href }) => {
         </motion.div>
       </section>
       <div className="w-full px-2">
-        <div className="flex flex-col lg:flex-row ">
+        <div className="flex flex-col md:flex-row">
           {articles &&
             articles.map((article) => {
               return (
                 <div
-                  className="md:w-1/3 sm:w-2/3 lg:w-1/4 z-20 mx-auto"
+                  className="md:w-2/5 sm:w-2/3 lg:w-1/3 z-20 mx-auto"
                   key={article.id}
                 >
                   <Postcard
