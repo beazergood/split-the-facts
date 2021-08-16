@@ -7,6 +7,7 @@ import { Navbar } from '../components/Navbar'
 import { Footer } from '../components/Footer'
 import Markdown from 'markdown-to-jsx'
 import { OrnateFrame } from '../components/OrnateFrame'
+import Head from 'next/head'
 
 export default function Privacy({ privacy, theme }) {
   const SEO = {
@@ -23,6 +24,14 @@ export default function Privacy({ privacy, theme }) {
 
   return (
     <>
+      <Head>
+        <title>Split the Facts: Parodies and comic sketches. Enjoy!</title>
+        <meta
+          name="description"
+          content="Split the Facts: Parodies and comic sketches. Enjoy!"
+        />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <NextSeo {...SEO} />
       <div className="bg-wall overflow-x-hidden">
         {/* <div className="bg-gradient-to-r from-cobalt to-cobalt-deep "> */}
@@ -60,7 +69,7 @@ export async function getStaticProps() {
   const { data } = await client.query({
     query: gql`
       query {
-        privacyPolicy {
+        privacy {
           header
           content
         }
@@ -70,7 +79,7 @@ export async function getStaticProps() {
 
   return {
     props: {
-      privacy: data.privacyPolicy,
+      privacy: data.privacy,
       theme: {
         primary: '#b3525e',
         secondary: '#3F678D',

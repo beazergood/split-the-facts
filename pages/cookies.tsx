@@ -2,6 +2,7 @@ import { gql } from '@apollo/client'
 import client from '../scripts/apollo-client'
 import { motion, useViewportScroll, useTransform } from 'framer-motion'
 import { NextSeo } from 'next-seo'
+import Head from 'next/head'
 import { WaveBackground } from '../components/WaveBackground'
 import { Navbar } from '../components/Navbar'
 import { Footer } from '../components/Footer'
@@ -23,6 +24,14 @@ export default function Cookies({ pageData, theme }) {
 
   return (
     <>
+      <Head>
+        <title>Split the Facts: Parodies and comic sketches. Enjoy!</title>
+        <meta
+          name="description"
+          content="Split the Facts: Parodies and comic sketches. Enjoy!"
+        />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <NextSeo {...SEO} />
       <div className="bg-wall overflow-x-hidden">
         {/* <div className="bg-gradient-to-r from-cobalt to-cobalt-deep "> */}
@@ -60,7 +69,7 @@ export async function getStaticProps() {
   const { data } = await client.query({
     query: gql`
       query {
-        cookiesPolicy {
+        cooky {
           header
           content
         }
@@ -70,7 +79,7 @@ export async function getStaticProps() {
 
   return {
     props: {
-      pageData: data.cookiesPolicy,
+      pageData: data.cooky,
       theme: {
         primary: '#b3525e',
         secondary: '#3F678D',

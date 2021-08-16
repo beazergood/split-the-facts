@@ -400,7 +400,7 @@ export const Footer: React.FC<FooterProps> = ({ theme, playlist = {} }) => {
           </span>
           <span className="block text-right mr-10 text-sm opacity-50 hover:underline cursor-pointer">
             <a href="https://www.webjam.io" target="_blank" rel="noreferrer">
-              Website by WebJAM
+              👾 Website by WebJAM
             </a>
           </span>
         </div>{' '}
