@@ -128,7 +128,7 @@ export const VideosRow = ({ videos, group }) => {
 
   return (
     <div
-      className="mx-auto my-3 relative px-3 py-4 bg-popstar-hover rounded-lg"
+      className="mx-auto my-3 mt-10 relative px-3 py-4 bg-popstar-hover rounded-lg"
       style={{ width: '95%' }}
       key={group.title}
     >
@@ -191,7 +191,7 @@ function Card({ fullSlug, title, itemId, thumbnail_url, published }) {
     <motion.div
       key={itemId}
       whileHover={{ scale: 1.05 }}
-      className="cursor-pointer   bg-wall border-red-300 flex-shrink-0 shadow mx-4"
+      className="cursor-pointer bg-wall border-red-300 flex-shrink-0 shadow mx-4"
       style={{
         width: '260px'
       }}
@@ -263,9 +263,9 @@ function Arrow({
         width: '20px',
         opacity: disabled ? '0' : '1',
         userSelect: 'none',
-        background: '#B3525E',
         color: '#fff'
       }}
+      className="hover:bg-ocean bg-popstar"
     >
       {children}
     </button>

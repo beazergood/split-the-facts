@@ -77,8 +77,8 @@ export default function VideosHome({ videos, theme }) {
               group={{ title: 'Boris Addressing The Nation', action: 'open' }}
             />
             <VideosRow
-              videos={videos.theGodfather}
-              group={{ title: 'The Godfather', action: 'open' }}
+              videos={videos.miscellaneous}
+              group={{ title: 'Miscellaneous', action: 'open' }}
             />
           </div>
         </motion.div>
@@ -157,8 +157,8 @@ export const getServerSideProps = async () => {
             name
           }
         }
-        theGodfather: videos(
-          where: { category: { slug: "the-godfather" } }
+        miscellaneous: videos(
+          where: { category: { slug: "miscellaneous" } }
           sort: "published:DESC"
         ) {
           id
@@ -184,7 +184,7 @@ export const getServerSideProps = async () => {
         royalInterview: buildFullSlug(data.royalInterview),
         atTheBar: buildFullSlug(data.atTheBar),
         boris: buildFullSlug(data.boris),
-        theGodfather: buildFullSlug(data.theGodfather)
+        miscellaneous: buildFullSlug(data.miscellaneous)
       },
       theme: {
         primary: '#b3525e',

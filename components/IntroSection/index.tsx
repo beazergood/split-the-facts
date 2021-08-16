@@ -87,7 +87,7 @@ export const IntroSection = ({ intro }) => {
           </motion.div>
         </div>
         <div
-          className="z-10 h-72 w-full"
+          className="z-10 h-44 w-full"
           style={{
             backgroundImage:
               'linear-gradient(2deg, #3F678D 70%, #FAF4E6 calc(70% + 2px))'

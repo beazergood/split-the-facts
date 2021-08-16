@@ -48,7 +48,7 @@ export const Nav = ({ props }) => {
         style={{ width: isOpen ? '300px' : '10px' }}
       >
         <motion.div
-          className="background"
+          className="background shadow-xl"
           variants={sidebar}
           style={{ background: props.fill }}
         />

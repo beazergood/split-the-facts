@@ -25,7 +25,7 @@ export default function Home({
   atTheBar,
   recentVideos,
   royalInterview,
-  theGodfather,
+  miscellaneous,
   theme,
   articles
 }) {
@@ -47,7 +47,7 @@ export default function Home({
             cursiveTitle={heroProps.hero_cursive_title}
             mainTitle={heroProps.hero_main_title}
             aboveImageText={heroProps.above_image_text}
-            embedId={heroProps.embedId}
+            embedId={heroProps.embed_id}
           />
         </div>
 
@@ -64,7 +64,7 @@ export default function Home({
           <VideosSection
             title="Videos"
             href="/videos"
-            videos={{ theGodfather, recentVideos, royalInterview, atTheBar }}
+            videos={{ miscellaneous, recentVideos, royalInterview, atTheBar }}
             theme={theme}
           />
 
@@ -162,8 +162,8 @@ export async function getStaticProps() {
             slug
           }
         }
-        theGodfather: videos(
-          where: { category: { slug: "the-godfather" } }
+        miscellaneous: videos(
+          where: { category: { slug: "miscellaneous" } }
           sort: "published:DESC"
         ) {
           id
@@ -223,7 +223,7 @@ export async function getStaticProps() {
       recentVideos: buildFullSlug(data.recentVideos),
       royalInterview: buildFullSlug(data.royalInterview),
       atTheBar: buildFullSlug(data.atTheBar),
-      theGodfather: buildFullSlug(data.theGodfather),
+      miscellaneous: buildFullSlug(data.miscellaneous),
       heroVideo: data.heroVideo,
       theme: {
         primary: '#b3525e',

@@ -56,7 +56,7 @@ export const BlogSection = ({ title, articles, theme, href }) => {
 
   return (
     <div
-      className="w-100  border-t-2 pb-20 border-ocean bg-ocean  relative min-h-64 py-20"
+      className="w-100  border-t-2 pb-20 border-ocean bg-ocean relative min-h-64 "
       ref={ref}
     >
       <section className="h-64 w-100 relative ">

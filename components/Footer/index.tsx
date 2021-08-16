@@ -375,6 +375,13 @@ export const Footer: React.FC<FooterProps> = ({ theme, playlist = {} }) => {
           <span className="block text-left ml-10 text-sm opacity-50">
             {showVersion && <span>{packageInfo.version}</span>}
           </span>
+          <span className="block text-right mr-10 text-sm opacity-50 cursor-pointer">
+            <Link href="/privacy-policy">
+              <>
+                👓 <span className="hover:underline">Privacy Policy</span>
+              </>
+            </Link>
+          </span>
           <span
             className="block text-center text-sm"
             onClick={() => {
@@ -384,7 +391,14 @@ export const Footer: React.FC<FooterProps> = ({ theme, playlist = {} }) => {
           >
             &copy; 2021 Sam Roffey
           </span>
-          <span className="block text-right mr-10 text-sm opacity-50 ">
+          <span className="block text-right mr-10 text-sm opacity-50 cursor-pointer">
+            <Link href="/cookies">
+              <>
+                🍪 <span className="hover:underline">Cookies Policy</span>
+              </>
+            </Link>
+          </span>
+          <span className="block text-right mr-10 text-sm opacity-50 hover:underline cursor-pointer">
             <a href="https://www.webjam.io" target="_blank" rel="noreferrer">
               Website by WebJAM
             </a>
