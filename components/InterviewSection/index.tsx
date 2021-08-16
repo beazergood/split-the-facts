@@ -9,11 +9,12 @@ export interface InterviewSectionProps {
 }
 export const InterviewSection = ({ characters }) => {
   const { scrollY } = useViewportScroll()
-  const y1 = useTransform(scrollY, [4000, 4500], [0, -50])
+  const y1 = useTransform(scrollY, [4500, 5000], [0, -50])
   const y2 = useTransform(scrollY, [3900, 4400], [0, -150])
   const y3 = useTransform(scrollY, [3800, 4800], [0, -150])
-  const y4 = useTransform(scrollY, [4500, 5800], [0, 100])
+  const y4 = useTransform(scrollY, [4500, 5000], [0, -200])
   const xChair = useTransform(scrollY, [3800, 4800], [10, 60])
+  const xHorse = useTransform(scrollY, [3800, 4800], [100, -160])
 
   const [ref1, inView1, entry1] = useInView({
     /* Optional options */
@@ -95,7 +96,7 @@ export const InterviewSection = ({ characters }) => {
       </motion.div>
       <motion.div
         className="absolute left-20 top-24 z-0 invisible md:visible"
-        style={{ y: y1, x: 15 }}
+        style={{ y: y1, x: xHorse }}
       >
         <Image
           src="/svg/horse-1.svg"
