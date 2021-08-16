@@ -129,7 +129,6 @@ export const VideosRow = ({ videos, group }) => {
   return (
     <div
       className="mx-auto my-3 mt-10 relative px-3 py-4 bg-popstar-hover rounded-lg"
-      style={{ width: '95%' }}
       key={group.title}
     >
       <p className="ml-6 my-3 relative font-AveriaSerifLibre text-wall">

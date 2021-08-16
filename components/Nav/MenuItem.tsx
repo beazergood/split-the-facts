@@ -23,19 +23,19 @@ const colors = ['#B3525E', '#B3525E', '#B3525E', '#B3525E', '#B3525E']
 
 export const MenuItem = ({ i, selected }) => {
   return (
-    <motion.li
-      className="cursor-pointer "
-      variants={variants}
-      whileHover={{ scale: 1.1 }}
-      whileTap={{ scale: 0.95 }}
-    >
-      <Link href={i.href} passHref>
+    <Link href={i.href} passHref>
+      <motion.li
+        className="cursor-pointer "
+        variants={variants}
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.95 }}
+      >
         <div>
           <div className="text-placeholder font-NotoSerif font-medium text=xl border-2 border-jasmine-faded">
             {i.label}
           </div>
         </div>
-      </Link>
-    </motion.li>
+      </motion.li>
+    </Link>
   )
 }

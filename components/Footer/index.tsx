@@ -373,10 +373,10 @@ export const Footer: React.FC<FooterProps> = ({ theme, playlist = {} }) => {
         </div>
         <div className="px-4 w-90 pt-14 flex flex-row items-center justify-around z-10 mx-auto bottom-10">
           <span className="block text-right mr-10 text-sm opacity-50 cursor-pointer">
-            <Link href="/privacy-policy">
-              <>
+            <Link href={'/privacy-policy'}>
+              <a>
                 👓 <span className="hover:underline">Privacy Policy</span>
-              </>
+              </a>
             </Link>
           </span>
           <span
@@ -390,10 +390,10 @@ export const Footer: React.FC<FooterProps> = ({ theme, playlist = {} }) => {
             {!showVersion && <span>&copy; 2021 Sam Roffey</span>}
           </span>
           <span className="block text-right mr-10 text-sm opacity-50 cursor-pointer">
-            <Link href="/cookies">
-              <>
+            <Link href={'/cookies'}>
+              <a>
                 🍪 <span className="hover:underline">Cookies Policy</span>
-              </>
+              </a>
             </Link>
           </span>
         </div>{' '}
@@ -407,7 +407,7 @@ export const Footer: React.FC<FooterProps> = ({ theme, playlist = {} }) => {
         .svg-container {
           display: inline-block;
           position: relative;
-          width: 103%;
+          width: 100%;
           padding-bottom: 20%;
           vertical-align: middle;
           overflow: hidden;

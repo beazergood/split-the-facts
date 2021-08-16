@@ -47,7 +47,7 @@ export const YearbookImage = ({ character, clickable = true }) => {
     <>
       {/* <AnimatePresence initial={false} exitBeforeEnter> */}
       <motion.div
-        className="mx-auto border- border-yellow-200 relative cursor-pointer w-full"
+        className="mx-auto border- border-yellow-200 relative w-full"
         whileHover={{ scale: 1 }}
         key={character.slug}
         ref={ref}
