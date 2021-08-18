@@ -1,3 +1,7 @@
+## [1.1.0-16] - 18/8/21
+### Fixes
+- page titles being wrong
+  
 ## [1.1.0-15] - 18/8/21
 ### Added
 - preview mode for previewing draft videos and blog articles

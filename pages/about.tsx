@@ -12,11 +12,13 @@ import Image from 'next/image'
 
 export default function About({ about, theme }) {
   const SEO = {
-    title: 'Videos Page',
-    description: 'My parody videos for your entertainment... enjoy!',
+    title: 'About Page',
+    description:
+      'Parody videos and comedic sketches for your entertainment... enjoy!',
     openGraph: {
-      title: 'Videos page',
-      description: 'My parody videos for your entertainment... enjoy!'
+      title: 'About page',
+      description:
+        'Parody videos and comedic sketches for your entertainment... enjoy!'
     }
   }
   const { scrollY } = useViewportScroll()

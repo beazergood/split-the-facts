@@ -14,7 +14,7 @@ export interface LandingHomeProps {
 
 export default function LandingHome({ video }) {
   const SEO = {
-    title: 'Videos Page',
+    title: 'Landing Page',
     description: 'My parody videos for your entertainment... enjoy!',
     openGraph: {
       title: 'Videos page',

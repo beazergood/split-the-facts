@@ -35,7 +35,7 @@ export default function Home({
         <title>Split the Facts: Parodies and comic sketches. Enjoy!</title>
         <meta
           name="description"
-          content="Split the Facts: Parodies and comic sketches. Enjoy!"
+          content="Split the Facts: Parodies and comedic sketches for your entertainment. Enjoy!"
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
@@ -53,7 +53,7 @@ export default function Home({
           <IntroSection intro={homepage.intro_rich} />
 
           <BlogSection
-            title="Writing"
+            title="Blog"
             articles={articles}
             theme={theme}
             href="/blog"

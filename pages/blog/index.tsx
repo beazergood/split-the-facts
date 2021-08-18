@@ -1,5 +1,3 @@
-import { gql } from '@apollo/client'
-import client from '../../scripts/apollo-client'
 import { NextSeo } from 'next-seo'
 import { motion, useViewportScroll, useTransform } from 'framer-motion'
 import { WaveBackground } from '../../components/WaveBackground'
@@ -10,11 +8,11 @@ import { Postcard } from '../../components/PostCard'
 import Layout from '../../components/Layout'
 export default function BlogHome({ posts, theme, preview }) {
   const SEO = {
-    title: 'Videos Page',
-    description: 'My parody videos for your entertainment... enjoy!',
+    title: 'Split the facts | Blog Home',
+    description: 'A blog by Sam Roffey',
     openGraph: {
-      title: 'Videos page',
-      description: 'My parody videos for your entertainment... enjoy!'
+      title: 'Split the facts | Blog Home',
+      description: 'A blog by Sam Roffey'
     }
   }
 
