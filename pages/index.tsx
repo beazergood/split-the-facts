@@ -32,7 +32,7 @@ export default function Home({
   return (
     <>
       <Head>
-        <title>Split the Facts: Parodies and comic sketches. Enjoy!</title>
+        <title>Split the Facts! | Home</title>
         <meta
           name="description"
           content="Split the Facts: Parodies and comedic sketches for your entertainment. Enjoy!"

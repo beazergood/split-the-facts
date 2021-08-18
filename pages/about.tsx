@@ -12,7 +12,7 @@ import Image from 'next/image'
 
 export default function About({ about, theme }) {
   const SEO = {
-    title: 'About Page',
+    title: 'Split the facts! | About Page',
     description:
       'Parody videos and comedic sketches for your entertainment... enjoy!',
     openGraph: {

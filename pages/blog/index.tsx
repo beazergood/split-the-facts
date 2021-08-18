@@ -8,10 +8,10 @@ import { Postcard } from '../../components/PostCard'
 import Layout from '../../components/Layout'
 export default function BlogHome({ posts, theme, preview }) {
   const SEO = {
-    title: 'Split the facts | Blog Home',
+    title: 'Split the facts! | Blog Home',
     description: 'A blog by Sam Roffey',
     openGraph: {
-      title: 'Split the facts | Blog Home',
+      title: 'Split the facts! | Blog Home',
       description: 'A blog by Sam Roffey'
     }
   }

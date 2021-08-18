@@ -25,10 +25,10 @@ export default function Privacy({ privacy, theme }) {
   return (
     <>
       <Head>
-        <title>Split the Facts: Parodies and comic sketches. Enjoy!</title>
+        <title>Split the Facts! | Privacy Policy</title>
         <meta
           name="description"
-          content="Split the Facts: Parodies and comic sketches. Enjoy!"
+          content="Split the Facts! | Parodies and comedic sketches for your entertainment. Enjoy!"
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>

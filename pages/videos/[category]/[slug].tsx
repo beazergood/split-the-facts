@@ -220,6 +220,8 @@ export const getStaticProps = async ({ params, preview = null }) => {
   )
   const data = await res.json()
 
+  console.log('data[0].id: ', data[0].id)
+
   return {
     props: {
       preview,

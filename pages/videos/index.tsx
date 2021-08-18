@@ -12,7 +12,7 @@ import Layout from '../../components/Layout'
 
 export default function VideosHome({ videos, theme, preview }) {
   const SEO = {
-    title: 'Videos Page',
+    title: 'Split the facts! | Videos Page',
     description: 'My parody videos for your entertainment... enjoy!',
     openGraph: {
       title: 'Videos page',
