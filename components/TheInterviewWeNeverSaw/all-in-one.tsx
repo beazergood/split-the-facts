@@ -10,8 +10,6 @@ export const AllInOne = ({ characters }) => {
 
   const y1 = useTransform(scrollY, [0, 500], [10, -350])
   const y2 = useTransform(scrollY, [0, 300], [0, -100])
-  const y3 = useTransform(scrollY, [100, 600], [0, -200])
-  const y4 = useTransform(scrollY, [100, 600], [0, -200])
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center mb-10">
@@ -40,7 +38,6 @@ export const AllInOne = ({ characters }) => {
       <div className="flex flex-col mt-12">
         {characters &&
           characters.map((character, index) => {
-            console.log('index: ', index)
             return (
               <>
                 {index % 2 === 0 ? (
@@ -52,28 +49,6 @@ export const AllInOne = ({ characters }) => {
             )
           })}
       </div>
-      {/* <motion.div
-        className="absolute left-2 top-32 md:top-14 invisible md:visible"
-        style={{ y: y3, x: 0 }}
-      >
-        <Image
-          src="/svg/frame-4.svg"
-          width="112px"
-          height="134px"
-          alt="Ornate Frame"
-        />
-      </motion.div>
-      <motion.div
-        className="absolute left-32 -top-20 md:top-0 scale-90 invisible md:visible"
-        style={{ y: y4, x: 0 }}
-      >
-        <Image
-          src="/svg/frame-10.svg"
-          width="91px"
-          height="102px"
-          alt="Ornate Frame"
-        />
-      </motion.div> */}
       <p className="border-2 p-8 font-PlayfairDisplay text-ocean text-lg text-bold  rounded-xl border-golden">
         <span className="text-3xl text-golden">*</span> it&lsquo;s perhaps worth
         pointing out in this day and age that these quotes are part of my parody

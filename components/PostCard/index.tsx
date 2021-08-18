@@ -65,7 +65,7 @@ export const Postcard = ({
       ref={ref}
       key={id}
     >
-      <div className="flex w-full  justify-center items-center flex-col bg-cobalt rounded-t-2xl">
+      <div className="flex w-full  justify-center items-center flex-col bg-ocean rounded-t-2xl">
         <div className="h-64 w-full relative rounded-t-2xl">
           <Image
             src={thumb}

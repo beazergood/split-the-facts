@@ -8,8 +8,10 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <DefaultSeo {...SEO} />
+      {/* Show a banner if preview mode is on */}
       <Component key="comp" {...pageProps} />
     </>
   )
 }
+
 export default MyApp

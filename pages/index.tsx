@@ -115,7 +115,7 @@ export async function getStaticProps() {
           id
           published_at
         }
-        recentVideos: videos(sort: "published:DESC", limit: 3) {
+        recentVideos: videos(sort: "published:DESC", limit: 6) {
           id
           slug
           title

@@ -1,3 +1,8 @@
+## [1.1.0-15] - 18/8/21
+### Added
+- preview mode for previewing draft videos and blog articles
+
+
 ## [1.1.0-14] - 16/8/21
 ### Changes
 - intro section using css background gradient

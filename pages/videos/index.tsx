@@ -8,8 +8,9 @@ import { WaveBackground } from '../../components/WaveBackground'
 import { Navbar } from '../../components/Navbar'
 import { Footer } from '../../components/Footer'
 import { OrnateFrame } from '../../components/OrnateFrame'
+import Layout from '../../components/Layout'
 
-export default function VideosHome({ videos, theme }) {
+export default function VideosHome({ videos, theme, preview }) {
   const SEO = {
     title: 'Videos Page',
     description: 'My parody videos for your entertainment... enjoy!',
@@ -21,78 +22,85 @@ export default function VideosHome({ videos, theme }) {
 
   return (
     <>
-      <NextSeo {...SEO} />
-      <div className="bg-wall overflow-x-hidden">
-        <div className="" style={{ backgroundColor: theme.primary }}>
-          <Navbar theme={theme.header} />
-          <div className="h-1/2 w-full relative">
-            {/* <p className="text-3xl text-white text-center font-NotoSerif my-10 z-20 relative">
+      <Layout preview={preview}>
+        <NextSeo {...SEO} />
+        <div className="bg-wall overflow-x-hidden">
+          <div className="" style={{ backgroundColor: theme.primary }}>
+            <Navbar theme={theme.header} />
+            <div className="h-1/2 w-full relative">
+              {/* <p className="text-3xl text-white text-center font-NotoSerif my-10 z-20 relative">
               Videos
             </p> */}
-            <div className="absolute left-32 top-16 z-0 invisible md:visible">
-              <Image
-                src="/svg/frame-6.svg"
-                width="126px"
-                height="141px"
-                alt="Ornate Frame"
-              />
-            </div>
-            <div className="absolute right-32 top-16 z-0 invisible md:visible">
-              <Image
-                src="/svg/frame-9.svg"
-                width="106px"
-                height="111px"
-                alt="Ornate Frame"
-              />
-            </div>
+              <div className="absolute left-32 top-16 z-0 invisible md:visible">
+                <Image
+                  src="/svg/frame-6.svg"
+                  width="126px"
+                  height="141px"
+                  alt="Ornate Frame"
+                />
+              </div>
+              <div className="absolute right-32 top-16 z-0 invisible md:visible">
+                <Image
+                  src="/svg/frame-9.svg"
+                  width="106px"
+                  height="111px"
+                  alt="Ornate Frame"
+                />
+              </div>
 
-            <div className="flex flex-col justify-center ">
-              <OrnateFrame label="Videos" color={theme.primary} />
+              <div className="flex flex-col justify-center ">
+                <OrnateFrame label="Videos" color={theme.primary} />
+              </div>
+            </div>
+            <div className="w-full ">
+              <WaveBackground />
             </div>
           </div>
-          <div className="w-full ">
-            <WaveBackground />
-          </div>
+          <motion.div className="w-full h-1/2">
+            <div className="relative z-30 bg-wall  py-2 mt-10 w-5/6 md:w-1/2 mx-auto shadow-m border-jasmine-faded border- ">
+              <p className="text-lg text-black text-center font-NotoSerif px-2">
+                The Meghan, Harry and Boris impressions came about via whimsical
+                enactment: I was with a friend, walking our dogs on a golf
+                course in Sunningdale, Berkshire, when I pretended to conduct a
+                mock interview: the premise was born.
+              </p>
+            </div>
+            <div className="mt-20">
+              <VideosRow
+                videos={videos.recentVideos}
+                group={{ title: 'Recent uploads', action: 'open' }}
+              />
+              <VideosRow
+                videos={videos.royalInterview}
+                group={{ title: 'Royal Interview', action: 'open' }}
+              />
+              <VideosRow
+                videos={videos.atTheBar}
+                group={{ title: 'At The Bar', action: 'open' }}
+              />
+              <VideosRow
+                videos={videos.boris}
+                group={{ title: 'Boris Addressing The Nation', action: 'open' }}
+              />
+              <VideosRow
+                videos={videos.miscellaneous}
+                group={{ title: 'Miscellaneous', action: 'open' }}
+              />
+            </div>
+          </motion.div>
+          <Footer theme={theme.footer} />
         </div>
-        <motion.div className="w-full h-1/2">
-          <div className="relative z-30 bg-wall  py-2 mt-10 w-5/6 md:w-1/2 mx-auto shadow-m border-jasmine-faded border- ">
-            <p className="text-lg text-black text-center font-NotoSerif px-2">
-              The Meghan, Harry and Boris impressions came about via whimsical
-              enactment: I was with a friend, walking our dogs on a golf course
-              in Sunningdale, Berkshire, when I pretended to conduct a mock
-              interview: the premise was born.
-            </p>
-          </div>
-          <div className="mt-20">
-            <VideosRow
-              videos={videos.royalInterview}
-              group={{ title: 'Royal Interview', action: 'open' }}
-            />
-            <VideosRow
-              videos={videos.atTheBar}
-              group={{ title: 'At The Bar', action: 'open' }}
-            />
-            <VideosRow
-              videos={videos.boris}
-              group={{ title: 'Boris Addressing The Nation', action: 'open' }}
-            />
-            <VideosRow
-              videos={videos.miscellaneous}
-              group={{ title: 'Miscellaneous', action: 'open' }}
-            />
-          </div>
-        </motion.div>
-        <Footer theme={theme.footer} />
-      </div>
+      </Layout>
     </>
   )
 }
 
-export const getServerSideProps = async () => {
+export const getServerSideProps = async ({ preview = null }) => {
+  // console.log('videos home preview: ', preview)
   const { data } = await client.query({
     query: gql`
       query {
-        recentVideos: videos(sort: "published:DESC", limit: 3) {
+        recentVideos: videos(sort: "published:DESC", limit: 6) {
           id
           slug
           title
@@ -180,7 +188,9 @@ export const getServerSideProps = async () => {
 
   return {
     props: {
+      preview,
       videos: {
+        recentVideos: buildFullSlug(data.recentVideos),
         royalInterview: buildFullSlug(data.royalInterview),
         atTheBar: buildFullSlug(data.atTheBar),
         boris: buildFullSlug(data.boris),

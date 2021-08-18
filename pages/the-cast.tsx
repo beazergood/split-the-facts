@@ -99,7 +99,6 @@ export default function Yearbook({ characters, theme, videos }) {
             <div className="flex flex-col mt-12">
               {characters &&
                 characters.map((character, index) => {
-                  console.log('index: ', index)
                   return (
                     <>
                       {index % 2 === 0 ? (
