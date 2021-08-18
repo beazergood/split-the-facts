@@ -2,8 +2,8 @@ const mailchimp = require('@mailchimp/mailchimp_marketing')
 const axios = require('axios')
 
 mailchimp.setConfig({
-  apiKey: process.env.MAILCHIMP_API_KEY,
-  server: process.env.MAILCHIMP_SERVER_PREFIX
+  apiKey: process.env.NEXT_PUBLIC_MAILCHIMP_API_KEY,
+  server: process.env.NEXT_PUBLIC_MAILCHIMP_SERVER_PREFIX
 })
 
 async function run() {
@@ -11,6 +11,7 @@ async function run() {
   console.log(response)
 }
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default async (req, res) => {
   const { email } = req.body
   console.log('sending subscribe to MailChimp message: ', email)
@@ -25,7 +26,7 @@ export default async (req, res) => {
 
     const response = await axios.post(url, data, { headers })
 
-    console.log('response', response)
+    // console.log('response from Mailchimp: ', response.data)
     // success
     return res
       .status(201)
@@ -42,13 +43,13 @@ export default async (req, res) => {
 
 function getRequestParams(email) {
   // get env variables
-  const API_KEY = process.env.MAILCHIMP_API_KEY
-  const AUDIENCE_ID = process.env.MAILCHIMP_AUDIENCE_ID
+  const API_KEY = process.env.NEXT_PUBLIC_MAILCHIMP_API_KEY
+  const AUDIENCE_ID = process.env.NEXT_PUBLIC_MAILCHIMP_AUDIENCE_ID
 
   // get the mailchimp datacenter
   // mailchimp API keys example: c0e214879c8542a54e716f38edf1635d-us2
   // we need the us2 part
-  const DATACENTER = process.env.MAILCHIMP_API_KEY.split('-')[1]
+  const DATACENTER = process.env.NEXT_PUBLIC_MAILCHIMP_API_KEY.split('-')[1]
 
   const url = `https://${DATACENTER}.api.mailchimp.com/3.0/lists/${AUDIENCE_ID}/members`
 

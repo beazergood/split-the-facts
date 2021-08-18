@@ -1,5 +1,5 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
-import { version } from '../package.json'
+import packageInfo from '../package.json'
 
 class MyDocument extends Document {
   static async getInitialProps(ctx) {
@@ -9,11 +9,7 @@ class MyDocument extends Document {
 
   render() {
     const meta = {
-      title: 'Split The Facts',
-      description:
-        'Parodies and comedic sketches written and performed by Sam Roffey.',
-      image:
-        'https://assets.vercel.com/image/upload/q_auto/front/vercel/dps.png'
+      title: 'Split The Facts!'
     }
 
     return (
@@ -30,25 +26,50 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           ></script>
 
           <meta name="robots" content="follow, index" />
-          <meta name="description" content={meta.description} />
           <meta property="og:site_name" content={meta.title} />
-          <meta property="og:description" content={meta.description} />
-          <meta property="og:title" content={meta.title} />
-          <meta property="og:image" content={meta.image} />
           <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:site" content="@yourname" />
-          <meta name="twitter:title" content={meta.title} />
-          <meta name="twitter:description" content={meta.description} />
-          <meta name="twitter:image" content={meta.image} />
+          <link
+            rel="apple-touch-icon"
+            sizes="180x180"
+            href="/apple-touch-icon.png"
+          />
+          <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="/favicon-32x32.png"
+          />
+          <link
+            rel="icon"
+            type="image/png"
+            sizes="16x16"
+            href="/favicon-16x16.png"
+          />
+          <link rel="manifest" href="/site.webmanifest" />
+          <meta name="msapplication-config" content="/browserconfig.xml" />
+          <meta name="msapplication-TileColor" content="#B3525E" />
+          <meta name="theme-color" content="#B3525E" />
 
           <link rel="preconnect" href="https://fonts.gstatic.com" />
+
           <link
-            href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,900;1,600;1,800&display=swap"
+            rel="stylesheet"
+          ></link>
+
+          <link
+            href="https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap"
+            rel="stylesheet"
+          ></link>
+
+          <link
+            href="https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap"
             rel="stylesheet"
           />
 
           <link
-            href="https://fonts.googleapis.com/css2?family=Noto+Serif&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@1,300&display=swap"
             rel="stylesheet"
           />
         </Head>
@@ -61,15 +82,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe>`
           ></noscript>
           <Main />
           <NextScript />
-
-          <div className="w-90">
-            <span className="block text-center text-sm text-gray-200">
-              &copy; 2021 Sam Roffey
-            </span>
-            <span className="inline-block text-right ml-10 text-sm text-gray-200">
-              {version}
-            </span>
-          </div>
         </body>
       </Html>
     )
