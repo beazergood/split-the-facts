@@ -68,8 +68,7 @@ export default function BlogHome({ posts, theme, preview }) {
   )
 }
 
-export const getServerSideProps = async ({ preview = null }) => {
-  // console.log('Blog index; ', preview)
+export const getStaticProps = async ({ params, preview = null }) => {
   const { NEXT_PUBLIC_STRAPI_API_URL } = process.env
   const res = await fetch(
     `${NEXT_PUBLIC_STRAPI_API_URL}/articles${
@@ -77,7 +76,6 @@ export const getServerSideProps = async ({ preview = null }) => {
     }`
   )
   const data = await res.json()
-
   return {
     props: {
       preview,
