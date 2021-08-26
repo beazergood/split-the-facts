@@ -4,6 +4,10 @@
 
 ### Added
 - Link to Ornate frame component
+## [1.1.0] - 18/8/21
+### Changes
+- Full website live!
+
 
 ## [1.1.0-16] - 18/8/21
 ### Fixes
