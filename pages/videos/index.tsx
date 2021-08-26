@@ -95,7 +95,7 @@ export default function VideosHome({ videos, theme, preview }) {
   )
 }
 
-export const getServerSideProps = async ({ preview = null }) => {
+export const getStaticProps = async ({ preview = null }) => {
   // console.log('videos home preview: ', preview)
   const { data } = await client.query({
     query: gql`

@@ -1,3 +1,7 @@
+## [1.1.2] - 26/8/21
+### Changed
+- swap getServerSideProps for getStaticProps so blog and videos pages are static, not server generated. Noticed some 504 errors on those pages as they are having to wait for Heroku to spin up and render the page!
+- 
 ## [1.1.1] - 26/8/21
 ### Changed
 - order of blog posts
