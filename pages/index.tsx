@@ -46,7 +46,7 @@ export default function Home({
             heroImageUrl={heroProps.hero_image_url}
             cursiveTitle={heroProps.hero_cursive_title}
             mainTitle={heroProps.hero_main_title}
-            aboveImageText={heroProps.above_image_text}
+            aboveImageText={heroProps.hero_above_image_header}
             embedId={heroProps.embed_id}
           />
 
@@ -100,7 +100,6 @@ export async function getStaticProps() {
           }
           intro_rich
         }
-
         heroVideo: video(id: "60fee84a54d42565648f4973") {
           title
           embed_url
