@@ -1,3 +1,10 @@
+## [1.1.1] - 26/8/21
+### Changed
+- order of blog posts
+
+### Added
+- Link to Ornate frame component
+
 ## [1.1.0-16] - 18/8/21
 ### Fixes
 - page titles being wrong
