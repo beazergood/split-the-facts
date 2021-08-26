@@ -104,7 +104,7 @@ export async function getStaticProps() {
           title
           embed_url
         }
-        articles(sort: "published:DESC", limit: 2) {
+        articles(sort: "published_at:DESC", limit: 2) {
           title
           description
           slug

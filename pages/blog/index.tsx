@@ -81,9 +81,7 @@ export const getServerSideProps = async ({ preview = null }) => {
   return {
     props: {
       preview,
-      posts: data.map((a) => {
-        return { ...a, slug: 'blog/' + a.slug }
-      }),
+      posts: blogPostsDescending(data),
       theme: {
         primary: '#b3525e',
         secondary: '#3F678D',
@@ -100,4 +98,16 @@ export const getServerSideProps = async ({ preview = null }) => {
       }
     }
   }
+}
+
+const blogPostsDescending = (data) => {
+  return data
+    .map((a) => {
+      return { ...a, slug: 'blog/' + a.slug }
+    })
+    .sort((a, b) => {
+      return (
+        new Date(b.published_at).getTime() - new Date(a.published_at).getTime()
+      )
+    })
 }

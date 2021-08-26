@@ -69,7 +69,7 @@ export const VideosSection = ({ title, href, theme, videos }) => {
           />
         </motion.div>
         <div className="absolute left-0 right-0 bottom-0 top-0 bg-popstar-hover bg-opacity-0 flex flex-col justify-center ">
-          <OrnateFrame label="Videos" color={theme.primary} />
+          <OrnateFrame label="Videos" color={theme.primary} href={href} />
         </div>
         <motion.div
           className="absolute right-32 bottom-0 z-10 invisible md:visible"

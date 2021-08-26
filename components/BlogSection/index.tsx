@@ -72,7 +72,7 @@ export const BlogSection = ({ title, articles, theme, href }) => {
           />
         </motion.div>
         <div className="absolute left-0 right-0 bottom-0 top-0 flex flex-col justify-center">
-          <OrnateFrame label={title} color={theme.secondary} />
+          <OrnateFrame label={title} color={theme.secondary} href="/blog" />
         </div>
         <motion.div
           className="absolute right-32 bottom-0 invisible md:visible"
