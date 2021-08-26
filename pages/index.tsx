@@ -5,7 +5,27 @@ import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { FaYoutube, FaPatreon } from 'react-icons/fa'
 
-export default function Home() {
+export interface HomepageProps {
+  heroProps: {
+    cursive_header: string
+    main_header: string
+    above_image_text: string
+    hero_image_url: string
+    embedId: string
+  }
+}
+
+export default function Home({
+  charactersCast,
+  heroProps,
+  homepage,
+  atTheBar,
+  recentVideos,
+  royalInterview,
+  miscellaneous,
+  theme,
+  articles
+}) {
   return (
     <div className="container mx-auto">
       <Head>
