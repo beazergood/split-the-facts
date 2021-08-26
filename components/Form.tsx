@@ -1,4 +1,5 @@
 import * as React from 'react'
+import fetch from 'isomorphic-unfetch'
 
 export const EmailForm: React.FC = () => {
   const registerUser = async (event) => {
@@ -15,7 +16,7 @@ export const EmailForm: React.FC = () => {
     })
 
     const result = await res.json()
-    console.log('result for subscribe to mailchimp', result) // TODO notify user of result
+    // console.log('result for subscribe to mailchimp', result) // TODO notify user of result
   }
 
   return (

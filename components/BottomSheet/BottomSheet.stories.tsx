@@ -1,4 +1,3 @@
-import '../../styles/tailwind.css'
 import { BottomSheetWithForm, BottomSheetProps } from '.'
 import { Story, Meta } from '@storybook/react'
 
