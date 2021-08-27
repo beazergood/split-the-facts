@@ -117,12 +117,16 @@ export default function Article({ theme, article, preview }) {
                 <article className="prose lg:prose-xl font-PlayfairDisplay px-4 lg:px-0 mt-12 text-gray-700 max-w-screen-md mx-auto text-lg leading-relaxed">
                   <Markdown>{article.content}</Markdown>
                   <div className="text-right">
-                    <Moment
-                      format="D MMM YYYY"
-                      className="font-NotoSerif text-xs"
-                    >
-                      {article.published}
-                    </Moment>
+                    <p>
+                      {article.author.name}
+                      <br />
+                      <Moment
+                        format="D MMM YYYY"
+                        className="font-NotoSerif text-xs"
+                      >
+                        {article.published}
+                      </Moment>
+                    </p>
                   </div>
                 </article>
               )}
