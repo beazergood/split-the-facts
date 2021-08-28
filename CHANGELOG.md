@@ -1,4 +1,4 @@
-## [1.1.3] - 27/8/21
+## [1.1.3] - 28/8/21
 ### Added
 - Author name to blog posts.
 
