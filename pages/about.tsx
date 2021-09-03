@@ -58,6 +58,7 @@ export default function About({ about, theme }) {
         <motion.div
           style={{ y: y1 }}
           className="w-full relative z-20 p-6 bg-white md:mt-0 py-2 md:my-20 md:w-4/6 mx-auto shadow-md border-jasmine-faded border-8 "
+          role="main"
         >
           <div className="flex rounded-lg my-10 flex-col items-center ">
             <Image

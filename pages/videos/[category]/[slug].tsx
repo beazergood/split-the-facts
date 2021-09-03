@@ -60,7 +60,7 @@ export default function Video({ theme, video, preview }) {
             {video.embed_url && (
               <>
                 <div className="md:w-2/3 mx-auto w-full">
-                  <div className="embed-container">
+                  <div className="embed-container1" role="main">
                     <iframe
                       src={`https://www.youtube.com/embed/${video.embed_url}?autoplay=1`}
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -172,13 +172,16 @@ export default function Video({ theme, video, preview }) {
             </div>
             <motion.div className="container border- border-red-300 mx-auto my-10 md:w-1/2 w-full">
               {video.content && (
-                <article className="prose lg:prose-xl px-4 lg:px-0 mt-12 font-PlayfairDisplay text-gray-700 max-w-screen-md mx-auto text-lg leading-relaxed">
+                <article
+                  className="prose lg:prose-xl px-4 lg:px-0 mt-12 font-PlayfairDisplay text-gray-700 max-w-screen-md mx-auto text-lg leading-relaxed"
+                  role="main"
+                >
                   <Markdown>{video.content}</Markdown>
                 </article>
               )}
             </motion.div>
           </motion.div>
-          <div className="w-full md:w-1/2 mx-auto">
+          <div className="w-full md:w-1/2 mx-auto" role="feed">
             <HyvorTalk.Embed
               websiteId={WEBSITE_ID}
               id={video.id}

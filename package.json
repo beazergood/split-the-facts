@@ -1,6 +1,6 @@
 {
   "name": "split-the-facts",
-  "version": "1.1.3",
+  "version": "1.1.4-0",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
@@ -10,7 +10,8 @@
     "lint": "next lint",
     "start": "next start",
     "storybook": "start-storybook -s ./public -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "percy": "export PERCY_TOKEN=0e6f2cf2f55f156631057ef9802bab645ae9699d16789d759b9c4b9ed6d461c8 && percy storybook http://localhost:6006"
   },
   "dependencies": {
     "@apollo/client": "^3.3.21",
@@ -58,6 +59,8 @@
     "@babel/core": "^7.14.6",
     "@mdx-js/loader": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
+    "@percy/cli": "^1.0.0-beta.67",
+    "@percy/storybook": "^4.0.2",
     "@storybook/addon-actions": "^6.3.4",
     "@storybook/addon-essentials": "^6.3.4",
     "@storybook/addon-links": "^6.3.4",

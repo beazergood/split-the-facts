@@ -45,12 +45,13 @@ export const Nav = ({ props }) => {
         custom={height}
         ref={containerRef}
         id="websiteNav"
+        role="navigation"
         style={{ width: isOpen ? '300px' : '10px' }}
       >
         <motion.div
           className="background shadow-xl"
           variants={sidebar}
-          style={{ background: props.fill }}
+          style={{ background: isOpen ? props.fill : 'none' }}
         />
         <Navigation props={props.items} />
         <MenuToggle toggle={() => toggleOpen()} />

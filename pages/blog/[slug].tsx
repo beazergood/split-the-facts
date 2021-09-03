@@ -62,7 +62,7 @@ export default function Article({ theme, article, preview }) {
             <WaveBackground />
           </div>
 
-          <motion.div className="container mx-auto relative  ">
+          <motion.div className="container mx-auto relative" role="main">
             <motion.div className="container border- border-red-300 mx-auto w-5/6">
               <div className="my-16">
                 <p className="text-5xl mb-2 font-PlayfairDisplay text-center">
@@ -132,7 +132,7 @@ export default function Article({ theme, article, preview }) {
               )}
             </motion.div>
           </motion.div>
-          <div className="w-full px-2 md:px-0 md:w-1/2 mx-auto">
+          <div className="w-full px-2 md:px-0 md:w-1/2 mx-auto" role="feed">
             <HyvorTalk.Embed
               websiteId={WEBSITE_ID}
               id={article.id}
