@@ -31,7 +31,10 @@ module.exports = {
         frames: "url('/images/frames-nobg-1440.png')",
         'frames-collage': "url('/collage-1440-5.svg')",
         'cobalt-popstar': "url('/svg/pattern-cobalt-popstar.svg')"
-      })
+      }),
+      zIndex: {
+        '-2': '-2'
+      }
     }
   },
   plugins: [

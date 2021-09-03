@@ -1,3 +1,7 @@
+## [1.1.5] - 3/9/21
+### Changes
+- 1.1.4 didn't work! Trying different approach that doesn't use any clip-path
+
 ## [1.1.4] - 3/9/21
 ### Changes
 - remove background colour from nav when closed as it isn't clipping in older browsers (iOS 11)
