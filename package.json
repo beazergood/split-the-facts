@@ -1,6 +1,6 @@
 {
   "name": "split-the-facts",
-  "version": "1.1.4-0",
+  "version": "1.1.5-0",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
@@ -23,6 +23,7 @@
     "@mailchimp/mailchimp_marketing": "^3.0.48",
     "@next/mdx": "^11.0.1",
     "axios": "^0.21.1",
+    "classnames": "^2.3.1",
     "cookie": "^0.4.1",
     "framer-motion": "4.1.17",
     "graphql": "^15.5.1",

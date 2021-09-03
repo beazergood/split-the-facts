@@ -4,6 +4,7 @@ import { motion, useCycle } from 'framer-motion'
 import { useDimensions } from './use-dimensions'
 import { MenuToggle } from './MenuToggle'
 import { Navigation } from './Navigation'
+import classNames from 'classnames'
 
 const sidebar = {
   open: (height = 1000) => ({
@@ -17,7 +18,7 @@ const sidebar = {
   closed: (height = 0) => ({
     clipPath: 'circle(30px at 235px 40px)',
     transition: {
-      delay: 0.5,
+      delay: 0.2,
       type: 'spring',
       stiffness: 400,
       damping: 40
@@ -48,10 +49,13 @@ export const Nav = ({ props }) => {
         role="navigation"
         style={{ width: isOpen ? '300px' : '10px' }}
       >
+        <div className="absolute top-3 right-9 w-14 h-14 rounded-full bg-wall -z-2"></div>
         <motion.div
-          className="background shadow-xl"
+          className={classNames('background', {
+            'shadow-xl bg-wall': isOpen === true
+          })}
+          style={{ width: isOpen ? '300px' : '0px' }}
           variants={sidebar}
-          style={{ background: isOpen ? props.fill : 'none' }}
         />
         <Navigation props={props.items} />
         <MenuToggle toggle={() => toggleOpen()} />
@@ -62,7 +66,6 @@ export const Nav = ({ props }) => {
           top: 0;
           right: 0;
           bottom: 0;
-          width: 300px;
         }
 
         .background {
@@ -70,7 +73,6 @@ export const Nav = ({ props }) => {
           top: 0;
           right: 0;
           bottom: 0;
-          width: 300px;
         }
 
         button#navBtn {
