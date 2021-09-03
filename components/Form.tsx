@@ -29,7 +29,9 @@ export const EmailForm: React.FC = () => {
           autoComplete="email"
           required
         />
-        <button type="submit">Sign Up</button>
+        <button type="submit" aria-label="Sign up to newsletter">
+          Sign Up
+        </button>
       </form>
     </div>
   )

@@ -8,7 +8,6 @@ const preview = async (req, res) => {
   if (req.query.secret !== (process.env.PREVIEW_SECRET || 'secret-token')) {
     return res.status(401).json({ message: 'Invalid token' })
   }
-  console.log(' <<<<<<<<<<<<<<<< STARTING PREVIEW >>>>>>>>')
 
   const cookies = parseCookies(req)
   const slugArray = req.query.slug.split('/')
@@ -16,8 +15,6 @@ const preview = async (req, res) => {
   const collection = slugArray[0] == 'blog' ? 'articles' : 'videos'
   const pageData = await getPageData({ slug: slugArray }, collection, true)
 
-  console.log('slugArray: ', slugArray)
-  console.log('pageData: ', pageData)
   // If the slug doesn't exist prevent preview mode from being enabled
   if (!pageData) {
     return res.status(401).json({ message: 'Invalid slug' })

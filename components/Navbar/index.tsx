@@ -37,7 +37,10 @@ export const Navbar: React.FC<NavbarProps> = ({ theme }) => {
   }
 
   return (
-    <div className="w-100 h-24 relative flex flex-row space-around border-0 border-red-300  py-4 z-40">
+    <div
+      className="w-100 h-24 relative flex flex-row space-around border-0 border-red-300  py-4 z-40"
+      role="navigation"
+    >
       <div>
         <Link href="/" passHref>
           <motion.svg

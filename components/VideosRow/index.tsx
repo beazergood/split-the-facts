@@ -265,6 +265,7 @@ function Arrow({
         color: '#fff'
       }}
       className="hover:bg-ocean bg-popstar-hover"
+      ariat-label="Arrow Button"
     >
       {children}
     </button>

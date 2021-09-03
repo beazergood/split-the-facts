@@ -1,3 +1,15 @@
+## [1.1.4] - 3/9/21
+### Changes
+- remove background colour from nav when closed as it isn't clipping in older browsers (iOS 11)
+- changes hero image from png to webp resulting in 80% reduction in file size! 588kb vs 118kb
+
+### Fixes
+- nav bug on older versions of Safari. Thanks to Barb in Oz reporting it
+
+### Added
+- aria labels to buttons
+- roles to sections of the pages for screen readers
+
 ## [1.1.3] - 28/8/21
 ### Added
 - Author name to blog posts.

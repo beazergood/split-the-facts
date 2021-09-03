@@ -96,7 +96,7 @@ export default function Yearbook({ characters, theme, videos }) {
                 alt="Ornate Frame"
               />
             </motion.div>
-            <div className="flex flex-col mt-12">
+            <div className="flex flex-col mt-12" role="main">
               {characters &&
                 characters.map((character, index) => {
                   return (

@@ -102,6 +102,7 @@ export const VideoPlayer = ({
             <div className="border- border-green-300 flex items-center">
               <motion.img
                 src={thumbnailImg}
+                alt="Video Thumbnail Image"
                 className="mx-auto rounded-lg  pt-1 "
                 width="732px"
                 height="431px"

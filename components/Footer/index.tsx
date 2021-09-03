@@ -54,7 +54,7 @@ export const Footer: React.FC<FooterProps> = ({ theme, playlist = {} }) => {
   const [showVersion, setShowVersion] = useState(false)
   return (
     <>
-      <div className="relative z-0 w-full">
+      <div className="relative z-0 w-full" role="contentinfo">
         <motion.div
           className="absolute z-10 right-4 top-14 invisible md:visible"
           style={{ y: y2, x: 0 }}

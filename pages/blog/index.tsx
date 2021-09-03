@@ -36,7 +36,11 @@ export default function BlogHome({ posts, theme, preview }) {
                 <WaveBackground />
               </div>
             </div>
-            <motion.div className="w-full h-1/2 px-3" style={{ y: y1, x: 0 }}>
+            <motion.div
+              className="w-full h-1/2 px-3"
+              style={{ y: y1, x: 0 }}
+              role="main"
+            >
               <div className="mt-10 flex flex-col ">
                 {posts &&
                   posts.map((post) => {
