@@ -1,0 +1,21 @@
+{
+  "kind": "singleType",
+  "collectionName": "privacies",
+  "info": {
+    "name": "Privacy"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "header": {
+      "type": "string"
+    },
+    "content": {
+      "type": "richtext"
+    }
+  }
+}

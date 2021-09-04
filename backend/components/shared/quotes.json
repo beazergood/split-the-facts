@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_shared_quotes",
+  "info": {
+    "name": "Quotes",
+    "icon": "bullhorn",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Quote": {
+      "type": "text"
+    }
+  }
+}

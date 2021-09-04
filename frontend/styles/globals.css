@@ -1,0 +1,47 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.no-scroll {
+  overflow-y: hidden;
+  padding-right: 15px;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 14px;
+  height: 14px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 100vh;
+  background: #B3525E;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #8D3F48;
+  border-radius: 100vh;
+  border: 2px solid #B3525E;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #3F678D;
+}
+/* Scrollbar styling */
+/* https://newbedev.com/css-how-to-style-scroll-bar-in-tailwind-css-code-example */
