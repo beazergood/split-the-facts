@@ -65,7 +65,7 @@ export const BlogSection = ({ title, articles, theme, href }) => {
       </section>
 
       <div className="w-full px-2 z-20">
-        <div className="cards grid gap-8  mt-10 ">
+        <div className="cards grid gap-5 mt-10 ">
           {articles &&
             articles.map((article) => {
               return (
@@ -77,7 +77,7 @@ export const BlogSection = ({ title, articles, theme, href }) => {
                   href={article.slug}
                   id={article.id}
                   published={article.published_at}
-                  width={deviceSize.isTabletOrMobile ? '330px' : '450px'}
+                  width={deviceSize.isTabletOrMobile ? '311px' : '450px'}
                 />
               )
             })}
@@ -96,7 +96,7 @@ export const BlogSection = ({ title, articles, theme, href }) => {
         .cards {
           scroll-snap-type: x;
           scroll-padding-left: 1.5rem;
-          padding: 16px;
+          /* padding: 16px; */
           grid-auto-flow: column;
           grid-auto-columns: minmax(1fr, 1fr);
           overflow-x: auto;
@@ -106,7 +106,7 @@ export const BlogSection = ({ title, articles, theme, href }) => {
         .cards:before,
         .cards:after {
           content: '';
-          width: 10px;
+          width: 0px;
         }
       `}</style>
     </div>

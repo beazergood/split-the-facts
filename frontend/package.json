@@ -1,6 +1,6 @@
 {
   "name": "split-the-facts",
-  "version": "1.1.6",
+  "version": "1.1.7-0",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
