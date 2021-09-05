@@ -69,7 +69,7 @@ export const VideosRow = ({ videos, group }) => {
         ))}
         <style jsx>{`
           .cards {
-            scroll-snap-type: x;
+            scroll-snap-type: x mandatory;
             scroll-padding-left: 1.5rem;
             margin-left: 5px;
             margin-right: 5px;
@@ -93,7 +93,7 @@ function Card({ fullSlug, title, itemId, thumbnail_url, published }) {
     <motion.div
       key={itemId}
       whileHover={{ scale: 1.05 }}
-      className="cursor-pointer bg-wall border-red-300 flex-shrink-0 shadow-md hover:shadow-lg mx-4 rounded-lg"
+      className="cursor-pointer scroll-snap bg-wall border-red-300 flex-shrink-0 shadow-md hover:shadow-lg mx-4 rounded-lg"
       style={{
         width: '260px'
       }}
@@ -138,6 +138,11 @@ function Card({ fullSlug, title, itemId, thumbnail_url, published }) {
           </div>
         </div>
       </Link>
+      <style jsx>{`
+        .scroll-snap {
+          scroll-snap-align: start;
+        }
+      `}</style>
     </motion.div>
   )
 }
