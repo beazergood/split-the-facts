@@ -1,3 +1,6 @@
+## [1.1.7] - 5/9/21
+- tweak postcard sizing for mobile
+  
 ## [1.1.6] - 5/9/21
 ### Changes
 - better horizontal scroll solution for blog section.
