@@ -1,6 +1,7 @@
-## [1.1.6] - 4/9/21
+## [1.1.6] - 5/9/21
 ### Changes
-- better horizontal scroll solution for blog section. Testing before doing same for video rows
+- better horizontal scroll solution for blog section.
+- videos rows scroll switched to grid, too.
 
 ## [1.1.5] - 3/9/21
 ### Changes

@@ -31,10 +31,10 @@ export const BlogSection = ({ title, articles, theme, href }) => {
 
   return (
     <div
-      className="w-100  border-t-2 pb-20 border-ocean bg-ocean relative min-h-64 "
+      className="w-100 border-t-2  border-ocean bg-ocean relative min-h-64"
       ref={ref}
     >
-      <section className="h-32 w-100 relative">
+      <section className="h-32 w-100 relative z-10">
         <motion.div
           className="absolute left-32 bottom-32 invisible md:visible"
           style={{ y: y6, x: 5 }}
@@ -62,8 +62,9 @@ export const BlogSection = ({ title, articles, theme, href }) => {
           />
         </motion.div>
       </section>
-      <div className="w-full px-2 z-20 ">
-        <div className="cards grid gap-8 overflow-x-scroll mt-10 no-scrollbar md:-ml-96">
+
+      <div className="w-full px-2 z-20">
+        <div className="cards grid gap-8  mt-10 ">
           {articles &&
             articles.map((article) => {
               return (
@@ -80,29 +81,25 @@ export const BlogSection = ({ title, articles, theme, href }) => {
             })}
         </div>
       </div>
-      {/* <div
-        className="absolute -bottom-10 h-72 w-full z-0"
+
+      <div
+        className="absolute -bottom-24 h-72 w-full z-10"
         style={{
           backgroundImage:
             'linear-gradient(176deg, #3F678D 70%, #B3525E calc(70% + 2px))'
         }}
-      ></div> */}
+      ></div>
+
       <style jsx>{`
         .cards {
-          /* scroll-snap-type: x;
-          scroll-padding-left: 1.5rem; */
-          /* display: grid; */
-
-          /* grid-auto-flow: column; */
-          /* grid-template-columns: repeat(2, calc(50% - 40px)); */
-          /* grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-          grid-template-rows: minmax(1fr); */
-          margin-left: -300px;
+          scroll-snap-type: x;
+          scroll-padding-left: 1.5rem;
           padding: 16px;
-          grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
           grid-auto-flow: column;
-          grid-auto-columns: minmax(350px, 1fr);
+          grid-auto-columns: minmax(1fr, 1fr);
           overflow-x: auto;
+          z-index: 20;
+          position: relative;
         }
         .cards:before,
         .cards:after {

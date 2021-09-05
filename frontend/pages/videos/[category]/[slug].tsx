@@ -60,7 +60,7 @@ export default function Video({ theme, video, preview }) {
             {video.embed_url && (
               <>
                 <div className="md:w-2/3 mx-auto w-full">
-                  <div className="embed-container1" role="main">
+                  <div className="embed-container" role="main">
                     <iframe
                       src={`https://www.youtube.com/embed/${video.embed_url}?autoplay=1`}
                       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

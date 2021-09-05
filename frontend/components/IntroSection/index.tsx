@@ -18,7 +18,7 @@ export const IntroSection = ({ intro }) => {
 
   return (
     <>
-      <div className="relative text-center bg-wall ">
+      <div className="relative text-center bg-wall pt-20">
         <motion.div
           className="absolute left-16 top-4 z-0 invisible md:visible"
           style={{ y: y3, x: x1 }}
@@ -59,12 +59,12 @@ export const IntroSection = ({ intro }) => {
             </div>
           )}
         </div>
-        <div className="relative z-20 mt-20">
+        <div className="relative z-20 mt-10">
           <HookForm fill={buttonFill} />
         </div>
-        <div>
+        <div className="z-10">
           <motion.div
-            className="absolute right-20 top-24 z-0 invisible md:visible"
+            className="absolute right-20 top-24 z-20 invisible md:visible"
             style={{ y: y4, x: x }}
           >
             <Image
@@ -75,7 +75,7 @@ export const IntroSection = ({ intro }) => {
             />
           </motion.div>
           <motion.div
-            className="absolute right-32 md:bottom-32 z-0  invisible md:visible"
+            className="absolute right-32 md:bottom-32 z-10 invisible md:visible"
             style={{ y: y5, x: 5 }}
           >
             <Image
@@ -87,7 +87,7 @@ export const IntroSection = ({ intro }) => {
           </motion.div>
         </div>
         <div
-          className="z-10 h-44 w-full"
+          className="h-44 w-full"
           style={{
             backgroundImage:
               'linear-gradient(2deg, #3F678D 70%, #FAF4E6 calc(70% + 2px))'

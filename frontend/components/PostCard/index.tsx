@@ -60,7 +60,10 @@ export const Postcard = ({
   })
 
   return (
-    <div className="w-100 flex flex-col bg-wall border-0 border-purple-500 shadow-lg rounded-lg pb-4">
+    <div
+      className="h-100 flex flex-col bg-wall border-0 border-purple-500 shadow-lg rounded-lg pb-4"
+      style={{ width: '330px' }}
+    >
       <div className="h-52 border-0 border-purple-500 overflow-hidden">
         <Image
           src={thumb}

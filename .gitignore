@@ -116,3 +116,4 @@ build
 node_modules
 
 backend/public
+frontend/.next
