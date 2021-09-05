@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_shared_wefs",
+  "info": {
+    "name": "wef",
+    "icon": "align-right"
+  },
+  "options": {},
+  "attributes": {
+    "fwefwew": {
+      "type": "string"
+    },
+    "fe": {
+      "type": "datetime"
+    }
+  }
+}

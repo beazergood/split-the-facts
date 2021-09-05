@@ -1,0 +1,34 @@
+{
+  "collectionName": "components_sections_homepage_heroes",
+  "info": {
+    "name": "HomepageHero",
+    "icon": "balance-scale"
+  },
+  "options": {},
+  "attributes": {
+    "aboveImageText": {
+      "type": "string"
+    },
+    "cursiveHeader": {
+      "type": "string"
+    },
+    "mainHeader": {
+      "type": "string"
+    },
+    "heroImage": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false,
+      "pluginOptions": {}
+    },
+    "embedId": {
+      "type": "string"
+    }
+  }
+}
