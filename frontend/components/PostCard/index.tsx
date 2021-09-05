@@ -97,11 +97,6 @@ export const Postcard = ({
           <Button label="Read post" href={href} />
         </div>
       </div>
-      <style jsx>{`
-        .scroll-snap {
-          scroll-snap-align: start;
-        }
-      `}</style>
     </div>
   )
 }

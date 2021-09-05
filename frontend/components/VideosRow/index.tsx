@@ -90,59 +90,56 @@ export const VideosRow = ({ videos, group }) => {
 
 function Card({ fullSlug, title, itemId, thumbnail_url, published }) {
   return (
-    <motion.div
-      key={itemId}
-      whileHover={{ scale: 1.05 }}
-      className="cursor-pointer scroll-snap bg-wall border-red-300 flex-shrink-0 shadow-md hover:shadow-lg mx-4 rounded-lg"
-      style={{
-        width: '260px'
-      }}
-      tabIndex={0}
-    >
-      <Link href={fullSlug} passHref>
-        <div className="flex flex-col items-center">
-          {thumbnail_url && (
-            <div className="relative">
-              <Image
-                src={`${thumbnail_url.slice(
-                  0,
-                  thumbnail_url.lastIndexOf('/') + 1
-                )}thumbnail_${thumbnail_url.slice(
-                  thumbnail_url.lastIndexOf('/') + 1
-                )}`}
-                width={270}
-                height={160}
-                alt="Video Thumbnail"
-                className="rounded-t-lg"
-              />
-              <div className="absolute bottom-14 left-24">
-                <FaPlayCircle className="text-white text-6xl opacity-70 " />
+    <>
+      <motion.div
+        key={itemId}
+        whileHover={{ scale: 1.05 }}
+        className="cursor-pointer scroll-snap bg-wall border-red-300 flex-shrink-0 shadow-md hover:shadow-lg mx-4 rounded-lg"
+        style={{
+          width: '260px'
+        }}
+        tabIndex={0}
+      >
+        <Link href={fullSlug} passHref>
+          <div className="flex flex-col items-center">
+            {thumbnail_url && (
+              <div className="relative">
+                <Image
+                  src={`${thumbnail_url.slice(
+                    0,
+                    thumbnail_url.lastIndexOf('/') + 1
+                  )}thumbnail_${thumbnail_url.slice(
+                    thumbnail_url.lastIndexOf('/') + 1
+                  )}`}
+                  width={270}
+                  height={160}
+                  alt="Video Thumbnail"
+                  className="rounded-t-lg"
+                />
+                <div className="absolute bottom-14 left-24">
+                  <FaPlayCircle className="text-white text-6xl opacity-70 " />
+                </div>
+              </div>
+            )}
+
+            <div className="w-full my-2 px-2 flex-1">
+              <p className="text-sm font-NotoSerif flex-1 flex">{title}</p>
+              <div className="text-sm font-NotoSerif text-right flex flex-row mx-2 items-center">
+                <Moment format="D MMM YYYY" className="font-NotoSerif text-xs">
+                  {published}
+                </Moment>
+                <span className="flex-grow"></span>
+                <HyvorTalk.CommentCount
+                  websiteId={WEBSITE_ID}
+                  id={itemId}
+                  mode="number"
+                />
+                <GoComment className="mx-1 text-lg" />
               </div>
             </div>
-          )}
-
-          <div className="w-full my-2 px-2 flex-1">
-            <p className="text-sm font-NotoSerif flex-1 flex">{title}</p>
-            <div className="text-sm font-NotoSerif text-right flex flex-row mx-2 items-center">
-              <Moment format="D MMM YYYY" className="font-NotoSerif text-xs">
-                {published}
-              </Moment>
-              <span className="flex-grow"></span>
-              <HyvorTalk.CommentCount
-                websiteId={WEBSITE_ID}
-                id={itemId}
-                mode="number"
-              />
-              <GoComment className="mx-1 text-lg" />
-            </div>
           </div>
-        </div>
-      </Link>
-      <style jsx>{`
-        .scroll-snap {
-          scroll-snap-align: start;
-        }
-      `}</style>
-    </motion.div>
+        </Link>
+      </motion.div>
+    </>
   )
 }

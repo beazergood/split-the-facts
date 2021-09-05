@@ -45,3 +45,7 @@ a {
 }
 /* Scrollbar styling */
 /* https://newbedev.com/css-how-to-style-scroll-bar-in-tailwind-css-code-example */
+
+.scroll-snap {
+  scroll-snap-align: start;
+}
