@@ -77,7 +77,7 @@ export const Postcard = ({
         />
       </div>
       <div className="px-4 py-5 flex flex-1 flex-col ">
-        <h3 className="text-3xl font-PlayfairDisplay">{title}</h3>
+        <h2 className="text-2xl font-PlayfairDisplay">{title}</h2>
         <p className="mt-2 font-PlayfairDisplay text-lg flex-1">{intro}</p>
         <div className="text-sm font-NotoSerif text-right flex flex-row mr-2 items-center mt-4">
           <span className="flex-grow"></span>
