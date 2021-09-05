@@ -50,7 +50,7 @@ export default function Home({
             embedId={heroProps.embed_id}
           />
 
-          <IntroSection intro={homepage.intro_rich} />
+          <IntroSection intro={homepage.intro_rich} theme={theme.textColor} />
 
           <BlogSection
             title="Blog"
@@ -227,8 +227,9 @@ export async function getStaticProps() {
         secondary: '#3F678D',
         header: { logoFill: '#fff', navBtnFill: '#FAF4E6' },
         body: { bgFill: '#fefefe' },
+        textColor: 'dark',
         footer: {
-          theme: 'dark',
+          textColor: 'light',
           bgFill: '#8D3F48',
           buttonFill: '#B3525E',
           iconsFill: '#8D3F48',

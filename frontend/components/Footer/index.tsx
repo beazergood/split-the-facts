@@ -19,20 +19,27 @@ import packageInfo from '../../package.json'
 import { VideosRow } from '../VideosRow'
 import Link from 'next/link'
 import Image from 'next/image'
+import classNames from 'classnames'
 
 export interface FooterProps {
-  theme: any
+  theme: {
+    logoFill: string
+    buttonsFill: string
+    iconsFill: string
+    textColor: string
+    btnFill: string
+  }
   playlist?: {
     videos: []
     group: {
       title: string
       action: string
+      theme: string
     }
   }
 }
 
 export const Footer: React.FC<FooterProps> = ({ theme, playlist = {} }) => {
-  console.log('footer theme ', theme)
   const { scrollY } = useViewportScroll()
   const y1 = useTransform(scrollY, [4500, 5800], [0, 100])
   const y2 = useTransform(scrollY, [4500, 6000], [0, -100])
@@ -83,8 +90,12 @@ export const Footer: React.FC<FooterProps> = ({ theme, playlist = {} }) => {
       <div style={{ background: theme.bgFill, marginTop: '-2px' }}>
         <div className="w-100 px-2 md:w-3/5 lg:w-1/3 mx-auto pt-10 ">
           <h1
-            className="text-2xl text-center my-4 font-PlayfairDisplay"
-            style={{ color: theme.titleTagColour }}
+            className={classNames(
+              'text-2xl text-center my-4 font-PlayfairDisplay',
+              {
+                'text-wall': theme.textColor === 'light'
+              }
+            )}
           >
             Let us expose the hypocrisies of those who demand we behave.
           </h1>
@@ -106,7 +117,7 @@ export const Footer: React.FC<FooterProps> = ({ theme, playlist = {} }) => {
               alt="Boxer Cushion"
             />
           </motion.div>
-          <HookForm theme={theme} />
+          <HookForm theme={theme.textColor} />
         </div>
         <div className="w-64 px5 md:w-44 mx-auto -14">
           <Link href="/" passHref>

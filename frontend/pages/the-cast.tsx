@@ -124,7 +124,7 @@ export default function Yearbook({ characters, theme, videos }) {
           theme={theme.footer}
           playlist={{
             videos: videos,
-            group: { title: 'Parody videos', action: 'open' }
+            group: { title: 'Parody videos', action: 'open', theme: 'light' }
           }}
         />
       </div>
@@ -220,7 +220,6 @@ const RightsideProfile = ({ character, key }) => {
 }
 
 export async function getStaticProps() {
-  // console.log('im on the server')
   const buildFullSlug = (videos, category = '') => {
     if (category) {
       return videos.map((video) => {
@@ -273,8 +272,6 @@ export async function getStaticProps() {
     `
   })
 
-  // console.log(' ===== data ', data)
-
   return {
     props: {
       characters: data.characters.map((c) => {
@@ -287,7 +284,7 @@ export async function getStaticProps() {
         header: { logoFill: '#fff', navBtnFill: '#FAF4E6' },
         body: { bgFill: '#fefefe' },
         footer: {
-          theme: 'dark',
+          textColor: 'light',
           bgFill: '#8D3F48',
           buttonFill: '#B3525E',
           iconsFill: '#faf4e6',

@@ -39,7 +39,7 @@ export const VideosRow = ({ videos, group }) => {
             'text-wall': group.theme === 'dark'
           },
           {
-            'text-popstar-hover': group.theme === 'light'
+            'text-popstar': group.theme === 'light'
           }
         )}
       >
@@ -93,7 +93,7 @@ function Card({ fullSlug, title, itemId, thumbnail_url, published }) {
     <motion.div
       key={itemId}
       whileHover={{ scale: 1.05 }}
-      className="cursor-pointer bg-wall border-red-300 flex-shrink-0 hover:shadow-lg mx-4 rounded-lg"
+      className="cursor-pointer bg-wall border-red-300 flex-shrink-0 shadow-md hover:shadow-lg mx-4 rounded-lg"
       style={{
         width: '260px'
       }}

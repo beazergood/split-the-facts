@@ -32,6 +32,6 @@ Dark.args = {
     buttonFill: '#B3525E',
     iconsFill: '#8D3F48',
     linkColour: '#fefefe',
-    theme: 'light'
+    textColor: 'light'
   }
 }

@@ -4,8 +4,9 @@ import Image from 'next/image'
 import Markdown from 'markdown-to-jsx'
 export interface IntroSectionProps {
   intro: string
+  theme: string
 }
-export const IntroSection = ({ intro }) => {
+export const IntroSection = ({ intro, theme }) => {
   const { scrollY } = useViewportScroll()
 
   const y1 = useTransform(scrollY, [0, 200], [0, -250])
@@ -14,7 +15,6 @@ export const IntroSection = ({ intro }) => {
   const y3 = useTransform(scrollY, [0, 400], [0, -100])
   const y4 = useTransform(scrollY, [0, 600], [0, -200])
   const y5 = useTransform(scrollY, [0, 200], [0, -100])
-  const theme = { theme: 'light' }
 
   return (
     <>

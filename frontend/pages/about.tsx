@@ -6,7 +6,6 @@ import { WaveBackground } from '../components/WaveBackground'
 import { Navbar } from '../components/Navbar'
 import { Footer } from '../components/Footer'
 import Markdown from 'markdown-to-jsx'
-import { HookForm } from '../components/HookForm'
 import { OrnateFrame } from '../components/OrnateFrame'
 import Image from 'next/image'
 

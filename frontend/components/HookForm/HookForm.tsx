@@ -1,23 +1,16 @@
 import { useForm } from 'react-hook-form'
 import React, { useEffect, useState } from 'react'
-import {
-  FormErrorMessage,
-  FormLabel,
-  FormControl,
-  Input,
-  Button
-} from '@chakra-ui/react'
+import { FormErrorMessage, FormControl, Input, Button } from '@chakra-ui/react'
 import { FaPaperPlane } from 'react-icons/fa'
 import { motion } from 'framer-motion'
 import Confetti from 'react-dom-confetti'
 import classNames from 'classnames'
 
 export interface HookFormProps {
-  theme?: string
+  theme: string
 }
 
-export const HookForm = ({ theme }) => {
-  console.log('theme ', theme)
+export const HookForm = ({ theme = '' }) => {
   const {
     handleSubmit,
     register,
@@ -95,7 +88,7 @@ export const HookForm = ({ theme }) => {
           className={classNames(
             'text-lg mb-5 font-PlayfairDisplay text-center',
             {
-              'text-wall': theme.theme === 'dark'
+              'text-wall': theme === 'light'
             }
           )}
         >
