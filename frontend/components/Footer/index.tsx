@@ -32,6 +32,7 @@ export interface FooterProps {
 }
 
 export const Footer: React.FC<FooterProps> = ({ theme, playlist = {} }) => {
+  console.log('footer theme ', theme)
   const { scrollY } = useViewportScroll()
   const y1 = useTransform(scrollY, [4500, 5800], [0, 100])
   const y2 = useTransform(scrollY, [4500, 6000], [0, -100])
@@ -105,7 +106,7 @@ export const Footer: React.FC<FooterProps> = ({ theme, playlist = {} }) => {
               alt="Boxer Cushion"
             />
           </motion.div>
-          <HookForm fill={theme.buttonFill} />
+          <HookForm theme={theme} />
         </div>
         <div className="w-64 px5 md:w-44 mx-auto -14">
           <Link href="/" passHref>
@@ -239,7 +240,7 @@ export const Footer: React.FC<FooterProps> = ({ theme, playlist = {} }) => {
                   />
                 </div>
                 <div className="flex flex-col">
-                  <p className="text-lg">
+                  <p className="text-lg text-wall">
                     Subscribe to my YouTube Channel &rarr; <br />
                   </p>
                   {/* <p className=" text-md" style={{ color: theme.linkColour }}>
@@ -269,7 +270,9 @@ export const Footer: React.FC<FooterProps> = ({ theme, playlist = {} }) => {
                   />
                 </div>
                 <div className="flex flex-col">
-                  <p className="text-lg">Support me on Patreon &rarr; </p>
+                  <p className="text-lg text-wall">
+                    Support me on Patreon &rarr;{' '}
+                  </p>
                   {/* <p className=" text-md" style={{ color: theme.linkColour }}>
                     @Sam Roffey
                   </p> */}
@@ -278,7 +281,7 @@ export const Footer: React.FC<FooterProps> = ({ theme, playlist = {} }) => {
             </a>
           </div>
         </div>
-        <div className="w-full px-2 md:w-5/6 lg:w-1/3 mx-auto flex flex-wrap justify-center">
+        <div className="w-full px-2 md:w-5/6 lg:w-1/3 mx-auto flex flex-wrap justify-center text-wall">
           <a
             href="mailto:split.thefacts@gmail.com"
             style={{ color: theme.linkColor }}

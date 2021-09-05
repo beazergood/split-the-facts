@@ -86,19 +86,19 @@ export const VideosSection = ({ title, href, theme, videos }) => {
       <div className="container mx-auto">
         <VideosRow
           videos={videos.recentVideos}
-          group={{ title: 'Latest Uploads', action: 'link' }}
+          group={{ title: 'Latest Uploads', action: 'link', theme: 'dark' }}
         />
         <VideosRow
           videos={videos.royalInterview}
-          group={{ title: 'Royal Interview', action: 'link' }}
+          group={{ title: 'Royal Interview', action: 'link', theme: 'dark' }}
         />
         <VideosRow
           videos={videos.atTheBar}
-          group={{ title: 'At The Bar', action: 'link' }}
+          group={{ title: 'At The Bar', action: 'link', theme: 'dark' }}
         />
         <VideosRow
           videos={videos.miscellaneous}
-          group={{ title: 'Miscellaneous', action: 'link' }}
+          group={{ title: 'Miscellaneous', action: 'link', theme: 'dark' }}
         />
       </div>
       <div

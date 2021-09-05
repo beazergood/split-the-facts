@@ -10,12 +10,14 @@ import {
 import { FaPaperPlane } from 'react-icons/fa'
 import { motion } from 'framer-motion'
 import Confetti from 'react-dom-confetti'
+import classNames from 'classnames'
 
 export interface HookFormProps {
-  fill?: string
+  theme?: string
 }
 
-export const HookForm = ({ fill = '#000' }) => {
+export const HookForm = ({ theme }) => {
+  console.log('theme ', theme)
   const {
     handleSubmit,
     register,
@@ -89,7 +91,14 @@ export const HookForm = ({ fill = '#000' }) => {
   return (
     <div className="">
       <form onSubmit={handleSubmit(onSubmit)} id="sign_up_form">
-        <p className="text-lg mb-5 font-PlayfairDisplay text-center">
+        <p
+          className={classNames(
+            'text-lg mb-5 font-PlayfairDisplay text-center',
+            {
+              'text-wall': theme.theme === 'dark'
+            }
+          )}
+        >
           Enter your email to subscribe to the occasional update from me.
         </p>
         <div className="flex flex-col md:flex-row mx-auto gap-2">
@@ -128,8 +137,9 @@ export const HookForm = ({ fill = '#000' }) => {
               type="submit"
               width="50px"
               height="50px"
-              className="rounded-full p-4 md:ml-2 hover:shadow-md text-white hidden md:block relative mt-8 z-30"
-              style={{ backgroundColor: fill }}
+              className={classNames(
+                'rounded-full p-4 md:ml-2 hover:shadow-md text-white hidden md:block relative mt-8 z-30 bg-golden'
+              )}
             >
               <FaPaperPlane className="text-white" />
               <Confetti active={someProp} config={config} />

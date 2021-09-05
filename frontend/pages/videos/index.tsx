@@ -65,26 +65,42 @@ export default function VideosHome({ videos, theme, preview }) {
                 mock interview: the premise was born.
               </p>
             </div>
-            <div className="mt-20">
+            <div className="mt-20 mx-8 md:mx-20 lg:mx-44">
               <VideosRow
                 videos={videos.recentVideos}
-                group={{ title: 'Recent uploads', action: 'open' }}
+                group={{
+                  title: 'Recent uploads',
+                  action: 'open',
+                  theme: 'light'
+                }}
               />
               <VideosRow
                 videos={videos.royalInterview}
-                group={{ title: 'Royal Interview', action: 'open' }}
+                group={{
+                  title: 'Royal Interview',
+                  action: 'open',
+                  theme: 'light'
+                }}
               />
               <VideosRow
                 videos={videos.atTheBar}
-                group={{ title: 'At The Bar', action: 'open' }}
+                group={{ title: 'At The Bar', action: 'open', theme: 'light' }}
               />
               <VideosRow
                 videos={videos.boris}
-                group={{ title: 'Boris Addressing The Nation', action: 'open' }}
+                group={{
+                  title: 'Boris Addressing The Nation',
+                  action: 'open',
+                  theme: 'light'
+                }}
               />
               <VideosRow
                 videos={videos.miscellaneous}
-                group={{ title: 'Miscellaneous', action: 'open' }}
+                group={{
+                  title: 'Miscellaneous',
+                  action: 'open',
+                  theme: 'light'
+                }}
               />
             </div>
           </motion.div>
@@ -202,6 +218,7 @@ export const getStaticProps = async ({ preview = null }) => {
         header: { logoFill: '#fff', navBtnFill: '#FAF4E6' },
         body: { bgFill: '#fefefe' },
         footer: {
+          theme: 'dark',
           bgFill: '#8D3F48',
           buttonFill: '#B3525E',
           iconsFill: '#8D3F48',

@@ -14,7 +14,7 @@ export const IntroSection = ({ intro }) => {
   const y3 = useTransform(scrollY, [0, 400], [0, -100])
   const y4 = useTransform(scrollY, [0, 600], [0, -200])
   const y5 = useTransform(scrollY, [0, 200], [0, -100])
-  const buttonFill = '#FFD56B'
+  const theme = { theme: 'light' }
 
   return (
     <>
@@ -60,7 +60,7 @@ export const IntroSection = ({ intro }) => {
           )}
         </div>
         <div className="relative z-20 mt-10">
-          <HookForm fill={buttonFill} />
+          <HookForm theme={theme} />
         </div>
         <div className="z-10">
           <motion.div

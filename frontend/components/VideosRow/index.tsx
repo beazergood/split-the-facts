@@ -1,20 +1,20 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Moment from 'react-moment'
-import { FaPlayCircle, FaTimes } from 'react-icons/fa'
+import { FaPlayCircle } from 'react-icons/fa'
 import { GoComment } from 'react-icons/go'
-import { BsChevronCompactLeft, BsChevronCompactRight } from 'react-icons/bs'
 import Link from 'next/link'
 import React, { useState } from 'react'
 import HyvorTalk from 'hyvor-talk-react'
-import { mergeOptions } from '@apollo/client'
 const WEBSITE_ID = parseInt(process.env.NEXT_PUBLIC_HYVOR_WEBSITE_ID)
+import classNames from 'classnames'
 
 export interface VideosRowProps {
   videos: any
   group: {
     title: string
     action: string
+    theme: string
   }
 }
 
@@ -32,7 +32,17 @@ export const VideosRow = ({ videos, group }) => {
       className="mx-auto my-3 relative py-2 bg-popstar-hove rounded-lg w-full overflow-x-scroll no-scrollbar"
       key={group.title}
     >
-      <p className="ml-6 relative font-AveriaSerifLibre text-wall">
+      <p
+        className={classNames(
+          'ml-6 relative font-AveriaSerifLibre',
+          {
+            'text-wall': group.theme === 'dark'
+          },
+          {
+            'text-popstar-hover': group.theme === 'light'
+          }
+        )}
+      >
         <span className="text-xl">{group.title}</span> -{' '}
         <span className="text-md">{items.length} videos</span>
       </p>

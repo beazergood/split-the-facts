@@ -24,7 +24,8 @@ export const Postcard = ({
   color = '',
   href,
   id,
-  published
+  published,
+  width
 }) => {
   const transition = {
     duration: 1.3,
@@ -62,7 +63,7 @@ export const Postcard = ({
   return (
     <div
       className="h-100 flex flex-col bg-wall border-0 border-purple-500 shadow-lg rounded-lg pb-4"
-      style={{ width: '330px' }}
+      style={{ width: width }}
     >
       <div className="h-52 border-0 border-purple-500 overflow-hidden">
         <Image
@@ -76,7 +77,7 @@ export const Postcard = ({
       </div>
       <div className="px-4 py-5 flex flex-1 flex-col ">
         <h3 className="text-3xl font-PlayfairDisplay">{title}</h3>
-        <p className="my-4 font-PlayfairDisplay text-xl flex-1">{intro}</p>
+        <p className="mt-2 font-PlayfairDisplay text-lg flex-1">{intro}</p>
         <div className="text-sm font-NotoSerif text-right flex flex-row mr-2 items-center mt-4">
           <span className="flex-grow"></span>
           <Moment format="D MMM YYYY" className="font-NotoSerif text-xs">

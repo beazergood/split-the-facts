@@ -57,6 +57,7 @@ export default function BlogHome({ posts, theme, preview }) {
                           href={post.slug}
                           id={post.id}
                           published={post.published_at}
+                          width="auto"
                         />
                         <div className="w-32"></div>
                       </div>
@@ -90,6 +91,7 @@ export const getStaticProps = async ({ params, preview = null }) => {
         header: { logoFill: '#fff', navBtnFill: '#FAF4E6' },
         body: { bgFill: '#fefefe' },
         footer: {
+          theme: 'dark',
           bgFill: '#8D3F48',
           buttonFill: '#B3525E',
           iconsFill: '#8D3F48',

@@ -3,7 +3,7 @@ import { useInView } from 'react-intersection-observer'
 import Image from 'next/image'
 import { OrnateFrame } from '../OrnateFrame'
 import { Postcard } from '../PostCard'
-
+import useResponsive from '../../hooks/responsive'
 export interface Article {
   title: string
   description: string
@@ -29,6 +29,7 @@ export const BlogSection = ({ title, articles, theme, href }) => {
     triggerOnce: true
   })
 
+  const deviceSize = useResponsive()
   return (
     <div
       className="w-100 border-t-2  border-ocean bg-ocean relative min-h-64"
@@ -76,6 +77,7 @@ export const BlogSection = ({ title, articles, theme, href }) => {
                   href={article.slug}
                   id={article.id}
                   published={article.published_at}
+                  width={deviceSize.isTabletOrMobile ? '330px' : '450px'}
                 />
               )
             })}
