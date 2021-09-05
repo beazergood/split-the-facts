@@ -29,7 +29,8 @@ export const BlogSection = ({ title, articles, theme, href }) => {
     triggerOnce: true
   })
 
-  const deviceSize = useResponsive()
+  const width = useResponsive().isTabletOrMobile ? '290px' : '450px'
+
   return (
     <div
       className="w-100 border-t-2  border-ocean bg-ocean relative min-h-64"
@@ -77,7 +78,7 @@ export const BlogSection = ({ title, articles, theme, href }) => {
                   href={article.slug}
                   id={article.id}
                   published={article.published_at}
-                  width={deviceSize.isTabletOrMobile ? '311px' : '450px'}
+                  width={width}
                 />
               )
             })}
@@ -94,9 +95,8 @@ export const BlogSection = ({ title, articles, theme, href }) => {
 
       <style jsx>{`
         .cards {
-          scroll-snap-type: x;
+          scroll-snap-type: x mandatory;
           scroll-padding-left: 1.5rem;
-          /* padding: 16px; */
           grid-auto-flow: column;
           grid-auto-columns: minmax(1fr, 1fr);
           overflow-x: auto;

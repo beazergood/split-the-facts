@@ -63,7 +63,7 @@ export const Postcard = ({
 
   return (
     <div
-      className="h-100 flex flex-col bg-wall border-0 border-purple-500 shadow-lg rounded-lg pb-4"
+      className="h-100 flex scroll-snap flex-col bg-wall border-0 border-purple-500 shadow-lg rounded-lg pb-4"
       style={{ width: width }}
     >
       <div className="h-52 border-0 border-purple-500 overflow-hidden">

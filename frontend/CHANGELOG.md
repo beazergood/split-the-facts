@@ -1,4 +1,9 @@
+## [1.1.8] - 5/9/21
+### Changes
+- more mobile tweaks. scroll snap on scroll containers.
+
 ## [1.1.7] - 5/9/21
+### Changes
 - tweak postcard sizing for mobile
   
 ## [1.1.6] - 5/9/21
