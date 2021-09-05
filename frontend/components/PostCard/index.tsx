@@ -15,6 +15,7 @@ export interface PostcardProps {
   href: string
   color?: string
   published: any
+  width: string
 }
 
 export const Postcard = ({

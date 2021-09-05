@@ -21,7 +21,8 @@ const args2 = {
       url: ''
     }
   },
-  published: new Date()
+  published: new Date(),
+  width: '440px'
 }
 
 const Template: Story<PostcardProps> = (args) => {
@@ -48,7 +49,8 @@ Standard.args = {
       url: ''
     }
   },
-  published: new Date()
+  published: new Date(),
+  width: '440px'
 }
 
 // export const Long = Template.bind({})

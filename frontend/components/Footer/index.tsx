@@ -24,10 +24,12 @@ import classNames from 'classnames'
 export interface FooterProps {
   theme: {
     logoFill: string
-    buttonsFill: string
+    buttonFill: string
     iconsFill: string
     textColor: string
+    linkColor: string
     btnFill: string
+    bgFill: string
   }
   playlist?: {
     videos: []

@@ -227,7 +227,7 @@ export async function getStaticProps() {
         secondary: '#3F678D',
         header: { logoFill: '#fff', navBtnFill: '#FAF4E6' },
         body: { bgFill: '#fefefe' },
-        textColor: 'dark',
+        textColor: 'light',
         footer: {
           textColor: 'light',
           bgFill: '#8D3F48',

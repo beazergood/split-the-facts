@@ -86,7 +86,7 @@ export async function getStaticProps() {
         header: { logoFill: '#fff', navBtnFill: '#FAF4E6' },
         body: { bgFill: '#fefefe' },
         footer: {
-          theme: 'dark',
+          textColor: 'light',
           bgFill: '#8D3F48',
           buttonFill: '#B3525E',
           iconsFill: '#8D3F48',
