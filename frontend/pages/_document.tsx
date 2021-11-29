@@ -72,6 +72,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             href="https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:ital,wght@1,300&display=swap"
             rel="stylesheet"
           />
+          <script
+            async
+            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9361191567282987"
+            crossorigin="anonymous"
+          ></script>
         </Head>
         <body>
           <noscript
