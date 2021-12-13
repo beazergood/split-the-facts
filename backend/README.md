@@ -1,3 +1,4 @@
-# Strapi application
+## Strapi Headless CMS 
 
-A quick description of your strapi application
+- MongoDB Atlas Cluster free tier stores data
+- Node application is deployed to Heroku free tier via 

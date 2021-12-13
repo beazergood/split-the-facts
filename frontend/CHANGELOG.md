@@ -1,3 +1,8 @@
+## [1.1.9] - 13/12/21
+### Changes
+- update to Next 12
+- added google script for AdSense
+
 ## [1.1.8] - 5/9/21
 ### Changes
 - more mobile tweaks. scroll snap on scroll containers.
