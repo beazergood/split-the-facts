@@ -1,4 +1,4 @@
-# Split The Facts! [website] (https://www.splitthefacts.com)
+# Split The Facts! 
 
 A JAM stack web application built as a media hub for parody videos by Sam Roffey. 
 
